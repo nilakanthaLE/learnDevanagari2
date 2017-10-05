@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CD391101F861FAB0054295A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3910F1F861FAB0054295A /* AppDelegate.swift */; };
+		5CD391121F861FAB0054295A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD391111F861FAB0054295A /* ViewController.swift */; };
+		5CD391151F861FAB0054295A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD391131F861FAB0054295A /* Main.storyboard */; };
+		5CD391181F861FAB0054295A /* learnDevanagari2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CD391161F861FAB0054295A /* learnDevanagari2.xcdatamodeld */; };
+		5CD3911A1F861FAB0054295A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD391191F861FAB0054295A /* Assets.xcassets */; };
+		5CD3911D1F861FAB0054295A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3911B1F861FAB0054295A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5CD3910C1F861FAB0054295A /* learnDevanagari2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnDevanagari2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD3910F1F861FAB0054295A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CD391111F861FAB0054295A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CD391141F861FAB0054295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CD391171F861FAB0054295A /* learnDevanagari2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = learnDevanagari2.xcdatamodel; sourceTree = "<group>"; };
+		5CD391191F861FAB0054295A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CD3911C1F861FAB0054295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CD3911E1F861FAB0054295A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CD391091F861FAB0054295A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CD391031F861FAB0054295A = {
+			isa = PBXGroup;
+			children = (
+				5CD3910E1F861FAB0054295A /* learnDevanagari2 */,
+				5CD3910D1F861FAB0054295A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CD3910D1F861FAB0054295A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CD3910C1F861FAB0054295A /* learnDevanagari2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CD3910E1F861FAB0054295A /* learnDevanagari2 */ = {
+			isa = PBXGroup;
+			children = (
+				5CD3910F1F861FAB0054295A /* AppDelegate.swift */,
+				5CD391111F861FAB0054295A /* ViewController.swift */,
+				5CD391131F861FAB0054295A /* Main.storyboard */,
+				5CD391191F861FAB0054295A /* Assets.xcassets */,
+				5CD3911B1F861FAB0054295A /* LaunchScreen.storyboard */,
+				5CD3911E1F861FAB0054295A /* Info.plist */,
+				5CD391161F861FAB0054295A /* learnDevanagari2.xcdatamodeld */,
+			);
+			path = learnDevanagari2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CD3910B1F861FAB0054295A /* learnDevanagari2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CD391211F861FAB0054295A /* Build configuration list for PBXNativeTarget "learnDevanagari2" */;
+			buildPhases = (
+				5CD391081F861FAB0054295A /* Sources */,
+				5CD391091F861FAB0054295A /* Frameworks */,
+				5CD3910A1F861FAB0054295A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = learnDevanagari2;
+			productName = learnDevanagari2;
+			productReference = 5CD3910C1F861FAB0054295A /* learnDevanagari2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CD391041F861FAB0054295A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Matthias Pochmann";
+				TargetAttributes = {
+					5CD3910B1F861FAB0054295A = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5CD391071F861FAB0054295A /* Build configuration list for PBXProject "learnDevanagari2" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CD391031F861FAB0054295A;
+			productRefGroup = 5CD3910D1F861FAB0054295A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CD3910B1F861FAB0054295A /* learnDevanagari2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CD3910A1F861FAB0054295A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD3911D1F861FAB0054295A /* LaunchScreen.storyboard in Resources */,
+				5CD3911A1F861FAB0054295A /* Assets.xcassets in Resources */,
+				5CD391151F861FAB0054295A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CD391081F861FAB0054295A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD391121F861FAB0054295A /* ViewController.swift in Sources */,
+				5CD391181F861FAB0054295A /* learnDevanagari2.xcdatamodeld in Sources */,
+				5CD391101F861FAB0054295A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5CD391131F861FAB0054295A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD391141F861FAB0054295A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CD3911B1F861FAB0054295A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD3911C1F861FAB0054295A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CD3911F1F861FAB0054295A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CD391201F861FAB0054295A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CD391221F861FAB0054295A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XAD3F7PHKG;
+				INFOPLIST_FILE = learnDevanagari2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DNS.learnDevanagari2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CD391231F861FAB0054295A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XAD3F7PHKG;
+				INFOPLIST_FILE = learnDevanagari2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DNS.learnDevanagari2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CD391071F861FAB0054295A /* Build configuration list for PBXProject "learnDevanagari2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD3911F1F861FAB0054295A /* Debug */,
+				5CD391201F861FAB0054295A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CD391211F861FAB0054295A /* Build configuration list for PBXNativeTarget "learnDevanagari2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD391221F861FAB0054295A /* Debug */,
+				5CD391231F861FAB0054295A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5CD391161F861FAB0054295A /* learnDevanagari2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5CD391171F861FAB0054295A /* learnDevanagari2.xcdatamodel */,
+			);
+			currentVersion = 5CD391171F861FAB0054295A /* learnDevanagari2.xcdatamodel */;
+			path = learnDevanagari2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5CD391041F861FAB0054295A /* Project object */;
+}
