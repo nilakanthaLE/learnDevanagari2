@@ -7,23 +7,75 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C04993A1FA8EE58008DD1A3 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0499391FA8EE58008DD1A3 /* QuizModel.swift */; };
+		5C04993C1FA8F286008DD1A3 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C04993B1FA8F286008DD1A3 /* QuizVC.swift */; };
+		5C04993E1FA9078F008DD1A3 /* QuizPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C04993D1FA9078F008DD1A3 /* QuizPanelView.swift */; };
+		5C3AF3401FAB13360045BB27 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AF33F1FAB13360045BB27 /* Design.swift */; };
+		5C3AF3421FAB67A30045BB27 /* QuizPruefenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AF3411FAB67A30045BB27 /* QuizPruefenButton.swift */; };
+		5C932C0E1FBDE59F0013789D /* DatenTypenLektion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C0D1FBDE59F0013789D /* DatenTypenLektion.swift */; };
+		5C932C111FBDE6D00013789D /* Lektionen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C101FBDE6D00013789D /* Lektionen.swift */; };
+		5C932C131FBF08990013789D /* QuizSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C121FBF08990013789D /* QuizSettings.swift */; };
+		5C9B0EF01FB216490084862E /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 5C9B0EEF1FB216490084862E /* tessdata */; };
+		5C9B0EF21FB30CF80084862E /* DatentypenZeichen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9B0EF11FB30CF80084862E /* DatentypenZeichen.swift */; };
+		5CA4DDBA1F9E5F2B00A114D7 /* MultiTouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA4DDB91F9E5F2B00A114D7 /* MultiTouchButton.swift */; };
+		5CAE404F1FB329E80030B024 /* QuizConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE404E1FB329E80030B024 /* QuizConfigVC.swift */; };
+		5CAE40511FB335D60030B024 /* QuizAbfragenSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE40501FB335D60030B024 /* QuizAbfragenSettingVC.swift */; };
+		5CAE40531FB3369C0030B024 /* QuizConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */; };
+		5CAE40551FB33DF60030B024 /* QuizFreiesUebenConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE40541FB33DF60030B024 /* QuizFreiesUebenConfigVC.swift */; };
 		5CD391101F861FAB0054295A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3910F1F861FAB0054295A /* AppDelegate.swift */; };
-		5CD391121F861FAB0054295A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD391111F861FAB0054295A /* ViewController.swift */; };
 		5CD391151F861FAB0054295A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD391131F861FAB0054295A /* Main.storyboard */; };
 		5CD391181F861FAB0054295A /* learnDevanagari2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CD391161F861FAB0054295A /* learnDevanagari2.xcdatamodeld */; };
 		5CD3911A1F861FAB0054295A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD391191F861FAB0054295A /* Assets.xcassets */; };
 		5CD3911D1F861FAB0054295A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD3911B1F861FAB0054295A /* LaunchScreen.storyboard */; };
+		5CE0FE011FAE78E70098BD2E /* PanelControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0FE001FAE78E70098BD2E /* PanelControlViewModel.swift */; };
+		5CE0FE031FAE7AE60098BD2E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0FE021FAE7AE60098BD2E /* Helper.swift */; };
+		5CE0FE061FB05F970098BD2E /* QuizZeichenfeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */; };
+		5CE68D4D1FB8926D00791D7D /* QuizDevaAbfrageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D4C1FB8926D00791D7D /* QuizDevaAbfrageView.swift */; };
+		5CE68D4F1FB8BD2600791D7D /* ZeichenfeldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */; };
+		5CE68D511FB8BE1600791D7D /* NibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D501FB8BE1500791D7D /* NibLoadingView.swift */; };
+		5CE68D531FB9AFEF00791D7D /* DevaAntwortenStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D521FB9AFEF00791D7D /* DevaAntwortenStackView.swift */; };
+		5CE68D551FB9D72300791D7D /* ZeichenSatz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D541FB9D72300791D7D /* ZeichenSatz.swift */; };
+		5CF360B81FA08E670074755C /* QuizTextFeld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF360B71FA08E670074755C /* QuizTextFeld.swift */; };
+		5CF360BA1FA0BB9D0074755C /* QuizArtikulationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF360B91FA0BB9D0074755C /* QuizArtikulationPicker.swift */; };
+		E4A98604A0C30F33514D668D /* Pods_learnDevanagari2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92367E8C5D438A23DD118B0 /* Pods_learnDevanagari2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19CA25FFF7826DA326643BC1 /* Pods-learnDevanagari2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learnDevanagari2.release.xcconfig"; path = "Pods/Target Support Files/Pods-learnDevanagari2/Pods-learnDevanagari2.release.xcconfig"; sourceTree = "<group>"; };
+		5C0499391FA8EE58008DD1A3 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		5C04993B1FA8F286008DD1A3 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		5C04993D1FA9078F008DD1A3 /* QuizPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPanelView.swift; sourceTree = "<group>"; };
+		5C3AF33F1FAB13360045BB27 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
+		5C3AF3411FAB67A30045BB27 /* QuizPruefenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPruefenButton.swift; sourceTree = "<group>"; };
+		5C932C0D1FBDE59F0013789D /* DatenTypenLektion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatenTypenLektion.swift; sourceTree = "<group>"; };
+		5C932C101FBDE6D00013789D /* Lektionen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lektionen.swift; sourceTree = "<group>"; };
+		5C932C121FBF08990013789D /* QuizSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettings.swift; sourceTree = "<group>"; };
+		5C9B0EEF1FB216490084862E /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		5C9B0EF11FB30CF80084862E /* DatentypenZeichen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatentypenZeichen.swift; sourceTree = "<group>"; };
+		5CA4DDB91F9E5F2B00A114D7 /* MultiTouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiTouchButton.swift; sourceTree = "<group>"; };
+		5CAE404E1FB329E80030B024 /* QuizConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConfigVC.swift; sourceTree = "<group>"; };
+		5CAE40501FB335D60030B024 /* QuizAbfragenSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAbfragenSettingVC.swift; sourceTree = "<group>"; };
+		5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConfigModel.swift; sourceTree = "<group>"; };
+		5CAE40541FB33DF60030B024 /* QuizFreiesUebenConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFreiesUebenConfigVC.swift; sourceTree = "<group>"; };
 		5CD3910C1F861FAB0054295A /* learnDevanagari2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnDevanagari2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3910F1F861FAB0054295A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5CD391111F861FAB0054295A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5CD391141F861FAB0054295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5CD391171F861FAB0054295A /* learnDevanagari2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = learnDevanagari2.xcdatamodel; sourceTree = "<group>"; };
 		5CD391191F861FAB0054295A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD3911C1F861FAB0054295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CD3911E1F861FAB0054295A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE0FE001FAE78E70098BD2E /* PanelControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelControlViewModel.swift; sourceTree = "<group>"; };
+		5CE0FE021FAE7AE60098BD2E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizZeichenfeldView.swift; sourceTree = "<group>"; };
+		5CE68D4C1FB8926D00791D7D /* QuizDevaAbfrageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDevaAbfrageView.swift; sourceTree = "<group>"; };
+		5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZeichenfeldView.xib; sourceTree = "<group>"; };
+		5CE68D501FB8BE1500791D7D /* NibLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadingView.swift; sourceTree = "<group>"; };
+		5CE68D521FB9AFEF00791D7D /* DevaAntwortenStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevaAntwortenStackView.swift; sourceTree = "<group>"; };
+		5CE68D541FB9D72300791D7D /* ZeichenSatz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeichenSatz.swift; sourceTree = "<group>"; };
+		5CF360B71FA08E670074755C /* QuizTextFeld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTextFeld.swift; sourceTree = "<group>"; };
+		5CF360B91FA0BB9D0074755C /* QuizArtikulationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizArtikulationPicker.swift; sourceTree = "<group>"; };
+		A58E091ADCD3B9630739A8D2 /* Pods-learnDevanagari2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-learnDevanagari2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-learnDevanagari2/Pods-learnDevanagari2.debug.xcconfig"; sourceTree = "<group>"; };
+		B92367E8C5D438A23DD118B0 /* Pods_learnDevanagari2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_learnDevanagari2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +83,69 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A98604A0C30F33514D668D /* Pods_learnDevanagari2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C2FCDFD1FB6343E00978E27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */,
+				5C0499391FA8EE58008DD1A3 /* QuizModel.swift */,
+				5C9B0EF31FB30DC20084862E /* DatenTypen */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5C2FCDFE1FB6348400978E27 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				5C04993B1FA8F286008DD1A3 /* QuizVC.swift */,
+				5CF360C31FA370B10074755C /* QuizPanel */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		5C2FCDFF1FB7628700978E27 /* QuizConfig */ = {
+			isa = PBXGroup;
+			children = (
+				5CAE404E1FB329E80030B024 /* QuizConfigVC.swift */,
+				5CAE40541FB33DF60030B024 /* QuizFreiesUebenConfigVC.swift */,
+				5CAE40501FB335D60030B024 /* QuizAbfragenSettingVC.swift */,
+			);
+			path = QuizConfig;
+			sourceTree = "<group>";
+		};
+		5C932C0F1FBDE62C0013789D /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				5CE68D541FB9D72300791D7D /* ZeichenSatz.swift */,
+				5C932C101FBDE6D00013789D /* Lektionen.swift */,
+			);
+			path = Import;
+			sourceTree = "<group>";
+		};
+		5C9B0EF31FB30DC20084862E /* DatenTypen */ = {
+			isa = PBXGroup;
+			children = (
+				5C9B0EF11FB30CF80084862E /* DatentypenZeichen.swift */,
+				5C932C0D1FBDE59F0013789D /* DatenTypenLektion.swift */,
+				5C932C121FBF08990013789D /* QuizSettings.swift */,
+				5C932C0F1FBDE62C0013789D /* Import */,
+			);
+			path = DatenTypen;
+			sourceTree = "<group>";
+		};
 		5CD391031F861FAB0054295A = {
 			isa = PBXGroup;
 			children = (
 				5CD3910E1F861FAB0054295A /* learnDevanagari2 */,
 				5CD3910D1F861FAB0054295A /* Products */,
+				CF155BDF8D973645CFD641E7 /* Pods */,
+				7A200BAE22687E0839A1494C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +160,71 @@
 		5CD3910E1F861FAB0054295A /* learnDevanagari2 */ = {
 			isa = PBXGroup;
 			children = (
-				5CD3910F1F861FAB0054295A /* AppDelegate.swift */,
-				5CD391111F861FAB0054295A /* ViewController.swift */,
 				5CD391131F861FAB0054295A /* Main.storyboard */,
+				5C2FCDFD1FB6343E00978E27 /* Model */,
+				5C2FCDFF1FB7628700978E27 /* QuizConfig */,
+				5C2FCDFE1FB6348400978E27 /* Quiz */,
+				5C3AF33F1FAB13360045BB27 /* Design.swift */,
+				5CE0FE021FAE7AE60098BD2E /* Helper.swift */,
 				5CD391191F861FAB0054295A /* Assets.xcassets */,
 				5CD3911B1F861FAB0054295A /* LaunchScreen.storyboard */,
 				5CD3911E1F861FAB0054295A /* Info.plist */,
 				5CD391161F861FAB0054295A /* learnDevanagari2.xcdatamodeld */,
+				5CD3910F1F861FAB0054295A /* AppDelegate.swift */,
+				5CE68D501FB8BE1500791D7D /* NibLoadingView.swift */,
+				5C9B0EEF1FB216490084862E /* tessdata */,
 			);
 			path = learnDevanagari2;
+			sourceTree = "<group>";
+		};
+		5CE0FE041FAF3A760098BD2E /* PanelControls */ = {
+			isa = PBXGroup;
+			children = (
+				5CE0FE001FAE78E70098BD2E /* PanelControlViewModel.swift */,
+				5CA4DDB91F9E5F2B00A114D7 /* MultiTouchButton.swift */,
+				5CF360B91FA0BB9D0074755C /* QuizArtikulationPicker.swift */,
+				5CF360B71FA08E670074755C /* QuizTextFeld.swift */,
+				5C3AF3411FAB67A30045BB27 /* QuizPruefenButton.swift */,
+			);
+			path = PanelControls;
+			sourceTree = "<group>";
+		};
+		5CF360BD1FA1FEAD0074755C /* QuizControls */ = {
+			isa = PBXGroup;
+			children = (
+				5CE68D4C1FB8926D00791D7D /* QuizDevaAbfrageView.swift */,
+				5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */,
+				5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */,
+				5CE68D521FB9AFEF00791D7D /* DevaAntwortenStackView.swift */,
+				5CE0FE041FAF3A760098BD2E /* PanelControls */,
+			);
+			path = QuizControls;
+			sourceTree = "<group>";
+		};
+		5CF360C31FA370B10074755C /* QuizPanel */ = {
+			isa = PBXGroup;
+			children = (
+				5C04993D1FA9078F008DD1A3 /* QuizPanelView.swift */,
+				5CF360BD1FA1FEAD0074755C /* QuizControls */,
+			);
+			path = QuizPanel;
+			sourceTree = "<group>";
+		};
+		7A200BAE22687E0839A1494C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B92367E8C5D438A23DD118B0 /* Pods_learnDevanagari2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF155BDF8D973645CFD641E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A58E091ADCD3B9630739A8D2 /* Pods-learnDevanagari2.debug.xcconfig */,
+				19CA25FFF7826DA326643BC1 /* Pods-learnDevanagari2.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5CD391211F861FAB0054295A /* Build configuration list for PBXNativeTarget "learnDevanagari2" */;
 			buildPhases = (
+				741FDDAC4BA712B99979667C /* [CP] Check Pods Manifest.lock */,
 				5CD391081F861FAB0054295A /* Sources */,
 				5CD391091F861FAB0054295A /* Frameworks */,
 				5CD3910A1F861FAB0054295A /* Resources */,
+				DF4ED9FEFFB6FCC862E37DD6 /* [CP] Embed Pods Frameworks */,
+				45FF8ED3586323D86F33930D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,21 +290,93 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CD3911D1F861FAB0054295A /* LaunchScreen.storyboard in Resources */,
+				5CE68D4F1FB8BD2600791D7D /* ZeichenfeldView.xib in Resources */,
 				5CD3911A1F861FAB0054295A /* Assets.xcassets in Resources */,
 				5CD391151F861FAB0054295A /* Main.storyboard in Resources */,
+				5C9B0EF01FB216490084862E /* tessdata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45FF8ED3586323D86F33930D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-learnDevanagari2/Pods-learnDevanagari2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		741FDDAC4BA712B99979667C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF4ED9FEFFB6FCC862E37DD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-learnDevanagari2/Pods-learnDevanagari2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5CD391081F861FAB0054295A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CD391121F861FAB0054295A /* ViewController.swift in Sources */,
+				5C9B0EF21FB30CF80084862E /* DatentypenZeichen.swift in Sources */,
+				5CAE40551FB33DF60030B024 /* QuizFreiesUebenConfigVC.swift in Sources */,
+				5C3AF3401FAB13360045BB27 /* Design.swift in Sources */,
+				5C932C111FBDE6D00013789D /* Lektionen.swift in Sources */,
+				5C932C131FBF08990013789D /* QuizSettings.swift in Sources */,
+				5C932C0E1FBDE59F0013789D /* DatenTypenLektion.swift in Sources */,
+				5CE0FE011FAE78E70098BD2E /* PanelControlViewModel.swift in Sources */,
+				5CE68D531FB9AFEF00791D7D /* DevaAntwortenStackView.swift in Sources */,
+				5CAE404F1FB329E80030B024 /* QuizConfigVC.swift in Sources */,
+				5CF360B81FA08E670074755C /* QuizTextFeld.swift in Sources */,
+				5C04993C1FA8F286008DD1A3 /* QuizVC.swift in Sources */,
+				5CE68D551FB9D72300791D7D /* ZeichenSatz.swift in Sources */,
 				5CD391181F861FAB0054295A /* learnDevanagari2.xcdatamodeld in Sources */,
 				5CD391101F861FAB0054295A /* AppDelegate.swift in Sources */,
+				5C04993E1FA9078F008DD1A3 /* QuizPanelView.swift in Sources */,
+				5C3AF3421FAB67A30045BB27 /* QuizPruefenButton.swift in Sources */,
+				5C04993A1FA8EE58008DD1A3 /* QuizModel.swift in Sources */,
+				5CE68D4D1FB8926D00791D7D /* QuizDevaAbfrageView.swift in Sources */,
+				5CE68D511FB8BE1600791D7D /* NibLoadingView.swift in Sources */,
+				5CAE40531FB3369C0030B024 /* QuizConfigModel.swift in Sources */,
+				5CA4DDBA1F9E5F2B00A114D7 /* MultiTouchButton.swift in Sources */,
+				5CAE40511FB335D60030B024 /* QuizAbfragenSettingVC.swift in Sources */,
+				5CF360BA1FA0BB9D0074755C /* QuizArtikulationPicker.swift in Sources */,
+				5CE0FE031FAE7AE60098BD2E /* Helper.swift in Sources */,
+				5CE0FE061FB05F970098BD2E /* QuizZeichenfeldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +434,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -256,6 +492,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -276,6 +513,7 @@
 		};
 		5CD391221F861FAB0054295A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A58E091ADCD3B9630739A8D2 /* Pods-learnDevanagari2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +529,7 @@
 		};
 		5CD391231F861FAB0054295A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19CA25FFF7826DA326643BC1 /* Pods-learnDevanagari2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
