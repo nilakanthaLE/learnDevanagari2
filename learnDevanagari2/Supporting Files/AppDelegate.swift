@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let iPadOrientation:MutableProperty<IPadOrientation?> = MutableProperty(nil)
-    var aktuelleLektion:MutableProperty<Lektion?> = MutableProperty(Lektion())
+//    var aktuelleLektion:MutableProperty<Lektion?> = MutableProperty(Lektion())
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

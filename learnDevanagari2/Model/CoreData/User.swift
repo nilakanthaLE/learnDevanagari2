@@ -18,6 +18,7 @@ extension User{
             }
         }
         user?.lektionsQuizSettings = QuizSetting().asDict as NSObject
+        try? managedContext.save()
         return user
     }
     static func getAll() -> [User]{
@@ -26,5 +27,16 @@ extension User{
     }
     func delete(){
         managedObjectContext?.delete(self)
+        try? managedContext.save()
+    }
+}
+
+
+
+extension MainSettings{
+    class func get() -> MainSettings?{
+        let request = NSFetchRequest<MainSettings>.init(entityName: "MainSettings")
+        if let settings = (try? managedContext.fetch(request))?.first   { return settings }
+        return NSEntityDescription.insertNewObject(forEntityName: "MainSettings", into: managedContext) as? MainSettings
     }
 }

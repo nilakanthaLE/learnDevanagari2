@@ -10,31 +10,15 @@ import UIKit
 import ReactiveSwift
 class SettingsTabVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBOutlet weak var quizAbfragenSettingsView: QuizAbfragenSettingView!{
         didSet{
-            quizAbfragenSettingsView.viewModel = QuizAbfragenSettingViewModel(quizSetting: MutableProperty(QuizSetting()))
+            let settings =  MutableProperty(QuizSetting.init(dict: MainSettings.get()?.angemeldeterUser?.lektionsQuizSettings as? [String:String]))
+            settings.signal.observeValues{settings in
+                MainSettings.get()?.angemeldeterUser?.lektionsQuizSettings = settings?.asDict as NSObject?
+                try? managedContext.save()
+            }
+            quizAbfragenSettingsView.viewModel = QuizAbfragenSettingViewModel(quizSetting:settings)
         }
     }
 }

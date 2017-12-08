@@ -31,6 +31,7 @@ extension ScoreZeichen{
         for userAntwort in userAntwortZeichen.userAntworten(for: quizZeichen){
             _ = scoreZeichen?.newAbfrage(userAntwort: userAntwort)
         }
+        try? managedContext.save()
     }
     
 

@@ -113,11 +113,8 @@ class QuizAbfragenSettingView: NibLoadingView {
                     self?.mainStack.axis = .vertical
                     self?.mainStack.distribution    = .fill
                     self?.mainStack.alignment       = .fill
-                    
                 }
             }
-            
-            
             initSwitchs(for: nachzeichnen, abfrage: .nachzeichnen)
             initSwitchs(for: umschrift, abfrage: .umschrift)
             initSwitchs(for: vokalOderKonsonant, abfrage: .vokalOderKonsonant)
@@ -127,10 +124,6 @@ class QuizAbfragenSettingView: NibLoadingView {
             initSwitchs(for: vokalOderHalbvokal, abfrage: .vokalOderHalbVokal)
             initSwitchs(for: aspiration, abfrage: .aspiration)
             initSwitchs(for: stimmhaftigkeit, abfrage: .stimmhaftigkeit)
-            
-            
-            
-            
         }
     }
     

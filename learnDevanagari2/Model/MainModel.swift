@@ -8,7 +8,8 @@
 
 import Foundation
 
-class MainModel{
-    var angemeldeterUser:User?
-    
-}
+//class MainModel{
+//    var angemeldeterUser:User?
+//    
+//}
+

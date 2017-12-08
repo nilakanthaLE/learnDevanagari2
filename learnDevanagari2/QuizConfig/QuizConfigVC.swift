@@ -93,7 +93,6 @@ class QuizConfigVC: UIViewController {
             self?.lektionZeichenStack.axis      = orientation == IPadOrientation.landscape ? .horizontal : .vertical
             self?.freiesUebenzeichenStack.axis  = orientation == IPadOrientation.landscape ? .horizontal : .vertical
         }
-        
     }
     
     //Outlets
@@ -109,7 +108,7 @@ class QuizConfigVC: UIViewController {
     @IBOutlet weak var lektionLabel: UILabel!
     @IBOutlet weak var lektionAbfragenView: AbfragenUndAnzeigenView!        { didSet{ lektionAbfragenView.viewModel = viewModel.getViewModelForLektionsAbfragen() } }
     @IBOutlet weak var lektionAnzeigenView: AbfragenUndAnzeigenView!        { didSet{ lektionAnzeigenView.viewModel = viewModel.getViewModelForLektionsAnzeigen() } }
-    @IBOutlet weak var lektionsZeichenView: ZeichenInAbfrageView!                   { didSet{ lektionsZeichenView.viewModel = viewModel.getViewModelForLektionsZeichenInAbfrage() } }
+    @IBOutlet weak var lektionsZeichenView: ZeichenInAbfrageView!           { didSet{ lektionsZeichenView.viewModel = viewModel.getViewModelForLektionsZeichenInAbfrage() } }
     @IBOutlet weak var uebenZeichenView: ZeichenInAbfrageView!              {
         didSet{
             uebenZeichenView.viewModel          = viewModel.getViewModelForUebenZeichenInAbfrage()
@@ -129,11 +128,13 @@ class QuizConfigVC: UIViewController {
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as? QuizVC)?.viewModel                           = viewModel.getViewModelForQuizConfig()
-        (segue.destination as? QuizAbfragenSettingView)?.viewModel            = viewModel.getViewModelForQuizAbfragenSetting()
+//        (segue.destination as? QuizAbfragenSettingView)?.viewModel            = viewModel.getViewModelForQuizAbfragenSetting()
         (segue.destination as? ConfigZeichensatzVC)?.viewModel              = viewModel.getViewModelForConfigZeichensatz()
     }
     
     @IBAction func abmeldenAction(_ sender: UIBarButtonItem) {
+        MainSettings.get()?.angemeldeterUser = nil
+        try? managedContext.save()
         dismiss(animated: true, completion: nil)
     }
 }

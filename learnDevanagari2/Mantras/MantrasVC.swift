@@ -115,7 +115,7 @@ class MantrasVC: UIViewController {
 
     
     override func viewDidAppear(_ animated: Bool) {
-        viewModel.currentLektion.value = (UIApplication.shared.delegate as? AppDelegate)!.aktuelleLektion.value?.nummer ?? 0
+        viewModel.currentLektion.value = Int(MainSettings.get()?.angemeldeterUser?.aktuelleLektion ?? 0)
         super.viewDidAppear(animated)
         viewModel.startAnimationForNeuGelernte()
     }

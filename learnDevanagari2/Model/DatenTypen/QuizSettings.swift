@@ -112,7 +112,9 @@ struct QuizSetting:Equatable{
         dict["konsonantTypModus"]       = konsonantTyp.konsonantTypModus?.string
         return dict
     }
-    init(dict:[String:String]){
+    init?(dict:[String:String]?){
+        guard let dict = dict else { return nil }
+         
         self.dynamisiert                                = false
         self.zeichenfeld                                = ZeichenfeldModus.get(for: dict["ZeichenfeldModus"])
         self.textfeld                                   = PanelControlSetting(controlTyp: .TextfeldTyp, modus:PanelControlModus.get(for: dict["textfeld"]), konsonantTypModus: nil)

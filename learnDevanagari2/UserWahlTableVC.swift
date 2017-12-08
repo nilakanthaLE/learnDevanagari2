@@ -38,7 +38,18 @@ class UserWahlTableVC: UITableViewController {
             present(alertView, animated: true, completion: nil)
         }
     }
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        MainSettings.get()?.angemeldeterUser = users[indexPath.row]
+        performSegue(withIdentifier: "goToQuiz", sender: nil)
+    }
+    
+    // MARK: - VC LifeCycle
+    override func viewDidLoad() {
+        if MainSettings.get()?.angemeldeterUser != nil{
+            performSegue(withIdentifier: "goToQuiz", sender: nil)
+        }
+    }
+    
     // MARK: - Navigation
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         performSegue(withIdentifier: "createOrEditUser", sender: users[indexPath.row])
@@ -51,6 +62,7 @@ class UserWahlTableVC: UITableViewController {
         destination?.user           = sender as? User
         destination?.dismissAction  = dismissAction
     }
+    
     func dismissAction(){
         users = User.getAll()
         dismiss(animated: true, completion: nil)

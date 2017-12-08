@@ -10,9 +10,6 @@ import Foundation
 import ReactiveSwift
 import Result
 
-
-
-
 enum SelectedSetting    {case Lektion, FreiesUeben}
 class QuizConfigModel{
     var selectedSetting     = MutableProperty<SelectedSetting?>(nil)
@@ -41,10 +38,8 @@ class QuizConfigModel{
     var quizZeichenSatzCount = MutableProperty(0)
     
     init(){
+        aktuelleLektion = MutableProperty(lektionen[Int(MainSettings.get()?.angemeldeterUser?.aktuelleLektion ?? 0)])
         
-        //von appDelegate
-        aktuelleLektion = (UIApplication.shared.delegate as? AppDelegate)!.aktuelleLektion
-        aktuelleLektion.value = lektionen[0]
         
         func useSetting(for selSetting:SelectedSetting?){
             guard let selSetting = selSetting else { return }
@@ -71,7 +66,9 @@ class QuizConfigModel{
         configZeichensatzGrundauswahl   <~ configZeichensatzGewaehlteLektionen.signal.map{[weak self] lektionen in self?.gesamtZeichenSatz.filter{lektionen.map{$0.nummer ?? 1000}.contains($0.lektion ?? -1000)} ?? [Zeichen]() }
         
         
-        
+        aktuelleLektion.producer.startWithValues { lektion in
+            MainSettings.get()?.angemeldeterUser?.aktuelleLektion = Int16(lektion?.nummer ?? 0)
+        }
         
         //setze canStartValue
         func _canStartQuiz() -> Bool{
@@ -84,11 +81,6 @@ class QuizConfigModel{
                                          gewaehlterZeichensatz.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()},
                                          gewaehltesQuizSetting.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()} ]
         canStartQuiz <~ SignalProducer.merge(canStartQuizProducerArray).map{_canStartQuiz()}
-    
-        
-        
-        
-        
     }
 }
 
