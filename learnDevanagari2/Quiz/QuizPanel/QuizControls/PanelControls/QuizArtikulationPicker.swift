@@ -30,6 +30,8 @@ class QuizArtikulationPicker: UIPickerView,UIPickerViewDelegate,UIPickerViewData
     var artikulationPickerViewModel:QuizArtikulationPickerViewModel{ return (viewModel as! QuizArtikulationPickerViewModel) }
     var viewModel:PanelControlViewModel!{
         didSet{
+            anchorHeightLandscape.priority = UILayoutPriority(999)
+            anchorHeightPortrait.priority = UILayoutPriority(999)
             delegate        = self
             dataSource      = self
             reactive.isUserInteractionEnabled       <~ viewModel.isEnabled

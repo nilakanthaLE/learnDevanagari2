@@ -29,6 +29,7 @@ class QuizZeichenfeldViewModel{
         nachZeichnenLabelText <~ self.quizModel.currentQuizZeichen.producer.map { $0?.quizSetting.zeichenfeld == .Nachzeichnen ? $0?.zeichen.devanagari : nil }
         quizModel.currentQuizZeichen.producer.startWithValues                   { [weak self] quizZeichen in self?.useTesseract = quizZeichen?.quizSetting.zeichenfeld != .Nachzeichnen }
         charWhiteList <~ quizModel.zeichenSatz.map{$0.map{$0.devanagari ?? nil} .filter{$0 != nil} .reduce("") {$0 + $1!} }
+        
     }
     var userEingabePrüfen       = MutableProperty(false)
     var erkannteZeichen         = MutableProperty([String]())
@@ -49,7 +50,9 @@ class QuizZeichenfeldView: ZeichenfeldView,G8TesseractDelegate {
             tesseract?.delegate = self
             tesseract?.pageSegmentationMode = .singleWord
             nachZeichnenLabel.reactive.text <~ viewModel.nachZeichnenLabelText.producer
-            
+            viewModel.nachZeichnenLabelText.producer.start(){[weak self] _ in
+                self?.currentSize = self?.bounds.size
+            }
         }
     }
     
@@ -69,7 +72,6 @@ class QuizZeichenfeldView: ZeichenfeldView,G8TesseractDelegate {
         tesseract?.image = image
         tesseract?.charWhitelist = viewModel.charWhiteList.value
         tesseract?.recognize()
-        print(viewModel.charWhiteList.value)
         func getCharArray() -> [String]{
             let anfangsArray = tesseract?.characterChoices as? [[G8RecognizedBlock]]
             var ergebnis = Set<String>()
@@ -81,7 +83,6 @@ class QuizZeichenfeldView: ZeichenfeldView,G8TesseractDelegate {
                     }
                 }
             }
-            print(Array(ergebnis.filter{$0 != " "}))
             return Array(ergebnis.filter{$0 != " "})
         }
         let charArray = getCharArray()
@@ -114,16 +115,17 @@ class ZeichenfeldView: NibLoadingView {
     }
     
     //MARK: GrößenÄnderungen
-    var currentSize:CGSize?         { didSet{
-        var hue:CGFloat = 0
-        var saturation:CGFloat = 0
-        var brightness:CGFloat = 0
-        var alpha : CGFloat = 0
-        orange.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-        backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness-0.3, alpha: alpha)
-        
-        imageView.image = UIImage(color: UIColor(white: 0, alpha: 0.3), size: bounds.size)
+    var currentSize:CGSize?         {
+        didSet{
+            var hue:CGFloat = 0
+            var saturation:CGFloat = 0
+            var brightness:CGFloat = 0
+            var alpha : CGFloat = 0
+            orange.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+            backgroundColor = UIColor(hue: hue, saturation: saturation, brightness: brightness-0.3, alpha: alpha)
+            imageView.image = UIImage( size: bounds.size)
         }
+        
     }
     override func layoutSubviews()  {
         super.layoutSubviews()
@@ -167,11 +169,9 @@ func drawOnImage(startingImage: UIImage, start:CGPoint,end:CGPoint) -> UIImage? 
 
 
 public extension UIImage {
-    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+    public convenience init?(size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 1.0)
-        color.setFill()
-        UIRectFill(rect)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         guard let cgImage = image?.cgImage else { return nil }

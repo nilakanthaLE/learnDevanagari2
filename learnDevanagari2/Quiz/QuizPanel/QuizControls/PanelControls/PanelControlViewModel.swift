@@ -44,7 +44,7 @@ class PanelControlViewModel:PanelControlViewModelProtocol{
         controlCurrentModus <~ quizModel.currentQuizZeichen.producer.map                    { [weak self] quizZeichen in
             guard let panelControlSetting = quizZeichen?.quizSetting.getPanelControlSetting(for: self?.controlTyp) else {return .Versteckt}
             switch panelControlSetting.modus{
-            case .Abfrage       :  return .Abfrage
+            case .InAbfrage       :  return .Abfrage
             case .NurAnzeige    :  return .Anzeige
             case .Versteckt     :  return .Versteckt
             }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Euc-rq-dqc">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start AnimationVC-->
+        <scene sceneID="pSw-pw-O8S">
+            <objects>
+                <viewController id="DOr-iN-xh8" customClass="StartAnimationVC" customModule="learnDevanagari2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yfg-rq-Bvp">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BzQ-Eb-iK8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SR9-H7-mBp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dY-wS-izt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="629" y="-151"/>
+        </scene>
+        <!--Start Animation-->
+        <scene sceneID="KOE-UP-Gu8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Euc-rq-dqc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Start Animation" id="8op-cj-OKQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CcC-Yd-P6H">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DOr-iN-xh8" kind="relationship" relationship="rootViewController" id="OWI-Ug-gTq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGf-Ic-Gc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="-151"/>
+        </scene>
+    </scenes>
+</document>

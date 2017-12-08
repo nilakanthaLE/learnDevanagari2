@@ -15,7 +15,21 @@ extension Array {
     }
 }
 
-struct QuizSetting{
+struct QuizSetting:Equatable{
+    static func ==(lhs: QuizSetting, rhs: QuizSetting) -> Bool {
+        return lhs.dynamisiert == rhs.dynamisiert &&
+        lhs.zeichenfeld == rhs.zeichenfeld &&
+        lhs.textfeld == rhs.textfeld &&
+        lhs.vokalOderKonsonant == rhs.vokalOderKonsonant &&
+        lhs.vokalOderHalbvokal == rhs.vokalOderHalbvokal &&
+        lhs.artikulation == rhs.artikulation &&
+        lhs.konsonantTyp == rhs.konsonantTyp &&
+        lhs.aspiration == rhs.aspiration &&
+        lhs.stimmhaftigkeit == rhs.stimmhaftigkeit
+    }
+    
+    
+    
     var dynamisiert: Bool
     var zeichenfeld:ZeichenfeldModus
     var textfeld:PanelControlSetting
@@ -28,13 +42,16 @@ struct QuizSetting{
     var allePanelControls:[PanelControlSetting] { return [textfeld,vokalOderKonsonant,vokalOderHalbvokal,artikulation,konsonantTyp,aspiration,stimmhaftigkeit] }
     
     //helper
+    var anzeigen:[ControlTyp]{
+        return allePanelControls.filter{$0.modus == .NurAnzeige}.map{$0.controlTyp} 
+    }
     var abfragen:[ControlTyp]{
-        let zeichenfeldAbfrage      = (zeichenfeld == .Abfrage || zeichenfeld == .AbfrageUndNachzeichnen) ? [ControlTyp.ZeichenfeldTyp] : [ControlTyp]()
-        return allePanelControls.filter{$0.modus == .Abfrage}.map{$0.controlTyp} + zeichenfeldAbfrage
+        let zeichenfeldAbfrage      = (zeichenfeld == .InAbfrage || zeichenfeld == .AbfrageUndNachzeichnen) ? [ControlTyp.ZeichenfeldTyp] : [ControlTyp]()
+        return allePanelControls.filter{$0.modus == .InAbfrage}.map{$0.controlTyp} + zeichenfeldAbfrage
     }
     var anzahlAbfragen:Int{
-        let anzahlZeichenFeldAbfragen = zeichenfeld == .Abfrage || zeichenfeld == .AbfrageUndNachzeichnen ? 1 : 0
-        return allePanelControls.filter{$0.modus == .Abfrage}.count + anzahlZeichenFeldAbfragen
+        let anzahlZeichenFeldAbfragen = zeichenfeld == .InAbfrage || zeichenfeld == .AbfrageUndNachzeichnen ? 1 : 0
+        return allePanelControls.filter{$0.modus == .InAbfrage}.count + anzahlZeichenFeldAbfragen
     }
     func getPanelControlSetting(for controlTyp:ControlTyp?) -> PanelControlSetting?{
         guard let controlTyp = controlTyp else {return nil}
@@ -56,9 +73,7 @@ struct QuizSetting{
     }
     mutating func setPanelControlsToNurAnzeige(){
         func setNurAnzeigeOderVersteckt( controlSetting: inout PanelControlSetting){
-            print("control\(controlSetting.controlTyp) --> modus:\(controlSetting.modus)")
             controlSetting.modus = controlSetting.modus == .Versteckt ? .Versteckt : .NurAnzeige
-            print("control\(controlSetting.controlTyp) --> modus:\(controlSetting.modus)")
         }
         setNurAnzeigeOderVersteckt(controlSetting: &self.textfeld)
         setNurAnzeigeOderVersteckt(controlSetting: &self.vokalOderKonsonant)
@@ -75,20 +90,51 @@ struct QuizSetting{
         self.dynamisiert                                = false
         self.zeichenfeld                                = .NurAnzeige
         self.textfeld                                   = PanelControlSetting(controlTyp: .TextfeldTyp, modus: .NurAnzeige, konsonantTypModus: nil)
-        self.vokalOderKonsonant                         = PanelControlSetting(controlTyp: .VokalOderKonsonantTyp, modus: .NurAnzeige, konsonantTypModus: nil)
-        self.vokalOderHalbvokal                         = PanelControlSetting(controlTyp: .VokalOderHalbvokalTyp, modus: .NurAnzeige, konsonantTypModus: nil)
-        self.artikulation                               = PanelControlSetting(controlTyp: .ArtikulationTyp, modus: .NurAnzeige, konsonantTypModus: nil)
-        self.konsonantTyp                               = PanelControlSetting(controlTyp: .KonsonantTyp, modus: .NurAnzeige, konsonantTypModus: .Hauchlaut)
-        self.aspiration                                 = PanelControlSetting(controlTyp: .AspirationTyp, modus: .NurAnzeige, konsonantTypModus: nil)
-        self.stimmhaftigkeit                            = PanelControlSetting(controlTyp: .StimmhaftigkeitTyp, modus: .NurAnzeige, konsonantTypModus: nil)
+        self.vokalOderKonsonant                         = PanelControlSetting(controlTyp: .VokalOderKonsonantTyp, modus: .Versteckt, konsonantTypModus: nil)
+        self.vokalOderHalbvokal                         = PanelControlSetting(controlTyp: .VokalOderHalbvokalTyp, modus: .Versteckt, konsonantTypModus: nil)
+        self.artikulation                               = PanelControlSetting(controlTyp: .ArtikulationTyp, modus: .Versteckt, konsonantTypModus: nil)
+        self.konsonantTyp                               = PanelControlSetting(controlTyp: .KonsonantTyp, modus: .Versteckt, konsonantTypModus: .Nasal)
+        self.aspiration                                 = PanelControlSetting(controlTyp: .AspirationTyp, modus: .Versteckt, konsonantTypModus: nil)
+        self.stimmhaftigkeit                            = PanelControlSetting(controlTyp: .StimmhaftigkeitTyp, modus: .Versteckt, konsonantTypModus: nil)
     }
     
-    
+    // für CoreData
+    var asDict:[String:String]{
+        var dict: [String:String] = [:]
+        dict["zeichenfeld"]             = zeichenfeld.string
+        dict["textfeld"]                = textfeld.modus.string
+        dict["vokalOderKonsonant"]      = vokalOderKonsonant.modus.string
+        dict["vokalOderHalbvokal"]      = vokalOderHalbvokal.modus.string
+        dict["artikulation"]            = artikulation.modus.string
+        dict["konsonantTyp"]            = konsonantTyp.modus.string
+        dict["aspiration"]              = aspiration.modus.string
+        dict["stimmhaftigkeit"]         = stimmhaftigkeit.modus.string
+        dict["konsonantTypModus"]       = konsonantTyp.konsonantTypModus?.string
+        return dict
+    }
+    init(dict:[String:String]){
+        self.dynamisiert                                = false
+        self.zeichenfeld                                = ZeichenfeldModus.get(for: dict["ZeichenfeldModus"])
+        self.textfeld                                   = PanelControlSetting(controlTyp: .TextfeldTyp, modus:PanelControlModus.get(for: dict["textfeld"]), konsonantTypModus: nil)
+        self.vokalOderKonsonant                         = PanelControlSetting(controlTyp: .VokalOderKonsonantTyp, modus: PanelControlModus.get(for: dict["vokalOderKonsonant"]), konsonantTypModus: nil)
+        self.vokalOderHalbvokal                         = PanelControlSetting(controlTyp: .VokalOderHalbvokalTyp, modus: PanelControlModus.get(for: dict["vokalOderHalbvokal"]), konsonantTypModus: nil)
+        self.artikulation                               = PanelControlSetting(controlTyp: .ArtikulationTyp, modus: PanelControlModus.get(for: dict["artikulation"]), konsonantTypModus: nil)
+        self.konsonantTyp                               = PanelControlSetting(controlTyp: .KonsonantTyp, modus: PanelControlModus.get(for: dict["konsonantTyp"]), konsonantTypModus: KonsonantTypModus.get(for: dict["konsonantTypModus"]))
+        self.aspiration                                 = PanelControlSetting(controlTyp: .AspirationTyp, modus: PanelControlModus.get(for: dict["aspiration"]), konsonantTypModus: nil)
+        self.stimmhaftigkeit                            = PanelControlSetting(controlTyp: .StimmhaftigkeitTyp, modus: PanelControlModus.get(for: dict["stimmhaftigkeit"]), konsonantTypModus: nil)
+    }
 }
 
 
 
-struct PanelControlSetting{
+struct PanelControlSetting:Equatable{
+    static func ==(lhs: PanelControlSetting, rhs: PanelControlSetting) -> Bool {
+        return lhs.controlTyp == rhs.controlTyp &&
+        lhs.modus == rhs.modus &&
+        lhs.konsonantTypModus == rhs.konsonantTypModus
+    }
+    
+    
     var controlTyp:ControlTyp
     var modus:PanelControlModus
     var konsonantTypModus:KonsonantTypModus?
@@ -103,8 +149,46 @@ struct PanelControlSetting{
 
 //MARK: enums
 enum IPadOrientation{ case portrait, landscape }
-enum ZeichenfeldModus{ case NurAnzeige, Nachzeichnen, Abfrage , AbfrageUndNachzeichnen }
-enum PanelControlModus{ case Versteckt, NurAnzeige, Abfrage }
+enum ZeichenfeldModus{
+    case NurAnzeige, Nachzeichnen, InAbfrage , AbfrageUndNachzeichnen
+    var string:String{
+        switch self{
+        case .NurAnzeige: return "NurAnzeige"
+        case .Nachzeichnen: return "Nachzeichnen"
+        case .InAbfrage: return "InAbfrage"
+        case .AbfrageUndNachzeichnen: return "AbfrageUndNachzeichnen"
+        }
+    }
+    static func get(for string:String?)->ZeichenfeldModus{
+        guard let string = string else {return .NurAnzeige}
+        switch string {
+        case "NurAnzeige": return .NurAnzeige
+        case "Nachzeichnen": return .Nachzeichnen
+        case "InAbfrage": return .InAbfrage
+        case "AbfrageUndNachzeichnen": return .AbfrageUndNachzeichnen
+        default: return .NurAnzeige }
+    }
+    
+    
+}
+enum PanelControlModus{
+    case Versteckt, NurAnzeige, InAbfrage
+    var string:String{
+        switch self {
+        case .InAbfrage:return "InAbfrage"
+        case .Versteckt:return  "Versteckt"
+        case .NurAnzeige:return "NurAnzeige"
+        }
+    }
+    static func get(for string:String?)->PanelControlModus{
+        guard let string = string else {return .Versteckt}
+        switch string {
+        case "InAbfrage": return .InAbfrage
+        case "Versteckt": return .Versteckt
+        case "NurAnzeige": return .NurAnzeige
+        default: return .Versteckt }
+    }
+}
 enum KonsonantTypModus:Int{
     case Nasal,Sibilant,Hauchlaut
     var titleArray:[[String]]{
@@ -114,12 +198,27 @@ enum KonsonantTypModus:Int{
         case.Hauchlaut:     return [[KonsonantTyp.EinfacherKonsonant.rawValue,KonsonantTyp.Nasal.rawValue],[KonsonantTyp.Sibilant.rawValue,KonsonantTyp.Hauchlaut.rawValue]]
         }
     }
+    var string:String?{
+        switch self {
+        case .Nasal:        return "Nasale"
+        case .Sibilant:     return "NasaleSibilanten"
+        case .Hauchlaut:    return "NasaleSibilantenHauchlaut"
+        }
+    }
     var controlName:String?{
         switch self {
         case .Nasal:        return "Nasale"
         case .Sibilant:     return "Nasale und Sibilanten"
         case .Hauchlaut:    return "Nasale, Sibilanten und Hauchlaut"
         }
+    }
+    static func get(for string:String?)->KonsonantTypModus{
+        guard let string = string else {return .Nasal}
+        switch string {
+        case "Nasale": return .Nasal
+        case "NasaleSibilanten": return .Sibilant
+        case "NasaleSibilantenHauchlaut": return .Hauchlaut
+        default: return .Nasal }
     }
 }
 enum ControlTyp:Int{
@@ -144,7 +243,9 @@ enum ControlTyp:Int{
         case .ZeichenfeldTyp:          return "Zeichenfeld"
         }
     }
-    
+    static var alleTypen:[ControlTyp]{
+        return [ .VokalOderKonsonantTyp, .VokalOderHalbvokalTyp, .KonsonantTyp, .TextfeldTyp, .ArtikulationTyp, .AspirationTyp, .StimmhaftigkeitTyp, .ZeichenfeldTyp ]
+    }
     var titleArray:[[String]]?{
         switch self {
         case .VokalOderKonsonantTyp:   return [[VokalOderKonsonant.Vokal.rawValue,VokalOderKonsonant.Konsonant.rawValue]]

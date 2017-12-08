@@ -8,7 +8,16 @@
 
 import Foundation
 
-class Lektion{
+class Lektion:Hashable{
+    var hashValue: Int{
+        return (title ?? "").hashValue + (nummer ?? 0).hashValue
+    }
+    
+    static func ==(lhs: Lektion, rhs: Lektion) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+    
+    
     var quizSetting:QuizSetting?
     var title:String?
     var nummer:Int?

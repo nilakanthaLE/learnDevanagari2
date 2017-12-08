@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArtikulationsAnleitungView" customModule="learnDevanagari2">
+            <connections>
+                <outlet property="imageView" destination="SBV-06-RvX" id="Po6-Su-4p1"/>
+                <outlet property="stackLabelView" destination="1oW-G8-ijc" id="44z-dR-mof"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="558" height="304"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zPB-ch-c00">
+                    <rect key="frame" x="0.0" y="0.0" width="558" height="304"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dental.png" highlightedImage="dental.png" translatesAutoresizingMaskIntoConstraints="NO" id="SBV-06-RvX">
+                            <rect key="frame" x="0.0" y="0.0" width="304" height="304"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="SBV-06-RvX" secondAttribute="height" multiplier="1:1" priority="999" id="JzR-pS-1wq"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Duc-ZE-XNg">
+                            <rect key="frame" x="312" y="0.0" width="274.5" height="304"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oW-G8-ijc" customClass="StackLabelView" customModule="learnDevanagari2" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="274.5" height="304"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zPB-ch-c00" secondAttribute="trailing" id="BDh-ze-CHk"/>
+                <constraint firstAttribute="bottom" secondItem="zPB-ch-c00" secondAttribute="bottom" id="IZF-eC-1yV"/>
+                <constraint firstItem="zPB-ch-c00" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ePl-kJ-RV8"/>
+                <constraint firstItem="zPB-ch-c00" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="erK-h3-EMQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="126" y="-127"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dental.png" width="240" height="229"/>
+    </resources>
+</document>

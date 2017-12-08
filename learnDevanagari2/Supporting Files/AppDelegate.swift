@@ -14,16 +14,20 @@ import ReactiveSwift
 
 @UIApplicationMain
 
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     var window: UIWindow?
     let iPadOrientation:MutableProperty<IPadOrientation?> = MutableProperty(nil)
-
+    var aktuelleLektion:MutableProperty<Lektion?> = MutableProperty(Lektion())
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         rotated()
         NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        
         return true
     }
     @objc func rotated() {

@@ -35,15 +35,18 @@ class QuizViewModel{
     func getViewModelForPanel() -> QuizPanelViewModel                           { return QuizPanelViewModel(quizModel:quizModel) }
     func getViewModelForQuizDevaAbfrage()    -> QuizDevaAbfrageViewModel        { return QuizDevaAbfrageViewModel(quizModel:quizModel) }
     func getViewModelForDevaAntwortenStack() -> DevaAntwortenStackViewModel     { return DevaAntwortenStackViewModel(quizModel:quizModel) }
+    func getViewModelForFortschrittsbalken() -> QuizFortschrittsbalkenViewModel { return QuizFortschrittsbalkenViewModel(quizModel: quizModel)}
 }
 
 class QuizVC: UIViewController {
     var viewModel:QuizViewModel!    { didSet{ viewModel.iPadOrientation?.producer.startWithValues{[weak self] orientation in self?.setAxis(iPadOrientation: orientation) } } }
     
-    @IBOutlet weak var mainStack: UIStackView!                      { didSet { setAxis(iPadOrientation:viewModel?.iPadOrientation?.value) } }
-    @IBOutlet weak var quizDevaAbfrage: QuizDevaAbfrageView!        { didSet { quizDevaAbfrage.viewModel = viewModel?.getViewModelForQuizDevaAbfrage() } }
-    @IBOutlet weak var quizPanelView: QuizPanelView!                { didSet { quizPanelView.viewModel   = viewModel?.getViewModelForPanel() } }
-    @IBOutlet weak var devaAntwortenStack: DevaAntwortenStackView!  { didSet { devaAntwortenStack.viewModel = viewModel.getViewModelForDevaAntwortenStack() } }
+    @IBOutlet weak var mainStack: UIStackView!                          { didSet { setAxis(iPadOrientation:viewModel?.iPadOrientation?.value) } }
+    @IBOutlet weak var quizDevaAbfrage: QuizDevaAbfrageView!            { didSet { quizDevaAbfrage.viewModel = viewModel?.getViewModelForQuizDevaAbfrage() } }
+    @IBOutlet weak var quizPanelView: QuizPanelView!                    { didSet { quizPanelView.viewModel   = viewModel?.getViewModelForPanel() } }
+    @IBOutlet weak var devaAntwortenStack: DevaAntwortenStackView!      { didSet { devaAntwortenStack.viewModel = viewModel.getViewModelForDevaAntwortenStack() } }
+    
+    @IBOutlet weak var fortschrittsBalken: QuizFortschrittsbalkenView!  { didSet{ fortschrittsBalken.viewModel = viewModel.getViewModelForFortschrittsbalken()}}
     
     var lastSize:CGSize?
     override func viewDidLayoutSubviews() {
@@ -53,6 +56,9 @@ class QuizVC: UIViewController {
         lastSize = safeAreaSize
     }
     
+    @IBAction func uirueckButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     func setAxis(iPadOrientation:IPadOrientation?){
         guard let iPadOrientation = iPadOrientation else {return}
         switch (iPadOrientation){

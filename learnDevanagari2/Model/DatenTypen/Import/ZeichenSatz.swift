@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 //
 //  zeichensatz.m
 //  learnDevanagari
@@ -14,6 +15,9 @@ import Foundation
 //  Created by Matthias Pochmann on 15.12.14.
 //  Copyright (c) 2014 Matthias Pochmann. All rights reserved.
 //
+
+//globals
+let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 
 

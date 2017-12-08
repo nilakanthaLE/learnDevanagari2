@@ -55,6 +55,7 @@ class MultiTouchButton: UIStackView,PanelControlProtocol {
             button.zeilenHoehe              <~ viewModel.zeilenHoehe
             button.reactive.backgroundColor <~ viewModel.controlCurrentModus.map                    { [weak self]  _ in return (self?.viewModel as! MultiTouchButtonViewModel).backgroundColor(forTag: button.tag) }
             button.reactive.backgroundColor <~ viewModel.userEingabe.producer.filter{$0 != nil}.map { [weak self]  _ in return (self?.viewModel as! MultiTouchButtonViewModel).backgroundColor(forTag: button.tag) }
+            
             return button
         }
         let buttonArray:[[UIButton]] = titleArray.enumerated().map   {

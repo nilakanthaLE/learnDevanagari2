@@ -14,19 +14,19 @@ import ReactiveCocoa
 
 class QuizAbfragenSettingViewModel{
     var iPadOrientation = (UIApplication.shared.delegate as? AppDelegate)?.iPadOrientation
-    var quizSetting:MutableProperty<QuizSetting>
-    init(quizSetting: MutableProperty<QuizSetting>) {
+    var quizSetting:MutableProperty<QuizSetting?>
+    init(quizSetting: MutableProperty<QuizSetting?>) {
         self.quizSetting    = quizSetting
         
-        nachZeichnen.value              = quizSetting.value.zeichenfeld                 == .Nachzeichnen || quizSetting.value.zeichenfeld == .AbfrageUndNachzeichnen
-        umschrift.value                 = quizSetting.value.textfeld.modus              == .Abfrage
-        vokalOderKonsonant.value        = quizSetting.value.vokalOderKonsonant.modus    == .Abfrage
-        artikulation.value              = quizSetting.value.artikulation.modus          == .Abfrage
-        devaSchreiben.value             = quizSetting.value.zeichenfeld                 == .Abfrage || quizSetting.value.zeichenfeld == .AbfrageUndNachzeichnen
-        konsonantenTyp.value            = quizSetting.value.konsonantTyp.modus          == .Abfrage
-        vokalOderHalbvokal.value        = quizSetting.value.vokalOderHalbvokal.modus    == .Abfrage
-        aspiration.value                = quizSetting.value.aspiration.modus            == .Abfrage
-        stimmhaftigkeit.value           = quizSetting.value.stimmhaftigkeit.modus       == .Abfrage
+        nachZeichnen.value              = quizSetting.value?.zeichenfeld                 == .Nachzeichnen || quizSetting.value?.zeichenfeld == .AbfrageUndNachzeichnen
+        umschrift.value                 = quizSetting.value?.textfeld.modus              == .InAbfrage
+        vokalOderKonsonant.value        = quizSetting.value?.vokalOderKonsonant.modus    == .InAbfrage
+        artikulation.value              = quizSetting.value?.artikulation.modus          == .InAbfrage
+        devaSchreiben.value             = quizSetting.value?.zeichenfeld                 == .InAbfrage || quizSetting.value?.zeichenfeld == .AbfrageUndNachzeichnen
+        konsonantenTyp.value            = quizSetting.value?.konsonantTyp.modus          == .InAbfrage
+        vokalOderHalbvokal.value        = quizSetting.value?.vokalOderHalbvokal.modus    == .InAbfrage
+        aspiration.value                = quizSetting.value?.aspiration.modus            == .InAbfrage
+        stimmhaftigkeit.value           = quizSetting.value?.stimmhaftigkeit.modus       == .InAbfrage
         
         _ = SignalProducer.combineLatest(propterties).start{ [weak self] _ in
             if let newSetting = self?.update(quizSetting:self?.quizSetting.value){
@@ -58,26 +58,22 @@ class QuizAbfragenSettingViewModel{
     
     
     private func update(quizSetting:QuizSetting?) -> QuizSetting?{
-        print("producerTest")
         var quizSetting = quizSetting
-        
-        
-        quizSetting?.zeichenfeld                = devaSchreiben.value && nachZeichnen.value ? .AbfrageUndNachzeichnen : devaSchreiben.value ? .Abfrage :  nachZeichnen.value ? .Nachzeichnen : .NurAnzeige
-        quizSetting?.textfeld.modus             = umschrift.value           ? .Abfrage : .NurAnzeige
-        quizSetting?.vokalOderKonsonant.modus   = vokalOderKonsonant.value  ? .Abfrage : .NurAnzeige
-        quizSetting?.vokalOderHalbvokal.modus   = vokalOderHalbvokal.value  ? .Abfrage : .NurAnzeige
-        quizSetting?.artikulation.modus         = artikulation.value        ? .Abfrage : .NurAnzeige
-        quizSetting?.konsonantTyp.modus         = konsonantenTyp.value      ? .Abfrage : .NurAnzeige
-        quizSetting?.aspiration.modus           = aspiration.value          ? .Abfrage : .NurAnzeige
-        quizSetting?.stimmhaftigkeit.modus      = stimmhaftigkeit.value     ? .Abfrage : .NurAnzeige
-        
+        quizSetting?.zeichenfeld                = devaSchreiben.value && nachZeichnen.value ? .AbfrageUndNachzeichnen : devaSchreiben.value ? .InAbfrage :  nachZeichnen.value ? .Nachzeichnen : .NurAnzeige
+        quizSetting?.textfeld.modus             = umschrift.value           ? .InAbfrage : .NurAnzeige
+        quizSetting?.vokalOderKonsonant.modus   = vokalOderKonsonant.value  ? .InAbfrage : .NurAnzeige
+        quizSetting?.vokalOderHalbvokal.modus   = vokalOderHalbvokal.value  ? .InAbfrage : .NurAnzeige
+        quizSetting?.artikulation.modus         = artikulation.value        ? .InAbfrage : .NurAnzeige
+        quizSetting?.konsonantTyp.modus         = konsonantenTyp.value      ? .InAbfrage : .NurAnzeige
+        quizSetting?.aspiration.modus           = aspiration.value          ? .InAbfrage : .NurAnzeige
+        quizSetting?.stimmhaftigkeit.modus      = stimmhaftigkeit.value     ? .InAbfrage : .NurAnzeige
         quizSetting?.konsonantTyp.konsonantTypModus = .Hauchlaut
         
         return quizSetting
     }
     
     
-    func getMutableProperty(for abfrage:Abfrage?) -> MutableProperty<Bool>?{
+    func getMutableProperty(for abfrage:AbfrageTyp?) -> MutableProperty<Bool>?{
         guard let abfrage = abfrage else {return nil}
         switch abfrage {
         case .nachzeichnen:         return nachZeichnen
@@ -103,7 +99,7 @@ class QuizAbfragenSettingViewModel{
     
 }
 
-class QuizAbfragenSettingVC: UIViewController {
+class QuizAbfragenSettingView: NibLoadingView {
     var viewModel:QuizAbfragenSettingViewModel!{
         didSet{
             viewModel.iPadOrientation?.signal.observeValues { [weak self] (orientation) in
@@ -120,21 +116,36 @@ class QuizAbfragenSettingVC: UIViewController {
                     
                 }
             }
+            
+            
+            initSwitchs(for: nachzeichnen, abfrage: .nachzeichnen)
+            initSwitchs(for: umschrift, abfrage: .umschrift)
+            initSwitchs(for: vokalOderKonsonant, abfrage: .vokalOderKonsonant)
+            initSwitchs(for: artikulation, abfrage: .artikulation)
+            initSwitchs(for: devaSchreiben, abfrage: .devaSchreiben)
+            initSwitchs(for: konsonantenType, abfrage: .konsonantenTyp)
+            initSwitchs(for: vokalOderHalbvokal, abfrage: .vokalOderHalbVokal)
+            initSwitchs(for: aspiration, abfrage: .aspiration)
+            initSwitchs(for: stimmhaftigkeit, abfrage: .stimmhaftigkeit)
+            
+            
+            
+            
         }
     }
     
     @IBOutlet weak var mainStack: UIStackView!
-    @IBOutlet var nachzeichnen: [UISwitch]!         { didSet{ initSwitchs(for: nachzeichnen, abfrage: .nachzeichnen) } }
-    @IBOutlet var umschrift: [UISwitch]!            { didSet{ initSwitchs(for: umschrift, abfrage: .umschrift) } }
+    @IBOutlet var nachzeichnen: [UISwitch]!         //{ didSet{ initSwitchs(for: nachzeichnen, abfrage: .nachzeichnen) } }
+    @IBOutlet var umschrift: [UISwitch]!            //{ didSet{ initSwitchs(for: umschrift, abfrage: .umschrift) } }
     
-    @IBOutlet var vokalOderKonsonant: [UISwitch]!   { didSet{ initSwitchs(for: vokalOderKonsonant, abfrage: .vokalOderKonsonant) } }
-    @IBOutlet var artikulation: [UISwitch]!         { didSet{ initSwitchs(for: artikulation, abfrage: .artikulation) } }
+    @IBOutlet var vokalOderKonsonant: [UISwitch]!   //{ didSet{ initSwitchs(for: vokalOderKonsonant, abfrage: .vokalOderKonsonant) } }
+    @IBOutlet var artikulation: [UISwitch]!         //{ didSet{ initSwitchs(for: artikulation, abfrage: .artikulation) } }
     
-    @IBOutlet var devaSchreiben: [UISwitch]!        { didSet{ initSwitchs(for: devaSchreiben, abfrage: .devaSchreiben) } }
-    @IBOutlet var konsonantenType: [UISwitch]!      { didSet{ initSwitchs(for: konsonantenType, abfrage: .konsonantenTyp) } }
-    @IBOutlet var vokalOderHalbvokal: [UISwitch]!   { didSet{ initSwitchs(for: vokalOderHalbvokal, abfrage: .vokalOderHalbVokal) } }
-    @IBOutlet var aspiration: [UISwitch]!           { didSet{ initSwitchs(for: aspiration, abfrage: .aspiration) } }
-    @IBOutlet var stimmhaftigkeit: [UISwitch]!      { didSet{ initSwitchs(for: stimmhaftigkeit, abfrage: .stimmhaftigkeit) } }
+    @IBOutlet var devaSchreiben: [UISwitch]!        //{ didSet{ initSwitchs(for: devaSchreiben, abfrage: .devaSchreiben) } }
+    @IBOutlet var konsonantenType: [UISwitch]!      //{ didSet{ initSwitchs(for: konsonantenType, abfrage: .konsonantenTyp) } }
+    @IBOutlet var vokalOderHalbvokal: [UISwitch]!   //{ didSet{ initSwitchs(for: vokalOderHalbvokal, abfrage: .vokalOderHalbVokal) } }
+    @IBOutlet var aspiration: [UISwitch]!           //{ didSet{ initSwitchs(for: aspiration, abfrage: .aspiration) } }
+    @IBOutlet var stimmhaftigkeit: [UISwitch]!      //{ didSet{ initSwitchs(for: stimmhaftigkeit, abfrage: .stimmhaftigkeit) } }
     
     
     @IBAction func tapOnEinfach(_ sender: UITapGestureRecognizer) {
@@ -153,9 +164,9 @@ class QuizAbfragenSettingVC: UIViewController {
         viewModel.doSwitch(for: .voll, to: true)
     }
     //helper
-    private func initSwitchs(for switchs:[UISwitch],abfrage:Abfrage){
+    private func initSwitchs(for switchs:[UISwitch],abfrage:AbfrageTyp){
         for iSwitch in switchs{
-            guard let prop = viewModel.getMutableProperty(for: abfrage) else {return}
+            guard let prop = viewModel?.getMutableProperty(for: abfrage) else {return}
             iSwitch.reactive.isOn   <~ prop
             prop                    <~ iSwitch.reactive.isOnValues
         }
@@ -165,7 +176,7 @@ class QuizAbfragenSettingVC: UIViewController {
 enum AbfrageStufe{case einfach,medium,voll}
 
 
-enum Abfrage{
+enum AbfrageTyp{
     case nachzeichnen
     case umschrift
     case vokalOderKonsonant

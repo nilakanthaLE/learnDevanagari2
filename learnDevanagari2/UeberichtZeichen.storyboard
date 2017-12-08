@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yid-Jg-qZA">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Übersicht Zeichen-->
+        <scene sceneID="j7w-BY-8pv">
+            <objects>
+                <viewController id="3uQ-e2-m4M" customClass="ZeichenUbersichtVC" customModule="learnDevanagari2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZNW-zy-XJr">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwf-ZH-DHe">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOd-LJ-yjc">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="960"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="YCo-qS-EbB"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HZy-a8-FsY">
+                                        <rect key="frame" x="20" y="0.0" width="728" height="960"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcl-B4-Dgl">
+                                                <rect key="frame" x="0.0" y="0.0" width="728" height="116"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="iTt-zI-5Zh"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmc-jH-kVv">
+                                                <rect key="frame" x="0.0" y="116" width="728" height="728"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqT-cn-k2f" customClass="ZeichenUebersichtView" customModule="learnDevanagari2" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="8" width="712" height="712"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="yqT-cn-k2f" secondAttribute="height" multiplier="1:1" priority="999" id="E3f-lG-kos"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="yqT-cn-k2f" firstAttribute="centerY" secondItem="kmc-jH-kVv" secondAttribute="centerY" id="H5I-Qg-8cL"/>
+                                                    <constraint firstItem="yqT-cn-k2f" firstAttribute="centerX" secondItem="kmc-jH-kVv" secondAttribute="centerX" id="Ldv-6w-zCS"/>
+                                                    <constraint firstItem="yqT-cn-k2f" firstAttribute="top" secondItem="kmc-jH-kVv" secondAttribute="top" constant="8" id="SLv-KQ-fZK"/>
+                                                    <constraint firstAttribute="width" secondItem="kmc-jH-kVv" secondAttribute="height" multiplier="1:1" id="Vjh-6u-eSa"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rN-wh-trG">
+                                                <rect key="frame" x="0.0" y="844" width="728" height="116"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="2rN-wh-trG" firstAttribute="height" secondItem="Dcl-B4-Dgl" secondAttribute="height" id="zQH-FK-hXL"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4P-8l-8VR">
+                                        <rect key="frame" x="748" y="0.0" width="20" height="960"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="AOd-LJ-yjc" firstAttribute="width" secondItem="o4P-8l-8VR" secondAttribute="width" id="U1K-dE-VX6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94375056030000004" green="0.59539538619999999" blue="0.21537679430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="HZy-a8-FsY" firstAttribute="width" secondItem="ZNW-zy-XJr" secondAttribute="width" priority="998" constant="-20" id="SB5-qH-y2R"/>
+                            <constraint firstItem="JWU-UR-50y" firstAttribute="trailing" secondItem="qwf-ZH-DHe" secondAttribute="trailing" id="XXu-CM-n0h"/>
+                            <constraint firstItem="qwf-ZH-DHe" firstAttribute="top" secondItem="JWU-UR-50y" secondAttribute="top" id="Zob-Ei-Bfc"/>
+                            <constraint firstItem="qwf-ZH-DHe" firstAttribute="leading" secondItem="JWU-UR-50y" secondAttribute="leading" id="aA7-8w-Ug6"/>
+                            <constraint firstItem="JWU-UR-50y" firstAttribute="bottom" secondItem="qwf-ZH-DHe" secondAttribute="bottom" id="nLv-Ri-yun"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JWU-UR-50y"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Übersicht Zeichen" id="w6Q-62-MAa"/>
+                    <connections>
+                        <outlet property="rahmenView" destination="kmc-jH-kVv" id="Zmn-SZ-mg5"/>
+                        <outlet property="zeichenUebersichtView" destination="yqT-cn-k2f" id="NkV-Vn-0QF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYd-mr-bGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="279"/>
+        </scene>
+        <!--Zeichen-->
+        <scene sceneID="BXo-op-MVa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yid-Jg-qZA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Zeichen" id="Yju-tm-3vT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gyZ-or-Lm2">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3uQ-e2-m4M" kind="relationship" relationship="rootViewController" id="Jo2-dU-eJ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ABM-wM-VNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="279"/>
+        </scene>
+    </scenes>
+</document>

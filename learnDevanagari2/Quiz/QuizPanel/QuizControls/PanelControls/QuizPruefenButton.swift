@@ -15,7 +15,7 @@ class QuizPruefenButtonViewModel{
     var zeilenHoehe:MutableProperty<CGFloat> = MutableProperty(30.0)
     init(quizModel:QuizModel){
         self.quizModel = quizModel
-        buttonZustand               <~ quizModel.currentQuizZeichen.producer.map{ $0?.quizSetting.anzahlAbfragen == 0 ? .NaechstesZeichen : .Pruefen }
+        buttonZustand               <~ quizModel.currentQuizZeichen.producer.map{ ($0?.status.value == .Correct ||  $0?.status.value == .FalschBeantwortet) ? .NaechstesZeichen : .Pruefen }
         zeilenHoehe                 <~ quizModel.zeilenHoehe
      }
     
@@ -24,10 +24,11 @@ class QuizPruefenButtonViewModel{
     func buttonPressed(){
         switch buttonZustand.value {
         case .NaechstesZeichen:
-            quizModel.setNextCurrentZeichen()
+            quizModel.nextZeichenPressed.value = Void()
         case .Pruefen:
             buttonZustand.value = buttonZustand.value.toggleNext()
-            quizModel.userEingabePrüfen.value = true
+            quizModel.pruefenPressed.value = Void()
+            
         }
     }
 }

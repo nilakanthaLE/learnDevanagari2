@@ -53,34 +53,52 @@ class UserAntwortZeichen{
         }
     }
     
+    func isCorrect(for controlTyp:ControlTyp, quizZeichen:QuizZeichen) -> Bool{
+        let userEingabe = getMutableProperty(for: controlTyp)?.value
+        let correct     = quizZeichen.zeichen.getValue(for: controlTyp)
+        return userEingabe == correct
+    }
     func isCorrect(for quizZeichen:QuizZeichen?) -> Bool{
         guard let quizZeichen = quizZeichen else {return false}
-        
-        func isCorrect(for controlTyp:ControlTyp, quizZeichen:QuizZeichen) -> Bool{
-            let userEingabe = getMutableProperty(for: controlTyp)?.value
-            let correct     = quizZeichen.zeichen.getValue(for: controlTyp)
-            return userEingabe == correct
-        }
-        
         return quizZeichen.quizSetting.abfragen.map{isCorrect(for: $0, quizZeichen: quizZeichen)}.filter{$0 == false}.count == 0
+    }
+    func userAntworten(for quizZeichen:QuizZeichen?) ->[(controlTyp:ControlTyp,correct:Bool)]{
+        guard let quizZeichen = quizZeichen else {return [(controlTyp:ControlTyp,correct:Bool)]()}
+        return quizZeichen.quizSetting.abfragen.map{(controlTyp:$0,correct:isCorrect(for: $0, quizZeichen: quizZeichen))}
     }
 }
 
-class QuizZeichen{
+enum QuizZeichenStatus:Int{ case Ungesichtet = 1 , Correct = 0, FalschBeantwortet = 2, InUserAbfrage = 3}
+class QuizZeichen:Equatable{
+    static func ==(lhs: QuizZeichen, rhs: QuizZeichen) -> Bool {
+        return lhs.zeichen == rhs.zeichen &&
+        lhs.quizSetting == rhs.quizSetting &&
+        lhs.status.value == rhs.status.value
+    }
+    
+    
+    var status =   MutableProperty( QuizZeichenStatus.Ungesichtet )
     var zeichen:Zeichen
     var quizSetting:QuizSetting
     init(zeichen:Zeichen,quizSetting:QuizSetting) {
         self.zeichen        = zeichen
         self.quizSetting    = quizSetting
+        
+        
     }
     var titleForZeichenfeldButton:String?{
-        return quizSetting.zeichenfeld == .Abfrage ? "?" : zeichen.devanagari
+        return quizSetting.zeichenfeld == .InAbfrage ? "?" : zeichen.devanagari
     }
 }
 
-class Zeichen{
+class Zeichen:NSObject{
+    static func ==(lhs: Zeichen, rhs: Zeichen) -> Bool {
+        return lhs.devanagari == rhs.devanagari
+    }
+    
     var ID:Int?
     
+    //mögliche AbfrageWerte
     var devanagari:String?
     var umschrift:String?
     var vokalOderKonsonant:String?
@@ -89,8 +107,8 @@ class Zeichen{
     var konsonantTyp:String?
     var aspiration:String?
     var stimmhaftigkeit:String?
-    var grundZeichen:String?
     
+    var grundZeichen:String?
     var lektion:Int?
     
     func getValue(for controlTyp:ControlTyp?) -> String?{
@@ -98,7 +116,7 @@ class Zeichen{
         switch controlTyp {
         case .ArtikulationTyp:         return artikulation
         case .AspirationTyp:           return aspiration
-        case .KonsonantTyp:         return konsonantTyp
+        case .KonsonantTyp:             return konsonantTyp
         case .StimmhaftigkeitTyp:      return stimmhaftigkeit
         case .TextfeldTyp:             return umschrift
         case .VokalOderHalbvokalTyp:   return vokalOderHalbvokal
@@ -106,6 +124,14 @@ class Zeichen{
         case .ZeichenfeldTyp:          return devanagari
         }
     }
+    
+    static func get(forDeva devaString:String?) -> Zeichen?{
+        guard let devaString = devaString else {return nil}
+        return erstelleZeichensatz().filter{$0.devanagari == devaString}.first
+    }
+    
+    private var alleMoegelichenAbfragewerte:[String?] {return  [devanagari,umschrift,vokalOderHalbvokal,vokalOderKonsonant,artikulation,konsonantTyp,aspiration,stimmhaftigkeit,]}
+    var anzahlMoeglicheAbfragen:Int{ return alleMoegelichenAbfragewerte.filter{$0 != nil}.count }
 }
 enum VokalOderKonsonant:String  { case Vokal        = "Vokal", Konsonant  = "Konsonant" }
 enum VokalOderHalbvokal:String  { case Vokal        = "einf. Vokal", Halbvokal  = "Halbvokal" }

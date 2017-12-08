@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MantraViewIPadH" customModule="learnDevanagari2">
+            <connections>
+                <outletCollection property="labels" destination="1zX-wU-5O9" collectionClass="NSMutableArray" id="XcI-Pa-fSB"/>
+                <outletCollection property="labels" destination="dWi-e6-nc3" collectionClass="NSMutableArray" id="76S-yf-Jr8"/>
+                <outletCollection property="labels" destination="8Z2-oi-bOu" collectionClass="NSMutableArray" id="HtH-zI-RAQ"/>
+                <outletCollection property="labels" destination="rMx-ed-Fxm" collectionClass="NSMutableArray" id="zFV-Ux-Dp4"/>
+                <outletCollection property="labels" destination="vy7-Zn-Nbq" collectionClass="NSMutableArray" id="S7h-Rx-qhf"/>
+                <outletCollection property="labels" destination="C5e-sH-HMk" collectionClass="NSMutableArray" id="NJA-sM-V2E"/>
+                <outletCollection property="labels" destination="sAe-2D-TyY" collectionClass="NSMutableArray" id="nY7-dS-a7M"/>
+                <outletCollection property="labels" destination="wj8-V4-9uX" collectionClass="NSMutableArray" id="Y40-Gv-UH5"/>
+                <outletCollection property="labels" destination="c5X-cI-bDO" collectionClass="NSMutableArray" id="LN7-Mb-wYi"/>
+                <outletCollection property="labels" destination="U2H-gN-tJh" collectionClass="NSMutableArray" id="NJw-VA-IBk"/>
+                <outletCollection property="labels" destination="LXl-ME-yBM" collectionClass="NSMutableArray" id="ER5-fH-9i4"/>
+                <outletCollection property="labels" destination="GaH-kV-K4G" collectionClass="NSMutableArray" id="N9x-fu-izs"/>
+                <outletCollection property="labels" destination="8c7-Bg-ur1" collectionClass="NSMutableArray" id="TaE-j1-0Oy"/>
+                <outletCollection property="labels" destination="dMn-nI-Fsb" collectionClass="NSMutableArray" id="VOJ-xI-Dws"/>
+                <outletCollection property="labels" destination="Vkf-Yz-OM7" collectionClass="NSMutableArray" id="KCh-qo-roa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0y-bF-3Gj">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vy7-Zn-Nbq">
+                            <rect key="frame" x="604" y="87" width="112" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="ॐ नमः शिवाय">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj8-V4-9uX">
+                            <rect key="frame" x="466" y="322" width="93.5" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="अहं ब्राह्मास्मि">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zX-wU-5O9">
+                            <rect key="frame" x="282.5" y="87" width="138" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="ॐ नमो नारायणाय">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z2-oi-bOu">
+                            <rect key="frame" x="279.5" y="227" width="141" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="ॐ गं गणपतये नमः">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-nI-Fsb">
+                            <rect key="frame" x="404" y="581" width="217" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2H-gN-tJh">
+                            <rect key="frame" x="483.5" y="380" width="57" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="सो ऽहम्">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5e-sH-HMk">
+                            <rect key="frame" x="604" y="227" width="104" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="ॐ मणिपद्मे हूँ">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaH-kV-K4G">
+                            <rect key="frame" x="717" y="366" width="277" height="56"/>
+                            <attributedString key="attributedText">
+                                <fragment content="त्रयम्बकं">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content=" ">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="यजामहे">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content=" ">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="सुगन्धिं">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content=" ">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="पुष्टिवर्धनम्">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment>
+                                    <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                    <attributes>
+                                        <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="उर्वारुकमिव">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content=" ">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="बन्धनान्मृत्योर्मुक्षीय">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content=" ">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="मामृतात्">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="8" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWi-e6-nc3">
+                            <rect key="frame" x="89" y="115" width="142" height="112"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">राम रमेति रमेति रमो
+रामेति मनोरमे
+सहस्त्र नाम तातुल्यम
+राम नाम वरानने</string>
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-2D-TyY">
+                            <rect key="frame" x="777" y="115" width="156" height="112"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">ॐ भूर्भुवः स्वः
+तत्सवितुर्वरेण्यं
+भर्गो देवस्य धीमहि
+धियो यो नः प्रचोदयात्</string>
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8c7-Bg-ur1">
+                            <rect key="frame" x="148" y="442" width="25" height="306"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">ॐ
+हं
+यं
+रं
+वं
+लं</string>
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-Yz-OM7">
+                            <rect key="frame" x="817" y="442" width="77" height="306"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">सहस्रार
+आज्ञा
+विशुद्ध
+अनाहत
+मनिपूर
+स्वाधिष्ठान
+मूलाधार</string>
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMx-ed-Fxm">
+                            <rect key="frame" x="420.5" y="40" width="183.5" height="262"/>
+                            <attributedString key="attributedText">
+                                <fragment content="ॐ नमो भगवते वासुदेवाय">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXl-ME-yBM">
+                            <rect key="frame" x="482" y="438" width="60" height="28"/>
+                            <attributedString key="attributedText">
+                                <fragment content="तत्त्वमसि">
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5X-cI-bDO">
+                            <rect key="frame" x="30" y="366" width="261" height="56"/>
+                            <attributedString key="attributedText">
+                                <fragment>
+                                    <string key="content">हरे राम हरे राम राम राम हरे हरे
+हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे</string>
+                                    <attributes>
+                                        <font key="NSFont" size="20" name="KohinoorDevanagari-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94375056030000004" green="0.59539538619999999" blue="0.21537679430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="8Z2-oi-bOu" firstAttribute="centerY" secondItem="rMx-ed-Fxm" secondAttribute="centerY" constant="70" id="1ie-ju-wGc"/>
+                        <constraint firstItem="8c7-Bg-ur1" firstAttribute="centerX" secondItem="c5X-cI-bDO" secondAttribute="centerX" id="2KZ-re-Z0n"/>
+                        <constraint firstItem="rMx-ed-Fxm" firstAttribute="top" secondItem="2v2-0h-mIt" secondAttribute="top" constant="20" id="2Ot-2W-euB"/>
+                        <constraint firstItem="LXl-ME-yBM" firstAttribute="top" secondItem="U2H-gN-tJh" secondAttribute="bottom" constant="30" id="2SQ-In-V4w"/>
+                        <constraint firstItem="Vkf-Yz-OM7" firstAttribute="centerX" secondItem="GaH-kV-K4G" secondAttribute="centerX" id="3Iq-ew-Tzf"/>
+                        <constraint firstItem="U2H-gN-tJh" firstAttribute="top" secondItem="wj8-V4-9uX" secondAttribute="bottom" constant="30" id="9jx-m2-ghq"/>
+                        <constraint firstItem="dMn-nI-Fsb" firstAttribute="centerX" secondItem="U2H-gN-tJh" secondAttribute="centerX" id="Cfh-2P-D66"/>
+                        <constraint firstItem="rMx-ed-Fxm" firstAttribute="centerX" secondItem="2v2-0h-mIt" secondAttribute="centerX" id="Cht-XX-LHN"/>
+                        <constraint firstItem="1zX-wU-5O9" firstAttribute="centerY" secondItem="rMx-ed-Fxm" secondAttribute="centerY" constant="-70" id="ClJ-vE-mbp"/>
+                        <constraint firstItem="rMx-ed-Fxm" firstAttribute="leading" secondItem="8Z2-oi-bOu" secondAttribute="trailing" id="Cwb-wo-8QD"/>
+                        <constraint firstItem="sAe-2D-TyY" firstAttribute="centerX" secondItem="GaH-kV-K4G" secondAttribute="centerX" id="Cxa-ks-15x"/>
+                        <constraint firstItem="c5X-cI-bDO" firstAttribute="centerY" secondItem="2v2-0h-mIt" secondAttribute="centerY" id="I5L-Qq-WBW"/>
+                        <constraint firstItem="U2H-gN-tJh" firstAttribute="centerX" secondItem="2v2-0h-mIt" secondAttribute="centerX" id="IH1-cq-5nN"/>
+                        <constraint firstItem="dMn-nI-Fsb" firstAttribute="centerY" secondItem="8c7-Bg-ur1" secondAttribute="centerY" id="J0Z-nr-1Hk"/>
+                        <constraint firstItem="GaH-kV-K4G" firstAttribute="centerY" secondItem="2v2-0h-mIt" secondAttribute="centerY" id="Kqx-A5-RIN"/>
+                        <constraint firstItem="U2H-gN-tJh" firstAttribute="centerY" secondItem="2v2-0h-mIt" secondAttribute="centerY" id="NaW-vW-KZH"/>
+                        <constraint firstItem="dWi-e6-nc3" firstAttribute="centerY" secondItem="rMx-ed-Fxm" secondAttribute="centerY" id="Os1-c8-tbP"/>
+                        <constraint firstItem="2v2-0h-mIt" firstAttribute="bottom" secondItem="Vkf-Yz-OM7" secondAttribute="bottom" constant="20" id="SB3-mS-iMC"/>
+                        <constraint firstItem="8c7-Bg-ur1" firstAttribute="top" secondItem="c5X-cI-bDO" secondAttribute="bottom" constant="20" id="TRl-0P-2Tj"/>
+                        <constraint firstItem="C5e-sH-HMk" firstAttribute="bottom" secondItem="8Z2-oi-bOu" secondAttribute="bottom" id="Wws-c3-9G4"/>
+                        <constraint firstItem="C5e-sH-HMk" firstAttribute="leading" secondItem="rMx-ed-Fxm" secondAttribute="trailing" id="Wzo-Nj-Pvw"/>
+                        <constraint firstItem="vy7-Zn-Nbq" firstAttribute="top" secondItem="1zX-wU-5O9" secondAttribute="top" id="XFM-nk-Huu"/>
+                        <constraint firstItem="LXl-ME-yBM" firstAttribute="centerX" secondItem="U2H-gN-tJh" secondAttribute="centerX" id="XbX-1x-Cyx"/>
+                        <constraint firstItem="2v2-0h-mIt" firstAttribute="trailing" secondItem="GaH-kV-K4G" secondAttribute="trailing" constant="30" id="faW-KS-37z"/>
+                        <constraint firstItem="rMx-ed-Fxm" firstAttribute="leading" secondItem="1zX-wU-5O9" secondAttribute="trailing" id="fjc-jV-hWB"/>
+                        <constraint firstItem="wj8-V4-9uX" firstAttribute="centerX" secondItem="U2H-gN-tJh" secondAttribute="centerX" id="h4q-pY-gLw"/>
+                        <constraint firstItem="vy7-Zn-Nbq" firstAttribute="leading" secondItem="rMx-ed-Fxm" secondAttribute="trailing" id="hLk-Fh-qJi"/>
+                        <constraint firstItem="dWi-e6-nc3" firstAttribute="centerX" secondItem="c5X-cI-bDO" secondAttribute="centerX" id="iAr-1W-mde"/>
+                        <constraint firstItem="wj8-V4-9uX" firstAttribute="top" secondItem="rMx-ed-Fxm" secondAttribute="bottom" constant="20" id="rfc-OY-N3v"/>
+                        <constraint firstItem="c5X-cI-bDO" firstAttribute="leading" secondItem="2v2-0h-mIt" secondAttribute="leading" constant="30" id="tmF-n7-XvB"/>
+                        <constraint firstItem="sAe-2D-TyY" firstAttribute="centerY" secondItem="rMx-ed-Fxm" secondAttribute="centerY" id="u4n-29-7qP"/>
+                        <constraint firstItem="Vkf-Yz-OM7" firstAttribute="top" secondItem="GaH-kV-K4G" secondAttribute="bottom" constant="20" id="wHX-Nv-uJy"/>
+                        <constraint firstItem="2v2-0h-mIt" firstAttribute="bottom" secondItem="8c7-Bg-ur1" secondAttribute="bottom" constant="20" id="waG-FN-lgu"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="2v2-0h-mIt"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="V0y-bF-3Gj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HPq-rc-nPY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="V0y-bF-3Gj" secondAttribute="bottom" id="aYZ-Xi-8iv"/>
+                <constraint firstItem="V0y-bF-3Gj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jX3-9N-SAW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="V0y-bF-3Gj" secondAttribute="trailing" id="w9U-gz-8FN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

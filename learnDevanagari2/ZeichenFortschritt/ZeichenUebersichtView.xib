@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZeichenUebersichtView" customModule="learnDevanagari2">
+            <connections>
+                <outletCollection property="zeichenButtons" destination="BbP-E2-3BB" collectionClass="NSMutableArray" id="LxP-vZ-Kso"/>
+                <outletCollection property="zeichenButtons" destination="1S8-GM-sVc" collectionClass="NSMutableArray" id="UJE-lC-icT"/>
+                <outletCollection property="zeichenButtons" destination="EoH-he-hhd" collectionClass="NSMutableArray" id="8jL-sw-KVO"/>
+                <outletCollection property="zeichenButtons" destination="XiV-5x-Dro" collectionClass="NSMutableArray" id="LI0-Dv-GSg"/>
+                <outletCollection property="zeichenButtons" destination="Vyz-U4-leu" collectionClass="NSMutableArray" id="8Mi-JL-eMB"/>
+                <outletCollection property="zeichenButtons" destination="ovb-ii-0FG" collectionClass="NSMutableArray" id="A6T-VJ-U80"/>
+                <outletCollection property="zeichenButtons" destination="C2Y-HG-bdN" collectionClass="NSMutableArray" id="zJX-zR-2A2"/>
+                <outletCollection property="zeichenButtons" destination="sPP-u6-r9V" collectionClass="NSMutableArray" id="dXM-Ol-tcW"/>
+                <outletCollection property="zeichenButtons" destination="6HQ-Ry-xti" collectionClass="NSMutableArray" id="9Fm-4I-oHw"/>
+                <outletCollection property="zeichenButtons" destination="1Ar-Ai-ozS" collectionClass="NSMutableArray" id="Xix-Wm-e6s"/>
+                <outletCollection property="zeichenButtons" destination="40G-Cp-py2" collectionClass="NSMutableArray" id="F66-iB-pnO"/>
+                <outletCollection property="zeichenButtons" destination="6gB-oa-wdT" collectionClass="NSMutableArray" id="uI3-zV-YbL"/>
+                <outletCollection property="zeichenButtons" destination="x1D-A4-afm" collectionClass="NSMutableArray" id="cc3-PA-LxW"/>
+                <outletCollection property="zeichenButtons" destination="YFW-tH-7VQ" collectionClass="NSMutableArray" id="vWm-7n-fq6"/>
+                <outletCollection property="zeichenButtons" destination="1XN-YI-seu" collectionClass="NSMutableArray" id="hSN-Wk-TMM"/>
+                <outletCollection property="zeichenButtons" destination="EfN-yX-C7B" collectionClass="NSMutableArray" id="ZGk-Nb-IJM"/>
+                <outletCollection property="zeichenButtons" destination="hIM-7R-cyB" collectionClass="NSMutableArray" id="5gq-zd-YIL"/>
+                <outletCollection property="zeichenButtons" destination="2oy-fF-8f5" collectionClass="NSMutableArray" id="aoP-e6-GZ8"/>
+                <outletCollection property="zeichenButtons" destination="LjL-Ph-5Jt" collectionClass="NSMutableArray" id="CvJ-BR-xI2"/>
+                <outletCollection property="zeichenButtons" destination="opQ-T2-OEb" collectionClass="NSMutableArray" id="n2K-Et-4iu"/>
+                <outletCollection property="zeichenButtons" destination="m8O-dl-KlC" collectionClass="NSMutableArray" id="NHN-Gt-J4E"/>
+                <outletCollection property="zeichenButtons" destination="Ukk-Bk-GbM" collectionClass="NSMutableArray" id="jkf-cB-Xme"/>
+                <outletCollection property="zeichenButtons" destination="EXT-Qk-nIq" collectionClass="NSMutableArray" id="Evp-qU-mXx"/>
+                <outletCollection property="zeichenButtons" destination="vlB-1X-4LW" collectionClass="NSMutableArray" id="qza-PU-ORn"/>
+                <outletCollection property="zeichenButtons" destination="OPe-18-TMu" collectionClass="NSMutableArray" id="KNg-ce-P5I"/>
+                <outletCollection property="zeichenButtons" destination="IPi-rW-HbY" collectionClass="NSMutableArray" id="fnH-j2-f8h"/>
+                <outletCollection property="zeichenButtons" destination="QcW-55-tUG" collectionClass="NSMutableArray" id="sbw-uu-ksE"/>
+                <outletCollection property="zeichenButtons" destination="93D-Xz-5yh" collectionClass="NSMutableArray" id="JBg-SK-CRs"/>
+                <outletCollection property="zeichenButtons" destination="zVb-6j-geD" collectionClass="NSMutableArray" id="3e6-JQ-jKQ"/>
+                <outletCollection property="zeichenButtons" destination="axs-3w-n4h" collectionClass="NSMutableArray" id="SL2-eg-9Vc"/>
+                <outletCollection property="zeichenButtons" destination="CpO-3H-hvv" collectionClass="NSMutableArray" id="1kw-Qb-9XY"/>
+                <outletCollection property="zeichenButtons" destination="rci-9E-BHi" collectionClass="NSMutableArray" id="WPZ-64-XN5"/>
+                <outletCollection property="zeichenButtons" destination="JpP-WS-01V" collectionClass="NSMutableArray" id="ZO2-l6-bxd"/>
+                <outletCollection property="zeichenButtons" destination="gH8-MU-yJl" collectionClass="NSMutableArray" id="31i-xS-Aym"/>
+                <outletCollection property="zeichenButtons" destination="WkT-UX-hnl" collectionClass="NSMutableArray" id="6FZ-sf-c39"/>
+                <outletCollection property="zeichenButtons" destination="hUL-4r-ES8" collectionClass="NSMutableArray" id="fUR-67-IFv"/>
+                <outletCollection property="zeichenButtons" destination="GrI-lB-Prw" collectionClass="NSMutableArray" id="S8K-h3-yJc"/>
+                <outletCollection property="zeichenButtons" destination="Ms3-Sx-KBa" collectionClass="NSMutableArray" id="GEC-et-Ucz"/>
+                <outletCollection property="zeichenButtons" destination="VJO-aa-fLP" collectionClass="NSMutableArray" id="QnO-2d-tef"/>
+                <outletCollection property="zeichenButtons" destination="Qgp-re-dIz" collectionClass="NSMutableArray" id="x2E-IQ-Pmq"/>
+                <outletCollection property="zeichenButtons" destination="pwN-zq-5Sd" collectionClass="NSMutableArray" id="4oP-sk-M5n"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Lof-Vq-efh">
+                    <rect key="frame" x="0.5" y="13" width="667" height="661"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-LT-TJR">
+                            <rect key="frame" x="0.0" y="0.0" width="667" height="561"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogc-mh-XX7">
+                                    <rect key="frame" x="0.0" y="0.0" width="667" height="88.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvM-wN-QrB">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="88.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="N8P-nl-SZN">
+                                            <rect key="frame" x="40" y="0.0" width="274.5" height="88.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1S8-GM-sVc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="89" height="88.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="1S8-GM-sVc" secondAttribute="height" multiplier="1:1" id="DfQ-5a-mk9"/>
+                                                    </constraints>
+                                                    <state key="normal" title="अ"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbP-E2-3BB">
+                                                    <rect key="frame" x="93" y="0.0" width="88.5" height="88.5"/>
+                                                    <state key="normal" title="इ"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EoH-he-hhd">
+                                                    <rect key="frame" x="185.5" y="0.0" width="89" height="88.5"/>
+                                                    <state key="normal" title="उ"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHG-W7-hre">
+                                            <rect key="frame" x="314.5" y="0.0" width="40" height="88.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cWv-4J-j41">
+                                            <rect key="frame" x="354.5" y="0.0" width="273" height="88.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiV-5x-Dro">
+                                                    <rect key="frame" x="0.0" y="0.0" width="88.5" height="88.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="XiV-5x-Dro" secondAttribute="height" multiplier="1:1" id="l56-MM-Whk"/>
+                                                    </constraints>
+                                                    <state key="normal" title="ए"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyz-U4-leu">
+                                                    <rect key="frame" x="92.5" y="0.0" width="88" height="88.5"/>
+                                                    <state key="normal" title="ओ"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovb-ii-0FG">
+                                                    <rect key="frame" x="184.5" y="0.0" width="88.5" height="88.5"/>
+                                                    <state key="normal" title="ऋ"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xi-DG-UpY">
+                                            <rect key="frame" x="627.5" y="0.0" width="39.5" height="88.5"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CHG-W7-hre" firstAttribute="width" secondItem="zvM-wN-QrB" secondAttribute="width" id="5At-Bn-NUg"/>
+                                        <constraint firstItem="6xi-DG-UpY" firstAttribute="width" secondItem="CHG-W7-hre" secondAttribute="width" id="O21-Dp-Ft7"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rT2-G5-ucW">
+                                    <rect key="frame" x="0.0" y="100.5" width="667" height="460.5"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uMm-8G-e03">
+                                            <rect key="frame" x="0.0" y="0.0" width="566.5" height="460.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CTY-Y8-fHm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="465.5" height="460.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="uNe-kb-XmP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="365.5" height="460.5"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="SvO-Ck-JVC">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="88.5" height="460.5"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2Y-HG-bdN">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="88.5" height="89"/>
+                                                                            <state key="normal" title="क"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gB-oa-wdT">
+                                                                            <rect key="frame" x="0.0" y="93" width="88.5" height="89"/>
+                                                                            <state key="normal" title="च"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjL-Ph-5Jt">
+                                                                            <rect key="frame" x="0.0" y="186" width="88.5" height="88.5"/>
+                                                                            <state key="normal" title="ट"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPi-rW-HbY">
+                                                                            <rect key="frame" x="0.0" y="278.5" width="88.5" height="89"/>
+                                                                            <state key="normal" title="त"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpP-WS-01V">
+                                                                            <rect key="frame" x="0.0" y="371.5" width="88.5" height="89"/>
+                                                                            <state key="normal" title="प"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="C2Y-HG-bdN" firstAttribute="width" secondItem="C2Y-HG-bdN" secondAttribute="height" multiplier="1:1" id="ttH-w4-iIX"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-Zb-jEr">
+                                                                    <rect key="frame" x="92.5" y="0.0" width="88.5" height="460.5"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPP-u6-r9V">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="88.5" height="89"/>
+                                                                            <state key="normal" title="ख"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1D-A4-afm">
+                                                                            <rect key="frame" x="0.0" y="93" width="88.5" height="89"/>
+                                                                            <state key="normal" title="छ"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opQ-T2-OEb">
+                                                                            <rect key="frame" x="0.0" y="186" width="88.5" height="88.5"/>
+                                                                            <state key="normal" title="ठ"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcW-55-tUG">
+                                                                            <rect key="frame" x="0.0" y="278.5" width="88.5" height="89"/>
+                                                                            <state key="normal" title="थ"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gH8-MU-yJl">
+                                                                            <rect key="frame" x="0.0" y="371.5" width="88.5" height="89"/>
+                                                                            <state key="normal" title="फ"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Wka-Pb-r8K">
+                                                                    <rect key="frame" x="185" y="0.0" width="88" height="460.5"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HQ-Ry-xti">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="88" height="89"/>
+                                                                            <state key="normal" title="ग"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFW-tH-7VQ">
+                                                                            <rect key="frame" x="0.0" y="93" width="88" height="89"/>
+                                                                            <state key="normal" title="ज"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8O-dl-KlC">
+                                                                            <rect key="frame" x="0.0" y="186" width="88" height="88.5"/>
+                                                                            <state key="normal" title="ड"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93D-Xz-5yh">
+                                                                            <rect key="frame" x="0.0" y="278.5" width="88" height="89"/>
+                                                                            <state key="normal" title="द"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkT-UX-hnl">
+                                                                            <rect key="frame" x="0.0" y="371.5" width="88" height="89"/>
+                                                                            <state key="normal" title="ब"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-kV-VMQ">
+                                                                    <rect key="frame" x="277" y="0.0" width="88.5" height="460.5"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-Ai-ozS">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="88.5" height="89"/>
+                                                                            <state key="normal" title="घ"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XN-YI-seu">
+                                                                            <rect key="frame" x="0.0" y="93" width="88.5" height="89"/>
+                                                                            <state key="normal" title="झ"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-Bk-GbM">
+                                                                            <rect key="frame" x="0.0" y="186" width="88.5" height="88.5"/>
+                                                                            <state key="normal" title="ढ"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVb-6j-geD">
+                                                                            <rect key="frame" x="0.0" y="278.5" width="88.5" height="89"/>
+                                                                            <state key="normal" title="ध"/>
+                                                                        </button>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUL-4r-ES8">
+                                                                            <rect key="frame" x="0.0" y="371.5" width="88.5" height="89"/>
+                                                                            <state key="normal" title="भ"/>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="P1n-mK-D8i">
+                                                            <rect key="frame" x="377.5" y="0.0" width="88" height="460.5"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40G-Cp-py2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="89"/>
+                                                                    <state key="normal" title="ङ"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfN-yX-C7B">
+                                                                    <rect key="frame" x="0.0" y="93" width="88" height="89"/>
+                                                                    <state key="normal" title="ञ"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-Qk-nIq">
+                                                                    <rect key="frame" x="0.0" y="186" width="88" height="88.5"/>
+                                                                    <state key="normal" title="ण"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axs-3w-n4h">
+                                                                    <rect key="frame" x="0.0" y="278.5" width="88" height="89"/>
+                                                                    <state key="normal" title="न"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrI-lB-Prw">
+                                                                    <rect key="frame" x="0.0" y="371.5" width="88" height="89"/>
+                                                                    <state key="normal" title="म"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="40G-Cp-py2" firstAttribute="width" secondItem="C2Y-HG-bdN" secondAttribute="width" id="4Aj-7G-Rub"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lq5-YR-waJ">
+                                                    <rect key="frame" x="477.5" y="0.0" width="89" height="460.5"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tv-GN-Gib">
+                                                            <rect key="frame" x="0.0" y="0.0" width="89" height="89"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIM-7R-cyB">
+                                                            <rect key="frame" x="0.0" y="93" width="89" height="89"/>
+                                                            <state key="normal" title="य"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlB-1X-4LW">
+                                                            <rect key="frame" x="0.0" y="186" width="89" height="88.5"/>
+                                                            <state key="normal" title="र"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpO-3H-hvv">
+                                                            <rect key="frame" x="0.0" y="278.5" width="89" height="89"/>
+                                                            <state key="normal" title="ल"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms3-Sx-KBa">
+                                                            <rect key="frame" x="0.0" y="371.5" width="89" height="89"/>
+                                                            <state key="normal" title="व"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Tv-GN-Gib" firstAttribute="width" secondItem="C2Y-HG-bdN" secondAttribute="width" id="TJf-xK-5Fo"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="caO-4G-liq">
+                                            <rect key="frame" x="578.5" y="0.0" width="88.5" height="460.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AW1-Rt-h7m">
+                                                    <rect key="frame" x="0.0" y="0.0" width="88.5" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="AW1-Rt-h7m" secondAttribute="height" multiplier="1:1" id="xeF-T8-RYG"/>
+                                                    </constraints>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oy-fF-8f5">
+                                                    <rect key="frame" x="0.0" y="93" width="88.5" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2oy-fF-8f5" secondAttribute="height" multiplier="1:1" id="IoO-g6-MYT"/>
+                                                    </constraints>
+                                                    <state key="normal" title="श"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPe-18-TMu">
+                                                    <rect key="frame" x="0.0" y="186" width="88.5" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="OPe-18-TMu" secondAttribute="height" multiplier="1:1" id="Ryy-Cy-WgV"/>
+                                                    </constraints>
+                                                    <state key="normal" title="ष"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rci-9E-BHi">
+                                                    <rect key="frame" x="0.0" y="279" width="88.5" height="88.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="rci-9E-BHi" secondAttribute="height" multiplier="1:1" id="8D4-w2-eV7"/>
+                                                    </constraints>
+                                                    <state key="normal" title="स"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUS-yf-SlB">
+                                                    <rect key="frame" x="0.0" y="371.5" width="88.5" height="89"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="IUS-yf-SlB" secondAttribute="height" multiplier="1:1" id="D9L-91-N2u"/>
+                                                    </constraints>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AW1-Rt-h7m" firstAttribute="width" secondItem="AW1-Rt-h7m" secondAttribute="height" multiplier="1:1" id="4Rz-L1-WhD"/>
+                                                <constraint firstItem="AW1-Rt-h7m" firstAttribute="width" secondItem="AW1-Rt-h7m" secondAttribute="height" multiplier="1:1" id="5XC-hd-9nO"/>
+                                                <constraint firstItem="OPe-18-TMu" firstAttribute="width" secondItem="OPe-18-TMu" secondAttribute="height" multiplier="1:1" id="UxW-sJ-rQi"/>
+                                                <constraint firstItem="IUS-yf-SlB" firstAttribute="width" secondItem="IUS-yf-SlB" secondAttribute="height" multiplier="1:1" id="X6G-s2-PIc"/>
+                                                <constraint firstItem="2oy-fF-8f5" firstAttribute="width" secondItem="2oy-fF-8f5" secondAttribute="height" multiplier="1:1" id="f7B-pv-Dw0"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1S8-GM-sVc" firstAttribute="width" secondItem="C2Y-HG-bdN" secondAttribute="width" id="6oK-6q-rGA"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJc-K2-F5O">
+                            <rect key="frame" x="0.0" y="573" width="667" height="88"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2e-mk-PGH">
+                                    <rect key="frame" x="0.0" y="0.0" width="100.5" height="88"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJO-aa-fLP">
+                                    <rect key="frame" x="100.5" y="0.0" width="88.5" height="88"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="VJO-aa-fLP" secondAttribute="height" multiplier="1:1" id="Fzt-bQ-Jjt"/>
+                                    </constraints>
+                                    <state key="normal" title="ह"/>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5X-wY-K1G">
+                                    <rect key="frame" x="189" y="0.0" width="100.5" height="88"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgp-re-dIz">
+                                    <rect key="frame" x="289.5" y="0.0" width="88.5" height="88"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Qgp-re-dIz" secondAttribute="height" multiplier="1:1" id="Txm-PZ-NXQ"/>
+                                    </constraints>
+                                    <state key="normal" title="ः"/>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gev-0B-mj1">
+                                    <rect key="frame" x="378" y="0.0" width="100.5" height="88"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwN-zq-5Sd">
+                                    <rect key="frame" x="478.5" y="0.0" width="88" height="88"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="pwN-zq-5Sd" secondAttribute="height" multiplier="1:1" id="Z4C-d9-f3g"/>
+                                    </constraints>
+                                    <state key="normal" title=" ं"/>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOM-uD-ZCM">
+                                    <rect key="frame" x="566.5" y="0.0" width="100.5" height="88"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="k5X-wY-K1G" firstAttribute="width" secondItem="gev-0B-mj1" secondAttribute="width" id="3jR-KW-Ais"/>
+                                <constraint firstItem="s2e-mk-PGH" firstAttribute="width" secondItem="k5X-wY-K1G" secondAttribute="width" id="Gb7-kM-Etg"/>
+                                <constraint firstItem="gev-0B-mj1" firstAttribute="width" secondItem="mOM-uD-ZCM" secondAttribute="width" id="vYm-xl-dsM"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="VJO-aa-fLP" firstAttribute="width" secondItem="JpP-WS-01V" secondAttribute="width" id="vBY-HE-XxY"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Lof-Vq-efh" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="3wm-80-ZGI"/>
+                <constraint firstItem="Lof-Vq-efh" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="pnh-MW-8w1"/>
+                <constraint firstItem="Lof-Vq-efh" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="uua-wI-yzG" userLabel="Stack View.width = width "/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-27.5" y="97.5"/>
+        </view>
+    </objects>
+</document>

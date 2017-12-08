@@ -17,12 +17,22 @@ class QuizModel{
     var zeichenSatz = MutableProperty([Zeichen]())
     init(quizConfigModel:QuizConfigModel ) {
         self.quizConfigModel        = quizConfigModel
-        zeichenSatz            <~ quizConfigModel.gewaehlterZeichensatz.producer
+        zeichenSatz                 <~ quizConfigModel.gewaehlterZeichensatz.producer
         
         quizZeichenSatz.value       = createQuizZeichensatz(quizSetting: quizConfigModel.gewaehltesQuizSetting.value  , zeichensatz: quizConfigModel.gewaehlterZeichensatz.value)
         setNextCurrentZeichen()
-        quizConfigModel.quizZeichenSatzCount <~ quizZeichenSatz.producer.map{[weak self] _ in self?.quizZeichenSatz.value.count ?? 0}
         
+        
+
+        
+        nextZeichenPressed.signal.observe { [weak self] _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self?.setNextCurrentZeichen()
+            }
+        }
+        pruefenPressed.signal.observe { [weak self] _ in
+            self?.pruefeEingabe()
+        }
     }
     
     
@@ -37,28 +47,47 @@ class QuizModel{
     var isUserEingabeCorrect:Bool   { return userEingabe.isCorrect(for: currentQuizZeichen.value) }
     
     
-    func setNextCurrentZeichen(){
-        currentQuizZeichen.value = getNaechstesQuizZeichen()
+    var nextZeichenPressed  = MutableProperty(Void())
+    var pruefenPressed      = MutableProperty(Void())
+    private func pruefeEingabe(){
+        currentQuizZeichen.value?.status.value = isUserEingabeCorrect  ? .Correct  : .FalschBeantwortet
+        userEingabePrüfen.value = true
+        ScoreZeichen.update(for: userEingabe, quizZeichen: currentQuizZeichen.value)
     }
+    private func setNextCurrentZeichen(){
+        guard let next = getNaechstesQuizZeichen() else {return}
+        if next.quizSetting.anzahlAbfragen == 0  { next.status.value = .Correct } //für Zeichenfeldmodus (kein Prüfen)
+        currentQuizZeichen.value = next
+    }
+    
+    
     private func getNaechstesQuizZeichen() -> QuizZeichen? {
-        if isUserEingabeCorrect && !(quizZeichenSatz.value.count == 0) { quizZeichenSatz.value.removeFirst() }
+        if currentQuizZeichen.value?.status.value == .Ungesichtet { currentQuizZeichen.value?.status.value = .Correct}  //falls ohe Prüfung (Nachzeichnen)
+        quizConfigModel.quizZeichenSatzCount.value  = quizZeicheninAbfrage.count
         userEingabe.resetToNil()
         userEingabePrüfen.value = false
-        return getRandomQuizZeichen()
+        let newRandomZeichen = getRandomQuizZeichen()
+        newRandomZeichen?.status.value = .InUserAbfrage
+        return newRandomZeichen
     }
     private func getRandomQuizZeichen() -> QuizZeichen?{
-        return quizZeichenSatz.value.first
+        // Keine Zeichenfeldabfrage für Zeichen, die noch nicht nachgezeichnet wurden
+        guard quizZeicheninAbfrage.count > 0 else {return nil}
+        let index = Int(arc4random_uniform(UInt32(quizZeicheninAbfrage.count)))
+        return quizZeicheninAbfrage[index]
     }
-
+    var quizZeicheninAbfrage:[QuizZeichen]{
+        return quizZeichenSatz.value.filter{$0.status.value != QuizZeichenStatus.Correct}
+    }
+        
     //helper
     func createQuizZeichensatz(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
         guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}
-        print(zeichensatz)
         
         var zeichensatzForZeichenfeldAbfrage:[QuizZeichen]{
             var quizSetting = quizSetting
             quizSetting.setPanelControlsToNurAnzeige()
-            quizSetting.zeichenfeld = .Abfrage
+            quizSetting.zeichenfeld = .InAbfrage
             return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
         }
         var zeichensatzForZeichenfeldNachzeichnen:[QuizZeichen]{
@@ -78,7 +107,7 @@ class QuizModel{
             return zeichensatzForZeichenfeldNurAnzeige
         case .Nachzeichnen:
             return zeichensatzForZeichenfeldNachzeichnen + zeichensatzForZeichenfeldNurAnzeige
-        case .Abfrage:
+        case .InAbfrage:
             return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige
         case .AbfrageUndNachzeichnen:
             return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige + zeichensatzForZeichenfeldNachzeichnen

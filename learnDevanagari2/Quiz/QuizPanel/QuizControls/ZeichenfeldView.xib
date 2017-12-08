@@ -29,6 +29,10 @@
                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIU-O7-Bi5">
+                    <rect key="frame" x="0.0" y="20" width="374" height="647"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29871808978873238" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JOE-bD-0fA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
@@ -59,7 +63,11 @@
                 <constraint firstItem="EbN-EP-X52" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="Ubp-zW-iE5"/>
                 <constraint firstAttribute="bottom" secondItem="EbN-EP-X52" secondAttribute="bottom" constant="20" symbolic="YES" id="ZUs-kd-V96"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="iCY-aX-fwF" secondAttribute="trailing" id="dpM-22-sEa"/>
+                <constraint firstItem="pIU-O7-Bi5" firstAttribute="leading" secondItem="iCY-aX-fwF" secondAttribute="leading" id="hwb-hX-mth"/>
                 <constraint firstItem="iCY-aX-fwF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="j6u-Qy-R0e"/>
+                <constraint firstItem="pIU-O7-Bi5" firstAttribute="top" secondItem="iCY-aX-fwF" secondAttribute="top" id="jAE-F1-acD"/>
+                <constraint firstItem="pIU-O7-Bi5" firstAttribute="centerX" secondItem="iCY-aX-fwF" secondAttribute="centerX" id="vkD-bA-FCK"/>
+                <constraint firstItem="pIU-O7-Bi5" firstAttribute="centerY" secondItem="iCY-aX-fwF" secondAttribute="centerY" id="xs8-HL-vJo"/>
                 <constraint firstItem="QX4-l5-Nes" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ymc-Pb-Ibr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

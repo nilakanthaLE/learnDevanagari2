@@ -25,9 +25,6 @@ class DevaAntwortenStackView: UIStackView {
             viewModel.devaAntworten.producer.startWithValues{ [weak self] antworten in
                 self?.updateStack(antworten: antworten)
             }
-            viewModel.devaAntworten.signal.observeValues { (ergebnis) in
-                print("-> \(ergebnis)")
-            }
         }
     }
     private func updateStack(antworten:[String]){
