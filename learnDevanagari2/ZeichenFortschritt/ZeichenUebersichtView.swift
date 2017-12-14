@@ -14,7 +14,10 @@ import Result
 fileprivate typealias ButtonData = (String, SignalProducer<Double, NoError>?)
 class ZeichenUebersichtViewModel{
     var buttonTitles = MutableProperty([String?]())
-    init(){ buttonTitles.producer.startWithValues {[weak self] titles in self?.scoreForButtons.value = titles.map{ ($0 ?? "",ScoreZeichen.getOrCreate(devaString: $0 )?.scoreProducer) } } }
+    init(){ buttonTitles.producer.startWithValues {[weak self] titles in
+//        self?.scoreForButtons.value = titles.map{ ($0 ?? "",ScoreZeichen.getOrCreate(devaString: $0 )?.scoreProducer) } }
+        }
+    }
     fileprivate var scoreForButtons =  MutableProperty([ButtonData]())
 }
 
@@ -52,17 +55,18 @@ class ZeichenUebersichtView:NibLoadingView{
 }
 
 
+//
+//
+//func ~> <R> (
+//    backgroundClosure:   @escaping () -> R,
+//    mainClosure:         @escaping (_ result: R) -> ())
+//{
+//    serial_queue.async {
+//        let result = backgroundClosure()
+//        DispatchQueue.main.async(execute: {
+//            mainClosure(result)
+//        })
+//    }
+//}
+//private let serial_queue = DispatchQueue(label: "serial-worker")
 
-
-func ~> <R> (
-    backgroundClosure:   @escaping () -> R,
-    mainClosure:         @escaping (_ result: R) -> ())
-{
-    serial_queue.async {
-        let result = backgroundClosure()
-        DispatchQueue.main.async(execute: {
-            mainClosure(result)
-        })
-    }
-}
-private let serial_queue = DispatchQueue(label: "serial-worker")

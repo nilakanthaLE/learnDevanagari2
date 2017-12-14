@@ -28,7 +28,7 @@ class QuizZeichenfeldViewModel{
         self.quizModel.userEingabeDevaErkannteZeichen   <~ erkannteZeichen
         nachZeichnenLabelText <~ self.quizModel.currentQuizZeichen.producer.map { $0?.quizSetting.zeichenfeld == .Nachzeichnen ? $0?.zeichen.devanagari : nil }
         quizModel.currentQuizZeichen.producer.startWithValues                   { [weak self] quizZeichen in self?.useTesseract = quizZeichen?.quizSetting.zeichenfeld != .Nachzeichnen }
-        charWhiteList <~ quizModel.zeichenSatz.map{$0.map{$0.devanagari ?? nil} .filter{$0 != nil} .reduce("") {$0 + $1!} }
+        charWhiteList <~ quizModel.quizZeichenSatz.map{$0.map{$0.zeichen.devanagari ?? nil} .filter{$0 != nil} .reduce("") {$0 + $1!} }
         
     }
     var userEingabePrüfen       = MutableProperty(false)

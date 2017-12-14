@@ -11,7 +11,6 @@
 		5C04993C1FA8F286008DD1A3 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C04993B1FA8F286008DD1A3 /* QuizVC.swift */; };
 		5C04993E1FA9078F008DD1A3 /* QuizPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C04993D1FA9078F008DD1A3 /* QuizPanelView.swift */; };
 		5C090CA11FDABB8B00173B01 /* SettingsTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C090CA01FDABB8B00173B01 /* SettingsTabVC.swift */; };
-		5C090CA31FDABFB200173B01 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C090CA21FDABFB200173B01 /* MainModel.swift */; };
 		5C0E6DC81FCC188100F246B6 /* QuizFortschrittsbalkenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0E6DC71FCC188100F246B6 /* QuizFortschrittsbalkenView.xib */; };
 		5C0E6DCA1FCC330100F246B6 /* Lektionstexte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E6DC91FCC330100F246B6 /* Lektionstexte.swift */; };
 		5C0E6DCD1FCC3BF800F246B6 /* LektionstextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E6DCC1FCC3BF800F246B6 /* LektionstextVC.swift */; };
@@ -91,7 +90,6 @@
 		5C04993B1FA8F286008DD1A3 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
 		5C04993D1FA9078F008DD1A3 /* QuizPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPanelView.swift; sourceTree = "<group>"; };
 		5C090CA01FDABB8B00173B01 /* SettingsTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabVC.swift; sourceTree = "<group>"; };
-		5C090CA21FDABFB200173B01 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		5C0E6DC71FCC188100F246B6 /* QuizFortschrittsbalkenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizFortschrittsbalkenView.xib; sourceTree = "<group>"; };
 		5C0E6DC91FCC330100F246B6 /* Lektionstexte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lektionstexte.swift; sourceTree = "<group>"; };
 		5C0E6DCC1FCC3BF800F246B6 /* LektionstextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LektionstextVC.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				5CC44CFF1FD02BB600C0FB05 /* CoreData */,
-				5C090CA21FDABFB200173B01 /* MainModel.swift */,
 				5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */,
 				5C0499391FA8EE58008DD1A3 /* QuizModel.swift */,
 				5C9B0EF31FB30DC20084862E /* DatenTypen */,
@@ -619,7 +616,6 @@
 				5C5B23011FDA8F6400AE2F85 /* User.swift in Sources */,
 				5C04993A1FA8EE58008DD1A3 /* QuizModel.swift in Sources */,
 				5CE68D4D1FB8926D00791D7D /* QuizDevaAbfrageView.swift in Sources */,
-				5C090CA31FDABFB200173B01 /* MainModel.swift in Sources */,
 				5CE68D511FB8BE1600791D7D /* NibLoadingView.swift in Sources */,
 				5C932C151FC0A3CF0013789D /* ZeichenInAbfrageView.swift in Sources */,
 				5CAE40531FB3369C0030B024 /* QuizConfigModel.swift in Sources */,

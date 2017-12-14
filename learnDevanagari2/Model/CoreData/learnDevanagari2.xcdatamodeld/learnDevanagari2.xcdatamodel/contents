@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B1003" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Abfrage" representedClassName="Abfrage" syncable="YES" codeGenerationType="class">
         <attribute name="correct" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lektion" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="artikulation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScoreZeichen" inverseName="artikulation" inverseEntity="ScoreZeichen" syncable="YES"/>
         <relationship name="aspiration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScoreZeichen" inverseName="aspiration" inverseEntity="ScoreZeichen" syncable="YES"/>
         <relationship name="devanagari" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScoreZeichen" inverseName="devanagari" inverseEntity="ScoreZeichen" syncable="YES"/>
@@ -17,6 +18,9 @@
     </entity>
     <entity name="ScoreZeichen" representedClassName="ScoreZeichen" syncable="YES" codeGenerationType="class">
         <attribute name="devaString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="letztesMalKorrektLektionZFAbfrage" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="letztesMalKorrektLektionZFAnzeige" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="letztesMalKorrektLektionZFNachzeichnen" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="artikulation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abfrage" inverseName="artikulation" inverseEntity="Abfrage" syncable="YES"/>
         <relationship name="aspiration" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abfrage" inverseName="aspiration" inverseEntity="Abfrage" syncable="YES"/>
         <relationship name="devanagari" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Abfrage" inverseName="devanagari" inverseEntity="Abfrage" syncable="YES"/>
@@ -35,9 +39,9 @@
         <relationship name="scoreZeichen" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScoreZeichen" inverseName="user" inverseEntity="ScoreZeichen" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Abfrage" positionX="-270" positionY="-54" width="128" height="193"/>
-        <element name="ScoreZeichen" positionX="-594" positionY="-45" width="128" height="193"/>
-        <element name="User" positionX="-866" positionY="44" width="128" height="118"/>
+        <element name="Abfrage" positionX="-270" positionY="-54" width="128" height="210"/>
         <element name="MainSettings" positionX="-1064" positionY="72" width="128" height="58"/>
+        <element name="ScoreZeichen" positionX="-594" positionY="-45" width="128" height="240"/>
+        <element name="User" positionX="-866" positionY="44" width="128" height="120"/>
     </elements>
 </model>

@@ -8,18 +8,18 @@
 
 import UIKit
 import ReactiveSwift
-
 let selectedColor = UIColor.green
 
 class QuizConfigViewModel{
-    var iPadOrientation = (UIApplication.shared.delegate as? AppDelegate)?.iPadOrientation
+    //Model
     var quizConfigModel:QuizConfigModel     = QuizConfigModel()
-    
-    var freiesUebenAbfragenLabelText        = MutableProperty<String?>("")
-    
-    var lektionLabelText:MutableProperty<String?> = MutableProperty(nil)
-    var quizStartenButtonIsEnabled          = MutableProperty(false)
-    
+    var iPadOrientation = (UIApplication.shared.delegate as? AppDelegate)?.iPadOrientation
+    var freiesUebenAbfragenLabelText                = MutableProperty<String?>("")
+    var lektionLabelText:MutableProperty<String?>   = MutableProperty(nil)
+    var quizStartenButtonIsEnabled                  = MutableProperty(false)
+    var quizZeichenSatzIstLeer                      = MutableProperty(Void())
+    var lektionBackgroundColor                      = MutableProperty(orange)
+    var freiesUebenBackgroundColor                  = MutableProperty(orange)
     init(){
         func toggleBackground(to selectedSetting:SelectedSetting?){
             guard let selectedSetting = selectedSetting else{
@@ -39,53 +39,38 @@ class QuizConfigViewModel{
         quizConfigModel.selectedSetting.producer.startWithValues() { toggleBackground(to: $0) }
         freiesUebenAbfragenLabelText    <~ quizConfigModel.freiesUebenQuizSetting.producer.map{ quizSetting in getText(for: .InAbfrage, in: quizSetting) }
         lektionLabelText                <~ quizConfigModel.aktuelleLektion.producer.map{$0?.title ?? "fehlt"}
-        quizZeichenSatzCount            <~ quizConfigModel.quizZeichenSatzCount.producer
-        
-        
-        quizStartenButtonIsEnabled      <~ quizConfigModel.canStartQuiz //.selectedSetting.producer.map{ $0 != nil }
-        
+        quizZeichenSatzIstLeer          <~ quizConfigModel.quizZeichenInAbfrageIstLeer
+        quizStartenButtonIsEnabled      <~ quizConfigModel.canStartQuiz
     }
     
-    var quizZeichenSatzCount = MutableProperty(0)
+    func settingGewaehlt(setting:SelectedSetting){ quizConfigModel.selectedSetting.value     = setting }
     
-    
-    
-    func settingGewaehlt(setting:SelectedSetting){
-        switch setting {
-        case .FreiesUeben:quizConfigModel.selectedSetting.value   = .FreiesUeben
-        case .Lektion:quizConfigModel.selectedSetting.value   = .Lektion
-        }
-    }
-    var lektionBackgroundColor      = MutableProperty(orange)
-    var freiesUebenBackgroundColor  = MutableProperty(orange)
-    
-    
-    func getViewModelForQuizConfig()            -> QuizViewModel                    { return QuizViewModel(quizModel:QuizModel(quizConfigModel: quizConfigModel)) }
+    //ViewModels
+    //QuizViewModel
+    func getViewModelForQuizVC()                -> QuizViewModel                    { return QuizViewModel(quizModel:quizConfigModel.getQuizModel()) }
+    //ZeichensatzAnzeigen
+    func getViewModelForUebenZeichenInAbfrage() -> ZeichenInAbfrageViewModel        { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.freiesUebenQuizZeichenSatz, editable: true)}
+    func getViewModelForLektionsZeichenInAbfrage()  -> ZeichenInAbfrageViewModel    { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.lektionsQuizZeichenSatz, editable: false)}
+    //QuizAbfragenSettings
     func getViewModelForQuizAbfragenSetting()   -> QuizAbfragenSettingViewModel     { return QuizAbfragenSettingViewModel( quizSetting:quizConfigModel.freiesUebenQuizSetting) }
-    func getViewModelForConfigZeichensatz()     -> ConfigZeichensatzViewModel       { return ConfigZeichensatzViewModel(quizConfigModel: quizConfigModel) }
-    
-    func getViewModelForLektionsZeichenInAbfrage() -> ZeichenInAbfrageViewModel     { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.lektionsZeichenSatz, editable: false)}
-    func getViewModelForUebenZeichenInAbfrage() -> ZeichenInAbfrageViewModel        { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.freiesUebenZeichenSatz, editable: true)}
-    
-    
+    func getViewModelForFreiesUebenAbfragen() -> AbfragenUndAnzeigenViewModel       { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.freiesUebenQuizSetting, editable: true, settingModus: .InAbfrage)}
     func getViewModelForLektionsAbfragen() -> AbfragenUndAnzeigenViewModel          { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.lektionsQuizSetting, editable: false, settingModus: .InAbfrage)}
     func getViewModelForLektionsAnzeigen() -> AbfragenUndAnzeigenViewModel          { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.lektionsQuizSetting, editable: false, settingModus: .Anzeige)}
-    func getViewModelForFreiesUebenAbfragen() -> AbfragenUndAnzeigenViewModel       { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.freiesUebenQuizSetting, editable: true, settingModus: .InAbfrage)}
-    
-    
+    //QuizModel für ZeichensatzKonfigurator (freies Üben)
+    func getViewModelForConfigZeichensatz()         -> ConfigZeichensatzViewModel   { return ConfigZeichensatzViewModel(quizConfigModel: quizConfigModel) }
 }
 
 class QuizConfigVC: UIViewController {
     var viewModel:QuizConfigViewModel! = QuizConfigViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        lektionLabel.reactive.text              <~ viewModel.lektionLabelText
-        viewModel.quizZeichenSatzCount.producer.filter{$0 == 0}.start(){[weak self] _ in
-            if UIApplication.shared.visibleViewController as? QuizVC != nil{  self?.dismiss(animated: true, completion: nil) }
-        }
+        lektionLabel.reactive.text                  <~ viewModel.lektionLabelText
         freiesUebenView.reactive.backgroundColor    <~ viewModel.freiesUebenBackgroundColor.producer
         lektionsView.reactive.backgroundColor       <~ viewModel.lektionBackgroundColor.producer
         quizStartButton.reactive.isEnabled          <~ viewModel.quizStartenButtonIsEnabled.producer
+        
+        //wenn QuizZeichensatz leer ist, dann zurück aus Quiz
+        viewModel.quizZeichenSatzIstLeer.signal.observeValues{[weak self] _ in self?.dismiss(animated: true, completion: nil) }
         viewModel.iPadOrientation?.producer.startWithValues{ [weak self] orientation in
             self?.mainStack.axis                = orientation == IPadOrientation.landscape ? .horizontal : .vertical
             self?.freiesUebenStack.axis         = orientation == IPadOrientation.landscape ? .vertical : .horizontal
@@ -93,6 +78,11 @@ class QuizConfigVC: UIViewController {
             self?.lektionZeichenStack.axis      = orientation == IPadOrientation.landscape ? .horizontal : .vertical
             self?.freiesUebenzeichenStack.axis  = orientation == IPadOrientation.landscape ? .horizontal : .vertical
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.quizConfigModel.selectedSetting.value = nil
     }
     
     //Outlets
@@ -127,7 +117,7 @@ class QuizConfigVC: UIViewController {
     
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        (segue.destination as? QuizVC)?.viewModel                           = viewModel.getViewModelForQuizConfig()
+        (segue.destination as? QuizVC)?.viewModel                           = viewModel.getViewModelForQuizVC()
 //        (segue.destination as? QuizAbfragenSettingView)?.viewModel            = viewModel.getViewModelForQuizAbfragenSetting()
         (segue.destination as? ConfigZeichensatzVC)?.viewModel              = viewModel.getViewModelForConfigZeichensatz()
     }
@@ -152,30 +142,14 @@ func getText(for controlModus:PanelControlModus,in settings:QuizSetting?) -> Str
 
 
 extension UIApplication {
-    
     var visibleViewController: UIViewController? {
-        
-        guard let rootViewController = keyWindow?.rootViewController else {
-            return nil
-        }
-        
+        guard let rootViewController = keyWindow?.rootViewController else { return nil }
         return getVisibleViewController(rootViewController)
     }
-    
     private func getVisibleViewController(_ rootViewController: UIViewController) -> UIViewController? {
-        
-        if let presentedViewController = rootViewController.presentedViewController {
-            return getVisibleViewController(presentedViewController)
-        }
-        
-        if let navigationController = rootViewController as? UINavigationController {
-            return navigationController.visibleViewController
-        }
-        
-        if let tabBarController = rootViewController as? UITabBarController {
-            return tabBarController.selectedViewController
-        }
-        
+        if let presentedViewController = rootViewController.presentedViewController { return getVisibleViewController(presentedViewController) }
+        if let navigationController = rootViewController as? UINavigationController { return navigationController.visibleViewController }
+        if let tabBarController = rootViewController as? UITabBarController         { return tabBarController.selectedViewController  }
         return rootViewController
     }
 }

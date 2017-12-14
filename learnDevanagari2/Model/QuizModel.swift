@@ -13,61 +13,58 @@ import ReactiveSwift
 
 
 class QuizModel{
-    var quizConfigModel:QuizConfigModel
-    var zeichenSatz = MutableProperty([Zeichen]())
-    init(quizConfigModel:QuizConfigModel ) {
-        self.quizConfigModel        = quizConfigModel
-        zeichenSatz                 <~ quizConfigModel.gewaehlterZeichensatz.producer
+    var quizZeichenInAbfrageIstLeer:MutableProperty<Void>
+    var quizZeichenSatz:MutableProperty<[QuizZeichen]>
+    init(quizZeichenSatz:MutableProperty<[QuizZeichen]>,quizZeichenInAbfrageIstLeer:MutableProperty<Void>, isLektionsquiz:Bool ) {
+        self.quizZeichenSatz = quizZeichenSatz
+        self.quizZeichenInAbfrageIstLeer = quizZeichenInAbfrageIstLeer
         
-        quizZeichenSatz.value       = createQuizZeichensatz(quizSetting: quizConfigModel.gewaehltesQuizSetting.value  , zeichensatz: quizConfigModel.gewaehlterZeichensatz.value)
-        setNextCurrentZeichen()
+        for quizZeichen in quizZeichenSatz.value.filter({$0.status.value == .InUserAbfrage}){ quizZeichen.status.value = .Ungesichtet }
         
-        
+        nextZeichenPressed.signal.observe               { [weak self] _ in DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { self?.setNextCurrentZeichen() } }
+        pruefenPressed.signal.observe                   { [weak self] _ in self?.pruefeEingabe() }
 
-        
-        nextZeichenPressed.signal.observe { [weak self] _ in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self?.setNextCurrentZeichen()
-            }
-        }
-        pruefenPressed.signal.observe { [weak self] _ in
-            self?.pruefeEingabe()
-        }
+        setNextCurrentZeichen()
     }
     
-    
+    //Zeilenhöhe der Controls (ändert sich wenn sich Orientation ändert)
     var zeilenHoehe:MutableProperty<CGFloat>                = MutableProperty(30.0)
     
-    var quizZeichenSatz                                     = MutableProperty([QuizZeichen]())
+    
     var currentQuizZeichen:MutableProperty<QuizZeichen?>    = MutableProperty(nil)
     var userEingabe                                         = UserAntwortZeichen()
     var userEingabeDevaErkannteZeichen                      = MutableProperty([String()])
     var userEingabePrüfen                                   = MutableProperty(false)
     
-    var isUserEingabeCorrect:Bool   { return userEingabe.isCorrect(for: currentQuizZeichen.value) }
-    
-    
+    //PruefenButton Aktionen
     var nextZeichenPressed  = MutableProperty(Void())
     var pruefenPressed      = MutableProperty(Void())
+    
+    //helper
+    private func setLetztesMalKorrektLektion(){
+        guard currentQuizZeichen.value?.status.value == .Correct else{return}
+        let scoreZ = MainSettings.get()?.angemeldeterUser?.getScoreZeichen(for: currentQuizZeichen.value?.zeichen.devanagari)
+        scoreZ?.setLetztesMalKorrektLektion(quizZeichen: currentQuizZeichen.value)
+    }
     private func pruefeEingabe(){
         currentQuizZeichen.value?.status.value = isUserEingabeCorrect  ? .Correct  : .FalschBeantwortet
+        setLetztesMalKorrektLektion()
         userEingabePrüfen.value = true
-        ScoreZeichen.update(for: userEingabe, quizZeichen: currentQuizZeichen.value)
+        MainSettings.get()?.angemeldeterUser?.updateScoreZeichen(for: userEingabe, quizZeichen: currentQuizZeichen.value)
     }
     private func setNextCurrentZeichen(){
         guard let next = getNaechstesQuizZeichen() else {return}
-        if next.quizSetting.anzahlAbfragen == 0  { next.status.value = .Correct } //für Zeichenfeldmodus (kein Prüfen)
+        if next.quizSetting.anzahlAbfragen == 0  {
+            setLetztesMalKorrektLektion()
+            next.status.value = .Correct } //für Zeichenfeldmodus (kein Prüfen)
         currentQuizZeichen.value = next
     }
-    
-    
     private func getNaechstesQuizZeichen() -> QuizZeichen? {
-        if currentQuizZeichen.value?.status.value == .Ungesichtet { currentQuizZeichen.value?.status.value = .Correct}  //falls ohe Prüfung (Nachzeichnen)
-        quizConfigModel.quizZeichenSatzCount.value  = quizZeicheninAbfrage.count
         userEingabe.resetToNil()
         userEingabePrüfen.value = false
         let newRandomZeichen = getRandomQuizZeichen()
         newRandomZeichen?.status.value = .InUserAbfrage
+        if newRandomZeichen == nil { quizZeichenInAbfrageIstLeer.value = Void() }
         return newRandomZeichen
     }
     private func getRandomQuizZeichen() -> QuizZeichen?{
@@ -76,43 +73,12 @@ class QuizModel{
         let index = Int(arc4random_uniform(UInt32(quizZeicheninAbfrage.count)))
         return quizZeicheninAbfrage[index]
     }
-    var quizZeicheninAbfrage:[QuizZeichen]{
-        return quizZeichenSatz.value.filter{$0.status.value != QuizZeichenStatus.Correct}
-    }
-        
-    //helper
-    func createQuizZeichensatz(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
-        guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}
-        
-        var zeichensatzForZeichenfeldAbfrage:[QuizZeichen]{
-            var quizSetting = quizSetting
-            quizSetting.setPanelControlsToNurAnzeige()
-            quizSetting.zeichenfeld = .InAbfrage
-            return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
-        }
-        var zeichensatzForZeichenfeldNachzeichnen:[QuizZeichen]{
-            var quizSetting = quizSetting
-            quizSetting.setPanelControlsToNurAnzeige()
-            quizSetting.zeichenfeld = .Nachzeichnen
-            return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
-        }
-        var zeichensatzForZeichenfeldNurAnzeige:[QuizZeichen]{
-            var quizSetting = quizSetting
-            quizSetting.zeichenfeld = .NurAnzeige
-            return quizSetting.anzahlAbfragen > 0 ? zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)} : [QuizZeichen]()
-        }
-        
-        switch quizSetting.zeichenfeld {
-        case .NurAnzeige:
-            return zeichensatzForZeichenfeldNurAnzeige
-        case .Nachzeichnen:
-            return zeichensatzForZeichenfeldNachzeichnen + zeichensatzForZeichenfeldNurAnzeige
-        case .InAbfrage:
-            return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige
-        case .AbfrageUndNachzeichnen:
-            return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige + zeichensatzForZeichenfeldNachzeichnen
-        }
-    }
+    
+    //calc Properties
+    //quizZeicheninAbfrage --> nicht correkt beantwortete QuizZeichen
+    var quizZeicheninAbfrage:[QuizZeichen]{ return quizZeichenSatz.value.filter{$0.status.value != QuizZeichenStatus.Correct} }
+    //prüft Usereingabe --> Bool
+    var isUserEingabeCorrect:Bool   { return userEingabe.isCorrect(for: currentQuizZeichen.value) }
 }
 
 

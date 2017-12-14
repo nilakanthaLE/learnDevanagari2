@@ -16,4 +16,9 @@ extension Abfrage{
         abfrage?.date       = Date()
         return abfrage
     }
+//    
+//    var scoreZeichen:ScoreZeichen?{
+//        return ([artikulation,aspiration,devanagari,konsonantTyp,stimmhaftigkeit,umschrift,vokalOderHalbVokal,vokalOderKonsonant].filter{$0 != nil}.first)!
+//    }
+
 }

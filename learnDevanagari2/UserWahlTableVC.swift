@@ -81,6 +81,7 @@ class CreateOrEditUserVC:UIViewController{
     @IBOutlet private weak var textField: UITextField!
     @IBAction private func okAction(_ sender: UIButton) {
         (user ?? User.neu())?.name = textField.text
+        try? managedContext.save()
         dismissAction?()
     }
     @IBAction private func abbrechenButtonPressed(_ sender: UIBarButtonItem) { dismissAction?() }

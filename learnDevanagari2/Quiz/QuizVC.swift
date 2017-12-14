@@ -13,11 +13,9 @@ import ReactiveSwift
 class QuizViewModel{
     var quizModel : QuizModel
     var iPadOrientation = (UIApplication.shared.delegate as? AppDelegate)?.iPadOrientation
-    var zeilenHoehe:MutableProperty<CGFloat> = MutableProperty(30.0)
     init (quizModel:QuizModel){
         self.quizModel          = quizModel
-        self.quizModel.zeilenHoehe  <~ zeilenHoehe
-        zeilenHoehe                 <~ safeAreaSize.producer.map{[weak self] safeAreaSize in self?.getZeilenHoehe(for: self?.iPadOrientation?.value, safeAreaSize: safeAreaSize) ?? 0}
+        self.quizModel.zeilenHoehe  <~ safeAreaSize.producer.map{[weak self] safeAreaSize in self?.getZeilenHoehe(for: self?.iPadOrientation?.value, safeAreaSize: safeAreaSize) ?? 0}
     }
     
     var safeAreaSize = MutableProperty(CGSize.zero)
@@ -56,9 +54,7 @@ class QuizVC: UIViewController {
         lastSize = safeAreaSize
     }
     
-    @IBAction func uirueckButtonPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
+    @IBAction func zurueckButtonPressed(_ sender: UIButton) { dismiss(animated: true, completion: nil) }
     func setAxis(iPadOrientation:IPadOrientation?){
         guard let iPadOrientation = iPadOrientation else {return}
         switch (iPadOrientation){

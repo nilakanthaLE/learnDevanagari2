@@ -89,6 +89,62 @@ class QuizZeichen:Equatable{
     var titleForZeichenfeldButton:String?{
         return quizSetting.zeichenfeld == .InAbfrage ? "?" : zeichen.devanagari
     }
+    
+    //helper
+    static func createQuizZeichensatz(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
+        guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}
+        
+        var zeichensatzForZeichenfeldAbfrage:[QuizZeichen]{
+            var quizSetting = quizSetting
+            quizSetting.setPanelControlsToNurAnzeige()
+            quizSetting.zeichenfeld = .InAbfrage
+            return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
+        }
+        var zeichensatzForZeichenfeldNachzeichnen:[QuizZeichen]{
+            var quizSetting = quizSetting
+            quizSetting.setPanelControlsToNurAnzeige()
+            quizSetting.zeichenfeld = .Nachzeichnen
+            return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
+        }
+        var zeichensatzForZeichenfeldNurAnzeige:[QuizZeichen]{
+            var quizSetting = quizSetting
+            quizSetting.zeichenfeld = .NurAnzeige
+            return quizSetting.anzahlAbfragen > 0 ? zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)} : [QuizZeichen]()
+        }
+        
+        switch quizSetting.zeichenfeld {
+        case .NurAnzeige:               return zeichensatzForZeichenfeldNurAnzeige
+        case .Nachzeichnen:             return zeichensatzForZeichenfeldNachzeichnen + zeichensatzForZeichenfeldNurAnzeige
+        case .InAbfrage:                return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige
+        case .AbfrageUndNachzeichnen:   return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige + zeichensatzForZeichenfeldNachzeichnen
+        }
+    }
+    static func createQuizZeichensatzForLektion(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
+        let quizZeichenSatz = createQuizZeichensatz(quizSetting:quizSetting,zeichensatz:zeichensatz)
+        for quizZeichen in quizZeichenSatz{
+            //setzt QuizZeichen status auf Correct, wenn in ScoreZeichen letztesMalKorrektInLektion == aktuelleLektion
+            let scoreZeichen    = MainSettings.get()?.angemeldeterUser?.scoreZeichen(for: quizZeichen.zeichen.devanagari)
+            let aktuelleLektion = MainSettings.get()?.angemeldeterUser?.aktuelleLektion
+            if scoreZeichen?.getLetztesMalKorrektInLektion(quizZeichen: quizZeichen) == aktuelleLektion{
+                quizZeichen.status.value = .Correct
+            }
+        }
+        return quizZeichenSatz
+    }
+    static func filterQuizZeichensatzForLektion(quizZeichenSatz:[QuizZeichen]){
+        //1 nur unbekannte Zeichen nachzeichnen
+        
+        //2 Zeichen mit neuer Abfrage nicht filtern
+        
+        //3 identischer Abfrage eines Zeichens
+        // bei LektionsQuizSchwierigkeitsstufe 3 (voll)
+        // <identische Abfrage eines Zeichens> herausfiltern
+        
+        // bei LektionsQuizSchwierigkeitsstufe kleiner 3
+        // <identische Abfrage eines Zeichens> nach Häufigkeit richtiger Abfragen sortieren (umgekehrt)
+        // Auswahl aus diesem Set (x Zeichen)
+    }
+    
 }
 
 class Zeichen:NSObject{
@@ -98,6 +154,7 @@ class Zeichen:NSObject{
     
     var ID:Int?
     
+    var scoreZeichen:ScoreZeichen?  {return MainSettings.get()?.angemeldeterUser?.getScoreZeichen(for: devanagari)}
     //mögliche AbfrageWerte
     var devanagari:String?
     var umschrift:String?

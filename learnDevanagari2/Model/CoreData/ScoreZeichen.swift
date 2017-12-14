@@ -16,33 +16,20 @@ extension ScoreZeichen{
         let request = NSFetchRequest<ScoreZeichen>.init(entityName: "ScoreZeichen")
         return (try? managedContext.fetch(request)) ?? [ScoreZeichen]()
     }
-    static func getOrCreate(devaString:String?) -> ScoreZeichen?{
+    static func create(devaString:String?) -> ScoreZeichen?{
         guard let devaString = devaString else {return nil}
-        let request = NSFetchRequest<ScoreZeichen>.init(entityName: "ScoreZeichen")
-        request.predicate = NSPredicate(format: "devaString == %@",devaString)
-        if let scoreZeichen = (try? managedContext.fetch(request))?.first   { return scoreZeichen }
+//        let request = NSFetchRequest<ScoreZeichen>.init(entityName: "ScoreZeichen")
+//        request.predicate = NSPredicate(format: "devaString == %@",devaString)
+//        if let scoreZeichen = (try? managedContext.fetch(request))?.first   { return scoreZeichen }
+        
         let scoreZeichen            = NSEntityDescription.insertNewObject(forEntityName: "ScoreZeichen", into: managedContext) as? ScoreZeichen
         scoreZeichen?.devaString    = devaString
         return scoreZeichen
     }
-    static func update(for userAntwortZeichen:UserAntwortZeichen,quizZeichen:QuizZeichen?){
-        guard let quizZeichen = quizZeichen else {return}
-        let scoreZeichen = getOrCreate(devaString: quizZeichen.zeichen.devanagari)
-        for userAntwort in userAntwortZeichen.userAntworten(for: quizZeichen){
-            _ = scoreZeichen?.newAbfrage(userAntwort: userAntwort)
-        }
-        try? managedContext.save()
-    }
     
-
-    static func getAllScoreGreaterZero() -> [Zeichen]{
-        return getAll().filter{$0.gesamtScore > 0}.map{Zeichen.get(forDeva:$0.devaString)!}
-    }
-    static func getAllScoreGreaterZero(fuerLektion lektion:Int) -> [Zeichen]{
-        return getAllScoreGreaterZero().filter{$0.lektion == lektion}
-    }
-    static func getAllScoreGreaterZero(bisLektion lektion:Int) -> [Zeichen]{
-        return getAllScoreGreaterZero().filter{$0.lektion ?? 1000 <= lektion}
+    
+    var zeichen:Zeichen?{
+        return erstelleZeichensatz().filter{$0.devanagari == self.devaString}.first
     }
     
     var scoreProducer:SignalProducer<Double, NoError>{
@@ -83,7 +70,7 @@ extension ScoreZeichen{
         case .ZeichenfeldTyp:           return convert(abfrageSet: devanagari)
         }
     }
-    private func newAbfrage(userAntwort : (controlTyp:ControlTyp,correct:Bool)) -> Abfrage?{
+    func newAbfrage(userAntwort : (controlTyp:ControlTyp,correct:Bool)) -> Abfrage?{
         guard let abfrage = Abfrage.new( correct: userAntwort.correct) else {return nil}
         switch userAntwort.controlTyp {
         case .ArtikulationTyp: addToArtikulation(abfrage)
@@ -95,11 +82,33 @@ extension ScoreZeichen{
         case .VokalOderKonsonantTyp: addToVokalOderKonsonant(abfrage)
         case .ZeichenfeldTyp: addToDevanagari(abfrage)
         }
+        abfrage.lektion = user?.aktuelleLektion ?? -1
         return abfrage
     }
     private func convert(abfrageSet:NSSet?) -> [Abfrage]{
         guard let abfrageSet = abfrageSet else {return [Abfrage]()}
         return Array(abfrageSet) as! [Abfrage]
+    }
+    
+    func setLetztesMalKorrektLektion(quizZeichen:QuizZeichen?){
+        guard let quizZeichen = quizZeichen, let aktuelleLektion = MainSettings.get()?.angemeldeterUser?.aktuelleLektion else {return}
+        switch quizZeichen.quizSetting.zeichenfeld {
+        case .NurAnzeige: letztesMalKorrektLektionZFAnzeige = aktuelleLektion
+        case .Nachzeichnen: letztesMalKorrektLektionZFNachzeichnen = aktuelleLektion
+        case .InAbfrage: letztesMalKorrektLektionZFAbfrage = aktuelleLektion
+        case .AbfrageUndNachzeichnen: break
+        }
+    }
+    func getLetztesMalKorrektInLektion(quizZeichen:QuizZeichen?) -> Int16?{
+        guard let quizZeichen = quizZeichen, let aktuelleLektion = MainSettings.get()?.angemeldeterUser?.aktuelleLektion else {return nil}
+        
+        switch quizZeichen.quizSetting.zeichenfeld{
+        case .NurAnzeige:       return  letztesMalKorrektLektionZFAnzeige == aktuelleLektion ? aktuelleLektion :  nil
+        case .Nachzeichnen:     return  letztesMalKorrektLektionZFNachzeichnen == aktuelleLektion ? aktuelleLektion :  nil
+        case .InAbfrage:        return  letztesMalKorrektLektionZFAbfrage == aktuelleLektion ? aktuelleLektion :  nil
+        case .AbfrageUndNachzeichnen: return nil
+        }
+        
     }
 }
 

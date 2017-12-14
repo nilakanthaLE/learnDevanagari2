@@ -25,7 +25,7 @@ class MantrasViewModel{
         currentLektion.producer.startWithValues{[weak self] lektion in
             //update der Labeltexte --> bekannte Zeichen weiß
             guard let _self = self else {return}
-            let bereitsBekannteZeichen      = ScoreZeichen.getAllScoreGreaterZero(bisLektion: lektion - 2).map{$0.devanagari ?? ""}
+            let bereitsBekannteZeichen      = MainSettings.get()?.angemeldeterUser?.allScoreZeichenGreaterZero(bisLektion: lektion - 2).map{$0.devanagari ?? ""}
             let rangesFuerBereitsBekannte   = MantrasViewModel.getRanges(for: bereitsBekannteZeichen,attrStrings: attrStrings)
             for ranges in rangesFuerBereitsBekannte.enumerated(){
                 let labelText                       = _self.labelTexte[ranges.offset]
@@ -48,7 +48,7 @@ class MantrasViewModel{
     func startAnimationForNeuGelernte(){
         let lektion     = currentLektion.value
         let attrStrings = labelTexte.map{$0.value}
-        let neuGelernteZeichen              = ScoreZeichen.getAllScoreGreaterZero(fuerLektion: lektion - 1).map{$0.devanagari ?? ""}
+        let neuGelernteZeichen              = MainSettings.get()?.angemeldeterUser?.allScoreZeichenGreaterZero(fuerLektion: lektion - 1).map{$0.devanagari ?? ""}
         let rangesFuerNeuGelernte           = MantrasViewModel.getRanges(for: neuGelernteZeichen,attrStrings: attrStrings)
         animateLabeltexte(labelRanges: rangesFuerNeuGelernte)
     }
@@ -90,7 +90,8 @@ class MantrasViewModel{
         }
         animateZeichen()
     }
-    private static func getRanges(for zeichen:[String],attrStrings:[NSAttributedString]) -> [[NSRange]]{
+    private static func getRanges(for zeichen:[String]?,attrStrings:[NSAttributedString]) -> [[NSRange]]{
+        guard let zeichen = zeichen else {return [[NSRange]]()}
         return attrStrings.map{labelText in zeichen.map {labelText.string.rangesWithoutVokalzeichen(of: $0)}.flatMap { $0 } }
     }
 }

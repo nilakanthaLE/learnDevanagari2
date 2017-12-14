@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import ReactiveSwift
+import ReactiveCocoa
 
 class StackLabelViewModel{
     var labelText = MutableProperty<String?>(nil)

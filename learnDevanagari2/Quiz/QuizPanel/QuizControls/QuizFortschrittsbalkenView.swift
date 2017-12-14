@@ -118,22 +118,19 @@ class QuizFortschrittsbalkenView: NibLoadingView {
             func initStack(statusArray:[MutableProperty<QuizZeichenStatus>]){
                 for subview in bottomStack.arrangedSubviews {subview.removeFromSuperview()}
                 for status in statusArray.reversed(){
-                    //bottom
+                    //bottom (grün,rot usw)
                     let view = UIView()
                     view.layer.borderColor  = UIColor.white.cgColor
                     view.layer.borderWidth  = 1
                     bottomStack.addArrangedSubview(view)
-                    view.backgroundColor    = color(for: .Ungesichtet)
-                    
-                    //top
+                    view.backgroundColor = status.value == .Correct ? color(for: status.value) : color(for: QuizZeichenStatus.Ungesichtet)
+                    //top (laufAnimantion Label)
                     let view2 = UIView()
                     topStack.addArrangedSubview(view2)
                     status.producer.filter{$0 == .InUserAbfrage}.startWithValues{[weak self] _ in
                         if self?.viewModel.isAnimatingSteps.value == true       { self?.viewNeedsStatusAnimationToInAbfrage = view2 }
                         else                                                    { self?.animateStatusForNewCurrentQuizZeichen(view: view2) }
                     }
-                    
-                    
                 }
             }
             initStack(statusArray: viewModel.statusArray)
