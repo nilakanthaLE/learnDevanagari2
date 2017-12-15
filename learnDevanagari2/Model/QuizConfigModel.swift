@@ -55,12 +55,16 @@ class QuizConfigModel{
                 gewaehltesQuizSetting.value                 = freiesUebenQuizSetting.value
                 gewaehlterQuizZeichensatz.value             = freiesUebenQuizZeichenSatz.value
             case .Lektion:
-                gewaehltesQuizSetting.value                 = aktuelleLektion.value?.quizSetting
+                gewaehltesQuizSetting.value                 = lektionsQuizSetting.value
                 gewaehlterQuizZeichensatz.value             = lektionsQuizZeichenSatz.value.sorted(by: { (qz1, qz2) -> Bool in return qz1.status.value == .Correct })
             }
         }
         func getZeichenSatz(fuer lektionen:[Lektion]) -> [Zeichen]{ return gesamtZeichenSatz.filter{lektionen.map{$0.nummer ?? 1000}.contains($0.lektion ?? -1000)} }
-        
+        func filterLektionsQuizSetting(lektion:Lektion?) -> QuizSetting?{
+            //user Einstellungen für Quiz berücksichtigen
+            guard let mainSettings  = MainSettings.get()?.angemeldeterUser?.currentMainQuizSetting else { return QuizSetting()}
+            return lektion?.quizSetting?.filterNotIn(quizSetting: mainSettings)
+        }
         
         //aktuelle Lektion setzen (angemeldeter User)
         aktuelleLektion = MutableProperty(lektionen[Int(MainSettings.get()?.angemeldeterUser?.aktuelleLektion ?? 0)])
@@ -82,7 +86,7 @@ class QuizConfigModel{
         //angemeldeter User aktuelle Lektion setzen
         aktuelleLektion.producer.startWithValues { lektion in  MainSettings.get()?.angemeldeterUser?.aktuelleLektion       = Int16(lektion?.nummer ?? 0) }
         //LektionsSetting setzen
-        lektionsQuizSetting <~ aktuelleLektion.producer.map{$0?.quizSetting}
+        lektionsQuizSetting <~ aktuelleLektion.producer.map{filterLektionsQuizSetting(lektion: $0)}
         
         //UserConfig Freies Üben
         freiesUebenZeichenSatz          <~ configZeichensatzGewaehltausGrundauswahl
@@ -91,7 +95,7 @@ class QuizConfigModel{
         
         //QuizZeichenSätze generieren
         //1) neue Lektion
-        lektionsQuizZeichenSatz         <~ aktuelleLektion.producer.map{ QuizZeichen.createQuizZeichensatzForLektion(quizSetting: $0?.quizSetting, zeichensatz: getLektionsZeichensatz(for: $0?.nummer)) }
+        lektionsQuizZeichenSatz         <~ aktuelleLektion.producer.map{  QuizZeichen.createQuizZeichensatzForLektion(quizSetting:filterLektionsQuizSetting(lektion:$0), zeichensatz: getLektionsZeichensatz(for: $0?.nummer)) }
         //2) freies Ueben - QuizSetting oder ZeichenSatz ändert sich
         freiesUebenQuizZeichenSatz      <~ freiesUebenZeichenSatz.producer.map{[weak self] zeichenSatz in QuizZeichen.createQuizZeichensatz(quizSetting: self?.freiesUebenQuizSetting.value, zeichensatz: zeichenSatz)}
         freiesUebenQuizZeichenSatz      <~ freiesUebenQuizSetting.producer.map{[weak self] quizSetting in QuizZeichen.createQuizZeichensatz(quizSetting: quizSetting, zeichensatz: self?.freiesUebenZeichenSatz.value)}

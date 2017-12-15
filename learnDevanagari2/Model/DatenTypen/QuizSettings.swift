@@ -42,6 +42,49 @@ struct QuizSetting:Equatable{
     var allePanelControls:[PanelControlSetting] { return [textfeld,vokalOderKonsonant,vokalOderHalbvokal,artikulation,konsonantTyp,aspiration,stimmhaftigkeit] }
     
     //helper
+    //lektionsQuizSetting.filterNotIn(quizSetting:MainSetting)
+    func filterNotIn(quizSetting:QuizSetting) -> QuizSetting{
+        var ergebnis = QuizSetting()
+        let filteredAbfragen    = Set(quizSetting.abfragen).intersection(Set(abfragen))
+        let filteredAnzeigen    = (Set(quizSetting.anzeigen).union(Set(quizSetting.abfragen))).intersection(Set(anzeigen))
+        let anzeigenUndAbfragen = filteredAbfragen.union(filteredAnzeigen)
+        
+        
+        
+        let versteckteControls  = Set(allePanelControls.map{$0.controlTyp}).filter{ !anzeigenUndAbfragen.contains($0)}
+        for control in versteckteControls{
+            ergebnis.getPanelControlSetting(for: control)?.modus = .Versteckt
+        }
+        for control in filteredAnzeigen{
+            ergebnis.getPanelControlSetting(for: control)?.modus  = .NurAnzeige
+        }
+        for control in filteredAbfragen{
+            ergebnis.getPanelControlSetting(for: control)?.modus = .InAbfrage
+        }
+        //in MainSetting steht Nachzeichnen
+        //--> Lektion: NurAnzeige : NurAnzeige
+        //--> Lektion: Nachzeichnen: Nachzeichnen
+        //--> Lektion: etwas anderes: Nachzeichnen
+        
+        //in MainSetting steht Abfrage
+        //--> Lektion: NurAnzeige : NurAnzeige
+        //--> Lektion: Nachzeichnen: NurAnzeige
+        //--> Lektion: Abfrage: Abfrage
+        //--> Lektion: AbfrageUndNachzeichnen: Abfrage
+        
+        //in MainSetting steht AbfrageUndNachzeichnen
+        //--> Lektion: NurAnzeige : NurAnzeige
+        //--> Lektion: Nachzeichnen: Nachzeichnen
+        //--> Lektion: Abfrage: Abfrage
+        //--> Lektion: AbfrageUndNachzeichnen: AbfrageUndNachzeichnen
+        switch quizSetting.zeichenfeld{
+        case .NurAnzeige:   ergebnis.zeichenfeld = .NurAnzeige
+        case .Nachzeichnen: ergebnis.zeichenfeld = zeichenfeld == .NurAnzeige ? .NurAnzeige : .Nachzeichnen
+        case .InAbfrage:    ergebnis.zeichenfeld = zeichenfeld == .InAbfrage || quizSetting.zeichenfeld == .AbfrageUndNachzeichnen ?  .InAbfrage : .NurAnzeige
+        case .AbfrageUndNachzeichnen: ergebnis.zeichenfeld = zeichenfeld
+        }
+        return ergebnis
+    }
     var anzeigen:[ControlTyp]{
         return allePanelControls.filter{$0.modus == .NurAnzeige}.map{$0.controlTyp} 
     }
@@ -51,8 +94,17 @@ struct QuizSetting:Equatable{
     }
     var anzahlAbfragen:Int{
         let anzahlZeichenFeldAbfragen = zeichenfeld == .InAbfrage || zeichenfeld == .AbfrageUndNachzeichnen ? 1 : 0
+        print(abfragen.map{$0.controlName})
         return allePanelControls.filter{$0.modus == .InAbfrage}.count + anzahlZeichenFeldAbfragen
     }
+    
+    var isNachZeichnen:Bool{
+        return abfragen.count == 0
+    }
+    var isStufe3:Bool{
+        return abfragen.count == allePanelControls.count + 1
+    }
+    
     func getPanelControlSetting(for controlTyp:ControlTyp?) -> PanelControlSetting?{
         guard let controlTyp = controlTyp else {return nil}
         switch controlTyp {
@@ -97,6 +149,12 @@ struct QuizSetting:Equatable{
         self.aspiration                                 = PanelControlSetting(controlTyp: .AspirationTyp, modus: .Versteckt, konsonantTypModus: nil)
         self.stimmhaftigkeit                            = PanelControlSetting(controlTyp: .StimmhaftigkeitTyp, modus: .Versteckt, konsonantTypModus: nil)
     }
+    static var stufeEinsSetting:QuizSetting {
+        var setting = QuizSetting()
+        setting.zeichenfeld     = .Nachzeichnen
+        setting.textfeld.modus  = .InAbfrage
+        return setting
+    }
     
     // für CoreData
     var asDict:[String:String]{
@@ -116,7 +174,7 @@ struct QuizSetting:Equatable{
         guard let dict = dict else { return nil }
          
         self.dynamisiert                                = false
-        self.zeichenfeld                                = ZeichenfeldModus.get(for: dict["ZeichenfeldModus"])
+        self.zeichenfeld                                = ZeichenfeldModus.get(for: dict["zeichenfeld"])
         self.textfeld                                   = PanelControlSetting(controlTyp: .TextfeldTyp, modus:PanelControlModus.get(for: dict["textfeld"]), konsonantTypModus: nil)
         self.vokalOderKonsonant                         = PanelControlSetting(controlTyp: .VokalOderKonsonantTyp, modus: PanelControlModus.get(for: dict["vokalOderKonsonant"]), konsonantTypModus: nil)
         self.vokalOderHalbvokal                         = PanelControlSetting(controlTyp: .VokalOderHalbvokalTyp, modus: PanelControlModus.get(for: dict["vokalOderHalbvokal"]), konsonantTypModus: nil)
@@ -125,11 +183,18 @@ struct QuizSetting:Equatable{
         self.aspiration                                 = PanelControlSetting(controlTyp: .AspirationTyp, modus: PanelControlModus.get(for: dict["aspiration"]), konsonantTypModus: nil)
         self.stimmhaftigkeit                            = PanelControlSetting(controlTyp: .StimmhaftigkeitTyp, modus: PanelControlModus.get(for: dict["stimmhaftigkeit"]), konsonantTypModus: nil)
     }
+    func copy() -> QuizSetting?{
+        return QuizSetting.init(dict: asDict)
+    }
 }
 
 
 
-struct PanelControlSetting:Equatable{
+class PanelControlSetting:Hashable{
+    var hashValue: Int{
+        return controlTyp.hashValue + modus.hashValue + (konsonantTypModus?.controlName?.hashValue ?? 0)
+    }
+    
     static func ==(lhs: PanelControlSetting, rhs: PanelControlSetting) -> Bool {
         return lhs.controlTyp == rhs.controlTyp &&
         lhs.modus == rhs.modus &&

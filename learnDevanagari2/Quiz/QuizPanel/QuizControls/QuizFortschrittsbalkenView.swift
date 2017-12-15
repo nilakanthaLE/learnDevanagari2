@@ -48,10 +48,12 @@ class QuizFortschrittsbalkenViewModel {
         statusArray[indexOfCurrentStackitem ?? 0].value   =  .InUserAbfrage
         
         quizModel.currentQuizZeichen.producer.combinePrevious().startWithValues{ [weak self](oldValue,newValue) in
+            //Animation für das letzte Zeichen, falls es nachzeichnen war
             if oldValue?.quizSetting.zeichenfeld == .Nachzeichnen{
                 self?.indexOfCurrentStackitem = self?.stackData.filter{$0.quizZeichen == oldValue}.first?.index
                 self?.moveStackitem(toStatus: .Correct)
             }
+            
             self?.indexOfCurrentStackitem = self?.stackData.filter{$0.quizZeichen == newValue}.first?.index
             self?.statusArray[self?.indexOfCurrentStackitem ?? 0].value   =  .InUserAbfrage
         }
@@ -73,9 +75,9 @@ class QuizFortschrittsbalkenViewModel {
             }
         }
         moveElementInStackData(from: indexOfCurrentStackitem, to: moveTo)
-        stepsToAnimate.value        = StepAnimation(steps:createstepsToAnimate(from: indexOfCurrentStackitem, to: moveTo),zielStatus:status)
+        stepsToAnimate.value        = StepAnimation(steps:createStepsToAnimate(from: indexOfCurrentStackitem, to: moveTo),zielStatus:status)
     }
-    private func createstepsToAnimate(from start:Int?, to ziel:Int?) -> [(from: Int,dif: Int)] {
+    private func createStepsToAnimate(from start:Int?, to ziel:Int?) -> [(from: Int,dif: Int)] {
         guard let start = start, let ziel = ziel else {return [(from: Int,dif: Int)]()}
         let dif = ziel - start
         var stepDirection:Int { return dif == 0 ? 0 : dif > 0 ? 1 : -1 }

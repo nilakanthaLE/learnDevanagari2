@@ -228,9 +228,9 @@
 		5C2FCDFD1FB6343E00978E27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5CC44CFF1FD02BB600C0FB05 /* CoreData */,
 				5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */,
 				5C0499391FA8EE58008DD1A3 /* QuizModel.swift */,
+				5CC44CFF1FD02BB600C0FB05 /* CoreData */,
 				5C9B0EF31FB30DC20084862E /* DatenTypen */,
 			);
 			path = Model;

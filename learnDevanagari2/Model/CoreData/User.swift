@@ -17,7 +17,7 @@ extension User{
                 user?.addToScoreZeichen(scoreZeichen)
             }
         }
-        user?.lektionsQuizSettings = QuizSetting().asDict as NSObject
+        user?.lektionsQuizSettings = QuizSetting.stufeEinsSetting.asDict as NSObject
         return user
     }
     static func getAll() -> [User]{
@@ -29,7 +29,10 @@ extension User{
         try? managedContext.save()
     }
     
-    
+    var currentMainQuizSetting:QuizSetting?{
+        return QuizSetting(dict: lektionsQuizSettings as? Dictionary)
+        
+    }
     
     //MARK: ScoreZeichen
     func getScoreZeichen(for devaString:String?) -> ScoreZeichen?{

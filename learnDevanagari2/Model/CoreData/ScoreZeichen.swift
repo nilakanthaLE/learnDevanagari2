@@ -100,16 +100,48 @@ extension ScoreZeichen{
         }
     }
     func getLetztesMalKorrektInLektion(quizZeichen:QuizZeichen?) -> Int16?{
-        guard let quizZeichen = quizZeichen, let aktuelleLektion = MainSettings.get()?.angemeldeterUser?.aktuelleLektion else {return nil}
+        guard let quizZeichen = quizZeichen else {return nil}
+        return getLetztesMalKorrektInLektion(quizSetting: quizZeichen.quizSetting)
+    }
+    func getLetztesMalKorrektInLektion(quizSetting:QuizSetting) -> Int16?{
+        guard let aktuelleLektion = MainSettings.get()?.angemeldeterUser?.aktuelleLektion else {return nil}
         
-        switch quizZeichen.quizSetting.zeichenfeld{
+        switch quizSetting.zeichenfeld{
         case .NurAnzeige:       return  letztesMalKorrektLektionZFAnzeige == aktuelleLektion ? aktuelleLektion :  nil
         case .Nachzeichnen:     return  letztesMalKorrektLektionZFNachzeichnen == aktuelleLektion ? aktuelleLektion :  nil
         case .InAbfrage:        return  letztesMalKorrektLektionZFAbfrage == aktuelleLektion ? aktuelleLektion :  nil
         case .AbfrageUndNachzeichnen: return nil
         }
-        
     }
+    
+    func wurdeBereitsKomplettAbgefragt(fuer quizSetting:QuizSetting,lektion:Int16?) -> Bool{
+        if quizSetting.zeichenfeld == .InAbfrage{
+            return letztesMalKorrektLektionZFAbfrage != -1
+        }
+        if quizSetting.zeichenfeld == .NurAnzeige{
+            let allesAbgefragt = quizSetting.abfragen.filter{!richtigeLetzteAbfragen.map{$0.controlTyp}.contains($0)}.count == 0
+            let inAktuellerLektionCorrect = getLetztesMalKorrektInLektion(quizSetting:quizSetting) == lektion
+            return allesAbgefragt && !inAktuellerLektionCorrect
+        }
+        return true
+    }
+    func anzahlRichtigeMinusFalscheAbfragen(quizSetting:QuizSetting) -> Int{
+        //richtige - falsche
+        let relevanteLetzteAbfragen = letzteAbfragen.filter{quizSetting.abfragen.contains($0.controlTyp)}
+        let korrekte    = relevanteLetzteAbfragen.filter{$0.abfrage.correct}.count
+        let falsche     = relevanteLetzteAbfragen.filter{!$0.abfrage.correct}.count
+        return korrekte - falsche
+    }
+    //eventuell nicht mehr gebraucht
+    func gesamtScoreIsMax(for quizSetting:QuizSetting) -> Bool{
+        return gesamtScore == maxGesamtScore(for: quizSetting)
+    }
+    private func maxGesamtScore(for quizSetting:QuizSetting) -> Double{
+        guard let anzahlMoeglich = Zeichen.get(forDeva: devaString)?.anzahlMoeglicheAbfragen, anzahlMoeglich > 0 else {return 1}
+        return Double(quizSetting.abfragen.count) / Double(anzahlMoeglich)
+    }
+    
+    
 }
 
 extension Date{

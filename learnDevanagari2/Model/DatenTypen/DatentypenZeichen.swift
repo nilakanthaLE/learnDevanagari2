@@ -54,6 +54,7 @@ class UserAntwortZeichen{
     }
     
     func isCorrect(for controlTyp:ControlTyp, quizZeichen:QuizZeichen) -> Bool{
+        // für Nachzeichnen  = true (quizSetting.abfragen.count == 0)
         let userEingabe = getMutableProperty(for: controlTyp)?.value
         let correct     = quizZeichen.zeichen.getValue(for: controlTyp)
         return userEingabe == correct
@@ -95,19 +96,19 @@ class QuizZeichen:Equatable{
         guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}
         
         var zeichensatzForZeichenfeldAbfrage:[QuizZeichen]{
-            var quizSetting = quizSetting
+            guard var quizSetting = quizSetting.copy() else {return [QuizZeichen]()}
             quizSetting.setPanelControlsToNurAnzeige()
             quizSetting.zeichenfeld = .InAbfrage
             return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
         }
         var zeichensatzForZeichenfeldNachzeichnen:[QuizZeichen]{
-            var quizSetting = quizSetting
+            guard var quizSetting = quizSetting.copy() else {return [QuizZeichen]()}
             quizSetting.setPanelControlsToNurAnzeige()
             quizSetting.zeichenfeld = .Nachzeichnen
             return zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)}
         }
         var zeichensatzForZeichenfeldNurAnzeige:[QuizZeichen]{
-            var quizSetting = quizSetting
+            guard var quizSetting = quizSetting.copy() else {return [QuizZeichen]()}
             quizSetting.zeichenfeld = .NurAnzeige
             return quizSetting.anzahlAbfragen > 0 ? zeichensatz.map{QuizZeichen(zeichen: $0, quizSetting: quizSetting)} : [QuizZeichen]()
         }
@@ -129,22 +130,61 @@ class QuizZeichen:Equatable{
                 quizZeichen.status.value = .Correct
             }
         }
-        return quizZeichenSatz
+        return filterQuizZeichensatzForLektion(quizZeichenSatz: quizZeichenSatz,quizSetting: quizSetting)
     }
-    static func filterQuizZeichensatzForLektion(quizZeichenSatz:[QuizZeichen]){
-        //1 nur unbekannte Zeichen nachzeichnen
+    static func filterQuizZeichensatzForLektion(quizZeichenSatz:[QuizZeichen],quizSetting:QuizSetting?) -> [QuizZeichen]{
+        let anzahlQZMax = 50
+        var quizZeichenSatz = quizZeichenSatz
         
+        //1 nur unbekannte Zeichen nachzeichnen
+        func filterNochNichtNachgezeichnet(quizZeichen:QuizZeichen) -> Bool{
+            if quizZeichen.quizSetting.zeichenfeld == .Nachzeichnen{
+                return MainSettings.get()?.angemeldeterUser?.scoreZeichen(for: quizZeichen.zeichen.devanagari)?.letztesMalKorrektLektionZFNachzeichnen == -1
+            }
+            return true
+        }
+        quizZeichenSatz = quizZeichenSatz.filter{filterNochNichtNachgezeichnet(quizZeichen: $0)}
         //2 Zeichen mit neuer Abfrage nicht filtern
         
-        //3 identischer Abfrage eines Zeichens
+        
+        //3 identische Abfragen eines Zeichens
         // bei LektionsQuizSchwierigkeitsstufe 3 (voll)
         // <identische Abfrage eines Zeichens> herausfiltern
+        func filterForStufe3(quizZeichen:QuizZeichen) -> Bool{
+            guard let user = MainSettings.get()?.angemeldeterUser, user.currentMainQuizSetting?.isStufe3 == true else { return true}
+            let scoreZeichen = user.scoreZeichen(for: quizZeichen.zeichen.devanagari)
+            return scoreZeichen?.wurdeBereitsKomplettAbgefragt(fuer: quizZeichen.quizSetting, lektion:user.aktuelleLektion) == false
+        }
+        if let user = MainSettings.get()?.angemeldeterUser, user.currentMainQuizSetting?.isStufe3 == true{
+            quizZeichenSatz = quizZeichenSatz.filter{filterForStufe3(quizZeichen: $0)}
+        }
         
         // bei LektionsQuizSchwierigkeitsstufe kleiner 3
         // <identische Abfrage eines Zeichens> nach Häufigkeit richtiger Abfragen sortieren (umgekehrt)
         // Auswahl aus diesem Set (x Zeichen)
+        func filterForStufeKleiner3(quizZeichenSatz:[QuizZeichen])->[QuizZeichen]{
+            guard let user = MainSettings.get()?.angemeldeterUser ,user.currentMainQuizSetting?.isStufe3 != true else {return quizZeichenSatz}
+            func wurdeBereitsKomplettAbgefragt(quizZeichen:QuizZeichen) -> Bool{
+                let scoreZeichen = quizZeichen.scoreZeichen
+                return scoreZeichen?.wurdeBereitsKomplettAbgefragt(fuer: quizZeichen.quizSetting, lektion:user.aktuelleLektion) == true
+            }
+            let mitNeuenAbfragen                = quizZeichenSatz.filter{!wurdeBereitsKomplettAbgefragt(quizZeichen: $0)}
+            let bereitsKomplettAbgefragt        = quizZeichenSatz.filter{wurdeBereitsKomplettAbgefragt(quizZeichen: $0)}
+            let sortedBereitsKomplettAbgefragt  = bereitsKomplettAbgefragt.sorted{$0.scoreZeichen?.anzahlRichtigeMinusFalscheAbfragen(quizSetting:$0.quizSetting) ?? 0
+                < $1.scoreZeichen?.anzahlRichtigeMinusFalscheAbfragen(quizSetting:$1.quizSetting) ?? 0}
+            let anzahlausBereitsKomlett         = anzahlQZMax - mitNeuenAbfragen.count > 0 ? anzahlQZMax - mitNeuenAbfragen.count : 0
+            
+            return mitNeuenAbfragen + sortedBereitsKomplettAbgefragt.prefix(anzahlausBereitsKomlett)
+        }
+        quizZeichenSatz = filterForStufeKleiner3(quizZeichenSatz: quizZeichenSatz)
+        
+        return quizZeichenSatz
     }
-    
+    var scoreZeichen:ScoreZeichen?{
+        let user = MainSettings.get()?.angemeldeterUser
+        let scoreZeichen = user?.scoreZeichen(for: zeichen.devanagari)
+        return scoreZeichen
+    }
 }
 
 class Zeichen:NSObject{

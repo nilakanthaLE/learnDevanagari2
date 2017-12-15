@@ -43,18 +43,19 @@ class QuizModel{
     //helper
     private func setLetztesMalKorrektLektion(){
         guard currentQuizZeichen.value?.status.value == .Correct else{return}
-        let scoreZ = MainSettings.get()?.angemeldeterUser?.getScoreZeichen(for: currentQuizZeichen.value?.zeichen.devanagari)
-        scoreZ?.setLetztesMalKorrektLektion(quizZeichen: currentQuizZeichen.value)
+        currentQuizZeichen.value?.scoreZeichen?.setLetztesMalKorrektLektion(quizZeichen: currentQuizZeichen.value)
     }
     private func pruefeEingabe(){
         currentQuizZeichen.value?.status.value = isUserEingabeCorrect  ? .Correct  : .FalschBeantwortet
         setLetztesMalKorrektLektion()
-        userEingabePrüfen.value = true
         MainSettings.get()?.angemeldeterUser?.updateScoreZeichen(for: userEingabe, quizZeichen: currentQuizZeichen.value)
+        
+        userEingabePrüfen.value = true
+        
     }
     private func setNextCurrentZeichen(){
         guard let next = getNaechstesQuizZeichen() else {return}
-        if next.quizSetting.anzahlAbfragen == 0  {
+        if next.quizSetting.isNachZeichnen  {
             setLetztesMalKorrektLektion()
             next.status.value = .Correct } //für Zeichenfeldmodus (kein Prüfen)
         currentQuizZeichen.value = next
@@ -64,7 +65,10 @@ class QuizModel{
         userEingabePrüfen.value = false
         let newRandomZeichen = getRandomQuizZeichen()
         newRandomZeichen?.status.value = .InUserAbfrage
-        if newRandomZeichen == nil { quizZeichenInAbfrageIstLeer.value = Void() }
+        if newRandomZeichen == nil {
+            //kein QuizZeichen mehr in Abfrage
+            setLetztesMalKorrektLektion()
+            quizZeichenInAbfrageIstLeer.value = Void() }
         return newRandomZeichen
     }
     private func getRandomQuizZeichen() -> QuizZeichen?{
