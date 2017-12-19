@@ -29,26 +29,25 @@ class QuizDevaAbfrageViewModel{
         devaButtonIsHidden  <~ showsZeichenFeld.producer
         
         devaButtonTitle     <~ quizModel.userEingabe.devanagari.producer.filter{$0 != nil}
+        
+        //Initialisierung neues Zeichen
         devaButtonTitle     <~ quizModel.currentQuizZeichen.producer.map{ $0?.titleForZeichenfeldButton }
         showsZeichenFeld    <~ quizModel.currentQuizZeichen.producer.map{ $0?.quizSetting.zeichenfeld == .Nachzeichnen}
         okButtonIsHidden    <~ quizModel.currentQuizZeichen.producer.map{ $0?.quizSetting.zeichenfeld == .Nachzeichnen}
         devaButtonIsEnabled <~ quizModel.currentQuizZeichen.producer.map{ $0?.quizSetting.zeichenfeld != .NurAnzeige  }
-        backGroundColor     <~ quizModel.userEingabePrüfen.producer.map{[weak self] _ in self?.getBackGroundColor() ?? colorForDefault}
-        devaButtonTitle     <~ quizModel.userEingabePrüfen.producer.filter{$0 == true}.map{[weak self] _ in self?.correctAnswer.value }
+        backGroundColor     <~ quizModel.currentQuizZeichen.producer.map{ _ in colorForDefault}
+        correctAnswer       <~ quizModel.currentQuizZeichen.producer.map{ $0?.zeichen.devanagari }
         
-        quizModel.currentQuizZeichen.producer.startWithValues           { [weak self] quizZeichen in
-            self?.correctAnswer.value   = quizZeichen?.zeichen.devanagari
-            self?.backGroundColor.value = self?.getBackGroundColor() ?? colorForDefault
-        }
+        
+        //Prüfergebnisse anzeigen
+        backGroundColor     <~ quizModel.zeigePruefergebnisse.signal.map{[weak self] _ in self?.getBackGroundColor() ?? colorForDefault}
+        devaButtonTitle     <~ quizModel.zeigePruefergebnisse.signal.map{[weak self] _ in self?.correctAnswer.value }
     }
     func getViewModelForZeichenFeld() -> QuizZeichenfeldViewModel {return QuizZeichenfeldViewModel(quizModel:quizModel,showsZeichenFeld:showsZeichenFeld)}
     
     private func getBackGroundColor() -> UIColor{
-        if quizModel.userEingabePrüfen.value   {
-            let currentQuizZeichen = self.quizModel.currentQuizZeichen.value
-            return currentQuizZeichen?.quizSetting.zeichenfeld == .NurAnzeige ? colorForCorrect : quizModel.userEingabe.devanagari.value == correctAnswer.value ? colorForCorrect : colorForWrong
-        }
-        return colorForDefault
+        let currentQuizZeichen = self.quizModel.currentQuizZeichen.value
+        return currentQuizZeichen?.quizSetting.zeichenfeld == .NurAnzeige ? colorForCorrect : quizModel.userEingabe.devanagari.value == correctAnswer.value ? colorForCorrect : colorForWrong
     }
     
 }

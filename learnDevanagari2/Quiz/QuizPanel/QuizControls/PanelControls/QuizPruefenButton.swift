@@ -12,24 +12,14 @@ import ReactiveSwift
 class QuizPruefenButtonViewModel{
     var quizModel:QuizModel
     var zeilenHoehe:MutableProperty<CGFloat> = MutableProperty(30.0)
+    var buttonZustand:MutableProperty<PruefenButtonZustand?> = MutableProperty(nil)
     init(quizModel:QuizModel){
         self.quizModel = quizModel
         buttonZustand               <~ quizModel.currentQuizZeichen.producer.map{ ($0?.status.value == .Correct ||  $0?.status.value == .FalschBeantwortet) ? .NaechstesZeichen : .Pruefen }
         zeilenHoehe                 <~ quizModel.zeilenHoehe
+        buttonZustand               <~ quizModel.pruefenButtonZustand.producer
      }
-    
-    var buttonZustand  = MutableProperty(PruefenButtonZustand.Pruefen)
-
-    func buttonPressed(){
-        switch buttonZustand.value {
-        case .NaechstesZeichen:
-            quizModel.nextZeichenPressed.value = Void()
-        case .Pruefen:
-            buttonZustand.value = buttonZustand.value.toggleNext()
-            quizModel.pruefenPressed.value = Void()
-            
-        }
-    }
+    func buttonPressed(){ quizModel.pruefenButtonHasAnAction.value = Void() }
 }
 
 class QuizPruefenButton: UIButton {
@@ -38,12 +28,11 @@ class QuizPruefenButton: UIButton {
         didSet{
             backgroundColor         = colorForDefault
             anchorHeight.isActive   = true
-            reactive.title(for: .normal)    <~ viewModel.buttonZustand.map{$0.rawValue}
+            reactive.title(for: .normal)    <~ viewModel.buttonZustand.map{$0?.rawValue ?? "fehlt"}
             anchorHeight.reactive.constant  <~ viewModel.zeilenHoehe
             
-            reactive.controlEvents(.touchUpInside).producer.start(){[weak self] _ in
-                self?.viewModel.buttonPressed()
-            }
+            //Button pressed Action
+            reactive.controlEvents(.touchUpInside).producer.start(){[weak self] _ in self?.viewModel.buttonPressed() }
         }
     }
 }
@@ -52,10 +41,5 @@ class QuizPruefenButton: UIButton {
 enum PruefenButtonZustand:String{
     case Pruefen            = "Eingabe prüfen"
     case NaechstesZeichen   = "nächstes Zeichen"
-    func toggleNext() -> PruefenButtonZustand{
-        switch self {
-        case .Pruefen:          return .NaechstesZeichen
-        case .NaechstesZeichen: return .Pruefen
-        }
-    }
+    case QuizBeenden        = "Quiz beenden"
 }

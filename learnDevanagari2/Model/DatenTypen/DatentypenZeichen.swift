@@ -91,6 +91,11 @@ class QuizZeichen:Equatable{
         return quizSetting.zeichenfeld == .InAbfrage ? "?" : zeichen.devanagari
     }
     
+    func setLetztesMalKorrektLektion(){
+        guard status.value == .Correct else {return}
+        scoreZeichen?.setLetztesMalKorrektLektion(quizZeichen: self)
+    }
+    
     //helper
     static func createQuizZeichensatz(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
         guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}

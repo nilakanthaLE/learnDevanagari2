@@ -124,23 +124,26 @@ protocol PanelControlViewModelProtocol:ControlViewModel {
 }
 extension PanelControlViewModelProtocol{
     //Model Interaktionen
-    func isHidden(usereingabe:UserAntwortZeichen?, controlTyp:ControlTyp, controlModus: PanelControlModus?, korrekteAntwort:Zeichen?, wirdGeprueft:Bool, vokalOderKonsShowsAnswer: PanelControlModus? ) -> Bool{
-        guard let usereingabe = usereingabe else {return true}
+    func isHidden(controlCurrentModus:ControlCurrentModus ,usereingabe:UserAntwortZeichen?, controlTyp:ControlTyp, controlModus: PanelControlModus?, korrekteAntwort:Zeichen?, vokalOderKonsShowsAnswer: PanelControlModus? ) -> Bool{
+        guard let usereingabe = usereingabe, controlCurrentModus != .Versteckt, controlModus != .Versteckt else {return true}
         
+        
+        
+        let wirdGeprueft = controlCurrentModus == .ShowsPruefergebnis
         
         let showsAnswer             = vokalOderKonsShowsAnswer == .NurAnzeige && controlModus == .NurAnzeige // nur wenn showsAnswer / selected von vokal oder Konsonant
         let vokalForShowsAnswer     = showsAnswer ? korrekteAntwort?.vokalOderKonsonant == VokalOderKonsonant.Vokal.rawValue : false
         let konsonantForShowsAnswer = showsAnswer ? korrekteAntwort?.vokalOderKonsonant == VokalOderKonsonant.Konsonant.rawValue : false
         
-        let vokalForKorrekt     = wirdGeprueft ? korrekteAntwort?.vokalOderKonsonant == VokalOderKonsonant.Vokal.rawValue : false
-        let konsonantForKorrekt = wirdGeprueft ? korrekteAntwort?.vokalOderKonsonant == VokalOderKonsonant.Konsonant.rawValue : false
+        let vokalForKorrekt         = wirdGeprueft ? korrekteAntwort?.vokalOderKonsonant == VokalOderKonsonant.Vokal.rawValue : false
+        let konsonantForKorrekt     = wirdGeprueft ? korrekteAntwort?.vokalOderKonsonant == VokalOderKonsonant.Konsonant.rawValue : false
         
-        let vokalKonsNil        = usereingabe.vokalOderKonsonant.value   == nil && !wirdGeprueft && !showsAnswer
-        let vokal               = usereingabe.vokalOderKonsonant.value   == VokalOderKonsonant.Vokal.rawValue
-        let konsonant           = usereingabe.vokalOderKonsonant.value   == VokalOderKonsonant.Konsonant.rawValue
+        let vokalKonsNil            = usereingabe.vokalOderKonsonant.value   == nil && !wirdGeprueft && !showsAnswer
+        let vokal                   = usereingabe.vokalOderKonsonant.value   == VokalOderKonsonant.Vokal.rawValue
+        let konsonant               = usereingabe.vokalOderKonsonant.value   == VokalOderKonsonant.Konsonant.rawValue
         
-        let vokalHalbVokalNil   = usereingabe.vokalOderHalbvokal.value   == nil && !wirdGeprueft && !showsAnswer
-        let einfVokal           = usereingabe.vokalOderHalbvokal.value   == VokalOderHalbvokal.Vokal.rawValue
+        let vokalHalbVokalNil       = usereingabe.vokalOderHalbvokal.value   == nil && !wirdGeprueft && !showsAnswer
+        let einfVokal               = usereingabe.vokalOderHalbvokal.value   == VokalOderHalbvokal.Vokal.rawValue
         
 //        let controlIsVersteckt = controlSetting.modus == .Versteckt
         

@@ -94,7 +94,6 @@ struct QuizSetting:Equatable{
     }
     var anzahlAbfragen:Int{
         let anzahlZeichenFeldAbfragen = zeichenfeld == .InAbfrage || zeichenfeld == .AbfrageUndNachzeichnen ? 1 : 0
-        print(abfragen.map{$0.controlName})
         return allePanelControls.filter{$0.modus == .InAbfrage}.count + anzahlZeichenFeldAbfragen
     }
     

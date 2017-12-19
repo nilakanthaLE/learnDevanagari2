@@ -48,20 +48,26 @@ class QuizFortschrittsbalkenViewModel {
         statusArray[indexOfCurrentStackitem ?? 0].value   =  .InUserAbfrage
         
         quizModel.currentQuizZeichen.producer.combinePrevious().startWithValues{ [weak self](oldValue,newValue) in
-            //Animation für das letzte Zeichen, falls es nachzeichnen war
-            if oldValue?.quizSetting.zeichenfeld == .Nachzeichnen{
-                self?.indexOfCurrentStackitem = self?.stackData.filter{$0.quizZeichen == oldValue}.first?.index
-                self?.moveStackitem(toStatus: .Correct)
-            }
+//            //Animation für das letzte Zeichen, falls es nachzeichnen war
+//            if oldValue?.quizSetting.zeichenfeld == .Nachzeichnen{
+//                self?.indexOfCurrentStackitem = self?.stackData.filter{$0.quizZeichen == oldValue}.first?.index
+//                self?.moveStackitem(toStatus: .Correct)
+//            }
             
             self?.indexOfCurrentStackitem = self?.stackData.filter{$0.quizZeichen == newValue}.first?.index
             self?.statusArray[self?.indexOfCurrentStackitem ?? 0].value   =  .InUserAbfrage
         }
         
-        quizModel.userEingabePrüfen.signal.filter{$0 == true}.observe { [weak self] _ in
-            let status  = quizModel.isUserEingabeCorrect ? QuizZeichenStatus.Correct : QuizZeichenStatus.FalschBeantwortet
+        quizModel.animateFortschrittsbalkenTo.signal.observeValues {[weak self] animationTo in
+            guard let animationTo = animationTo else {return}
+            let status = animationTo ? QuizZeichenStatus.Correct : QuizZeichenStatus.FalschBeantwortet
             self?.moveStackitem(toStatus: status)
         }
+        
+//        quizModel.userEingabePruefen_weg.signal.filter{$0 == true}.observe { [weak self] _ in
+//            let status  = quizModel.isUserEingabeCorrect ? QuizZeichenStatus.Correct : QuizZeichenStatus.FalschBeantwortet
+//            self?.moveStackitem(toStatus: status)
+//        }
     }
     
     //MARK: helper

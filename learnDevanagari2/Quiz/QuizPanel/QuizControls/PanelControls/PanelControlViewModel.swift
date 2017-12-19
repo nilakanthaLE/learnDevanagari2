@@ -32,8 +32,7 @@ class PanelControlViewModel:PanelControlViewModelProtocol{
         self.controlTyp         = controlSetting.controlTyp
         self.quizModel          = quizModel
         
-        if controlTyp == .TextfeldTyp || controlTyp == .ArtikulationTyp
-            { backGroundColor     <~ controlCurrentModus.producer.map{[weak self] _ in self?.getBackGroundColor() ?? colorForDefault} }
+        if controlTyp == .TextfeldTyp || controlTyp == .ArtikulationTyp { backGroundColor     <~ controlCurrentModus.producer.map{[weak self] _ in self?.getBackGroundColor() ?? colorForDefault} }
         
         //schreibt Usereingabe in das UsereingabeZeichen im Quizmodel
         userEingabe             = quizModel.userEingabe.getMutableProperty(for: controlTyp) ?? MutableProperty<String?>(nil)
@@ -43,43 +42,42 @@ class PanelControlViewModel:PanelControlViewModelProtocol{
         controlCurrentModus <~ quizModel.currentQuizZeichen.producer.map                    { [weak self] quizZeichen in
             guard let panelControlSetting = quizZeichen?.quizSetting.getPanelControlSetting(for: self?.controlTyp) else {return .Versteckt}
             switch panelControlSetting.modus{
-            case .InAbfrage       :  return .Abfrage
-            case .NurAnzeige    :  return .Anzeige
-            case .Versteckt     :  return .Versteckt
+                case .InAbfrage     :  return .Abfrage
+                case .NurAnzeige    :  return .Anzeige
+                case .Versteckt     :  return .Versteckt
             }
         }
+        //currentControlModus
+        controlCurrentModus <~ quizModel.zeigePruefergebnisse.signal.map{ _ in .ShowsPruefergebnis }
         
         //isHidden
+        
         isHidden <~ quizModel.userEingabe.vokalOderKonsonant.producer
             .filter{ [weak self] _ in self?.controlCurrentModus.value != .Versteckt}
-            .map       { [weak self] _ -> Bool in getIsHidden() == true }
+            .map       { [weak self] _ -> Bool in getIsHidden()}
         isHidden <~ quizModel.userEingabe.vokalOderHalbvokal.producer
             .filter{ [weak self] _ in self?.controlCurrentModus.value != .Versteckt}
-            .map       { [weak self] _ -> Bool in getIsHidden() == true }
+            .map       { [weak self] _ -> Bool in getIsHidden() }
         isHidden <~ controlCurrentModus.producer
             .filter{$0 == .Versteckt}
             .map{_ in return true}
         isHidden <~ controlCurrentModus.producer
             .filter{$0 != .Versteckt}
-            .map        { [weak self] _ -> Bool in getIsHidden() == true }
+            .map        { [weak self] _ -> Bool in getIsHidden()}
     
 
-        //currentControlModus
-        controlCurrentModus <~ quizModel.userEingabePrüfen.producer
-            .filter{ $0 == true }
-            .filter{ [weak self] _ in self?.controlCurrentModus.value != .Versteckt}
-            .map{ _ in .ShowsPruefergebnis }
+        
         
         isEnabled           <~ controlCurrentModus.producer.map{  $0 == .Abfrage ? true : false }
         zeilenHoehe         <~ quizModel.zeilenHoehe.producer
     
         func getIsHidden()->Bool {
             let controlModus = quizModel.currentQuizZeichen.value?.quizSetting.getPanelControlSetting(for: controlTyp)?.modus
-            return isHidden(usereingabe: quizModel.userEingabe,
+            return isHidden(controlCurrentModus:controlCurrentModus.value,
+                            usereingabe: quizModel.userEingabe,
                             controlTyp:               controlTyp,
                             controlModus:             controlModus,
                             korrekteAntwort:          quizModel.currentQuizZeichen.value?.zeichen,
-                            wirdGeprueft:             quizModel.userEingabePrüfen.value,
                             vokalOderKonsShowsAnswer: quizModel.currentQuizZeichen.value?.quizSetting.vokalOderKonsonant.modus) }
     }
     
