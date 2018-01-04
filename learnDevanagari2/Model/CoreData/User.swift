@@ -29,10 +29,19 @@ extension User{
         try? managedContext.save()
     }
     
-    var currentMainQuizSetting:QuizSetting?{
-        return QuizSetting(dict: lektionsQuizSettings as? Dictionary)
-        
+    func getButtonData(title:String?)           -> ButtonData   { return (title ?? "" ,getScoreZeichen(for: title)?.gesamtScore ?? 0) }
+    func getButtonData(for titles:[String?])    -> [ButtonData] { return titles.map{getButtonData(title: $0)} }
+    
+    var currentMainQuizSetting:QuizSetting?{ return QuizSetting(dict: lektionsQuizSettings as? Dictionary) }
+    
+    //Mark:Lektion
+    var currentLektion:Lektion{ return erstelleLektionen()[Int(aktuelleLektion)] }
+    func nextLektion()->Lektion{
+        aktuelleLektion += 1
+        try? managedContext.save()
+        return currentLektion
     }
+    var alleLektionenBisher:[Lektion]           { return erstelleLektionen().filter{$0.nummer  ?? 1000  <= aktuelleLektion } }
     
     //MARK: ScoreZeichen
     func getScoreZeichen(for devaString:String?) -> ScoreZeichen?{
@@ -54,19 +63,7 @@ extension User{
     func allScoreZeichenGreaterZero(bisLektion lektion:Int) -> [Zeichen]{
         return allScoreZeichenGreaterZero.filter{$0.lektion ?? 1000 <= lektion}
     }
-    
-    var bereitsCorrectBeantworteteZeichenFuerAktuelleLektion:[Zeichen]{
-        //zeichen in Abfrage (Lektion)
-        //Abfragen fuer <zeichen in Abfrage (Lektion)> nach Lektionsstart zu lektion
-        
-        return [Zeichen]()
-    }
-    
-
-    
     func updateScoreZeichen(for userAntwortZeichen:UserAntwortZeichen,quizZeichen:QuizZeichen?){
-        
-        
         guard let quizZeichen = quizZeichen else {return}
         let scoreZeichen = getScoreZeichen(for: quizZeichen.zeichen.devanagari)
         for userAntwort in userAntwortZeichen.userAntworten(for: quizZeichen){

@@ -15,8 +15,7 @@ class MantrasViewModel{
     
     var iPadOrientation = (UIApplication.shared.delegate as? AppDelegate)?.iPadOrientation
     
-   
-    
+    //sichtbare LabelTexte - enthalten weiße Zeichen, sind schwach sichtbar noch ohne grüne Zeichen (Vor Animation grüne Zeichen)
     var labelTexteBereitsBekanntSichtbar = [NSAttributedString]()
     
     init(attrStrings:[NSAttributedString]){
@@ -27,6 +26,8 @@ class MantrasViewModel{
             guard let _self = self else {return}
             let bereitsBekannteZeichen      = MainSettings.get()?.angemeldeterUser?.allScoreZeichenGreaterZero(bisLektion: lektion - 2).map{$0.devanagari ?? ""}
             let rangesFuerBereitsBekannte   = MantrasViewModel.getRanges(for: bereitsBekannteZeichen,attrStrings: attrStrings)
+            
+            
             for ranges in rangesFuerBereitsBekannte.enumerated(){
                 let labelText                       = _self.labelTexte[ranges.offset]
                 var mutableAttrLabelText            = NSMutableAttributedString(attributedString:labelText.value)
@@ -42,7 +43,6 @@ class MantrasViewModel{
             }
         }
     }
-    
     //animation für neu gelernte Zeichen
     //update der LabelTexte --> neue Zeichen werden grün
     func startAnimationForNeuGelernte(){
@@ -113,65 +113,17 @@ class MantrasVC: UIViewController {
         for label in mantraViewIPadH.labels.sorted(by: {$1.tag > $0.tag }).enumerated(){ label.element.reactive.attributedText <~ viewModel.labelTexte[label.offset] }
         for label in mantraViewIPadV.labels.sorted(by: {$1.tag > $0.tag }).enumerated(){ label.element.reactive.attributedText <~ viewModel.labelTexte[label.offset] }
     }
-
-    
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.currentLektion.value = Int(MainSettings.get()?.angemeldeterUser?.aktuelleLektion ?? 0)
+    }
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.startAnimationForNeuGelernte()
     }
-
-    
-    
-    
-
-    
-    
     var labels: [UILabel]!
-
 }
 
 
-//extension UILabel {
-//    func boundingRectForCharacterRange(range: NSRange) -> CGRect? {
-//
-//        guard let attributedText = attributedText else { return nil }
-//
-//        let textStorage     = NSTextStorage(attributedString: attributedText)
-//        let layoutManager   = NSLayoutManager()
-//
-//        textStorage.addLayoutManager(layoutManager)
-//
-//        let textContainer = NSTextContainer(size: bounds.size)
-//        textContainer.lineFragmentPadding = 0.0
-//
-//        layoutManager.addTextContainer(textContainer)
-//
-//        var glyphRange = NSRange()
-//
-//        // Convert the range for glyphs.
-//        layoutManager.characterRange(forGlyphRange: range, actualGlyphRange: &glyphRange)
-//
-//        return layoutManager.boundingRect(forGlyphRange: glyphRange, in: textContainer)
-//    }
-//}
 
-//class LupenView:UIView{
-//
-//
-//    let lineWidth:CGFloat = 3
-//     // Only override draw() if you perform custom drawing.
-//     // An empty implementation adversely affects performance during animation.
-//    override func draw(_ rect: CGRect) {
-//        backgroundColor = .clear
-//        let context = UIGraphicsGetCurrentContext()
-//        context?.addEllipse(in: bounds.insetBy(dx: lineWidth/2, dy: lineWidth/2))
-//        context?.setStrokeColor(UIColor.blue.cgColor)
-//        context?.setLineWidth(lineWidth)
-//        context?.strokePath()
-//    }
-//
-//
-//
-//}
 

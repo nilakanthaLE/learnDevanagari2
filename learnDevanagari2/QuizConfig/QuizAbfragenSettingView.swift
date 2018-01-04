@@ -28,9 +28,7 @@ class QuizAbfragenSettingViewModel{
         stimmhaftigkeit.value           = quizSetting.value?.stimmhaftigkeit.modus       == .InAbfrage
         
         _ = SignalProducer.combineLatest(propterties).start{ [weak self] _ in
-            if let newSetting = self?.update(quizSetting:self?.quizSetting.value){
-                self?.quizSetting.value = newSetting
-            }
+            if let newSetting = self?.update(quizSetting:self?.quizSetting.value){ self?.quizSetting.value = newSetting }
         }
     }
     
@@ -56,7 +54,7 @@ class QuizAbfragenSettingViewModel{
     var propterties:[MutableProperty<Bool>] {return [nachZeichnen,umschrift,vokalOderKonsonant,artikulation,devaSchreiben,konsonantenTyp,aspiration,stimmhaftigkeit]}
     
     
-    private func update(quizSetting:QuizSetting?) -> QuizSetting?{
+    private func update(quizSetting:QuizSetting?) -> QuizSetting?{    
         var quizSetting = quizSetting
         quizSetting?.zeichenfeld                = devaSchreiben.value && nachZeichnen.value ? .AbfrageUndNachzeichnen : devaSchreiben.value ? .InAbfrage :  nachZeichnen.value ? .Nachzeichnen : .NurAnzeige
         quizSetting?.textfeld.modus             = umschrift.value           ? .InAbfrage : .NurAnzeige
@@ -127,17 +125,16 @@ class QuizAbfragenSettingView: NibLoadingView {
     }
     
     @IBOutlet weak var mainStack: UIStackView!
-    @IBOutlet var nachzeichnen: [UISwitch]!         //{ didSet{ initSwitchs(for: nachzeichnen, abfrage: .nachzeichnen) } }
-    @IBOutlet var umschrift: [UISwitch]!            //{ didSet{ initSwitchs(for: umschrift, abfrage: .umschrift) } }
+    @IBOutlet var nachzeichnen: [UISwitch]!
+    @IBOutlet var umschrift: [UISwitch]!
     
-    @IBOutlet var vokalOderKonsonant: [UISwitch]!   //{ didSet{ initSwitchs(for: vokalOderKonsonant, abfrage: .vokalOderKonsonant) } }
-    @IBOutlet var artikulation: [UISwitch]!         //{ didSet{ initSwitchs(for: artikulation, abfrage: .artikulation) } }
-    
-    @IBOutlet var devaSchreiben: [UISwitch]!        //{ didSet{ initSwitchs(for: devaSchreiben, abfrage: .devaSchreiben) } }
-    @IBOutlet var konsonantenType: [UISwitch]!      //{ didSet{ initSwitchs(for: konsonantenType, abfrage: .konsonantenTyp) } }
-    @IBOutlet var vokalOderHalbvokal: [UISwitch]!   //{ didSet{ initSwitchs(for: vokalOderHalbvokal, abfrage: .vokalOderHalbVokal) } }
-    @IBOutlet var aspiration: [UISwitch]!           //{ didSet{ initSwitchs(for: aspiration, abfrage: .aspiration) } }
-    @IBOutlet var stimmhaftigkeit: [UISwitch]!      //{ didSet{ initSwitchs(for: stimmhaftigkeit, abfrage: .stimmhaftigkeit) } }
+    @IBOutlet var vokalOderKonsonant: [UISwitch]!
+    @IBOutlet var artikulation: [UISwitch]!
+    @IBOutlet var devaSchreiben: [UISwitch]!
+    @IBOutlet var konsonantenType: [UISwitch]!
+    @IBOutlet var vokalOderHalbvokal: [UISwitch]!
+    @IBOutlet var aspiration: [UISwitch]!
+    @IBOutlet var stimmhaftigkeit: [UISwitch]!      
     
     
     @IBAction func tapOnEinfach(_ sender: UITapGestureRecognizer) {

@@ -9,6 +9,11 @@
 import Foundation
 
 //MARK: Array helper
+func getIndex(for  string:String,in array:[[String]])->(x:Int,y:Int)?{
+    let selArray    = getArray(forTitle: string, inArray: array)
+    return getIndex(forSelectedArray: selArray)
+}
+
 func getTitle(forTag tag:Int,inArray array:[[String]]) -> String?{
     let index               = getIndex(forTag: tag, inArray: array)
     return index == nil ? nil : array[index!.x][index!.y]

@@ -18,9 +18,6 @@ extension ScoreZeichen{
     }
     static func create(devaString:String?) -> ScoreZeichen?{
         guard let devaString = devaString else {return nil}
-//        let request = NSFetchRequest<ScoreZeichen>.init(entityName: "ScoreZeichen")
-//        request.predicate = NSPredicate(format: "devaString == %@",devaString)
-//        if let scoreZeichen = (try? managedContext.fetch(request))?.first   { return scoreZeichen }
         
         let scoreZeichen            = NSEntityDescription.insertNewObject(forEntityName: "ScoreZeichen", into: managedContext) as? ScoreZeichen
         scoreZeichen?.devaString    = devaString
@@ -32,24 +29,17 @@ extension ScoreZeichen{
         return erstelleZeichensatz().filter{$0.devanagari == self.devaString}.first
     }
     
-    var scoreProducer:SignalProducer<Double, NoError>{
-        let producers = SignalProducer.merge([
-            reactive.producer(forKeyPath: "artikulation").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "aspiration").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "konsonantTyp").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "stimmhaftigkeit").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "umschrift").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "vokalOderHalbVokal").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "vokalOderKonsonant").filter{$0 != nil}.map{_ in Void()},
-            reactive.producer(forKeyPath: "devanagari").filter{$0 != nil}.map{_ in Void()}
-            ]).map{[weak self] _ in ScoreZeichen.calcGesamtScore(scorezeichen: self)}
-        return producers
-    }
+
     
     //helper
-    var gesamtScore:Double{
-        return ScoreZeichen.calcGesamtScore(scorezeichen: self)
+    var alleAbfragen:[Abfrage]{
+        return [convert(abfrageSet: artikulation) , convert(abfrageSet: aspiration) , convert(abfrageSet: konsonantTyp) , convert(abfrageSet: stimmhaftigkeit) , convert(abfrageSet: umschrift) , convert(abfrageSet: vokalOderHalbVokal) , convert(abfrageSet: vokalOderKonsonant) , convert(abfrageSet: devanagari)].flatMap{$0}
     }
+    var haeufigkeitFalsch:Int       {
+        print("\(devaString) anzahlFalsch:  \(alleAbfragen.filter{!$0.correct}.count)")
+        return alleAbfragen.filter{!$0.correct}.count }
+    var haeufigKeitGeuebt:Int       { return alleAbfragen.count }
+    var gesamtScore:Double          { return ScoreZeichen.calcGesamtScore(scorezeichen: self) }
     static func calcGesamtScore(scorezeichen:ScoreZeichen?) -> Double{
         guard let scorezeichen = scorezeichen, let anzahlMoeglich = Zeichen.get(forDeva: scorezeichen.devaString)?.anzahlMoeglicheAbfragen, anzahlMoeglich > 0 else {return 0}
         return Double(scorezeichen.richtigeLetzteAbfragen.count) / Double(anzahlMoeglich)

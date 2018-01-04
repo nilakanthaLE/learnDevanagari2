@@ -11,13 +11,9 @@ import UIKit
 class ZeichenUbersichtVC: UIViewController {
 
 
-    @IBOutlet weak var zeichenUebersichtView: ZeichenUebersichtView!{
-        didSet{
-            zeichenUebersichtView.viewModel = ZeichenUebersichtViewModel()
-        }
-    }
+    @IBOutlet private weak var zeichenUebersichtView: ZeichenUebersichtView!{ didSet{ zeichenUebersichtView.viewModel = ZeichenUebersichtViewModel()  } }
     
-    @IBOutlet weak var rahmenView: UIView!{
+    @IBOutlet private weak var rahmenView: UIView!{
         didSet{
             rahmenView.layer.borderWidth   = 2
             rahmenView.layer.borderColor   = UIColor.white.cgColor
@@ -28,6 +24,6 @@ class ZeichenUbersichtVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        zeichenUebersichtView.setButtonData()
+        zeichenUebersichtView.updateButtonData()
     }
 }

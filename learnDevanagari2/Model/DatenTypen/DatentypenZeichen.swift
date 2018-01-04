@@ -100,6 +100,9 @@ class QuizZeichen:Equatable{
     static func createQuizZeichensatz(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
         guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}
         
+//        let start = Date()
+//        defer { print("dauer: \(Date().timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate)") }
+        
         var zeichensatzForZeichenfeldAbfrage:[QuizZeichen]{
             guard var quizSetting = quizSetting.copy() else {return [QuizZeichen]()}
             quizSetting.setPanelControlsToNurAnzeige()
@@ -119,10 +122,14 @@ class QuizZeichen:Equatable{
         }
         
         switch quizSetting.zeichenfeld {
-        case .NurAnzeige:               return zeichensatzForZeichenfeldNurAnzeige
-        case .Nachzeichnen:             return zeichensatzForZeichenfeldNachzeichnen + zeichensatzForZeichenfeldNurAnzeige
-        case .InAbfrage:                return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige
-        case .AbfrageUndNachzeichnen:   return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige + zeichensatzForZeichenfeldNachzeichnen
+        case .NurAnzeige:
+            return zeichensatzForZeichenfeldNurAnzeige
+        case .Nachzeichnen:
+            return zeichensatzForZeichenfeldNachzeichnen + zeichensatzForZeichenfeldNurAnzeige
+        case .InAbfrage:
+            return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige
+        case .AbfrageUndNachzeichnen:
+            return zeichensatzForZeichenfeldAbfrage + zeichensatzForZeichenfeldNurAnzeige + zeichensatzForZeichenfeldNachzeichnen
         }
     }
     static func createQuizZeichensatzForLektion(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
@@ -232,9 +239,38 @@ class Zeichen:NSObject{
         return erstelleZeichensatz().filter{$0.devanagari == devaString}.first
     }
     
+    // filtert Zeichensatz für Auswahl: Zufall, selten geübt, häufig falsch
+    static func filterZeichenSatz(anzahl:Int,aus zeichenSatz:[Zeichen]?, user:User?,zeichenAuswahlTyp:ZeichenAuswahlTyp?) -> [Zeichen]{
+        guard let zeichenSatz = zeichenSatz else {return [Zeichen]()}
+        guard let zeichenAuswahlTyp = zeichenAuswahlTyp else {return zeichenSatz}
+        switch zeichenAuswahlTyp {
+        case .Zufall: return zeichenSatz.pickRandom(anzahl: anzahl)
+        case .SeltenGeuebt:
+            let sortedSatz = zeichenSatz.sorted{$1.scoreZeichen?.haeufigKeitGeuebt ?? 0 > $0.scoreZeichen?.haeufigKeitGeuebt ?? 0}
+            return Array(sortedSatz.prefix(anzahl))
+        case .HauefigFalsch:
+            let sortedSatz = zeichenSatz.sorted{$0.scoreZeichen?.haeufigkeitFalsch ?? 0 > $1.scoreZeichen?.haeufigkeitFalsch ?? 0}
+            print(sortedSatz.map{"\($0.devanagari) - \($0.scoreZeichen?.haeufigkeitFalsch ?? 0)"})
+            return Array(sortedSatz.prefix(anzahl))
+        }
+    }
+    
     private var alleMoegelichenAbfragewerte:[String?] {return  [devanagari,umschrift,vokalOderHalbvokal,vokalOderKonsonant,artikulation,konsonantTyp,aspiration,stimmhaftigkeit,]}
     var anzahlMoeglicheAbfragen:Int{ return alleMoegelichenAbfragewerte.filter{$0 != nil}.count }
 }
+
+extension Array{
+    func pickRandom(anzahl:Int) -> Array{
+        var workArray = self
+        let numberToMove = count - anzahl >= 0 ? count - anzahl : 0
+        for _ in 0 ..< numberToMove{
+            let randomIndex = Int(arc4random_uniform(UInt32(workArray.count)))
+            workArray.remove(at: randomIndex)
+        }
+        return workArray
+    }
+}
+
 enum VokalOderKonsonant:String  { case Vokal        = "Vokal", Konsonant  = "Konsonant" }
 enum VokalOderHalbvokal:String  { case Vokal        = "einf. Vokal", Halbvokal  = "Halbvokal" }
 enum KonsonantTyp:String        { case Nasal        = "Nasal",Sibilant = "Sibilant",Hauchlaut = "Hauchlaut",EinfacherKonsonant = "einf. Konsonant" }

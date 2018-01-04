@@ -31,7 +31,31 @@ class QuizTextFeld: UITextField,PanelControlProtocol {
             textColor                       = UIColor.white
             textAlignment                   = .center
             spellCheckingType               = .no
-            self.autocapitalizationType     = .none
+            autocapitalizationType          = .none
+            smartDashesType                 = .no
+            smartQuotesType                 = .no
+            smartInsertDeleteType           = .no
+            autocorrectionType              = .no
+            
+            
+            
+            
+            var flexibleSpace:UIBarButtonItem{
+                return UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+            }
+            
+            let toolBar                     = UIToolbar.init(frame: CGRect.zero)
+            toolBar.barStyle                = .default
+            toolBar.items                   = [UIBarButtonItem.init(title: "test", style: .done, target: self, action: nil)]
+            toolBar.sizeToFit()
+            
+            inputAccessoryView              = toolBar
+            
+            inputAssistantItem.leadingBarButtonGroups.removeAll()
+            inputAssistantItem.trailingBarButtonGroups.removeAll()
+            
+                
+            
             
             viewModel.userEingabe           <~ reactive.continuousTextValues
             reactive.isEnabled              <~ viewModel.isEnabled.producer

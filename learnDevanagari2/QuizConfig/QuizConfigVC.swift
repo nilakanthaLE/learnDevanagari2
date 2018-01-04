@@ -38,7 +38,7 @@ class QuizConfigViewModel{
         }
         quizConfigModel.selectedSetting.producer.startWithValues() { toggleBackground(to: $0) }
         freiesUebenAbfragenLabelText    <~ quizConfigModel.freiesUebenQuizSetting.producer.map{ quizSetting in getText(for: .InAbfrage, in: quizSetting) }
-        lektionLabelText                <~ quizConfigModel.aktuelleLektion.producer.map{$0?.title ?? "fehlt"}
+        lektionLabelText                <~ quizConfigModel.aktuellerLektionsTitle
         quizZeichenSatzIstLeer          <~ quizConfigModel.quizZeichenInAbfrageIstLeer
         quizStartenButtonIsEnabled      <~ quizConfigModel.canStartQuiz
     }
@@ -49,10 +49,9 @@ class QuizConfigViewModel{
     //QuizViewModel
     func getViewModelForQuizVC()                -> QuizViewModel                    { return QuizViewModel(quizModel:quizConfigModel.getQuizModel()) }
     //ZeichensatzAnzeigen
-    func getViewModelForUebenZeichenInAbfrage() -> ZeichenInAbfrageViewModel        { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.freiesUebenQuizZeichenSatz, editable: true)}
-    func getViewModelForLektionsZeichenInAbfrage()  -> ZeichenInAbfrageViewModel    { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.lektionsQuizZeichenSatz, editable: false)}
+    func getViewModelForUebenZeichenInAbfrage() -> ZeichenInAbfrageViewModel        { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.freiesUebenQuizZeichenSatz, editable: true, currentQuizZeichenStatusHasChanged: quizConfigModel.currentQuizZeichenStatusHasChanged)}
+    func getViewModelForLektionsZeichenInAbfrage()  -> ZeichenInAbfrageViewModel    { return ZeichenInAbfrageViewModel(zeichenSatz: quizConfigModel.lektionsQuizZeichenSatz, editable: false, currentQuizZeichenStatusHasChanged: quizConfigModel.currentQuizZeichenStatusHasChanged)}
     //QuizAbfragenSettings
-    func getViewModelForQuizAbfragenSetting()   -> QuizAbfragenSettingViewModel     { return QuizAbfragenSettingViewModel( quizSetting:quizConfigModel.freiesUebenQuizSetting) }
     func getViewModelForFreiesUebenAbfragen() -> AbfragenUndAnzeigenViewModel       { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.freiesUebenQuizSetting, editable: true, settingModus: .InAbfrage)}
     func getViewModelForLektionsAbfragen() -> AbfragenUndAnzeigenViewModel          { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.lektionsQuizSetting, editable: false, settingModus: .InAbfrage)}
     func getViewModelForLektionsAnzeigen() -> AbfragenUndAnzeigenViewModel          { return AbfragenUndAnzeigenViewModel.init(quizSetting: quizConfigModel.lektionsQuizSetting, editable: false, settingModus: .Anzeige)}
@@ -118,8 +117,8 @@ class QuizConfigVC: UIViewController {
     //Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         (segue.destination as? QuizVC)?.viewModel                           = viewModel.getViewModelForQuizVC()
-//        (segue.destination as? QuizAbfragenSettingView)?.viewModel            = viewModel.getViewModelForQuizAbfragenSetting()
         (segue.destination as? ConfigZeichensatzVC)?.viewModel              = viewModel.getViewModelForConfigZeichensatz()
+        (segue.destination as? QuizAbfrageSettingsVC)?.settings             = viewModel.quizConfigModel.freiesUebenQuizSetting
     }
     
     @IBAction func abmeldenAction(_ sender: UIBarButtonItem) {

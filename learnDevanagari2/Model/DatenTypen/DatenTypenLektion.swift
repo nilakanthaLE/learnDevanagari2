@@ -17,6 +17,8 @@ class Lektion:Hashable{
         return lhs.hashValue == rhs.hashValue
     }
     
+    var zeichenSatzBisAktuell:[Zeichen]{ return erstelleZeichensatz().filter{$0.lektion ?? 1000 <= nummer ?? -1} }
+    static func zeichenSatz(fuer lektionen:[Lektion]) -> [Zeichen]{ return erstelleZeichensatz().filter{lektionen.map{$0.nummer ?? 1000}.contains($0.lektion ?? -1000)} }
     
     var quizSetting:QuizSetting?
     var title:String?

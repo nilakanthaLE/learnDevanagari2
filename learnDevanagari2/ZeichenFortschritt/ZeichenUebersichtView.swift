@@ -11,33 +11,35 @@ import UIKit
 import ReactiveSwift
 import Result
 
-fileprivate typealias ButtonData = (String, SignalProducer<Double, NoError>?)
+typealias ButtonData = (title:String, score: Double)
 class ZeichenUebersichtViewModel{
-    var buttonTitles = MutableProperty([String?]())
-    init(){ buttonTitles.producer.startWithValues {[weak self] titles in
-//        self?.scoreForButtons.value = titles.map{ ($0 ?? "",ScoreZeichen.getOrCreate(devaString: $0 )?.scoreProducer) } }
+    fileprivate var buttonTitles = [String?](){ didSet{ buttonData = buttonTitles.map{ MutableProperty((title:$0 ?? "", score: 0)) } } }
+    fileprivate var buttonData = [MutableProperty<ButtonData>]()
+    
+    fileprivate func updateScores(){
+        for bData in buttonData{
+            let title = bData.value.title
+            let score = MainSettings.get()?.angemeldeterUser?.getButtonData(title: title).score ?? 0
+            bData.value = (title:title,score:score)
         }
     }
-    fileprivate var scoreForButtons =  MutableProperty([ButtonData]())
+    fileprivate func getButtonData(for deva:String?) -> MutableProperty<ButtonData>?{ return buttonData.filter{$0.value.title == deva}.first }
+    private var userButtonData:[ButtonData]     { return (MainSettings.get()?.angemeldeterUser?.getButtonData(for: buttonTitles) ?? [ButtonData]()) }
 }
 
 class ZeichenUebersichtView:NibLoadingView{
-    var viewModel:ZeichenUebersichtViewModel!   { didSet{ viewModel.scoreForButtons.signal.observeValues{ [weak self] datas in self?.setObserverForButtons(buttonDatas: datas) } }}
-    func setButtonData() {
-        guard viewModel.buttonTitles.value.count == 0 else {return}
-        viewModel.buttonTitles.value = zeichenButtons.map{$0.currentTitle}
-    }
-    
-    @IBOutlet var zeichenButtons: [UIButton]!   { didSet{ for button in zeichenButtons { ZeichenUebersichtView.setStyle(for: button, score: 0) } } }
-    
-    //helper
-    private func setObserverForButtons(buttonDatas:[ButtonData]){
-        for data in buttonDatas{
-            let button = getButton(for: data.0)
-            data.1?.producer.startWithValues{ score in ZeichenUebersichtView.setStyle(for: button, score: score) }
+    func updateButtonData() { viewModel.updateScores() }
+    var viewModel:ZeichenUebersichtViewModel! {
+        didSet{
+            viewModel.buttonTitles = zeichenButtons.map{$0.currentTitle}
+            for button in zeichenButtons  {
+                viewModel.getButtonData(for: button.currentTitle)?.producer.startWithValues{buttonData in ZeichenUebersichtView.setStyle(for: button, score: buttonData.score)  }
+            }
         }
     }
-    private func getButton(for devaString:String?) -> UIButton{ return zeichenButtons.filter{$0.currentTitle == devaString}.first ?? UIButton()}
+    @IBOutlet private var zeichenButtons: [UIButton]!
+    
+    //helper
     private static func setStyle(for button:UIButton, score:Double){
         func berechneFarbe(score:Double) -> UIColor{
             guard score > 0 else    { return .clear}
@@ -54,19 +56,4 @@ class ZeichenUebersichtView:NibLoadingView{
     }
 }
 
-
-//
-//
-//func ~> <R> (
-//    backgroundClosure:   @escaping () -> R,
-//    mainClosure:         @escaping (_ result: R) -> ())
-//{
-//    serial_queue.async {
-//        let result = backgroundClosure()
-//        DispatchQueue.main.async(execute: {
-//            mainClosure(result)
-//        })
-//    }
-//}
-//private let serial_queue = DispatchQueue(label: "serial-worker")
 
