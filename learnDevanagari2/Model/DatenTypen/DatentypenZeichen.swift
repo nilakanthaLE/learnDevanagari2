@@ -96,12 +96,18 @@ class QuizZeichen:Equatable{
         scoreZeichen?.setLetztesMalKorrektLektion(quizZeichen: self)
     }
     
+    static func getSonderZeichenFuerTastaturBar(quizZeichensatz:[QuizZeichen]) -> [String]{
+        var ergebnis = Set<String>()
+        for barZeichen in sonderZeichenFuerBar(){
+            if (quizZeichensatz.map{$0.zeichen.devanagari ?? ""}.filter{$0.contains(barZeichen.suchString)}.count > 0) { ergebnis.insert(barZeichen.angezeigt)}
+        }
+        return Array(ergebnis)
+    }
+    
     //helper
     static func createQuizZeichensatz(quizSetting:QuizSetting?,zeichensatz:[Zeichen]?) -> [QuizZeichen]{
         guard let quizSetting = quizSetting, let zeichensatz = zeichensatz else {return [QuizZeichen]()}
         
-//        let start = Date()
-//        defer { print("dauer: \(Date().timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate)") }
         
         var zeichensatzForZeichenfeldAbfrage:[QuizZeichen]{
             guard var quizSetting = quizSetting.copy() else {return [QuizZeichen]()}
@@ -250,7 +256,6 @@ class Zeichen:NSObject{
             return Array(sortedSatz.prefix(anzahl))
         case .HauefigFalsch:
             let sortedSatz = zeichenSatz.sorted{$0.scoreZeichen?.haeufigkeitFalsch ?? 0 > $1.scoreZeichen?.haeufigkeitFalsch ?? 0}
-            print(sortedSatz.map{"\($0.devanagari) - \($0.scoreZeichen?.haeufigkeitFalsch ?? 0)"})
             return Array(sortedSatz.prefix(anzahl))
         }
     }

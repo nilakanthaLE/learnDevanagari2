@@ -125,7 +125,10 @@ protocol PanelControlViewModelProtocol:ControlViewModel {
 extension PanelControlViewModelProtocol{
     //Model Interaktionen
     func isHidden(controlCurrentModus:ControlCurrentModus ,usereingabe:UserAntwortZeichen?, controlTyp:ControlTyp, controlModus: PanelControlModus?, korrekteAntwort:Zeichen?, vokalOderKonsShowsAnswer: PanelControlModus? ) -> Bool{
-        guard let usereingabe = usereingabe, controlCurrentModus != .Versteckt, controlModus != .Versteckt else {return true}
+        guard let usereingabe = usereingabe,
+            controlCurrentModus != .Versteckt,
+            controlCurrentModus != .Anzeige,
+            controlModus != .Versteckt else {return true}
         
         
         
@@ -145,7 +148,6 @@ extension PanelControlViewModelProtocol{
         let vokalHalbVokalNil       = usereingabe.vokalOderHalbvokal.value   == nil && !wirdGeprueft && !showsAnswer
         let einfVokal               = usereingabe.vokalOderHalbvokal.value   == VokalOderHalbvokal.Vokal.rawValue
         
-//        let controlIsVersteckt = controlSetting.modus == .Versteckt
         
         switch controlTyp {
         case .VokalOderKonsonantTyp:   return false

@@ -21,7 +21,7 @@ class QuizAbfrageSettingsVC: UIViewController {
                 try? managedContext.save()
             }
         }
-        quizAbfragenSettingsView.viewModel = QuizAbfragenSettingViewModel(quizSetting:settings)
+        quizAbfragenSettingsView.viewModel = QuizAbfragenSettingViewModel(quizSetting:settings,isFreiesUebensetting:isFreiesUebensetting)
     }
 }
 

@@ -23,10 +23,15 @@ class QuizModel{
         //setze alle QZ auf ungesichtet
         for quizZeichen in quizZeichenSatz.value.filter({$0.status.value == .InUserAbfrage}){ quizZeichen.status.value = .Ungesichtet }
         
+        //sonderZeichenFuerTastaturBar
+        sonderZeichenFuerTastaturBar.value = QuizZeichen.getSonderZeichenFuerTastaturBar(quizZeichensatz: quizZeichenSatz.value)
+        
         //observiert UserInteraktion für PrufenButton
         pruefenButtonHasAnAction.signal.observeValues {[weak self] () in  self?.pruefenButtonAction() }
         setNextQZ()
     }
+    
+    var sonderZeichenFuerTastaturBar = MutableProperty([String]())
     
     //Zeilenhöhe der Controls (ändert sich wenn sich Orientation ändert)
     //wird von PanelControlViewModel gesetzt

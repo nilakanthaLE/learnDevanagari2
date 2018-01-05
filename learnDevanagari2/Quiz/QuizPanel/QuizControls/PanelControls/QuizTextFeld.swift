@@ -10,7 +10,8 @@ import UIKit
 import ReactiveSwift
 
 class QuizTextFeldViewModel:PanelControlViewModel{
-    var text = MutableProperty<String?>("")
+    var text                    = MutableProperty<String?>("")
+    var sonderzeichenFuerBar    = MutableProperty([String]())
     required init(controlSetting: PanelControlSetting,quizModel:QuizModel) {
         super.init(controlSetting: controlSetting, quizModel: quizModel)
         text <~ userEingabe
@@ -18,7 +19,7 @@ class QuizTextFeldViewModel:PanelControlViewModel{
         text <~ quizModel.currentQuizZeichen.producer.map{ [weak self] _ in
             quizModel.currentQuizZeichen.value?.quizSetting.textfeld.modus == .NurAnzeige ? self?.correctAnswer.value : nil
         }
-        
+        sonderzeichenFuerBar   <~ quizModel.sonderZeichenFuerTastaturBar
     }
 }
 
@@ -37,22 +38,40 @@ class QuizTextFeld: UITextField,PanelControlProtocol {
             smartInsertDeleteType           = .no
             autocorrectionType              = .no
             
+            inputAssistantItem.leadingBarButtonGroups.removeAll()
+            inputAssistantItem.trailingBarButtonGroups.removeAll()
             
+            //ToolBar
+            let toolBar                     = UIToolbar.init(frame: CGRect.zero)
+            inputAccessoryView              = toolBar
+            toolBar.barStyle                = .default
             
+            viewModel.sonderzeichenFuerBar.producer.startWithValues { [weak self] sonderZeichen in
+                guard sonderZeichen.count > 0 else {
+                    self?.inputAccessoryView = nil
+                    return
+                }
+                var barItems:[UIBarButtonItem]  = {
+                    var ergebnis = [UIBarButtonItem]()
+                    for string in sonderZeichen{
+                        ergebnis.append(UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+                        ergebnis.append(UIBarButtonItem.init(title: string, style: .done, target: self, action: nil))
+                    }
+                    ergebnis.append(UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
+                    return ergebnis
+                }()
+                toolBar.items = barItems
+                toolBar.sizeToFit()
+            }
             
             var flexibleSpace:UIBarButtonItem{
                 return UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             }
             
-            let toolBar                     = UIToolbar.init(frame: CGRect.zero)
-            toolBar.barStyle                = .default
-            toolBar.items                   = [UIBarButtonItem.init(title: "test", style: .done, target: self, action: nil)]
-            toolBar.sizeToFit()
             
-            inputAccessoryView              = toolBar
             
-            inputAssistantItem.leadingBarButtonGroups.removeAll()
-            inputAssistantItem.trailingBarButtonGroups.removeAll()
+            
+            
             
                 
             

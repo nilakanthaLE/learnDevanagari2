@@ -10,67 +10,85 @@ import UIKit
 import ReactiveSwift
 
 
+fileprivate typealias SwitchStatus = (isOn:Bool,isEnabled:Bool)
 
 class QuizAbfragenSettingViewModel{
     var iPadOrientation = (UIApplication.shared.delegate as? AppDelegate)?.iPadOrientation
     var quizSetting:MutableProperty<QuizSetting?>
-    init(quizSetting: MutableProperty<QuizSetting?>) {
-        self.quizSetting    = quizSetting
+    var isFreiesUebensetting:Bool
+    init(quizSetting: MutableProperty<QuizSetting?>,isFreiesUebensetting:Bool) {
+        self.quizSetting            = quizSetting
+        self.isFreiesUebensetting   = isFreiesUebensetting
         
-        nachZeichnen.value              = quizSetting.value?.zeichenfeld                 == .Nachzeichnen || quizSetting.value?.zeichenfeld == .AbfrageUndNachzeichnen
-        umschrift.value                 = quizSetting.value?.textfeld.modus              == .InAbfrage
-        vokalOderKonsonant.value        = quizSetting.value?.vokalOderKonsonant.modus    == .InAbfrage
-        artikulation.value              = quizSetting.value?.artikulation.modus          == .InAbfrage
-        devaSchreiben.value             = quizSetting.value?.zeichenfeld                 == .InAbfrage || quizSetting.value?.zeichenfeld == .AbfrageUndNachzeichnen
-        konsonantenTyp.value            = quizSetting.value?.konsonantTyp.modus          == .InAbfrage
-        vokalOderHalbvokal.value        = quizSetting.value?.vokalOderHalbvokal.modus    == .InAbfrage
-        aspiration.value                = quizSetting.value?.aspiration.modus            == .InAbfrage
-        stimmhaftigkeit.value           = quizSetting.value?.stimmhaftigkeit.modus       == .InAbfrage
+        //isOn setzen
+        nachZeichnen.value.isOn              = quizSetting.value?.zeichenfeld                 == .Nachzeichnen || quizSetting.value?.zeichenfeld == .AbfrageUndNachzeichnen
+        umschrift.value.isOn                 = quizSetting.value?.textfeld.modus              == .InAbfrage
+        vokalOderKonsonant.value.isOn        = quizSetting.value?.vokalOderKonsonant.modus    == .InAbfrage
+        artikulation.value.isOn              = quizSetting.value?.artikulation.modus          == .InAbfrage
+        devaSchreiben.value.isOn             = quizSetting.value?.zeichenfeld                 == .InAbfrage || quizSetting.value?.zeichenfeld == .AbfrageUndNachzeichnen
+        konsonantenTyp.value.isOn            = quizSetting.value?.konsonantTyp.modus          == .InAbfrage
+        vokalOderHalbvokal.value.isOn        = quizSetting.value?.vokalOderHalbvokal.modus    == .InAbfrage
+        aspiration.value.isOn                = quizSetting.value?.aspiration.modus            == .InAbfrage
+        stimmhaftigkeit.value.isOn           = quizSetting.value?.stimmhaftigkeit.modus       == .InAbfrage
         
+        //update QuizSetting, falls Switchs gesetzt werden
         _ = SignalProducer.combineLatest(propterties).start{ [weak self] _ in
             if let newSetting = self?.update(quizSetting:self?.quizSetting.value){ self?.quizSetting.value = newSetting }
+        }
+        
+        //isEnabled setzen
+        if isFreiesUebensetting         {
+            let bekannteControls  = MainSettings.get()?.angemeldeterUser?.bekannteControls ?? Set<ControlTyp>()
+            nachZeichnen.value.isEnabled        = AbfrageTyp.umschrift.isEnabled(for: bekannteControls)
+            umschrift.value.isEnabled           = AbfrageTyp.umschrift.isEnabled(for: bekannteControls)
+            vokalOderKonsonant.value.isEnabled  = AbfrageTyp.vokalOderKonsonant.isEnabled(for: bekannteControls)
+            artikulation.value.isEnabled        = AbfrageTyp.artikulation.isEnabled(for: bekannteControls)
+            devaSchreiben.value.isEnabled       = AbfrageTyp.devaSchreiben.isEnabled(for: bekannteControls)
+            konsonantenTyp.value.isEnabled      = AbfrageTyp.konsonantenTyp.isEnabled(for: bekannteControls)
+            vokalOderHalbvokal.value.isEnabled  = AbfrageTyp.vokalOderHalbVokal.isEnabled(for: bekannteControls)
+            aspiration.value.isEnabled          = AbfrageTyp.aspiration.isEnabled(for: bekannteControls)
+            stimmhaftigkeit.value.isEnabled     = AbfrageTyp.stimmhaftigkeit.isEnabled(for: bekannteControls)
         }
     }
     
     
+    fileprivate var nachZeichnen        = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var umschrift           = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var einfache:[MutableProperty<SwitchStatus>]{return [nachZeichnen,umschrift]}
     
-    var nachZeichnen        = MutableProperty(false)
-    var umschrift           = MutableProperty(false)
-    var einfache:[MutableProperty<Bool>]{return [nachZeichnen,umschrift]}
+    fileprivate var vokalOderKonsonant  = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var artikulation        = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var mediums:[MutableProperty<SwitchStatus>]{return [vokalOderKonsonant,artikulation]}
     
-    var vokalOderKonsonant  = MutableProperty(false)
-    var artikulation        = MutableProperty(false)
-    var mediums:[MutableProperty<Bool>]{return [vokalOderKonsonant,artikulation]}
-    
-    var devaSchreiben       = MutableProperty(false)
-    var konsonantenTyp      = MutableProperty(false)
-    var vokalOderHalbvokal  = MutableProperty(false)
+    fileprivate var devaSchreiben       = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var konsonantenTyp      = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var vokalOderHalbvokal  = MutableProperty((isOn:false,isEnabled:true))
     
     
-    var aspiration          = MutableProperty(false)
-    var stimmhaftigkeit     = MutableProperty(false)
-    var voll:[MutableProperty<Bool>]{return [devaSchreiben,vokalOderHalbvokal,konsonantenTyp,aspiration,stimmhaftigkeit]}
+    fileprivate var aspiration          = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var stimmhaftigkeit     = MutableProperty((isOn:false,isEnabled:true))
+    fileprivate var voll:[MutableProperty<SwitchStatus>]{return [devaSchreiben,vokalOderHalbvokal,konsonantenTyp,aspiration,stimmhaftigkeit]}
     
-    var propterties:[MutableProperty<Bool>] {return [nachZeichnen,umschrift,vokalOderKonsonant,artikulation,devaSchreiben,konsonantenTyp,aspiration,stimmhaftigkeit]}
+    fileprivate var propterties:[MutableProperty<SwitchStatus>] {return [nachZeichnen,umschrift,vokalOderKonsonant,artikulation,devaSchreiben,konsonantenTyp,aspiration,stimmhaftigkeit]}
     
     
     private func update(quizSetting:QuizSetting?) -> QuizSetting?{    
         var quizSetting = quizSetting
-        quizSetting?.zeichenfeld                = devaSchreiben.value && nachZeichnen.value ? .AbfrageUndNachzeichnen : devaSchreiben.value ? .InAbfrage :  nachZeichnen.value ? .Nachzeichnen : .NurAnzeige
-        quizSetting?.textfeld.modus             = umschrift.value           ? .InAbfrage : .NurAnzeige
-        quizSetting?.vokalOderKonsonant.modus   = vokalOderKonsonant.value  ? .InAbfrage : .NurAnzeige
-        quizSetting?.vokalOderHalbvokal.modus   = vokalOderHalbvokal.value  ? .InAbfrage : .NurAnzeige
-        quizSetting?.artikulation.modus         = artikulation.value        ? .InAbfrage : .NurAnzeige
-        quizSetting?.konsonantTyp.modus         = konsonantenTyp.value      ? .InAbfrage : .NurAnzeige
-        quizSetting?.aspiration.modus           = aspiration.value          ? .InAbfrage : .NurAnzeige
-        quizSetting?.stimmhaftigkeit.modus      = stimmhaftigkeit.value     ? .InAbfrage : .NurAnzeige
+        quizSetting?.zeichenfeld                = devaSchreiben.value.isOn && nachZeichnen.value.isOn ? .AbfrageUndNachzeichnen : devaSchreiben.value.isOn ? .InAbfrage :  nachZeichnen.value.isOn ? .Nachzeichnen : .NurAnzeige
+        quizSetting?.textfeld.modus             = umschrift.value.isOn           ? .InAbfrage : umschrift.value.isEnabled ? .NurAnzeige : .Versteckt
+        quizSetting?.vokalOderKonsonant.modus   = vokalOderKonsonant.value.isOn  ? .InAbfrage : vokalOderKonsonant.value.isEnabled ? .NurAnzeige : .Versteckt
+        quizSetting?.vokalOderHalbvokal.modus   = vokalOderHalbvokal.value.isOn  ? .InAbfrage : vokalOderHalbvokal.value.isEnabled ? .NurAnzeige : .Versteckt
+        quizSetting?.artikulation.modus         = artikulation.value.isOn        ? .InAbfrage : artikulation.value.isEnabled ? .NurAnzeige : .Versteckt
+        quizSetting?.konsonantTyp.modus         = konsonantenTyp.value.isOn      ? .InAbfrage : konsonantenTyp.value.isEnabled ? .NurAnzeige : .Versteckt
+        quizSetting?.aspiration.modus           = aspiration.value.isOn          ? .InAbfrage : aspiration.value.isEnabled ? .NurAnzeige : .Versteckt
+        quizSetting?.stimmhaftigkeit.modus      = stimmhaftigkeit.value.isOn     ? .InAbfrage : stimmhaftigkeit.value.isEnabled ? .NurAnzeige : .Versteckt
         quizSetting?.konsonantTyp.konsonantTypModus = .Hauchlaut
         
         return quizSetting
     }
     
     
-    func getMutableProperty(for abfrage:AbfrageTyp?) -> MutableProperty<Bool>?{
+    fileprivate func getMutableProperty(for abfrage:AbfrageTyp?) -> MutableProperty<SwitchStatus>?{
         guard let abfrage = abfrage else {return nil}
         switch abfrage {
         case .nachzeichnen:         return nachZeichnen
@@ -84,8 +102,12 @@ class QuizAbfragenSettingViewModel{
         case .vokalOderHalbVokal:   return vokalOderHalbvokal
         }
     }
-    func doSwitch(for stufe:AbfrageStufe,to isOn:Bool){
-        func set(props:[MutableProperty<Bool>],to isON:Bool){ for prop in props {prop.value = isOn} }
+    fileprivate func doSwitch(for stufe:AbfrageStufe,to isOn:Bool){
+        func set(props:[MutableProperty<SwitchStatus>],to isON:Bool){
+            for prop in props {
+                if prop.value.isEnabled { prop.value.isOn = isOn }
+            }
+        }
         switch stufe {
         case .einfach: set(props: einfache, to: isOn)
         case .medium: set(props: mediums, to: isOn)
@@ -121,6 +143,8 @@ class QuizAbfragenSettingView: NibLoadingView {
             initSwitchs(for: vokalOderHalbvokal, abfrage: .vokalOderHalbVokal)
             initSwitchs(for: aspiration, abfrage: .aspiration)
             initSwitchs(for: stimmhaftigkeit, abfrage: .stimmhaftigkeit)
+            
+
         }
     }
     
@@ -156,16 +180,17 @@ class QuizAbfragenSettingView: NibLoadingView {
     private func initSwitchs(for switchs:[UISwitch],abfrage:AbfrageTyp){
         for iSwitch in switchs{
             guard let prop = viewModel?.getMutableProperty(for: abfrage) else {return}
-            iSwitch.reactive.isOn   <~ prop
-            prop                    <~ iSwitch.reactive.isOnValues
+            iSwitch.reactive.isOn       <~ prop.map{$0.isOn}
+            prop                        <~ iSwitch.reactive.isOnValues.map{(isOn:$0,isEnabled:prop.value.isEnabled)}
+            iSwitch.reactive.isEnabled  <~ prop.map{$0.isEnabled}
         }
     }
 }
 
-enum AbfrageStufe{case einfach,medium,voll}
+fileprivate enum AbfrageStufe{case einfach,medium,voll}
 
 
-enum AbfrageTyp{
+fileprivate enum AbfrageTyp{
     case nachzeichnen
     case umschrift
     case vokalOderKonsonant
@@ -177,4 +202,24 @@ enum AbfrageTyp{
     case aspiration
     case stimmhaftigkeit
     case vokalOderHalbVokal
+    
+    var controlTyp:ControlTyp{
+        switch self {
+        case .nachzeichnen:         return .ZeichenfeldTyp
+        case .umschrift:            return .TextfeldTyp
+        case .vokalOderKonsonant:   return .VokalOderKonsonantTyp
+        case .artikulation:         return .ArtikulationTyp
+        case .devaSchreiben:        return .ZeichenfeldTyp
+        case .konsonantenTyp:       return .KonsonantTyp
+        case .aspiration:           return .AspirationTyp
+        case .stimmhaftigkeit:      return .StimmhaftigkeitTyp
+        case .vokalOderHalbVokal:   return .VokalOderHalbvokalTyp
+        }
+
+    }
+    
+    func isEnabled(for bekannteControls:Set<ControlTyp>) -> Bool{
+        guard self != .nachzeichnen else { return true}
+        return bekannteControls.contains(self.controlTyp)
+    }
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 
 enum SelectedSetting    {case Lektion, FreiesUeben}
 class QuizConfigModel{
@@ -49,6 +48,9 @@ class QuizConfigModel{
             lektionsQuizZeichenSatz.value   = QuizZeichen.createQuizZeichensatzForLektion(quizSetting:filterLektionsQuizSetting(lektion:lektion), zeichensatz: lektion?.zeichenSatzBisAktuell)
             aktuellerLektionsTitle.value    = lektion?.title
             
+            user?.updateBereitsBekannteControls(quizSetting: lektionsQuizSetting.value)
+            
+            //falls beim letzten Mal die App beendet wurde, ohne dass die nächste Lektion initialisiert wurde
             if (lektionsQuizZeichenSatz.value.filter{ $0.status.value != .Correct}).count == 0{
                 updateForLektion(user?.nextLektion())
             }
@@ -63,6 +65,9 @@ class QuizConfigModel{
         //--> selectedSetting wieder auf nil setzen
         quizZeichenInAbfrageIstLeer.signal.observeValues{ [weak self] _ in
             if self?.selectedSetting.value == .Lektion { updateForLektion(user?.nextLektion()) }
+            else {
+                self?.freiesUebenZeichenSatz.value = [Zeichen]()
+            }
             self?.selectedSetting.value = nil
         }
         
@@ -88,11 +93,7 @@ class QuizConfigModel{
             guard let selSetting = selSetting else { return }
             switch selSetting {
             case .FreiesUeben:
-                
-                // hier
-                // nur Abfragen und Anzeigen, die der User bereits gesehen hat
                 gewaehltesQuizSetting.value                 = freiesUebenQuizSetting.value
-                
                 gewaehlterQuizZeichensatz.value             = freiesUebenQuizZeichenSatz.value
             case .Lektion:
                 gewaehltesQuizSetting.value                 = lektionsQuizSetting.value

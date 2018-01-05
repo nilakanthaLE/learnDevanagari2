@@ -297,6 +297,20 @@ enum ControlTyp:Int{
     case AspirationTyp = 6
     case StimmhaftigkeitTyp = 7
     
+    static func getBy(name:String)  -> ControlTyp{
+        switch name {
+            case "Vokal oder Konsonant":    return .VokalOderKonsonantTyp
+            case "Vokal oder Halbvokal":    return .VokalOderHalbvokalTyp
+            case "KonsonantTyp":            return .KonsonantTyp
+            case "Textfeld":                return .TextfeldTyp
+            case "Artikulation":            return .ArtikulationTyp
+            case "Aspiration":              return .AspirationTyp
+            case "Stimmhaftigkeit":         return .StimmhaftigkeitTyp
+            case "Zeichenfeld":             return .ZeichenfeldTyp
+            default: return .TextfeldTyp
+        }
+    }
+    
     var controlName:String?{
         switch self {
         case .VokalOderKonsonantTyp:   return "Vokal oder Konsonant"

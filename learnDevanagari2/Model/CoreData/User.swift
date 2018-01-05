@@ -42,6 +42,13 @@ extension User{
         return currentLektion
     }
     var alleLektionenBisher:[Lektion]           { return erstelleLektionen().filter{$0.nummer  ?? 1000  <= aktuelleLektion } }
+    var bekannteControls:Set<ControlTyp>        { return Set((bereitsBekannteControls as? Set<String>)?.map{ControlTyp.getBy(name: $0)} ?? [ControlTyp]() )}
+    func updateBereitsBekannteControls(quizSetting:QuizSetting?){
+        guard let quizSetting = quizSetting else {return}
+        let aktuelleAbfragen    = Set(quizSetting.abfragen.map{$0.controlName!})
+        let bereitsBekannte     = (bereitsBekannteControls as? Set<String>) ??  Set<String>()
+        bereitsBekannteControls = bereitsBekannte.union(aktuelleAbfragen) as NSObject
+    }
     
     //MARK: ScoreZeichen
     func getScoreZeichen(for devaString:String?) -> ScoreZeichen?{

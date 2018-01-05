@@ -5505,6 +5505,47 @@ func erstelleZeichensatz() -> [Zeichen] {
     
 }
 
+func sonderZeichenFuerBar() -> [(suchString:String,angezeigt:String)]{
+    var ergebnis = [(suchString:String,angezeigt:String)]()
+    ergebnis.append((suchString: "आ", angezeigt: "ā"))
+    ergebnis.append((suchString: "ा", angezeigt: "ā"))
+    
+    ergebnis.append((suchString: "ई", angezeigt: "ī"))
+    ergebnis.append((suchString: "ी", angezeigt: "ī"))
+    
+    ergebnis.append((suchString: "ऊ", angezeigt: "ū"))
+    ergebnis.append((suchString: "ू", angezeigt: "ū"))
+    
+    ergebnis.append((suchString: "ऋ", angezeigt: "ṛ"))
+    ergebnis.append((suchString: "ृ", angezeigt: "ṛ"))
+    
+    ergebnis.append((suchString: "ॠ", angezeigt: "ṝ"))
+    ergebnis.append((suchString: "ॄ", angezeigt: "ṝ"))
+    
+    ergebnis.append((suchString: "ठ", angezeigt: "ṭ"))
+    ergebnis.append((suchString: "ट", angezeigt: "ṭ"))
+    
+    ergebnis.append((suchString: "ड", angezeigt: "ḍ"))
+    ergebnis.append((suchString: "ढ", angezeigt: "ḍ"))
+    
+    ergebnis.append((suchString: "ङ", angezeigt: "ṅ"))
+    
+    ergebnis.append((suchString: "ञ", angezeigt: "ñ"))
+    
+    ergebnis.append((suchString: "ण", angezeigt: "ṇ"))
+    
+    ergebnis.append((suchString: "श", angezeigt: "ś"))
+    
+    ergebnis.append((suchString: "ष", angezeigt: "ṣ"))
+    
+    ergebnis.append((suchString: "ं", angezeigt: "ṃ"))
+    
+    ergebnis.append((suchString: "ः", angezeigt: "ḥ"))
+    
+    return ergebnis
+}
+
+
 
 
 //-(NSMutableArray *)erstelleAnusvaras{
