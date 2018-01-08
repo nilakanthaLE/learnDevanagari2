@@ -55,7 +55,7 @@ class QuizTextFeld: UITextField,PanelControlProtocol {
                     var ergebnis = [UIBarButtonItem]()
                     for string in sonderZeichen{
                         ergebnis.append(UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
-                        ergebnis.append(UIBarButtonItem.init(title: string, style: .done, target: self, action: nil))
+                        ergebnis.append(UIBarButtonItem.init(title: string, style: .done, target: self, action: #selector(self?.barButtonPressed)))
                     }
                     ergebnis.append(UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil))
                     return ergebnis
@@ -68,19 +68,15 @@ class QuizTextFeld: UITextField,PanelControlProtocol {
                 return UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             }
             
-            
-            
-            
-            
-            
-                
-            
-            
             viewModel.userEingabe           <~ reactive.continuousTextValues
             reactive.isEnabled              <~ viewModel.isEnabled.producer
             reactive.backgroundColor        <~ viewModel.backGroundColor.producer
             reactive.text                   <~ viewModel.text.producer
             anchorHeight.reactive.constant  <~ viewModel.zeilenHoehe.producer
         }
+    }
+    @objc private func barButtonPressed(sender:UIBarButtonItem){
+        guard let title = sender.title else {return}
+        text = (text ?? "") + title
     }
 }

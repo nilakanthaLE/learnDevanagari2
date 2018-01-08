@@ -229,14 +229,14 @@ class Zeichen:NSObject{
     func getValue(for controlTyp:ControlTyp?) -> String?{
         guard let controlTyp = controlTyp else {return nil}
         switch controlTyp {
-        case .ArtikulationTyp:         return artikulation
-        case .AspirationTyp:           return aspiration
+        case .ArtikulationTyp:          return artikulation
+        case .AspirationTyp:            return aspiration
         case .KonsonantTyp:             return konsonantTyp
-        case .StimmhaftigkeitTyp:      return stimmhaftigkeit
-        case .TextfeldTyp:             return umschrift
-        case .VokalOderHalbvokalTyp:   return vokalOderHalbvokal
-        case .VokalOderKonsonantTyp:   return vokalOderKonsonant
-        case .ZeichenfeldTyp:          return devanagari
+        case .StimmhaftigkeitTyp:       return stimmhaftigkeit
+        case .TextfeldTyp:              return umschrift
+        case .VokalOderHalbvokalTyp:    return vokalOderHalbvokal
+        case .VokalOderKonsonantTyp:    return vokalOderKonsonant
+        case .ZeichenfeldTyp:           return devanagari
         }
     }
     
