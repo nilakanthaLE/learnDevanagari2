@@ -20,12 +20,13 @@ class LektionstextViewModel{
     var currentLektionsText             = MutableProperty(getTexteFuerLektionen()[0])
     var currentAufgabenText             = MutableProperty<String?>(nil)
     var currentZusatzAufgebenText       = MutableProperty<String?>(nil)
+    var title                           = MutableProperty<String?>(nil)
     init() {
+        currentLektion.value            = Int(MainSettings.get()?.angemeldeterUser?.aktuelleLektion ?? 0)
         currentLektionsText             <~ currentLektion.producer.map{getTexteFuerLektionen()[$0]}
         currentAufgabenText             <~ currentLektionsText.producer.map{$0.erklaerung}
         currentZusatzAufgebenText       <~ currentLektionsText.producer.map{$0.zusatzAufgaben}
-
-        
+        title                           <~ currentLektion.map{erstelleLektionen()[$0].title}
     }
     //helper
     func showNextLektionsText(direction:String?){
@@ -41,6 +42,7 @@ class LektionstextViewModel{
 }
 
 class LektionstextVC: UIViewController {
+    var quizViewModel:QuizViewModel?
     var viewModel:LektionstextViewModel!{
         didSet{
             erklaerungView.viewModel = viewModel.getViewModelForAnleitungErklaerungControl()
@@ -53,19 +55,22 @@ class LektionstextVC: UIViewController {
             
             
             viewModel.currentLektion.producer.startWithValues{[weak self] lektion in
-                self?.segmentedControl?.setEnabled(lektion < getTexteFuerLektionen().count - 1, forSegmentAt: 1)
+                var maxLektion:Int{
+                    guard let bereitsBekannteLektion = MainSettings.get()?.angemeldeterUser?.bereitsBekannteLektion else {return getTexteFuerLektionen().count - 1}
+                    return Int(bereitsBekannteLektion)
+                }
+                self?.segmentedControl?.setEnabled(lektion < maxLektion, forSegmentAt: 1)
                 self?.segmentedControl?.setEnabled(lektion > 0, forSegmentAt: 0)
             }
             
-            navigationItem.reactive.title   <~ viewModel.currentLektion.producer.map{ "Lektion \($0 + 1)" }
             viewModel.iPadOrientation?.producer.startWithValues{ [weak self] orientation in self?.setViews(for: orientation) }
             viewModel.currentZusatzAufgebenText.producer.startWithValues {[weak self] text in self?.setZusatzAufgabenViews(text: text) }
             
-
-            
+            navigationItem.reactive.title   <~ viewModel.title.producer
         }
     }
     
+    @IBOutlet weak var zumQuizBarButton: UIBarButtonItem!
     @IBOutlet weak var neueZeichenLabelStackView: StackLabelView!
     @IBOutlet weak var aufgabenLabelStackView: StackLabelView!
     @IBOutlet weak var zusatzAufgabenLabelStackView: StackLabelView!
@@ -81,11 +86,7 @@ class LektionstextVC: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
-    @IBOutlet weak var erklaerungView: AnleitungErklaerungControl!{
-        didSet{
-            setStyle(for: erklaerungView)
-        }
-    }
+    @IBOutlet weak var erklaerungView: AnleitungErklaerungControl!{ didSet{ setStyle(for: erklaerungView) } }
     
     
     private func setStyle(for view:UIView){
@@ -128,7 +129,6 @@ class LektionstextVC: UIViewController {
             thirdRowStack.addArrangedSubview(emptyErsatzZusatzAufgabenView)
             thirdRowStack.isHidden = false
         }
-//        setZusatzAufgabenViews(text: viewModel.currentZusatzAufgebenText.value)
     }
     private func setZusatzAufgabenViews(text:String?){
         emptyErsatzZusatzAufgabenView.isHidden  = text == nil ? false : true
@@ -138,11 +138,19 @@ class LektionstextVC: UIViewController {
     
     override func viewDidLoad() {
         viewModel = LektionstextViewModel()
+        if quizViewModel == nil { navigationItem.rightBarButtonItem = nil }
     }
     
     @IBAction func segementedControlAction(_ sender: UISegmentedControl) {
         var direction:String{ return sender.selectedSegmentIndex == 0 ? "<" : ">"  }
         viewModel.showNextLektionsText(direction: direction)
         sender.selectedSegmentIndex = UISegmentedControlNoSegment
+    }
+    
+    //Segues
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        quizViewModel?.isLektionsQuiz                                       = true
+        (segue.destination as? QuizVC)?.viewModel                           = quizViewModel
+        navigationController?.isNavigationBarHidden = true
     }
 }

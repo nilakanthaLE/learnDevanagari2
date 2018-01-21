@@ -10,6 +10,7 @@ import UIKit
 import ReactiveSwift
 
 class MantrasViewModel{
+    
     var currentLektion          = MutableProperty(0)
     var labelTexte : [MutableProperty<NSAttributedString>]
     
@@ -92,16 +93,18 @@ class MantrasViewModel{
     }
     private static func getRanges(for zeichen:[String]?,attrStrings:[NSAttributedString]) -> [[NSRange]]{
         guard let zeichen = zeichen else {return [[NSRange]]()}
-        return attrStrings.map{labelText in zeichen.map {labelText.string.rangesWithoutVokalzeichen(of: $0)}.flatMap { $0 } }
+        return attrStrings.map{labelText in zeichen.map { labelText.string.ranges(of: $0)}.flatMap { $0 } }
     }
 }
 
 class MantrasVC: UIViewController {
+    var dismissToRoot:MutableProperty<Void>?
     var viewModel:MantrasViewModel! = MantrasViewModel(attrStrings:MantraViewIPadV().labels.sorted{$1.tag > $0.tag }.map{$0.attributedText ?? NSAttributedString()})
     
     let mantraViewIPadH = MantraViewIPadH()
     let mantraViewIPadV = MantraViewIPadV()
     
+    @IBOutlet weak var weiterBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         viewModel.iPadOrientation?.producer.startWithValues{[weak self] orientation in
             guard let orientation = orientation else {return}
@@ -112,6 +115,7 @@ class MantrasVC: UIViewController {
         }
         for label in mantraViewIPadH.labels.sorted(by: {$1.tag > $0.tag }).enumerated(){ label.element.reactive.attributedText <~ viewModel.labelTexte[label.offset] }
         for label in mantraViewIPadV.labels.sorted(by: {$1.tag > $0.tag }).enumerated(){ label.element.reactive.attributedText <~ viewModel.labelTexte[label.offset] }
+        if dismissToRoot == nil { navigationItem.rightBarButtonItem = nil }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -122,6 +126,9 @@ class MantrasVC: UIViewController {
         viewModel.startAnimationForNeuGelernte()
     }
     var labels: [UILabel]!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination.contentViewController as? ZeichenUbersichtVC)?.dismissToRoot = dismissToRoot
+    }
 }
 
 

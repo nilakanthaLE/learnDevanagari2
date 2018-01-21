@@ -17,25 +17,22 @@ extension NSAttributedString{
         attributed.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
         return attributed
     }
+
 }
 
 extension String {
-    func rangesWithoutVokalzeichen(of substring:String) -> [NSRange]{
-        return ranges(of: substring).filter{range in
-            var nextChar:String{
-                let next = Range.init(uncheckedBounds: (lower: range.upperBound, upper: self.index(after: range.upperBound)))
-                return String(self[next])
+    func ranges(of substring: String) -> [NSRange]{
+        let endIndex = self.endIndex
+        var ranges = [NSRange]()
+        enumerateSubstrings(in: startIndex..<endIndex, options: .byComposedCharacterSequences) {
+            (_substring, substringRange, _, _) in
+            if substring == _substring {
+                ranges.append(NSRange(substringRange, in: self))
             }
-            return !vokalZeichen.contains(nextChar)
-        }.map{NSRange($0,in:self)}
-    }
-    func ranges(of substring: String, options: CompareOptions = [], locale: Locale? = nil) -> [Range<String.Index>] {
-        var ranges: [Range<Index>] = []
-        while let range = self.range(of: substring, options: options, range: (ranges.last?.upperBound ?? self.startIndex)..<self.endIndex, locale: locale) {
-            ranges.append(range)
         }
         return ranges
     }
+    
     
     subscript (i: Int) -> Character { return self[index(startIndex, offsetBy: i)] }
     

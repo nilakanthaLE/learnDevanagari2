@@ -17,7 +17,8 @@ struct LektionsText{
     var aufgabenIPhone:String
     var zusatzAufgaben:String?
     var zusatzAufgabenIPhone:String?
-    var mitArtikulationAnleitungViews = false
+    var mitArtikulationAnleitungViews   = false
+    var mitNasaleAnleitungViews         = false
     init (erklaerung: String, neueZeichen: String, aufgaben: String, neueZeichenIPhone: String, aufgabenIPhone: String){
         self.init(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone, zusatzAufgaben: nil, zusatzAufgabenIPhone: nil,erklaerung2: nil)
     }
@@ -36,7 +37,7 @@ struct LektionsText{
         self.erklaerung2            = erklaerung2
     }
     var anzahlErklaerungsSeiten:Int{
-        return 1 + (erklaerung2 != nil ? 1 : 0) + (mitArtikulationAnleitungViews ? 5 : 0)
+        return 1 + (erklaerung2 != nil ? 1 : 0) + (mitArtikulationAnleitungViews ? 5 : 0) + (mitNasaleAnleitungViews ? 1 : 0)
     }
 }
 
@@ -171,22 +172,31 @@ func getTexteFuerLektionen() -> [LektionsText]{
     
     
     //Lektion15
+    erklaerung         = "Nasale entstehen dadurch, dass der Luftstrom bei der Artikulation nicht allein über den Mund, sondern auch über die Nase entweicht.\n\nDevanagari unterscheidet 5 Nasale. Für jeden Artikulationsort einen.\n\nNasale sind stimmhaft und werden nicht aspiriert."
+    
     neueZeichen        = "neue Zeichen:\n\nङ\t=\tṅa\t\t(velar, wie Eṅgel)\nञ\t=\tña\t\t(palatal, wie engl.:fiñch)\nण\t=\tṇa\t\t(retroflex, wie Am.E.:huṇter)\nन\t=\tna\t\t(dental, wie Ente)\nम\t=\tma\t\t(labial, wie Ampel)"
     aufgaben           = "Aufgaben:\n\n1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) beobachte die Anzeige des neuen Feldes Nasale"
     neueZeichenIPhone        = "ङ\t=\tṅa\t\t(velar, wie Eṅgel)\nञ\t=\tña\t\t(palatal, wie engl.:fiñch)\nण\t=\tṇa\t\t(retroflex, wie Am.E.:huṇter)\nन\t=\tna\t\t(dental, wie Ente)\nम\t=\tma\t\t(labial, wie Ampel)"
     aufgabenIPhone           = "1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) beobachte die Anzeige des neuen Feldes Nasale"
-    ergebnis.append(LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone))
+    var lektionsText2 = LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone)
+    lektionsText2.mitNasaleAnleitungViews = true
+    ergebnis.append(lektionsText2)
     
     //Lektion16
+    erklaerung         = "Diese Lektion dient dazu Nasale zu erkennen und die Unterscheidung zwischen Nasalen und einfachen Konsonanten zu festigen.\n\nWiederholung aus vorangegangener Lektion:\nNasale entstehen dadurch, dass der Luftstrom bei der Artikulation nicht allein über den Mund, sondern auch über die Nase entweicht.\n\nDevanagari unterscheidet 5 Nasale. Für jeden Artikulationsort einen.\n\nNasale sind stimmhaft und werden nicht aspiriert."
+    
     neueZeichen        = "neue Zeichen:\n\nङ\t=\tṅa\t\t(velar, wie Eṅgel)\nञ\t=\tña\t\t(palatal, wie engl.:fiñch)\nण\t=\tṇa\t\t(retroflex, wie Am.E.:huṇter)\nन\t=\tna\t\t(dental, wie Ente)\nम\t=\tma\t\t(labial, wie Ampel)"
     aufgaben           = "Aufgaben:\n\n1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen einfachen Konsonanten und Nasalen"
     neueZeichenIPhone        = "ङ\t=\tṅa\t\t(velar, wie Eṅgel)\nञ\t=\tña\t\t(palatal, wie engl.:fiñch)\nण\t=\tṇa\t\t(retroflex, wie Am.E.:huṇter)\nन\t=\tna\t\t(dental, wie Ente)\nम\t=\tma\t\t(labial, wie Ampel)"
     aufgabenIPhone           = "1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen einfachen Konsonanten und Nasalen"
-    ergebnis.append(LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone))
+    var lektionsText3 = LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone)
+    lektionsText3.mitNasaleAnleitungViews = true
+    ergebnis.append(lektionsText3)
+    
     
     //Lektion17
-    erklaerung         = "Halbvokale stehen zwischen den Konsonanten und Vokalen.\n\nIm Gegensatz zu einfachen Konsonanten können Halbvokale, wie Vokale, anhaltend artikuliert werden.\n\nMit den Konsonanten haben sie wiederum gemeinsam, dass ihnen Vokale anhängen."
-    neueZeichen        = "neue Zeichen:\n\nय\t=\tya\t\t(wie 'J'ude)\nर\t=\tra\t\t(wie Am.E.:tea'r'ing)\nव\t=\tva\t\t(Wie 'W'al oder 'W'as)\nल\t=\tla\t\t(Wie 'l'ieben)"
+    erklaerung         = "Halbvokale stehen zwischen den Konsonanten und Vokalen.\n\nIm Gegensatz zu einfachen Konsonanten können Halbvokale, wie Vokale, anhaltend artikuliert werden.\n\nMit den Konsonanten haben sie wiederum gemeinsam, dass ihnen Vokale anhängen.\n\nHalbvokale sind stimmhaft und werden nicht aspiriert. Für vier Artikulationsorte gibt es einen Halbvokal."
+    neueZeichen        = "neue Zeichen:\n\nय\t=\tya\t\t(velar, wie 'J'ude)\nर\t=\tra\t\t(retroflex, wie Am.E.: tea'r'ing)\nव\t=\tva\t\t(labial, wie 'W'al oder 'W'as)\nल\t=\tla\t\t(dental, wie 'l'ieben)"
     aufgaben           = "Aufgaben:\n\n1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen einfachen Konsonanten und Nasalen\n9) unterscheide zwischen Halbvokalen und einfachen Vokalen"
     zusatzAufgaben     = "Zusatzaufgabe:\n\nErkenne die Besonderheit der Halbvokale, indem Du jeden Halbvokal (य,र,व,ल) lang anhaltend artikulierst.\n\nVersuche das Gleiche mit einfachen Konsonanten, wie z.B. क, प, त oder च."
     neueZeichenIPhone        = "य\t=\tya\t\t(wie 'J'ude)\nर\t=\tra\t\t(wie Am.E.:tea'r'ing)\nव\t=\tva\t\t(Wie 'W'al oder 'W'as)\nल\t=\tla\t\t(Wie 'l'ieben)"
@@ -195,7 +205,7 @@ func getTexteFuerLektionen() -> [LektionsText]{
      ergebnis.append(LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone,zusatzAufgaben:zusatzAufgaben,zusatzAufgabenIPhone:zusatzAufgabenIPhone))
     
     //Lektion18
-    erklaerung         = "Sibilianten beziehungsweise Zischlaute entstehen dadurch, dass der Luftstrom im Mundraum eine enge Stelle vor oder hinter den Zähnen passiert.\n\nDevanagari kennt drei Zischlaute. Einen dentalen, स - sa, einen palatalen श - śa und einen retroflexen ष - ṣa."
+    erklaerung         = "Sibilianten beziehungsweise Zischlaute entstehen dadurch, dass der Luftstrom im Mundraum eine enge Stelle vor oder hinter den Zähnen passiert.\n\nDevanagari kennt drei Zischlaute. Einen dentalen, स - sa, einen palatalen श - śa und einen retroflexen ष - ṣa.\n\nSibilianten sind stimmlos und werden aspiriert."
     neueZeichen        = "neue Zeichen:\n\nस\t=\tsa\t\t(dental, wie wi'ss'en)\nश\t=\tśa\t\t(palatal, wie deutsch 'Sch'af)\nष\t=\tṣa\t\t(retroflex)"
     aufgaben           = "Aufgaben:\n\n1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen Halbvokalen und einfachen Vokalen\n9) unterscheide zwischen einfachen Konsonanten, Nasalen und Sibilanten"
     neueZeichenIPhone        = "स\t=\tsa\t\t(dental, wie wi'ss'en)\nश\t=\tśa\t\t(palatal, wie deutsch 'Sch'af)\nष\t=\tṣa\t\t(retroflex)"
@@ -203,7 +213,7 @@ func getTexteFuerLektionen() -> [LektionsText]{
     ergebnis.append(LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone))
     
     //Lektion19
-    erklaerung         = "Als letztes Grundzeichen des Devanagari-Alphabets lernen wir in dieser Lektion den Hauchlaut kennen.\n\nDer Hauchlaut in Sanskrit entspricht dem deutschen Laut 'ha', wie wir ihn in Haus oder Hirsch kennen"
+    erklaerung         = "Als letztes Grundzeichen des Devanagari-Alphabets lernen wir in dieser Lektion den Hauchlaut kennen.\n\nDer Hauchlaut in Sanskrit entspricht dem deutschen Laut 'ha', wie wir ihn in Haus oder Hirsch kennen.\n\nEr ist stimmhaft und wird aspiriert. Der Artikulationsort ist velar."
     neueZeichen        = "neue Zeichen:\n\nह\t=\tha\t\t(wie 'h'eim oder 'H'irsch)"
     aufgaben           = "Aufgaben:\n\n1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen Halbvokalen und einfachen Vokalen\n9) unterscheide zwischen einfachen Konsonanten, Nasalen, Sibilanten und dem Hauchlaut"
     neueZeichenIPhone        = "ह\t=\tha\t\t(wie 'h'eim oder 'H'irsch)"
@@ -216,9 +226,9 @@ func getTexteFuerLektionen() -> [LektionsText]{
     var erklaerung2     = "Steht der Visarga jedoch in der Mitte eines Satzes, wird nichts hinzugefügt. Es wird also lediglich das h gesprochen\n\nBeispiel: 'namaḥ śivāya' wird 'namah śivāya' gesprochen.\n\nEtwas komplizierter ist die Ausprache des Anusvara ं (Punkt über der Silbe). In dieser Lektion tritt er lediglich am Ende eines Wortes, bzw. einer einzelnen Silbe auf. In diesem Fall wird der vorangegangene Vokal durch den Anusvara nasalisiert. \n\nDer Visarga wird in der IAST-Umschrift als ḥ und der Anusvara als ṃ geschrieben\n\nEndet eine Silbe mit einem Virāma ् (Strich unterhalb der Silbe), dann wird der Vokal a, der normalerweise jedem Zeichen anhängt unterdrückt. प् (प + ्) wird also nicht, wie bisher als 'pa' umschrieben, sondern als 'p'. Ein Virāma findet man nur am Ende eines Wortes, das auf einen Konsonanten endet."
     
     neueZeichen        = "neue Zeichen:\n\nः\t=\tḥ\t\t\n(am Ende eines Satzes:\nh+'vorangehender Vokal'\nin der Mitte eines Satzes: nur h)\n\nं\t=\tṃ\t\t\n(Am Ende eines Wortes:\nNasalisierung des vorangegangenen Vokals)\n\n्\t=\tunterdrückt den Vokal a\n(Beispiel क् = k und nicht ka)"
-    aufgaben           = "Aufgaben:\n\n1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen Halbvokalen und einfachen Vokalen\n9) unterscheide zwischen einfachen Konsonanten, Nasalen, Sibilanten und dem Hauchlaut"
+    aufgaben           = "Aufgaben:\n\n1) unterscheide zwischen Vokalen und Konsonanten\n2) gib die Umschrift an\n3) bestimme den Ort der Artikulation\n4) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n5) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n6) unterscheide zwischen Halbvokalen und einfachen Vokalen\n7) unterscheide zwischen einfachen Konsonanten, Nasalen, Sibilanten und dem Hauchlaut"
     neueZeichenIPhone        = "ः\t=\tḥ\t\t\n(am Ende eines Satzes:\nh+'vorangehender Vokal'\nin der Mitte eines Satzes: nur h)\n\nं\t=\tṃ\t\t\n(Am Ende eines Wortes:\nNasalisierung des vorangegangenen Vokals)\n\n्\t=\tunterdrückt den Vokal a\n(Beispiel क् = k und nicht ka)"
-    aufgabenIPhone           = "1) zeichne die Zeichen nach\n2) unterscheide zwischen Vokalen und Konsonanten\n3) gib die Umschrift an\n4) erinnere und zeichne die Devanagari-Zeichen\n5) bestimme den Ort der Artikulation\n6) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n7) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n8) unterscheide zwischen Halbvokalen und einfachen Vokalen\n9) unterscheide zwischen einfachen Konsonanten, Nasalen, Sibilanten und dem Hauchlaut"
+    aufgabenIPhone           = "1) unterscheide zwischen Vokalen und Konsonanten\n2) gib die Umschrift an\n3) bestimme den Ort der Artikulation\n4) unterscheide zwischen aspirierten und nicht aspirierten Konsonanten\n5) unterscheide zwischen stimmhaften und stimmlosen Konsonanten\n6) unterscheide zwischen Halbvokalen und einfachen Vokalen\n7) unterscheide zwischen einfachen Konsonanten, Nasalen, Sibilanten und dem Hauchlaut"
     ergebnis.append(LektionsText(erklaerung: erklaerung, neueZeichen: neueZeichen, aufgaben: aufgaben, neueZeichenIPhone: neueZeichenIPhone, aufgabenIPhone: aufgabenIPhone, zusatzAufgaben: nil, zusatzAufgabenIPhone: nil, erklaerung2: erklaerung2))
     
     
@@ -291,6 +301,9 @@ func getArtikulationViewData() -> [ArtikulationAnleitungViewData]{
     return ergebnis
 }
 
+func getNasaleText()->String{
+    return "Nasale entstehen dadurch, dass der Luftstrom bei der Artikulation nicht allein über den Mund, sondern auch über die Nase entweicht.\n\nDevanagari unterscheidet 5 Nasale. Für jeden Artikulationsort einen.\n\nNasale sind stimmhaft und werden nicht aspiriert."
+}
 
 ////Bubbles
 //self.bubbleNasalDesAnusvaraUmschrift.landscapeDE    = "Gib hier die Umschrift der Nonsens-Zeichenfolge ein.\n\nErsetze dabei den Anusvara durch den korrespondierenden Nasal"

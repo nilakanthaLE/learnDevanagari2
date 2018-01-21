@@ -38,7 +38,7 @@ class ZeichenInAbfrageViewModel:AbfrageZeichenViewModelProtocol{
             var color:UIColor{
                 let sameArray                   = ZeichenInAbfrageViewModel.arrayOfSame(array: quizZeichenSatz.value)
                 let qZeichenMitAnteilCorrect    = ZeichenInAbfrageViewModel.arrayOfZeichenWithAnteilCorrect(array: sameArray)
-                let anteilCorrect               = qZeichenMitAnteilCorrect.filter{$0.zeichen?.devanagari == devaString}.first?.anteilCorrect ?? 0
+                let anteilCorrect               = qZeichenMitAnteilCorrect.filter{$0.quizZeichen?.zeichen.devanagari == devaString}.first?.anteilCorrect ?? 0
                 return ZeichenInAbfrageViewModel.colorForAnteilCorrect(anteilCorrect)
             }
             arbeitsArray[index.x][index.y].color = color
@@ -55,10 +55,10 @@ class ZeichenInAbfrageViewModel:AbfrageZeichenViewModelProtocol{
             return result
         }
     }
-    static func arrayOfZeichenWithAnteilCorrect(array:[[QuizZeichen]]) -> [(zeichen:Zeichen?,anteilCorrect:Double)]{
-        return array.reduce([(zeichen:Zeichen?,anteilCorrect:Double)](), { (result, arrayQZ)  in
+    static func arrayOfZeichenWithAnteilCorrect(array:[[QuizZeichen]]) -> [(quizZeichen:QuizZeichen?,anteilCorrect:Double)]{
+        return array.reduce([(quizZeichen:QuizZeichen?,anteilCorrect:Double)](), { (result, arrayQZ)  in
             let correct:Double = Double(arrayQZ.filter{$0.status.value == .Correct}.count)
-            return result.arrayByAppending(o: (zeichen:arrayQZ.first?.zeichen,anteilCorrect: correct/Double(arrayQZ.count)))
+            return result.arrayByAppending(o: (quizZeichen:arrayQZ.first,anteilCorrect: correct/Double(arrayQZ.count)))
         })
     }
     static func colorForAnteilCorrect(_ anteilCorrect:Double) -> UIColor{
@@ -71,8 +71,8 @@ class ZeichenInAbfrageViewModel:AbfrageZeichenViewModelProtocol{
         
         func getAndRemoveFirst() -> (title:String,color:UIColor)  {
             if zeichenMitAnteilCorrect.count > 0{
-                let zeichen = zeichenMitAnteilCorrect.removeFirst()
-                return (title:zeichen.zeichen?.devanagari ?? String(),color:colorForAnteilCorrect(zeichen.anteilCorrect))
+                let zeichenMitCorrect = zeichenMitAnteilCorrect.removeFirst()
+                return (title:zeichenMitCorrect.quizZeichen?.anusvaraVisargaViramaZeichen?.devanagari ?? zeichenMitCorrect.quizZeichen?.zeichen.devanagari ?? String(),color:colorForAnteilCorrect(zeichenMitCorrect.anteilCorrect))
             }
             return (title: String() , color : .clear)
         }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,34 +20,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ts3-vv-VXg">
-                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                    <rect key="frame" x="0.0" y="0.0" width="893" height="339"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zon-Ot-rZ5" customClass="StackLabelView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="0.0" y="0.0" width="111.5" height="339"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pWE-9z-6vq" customClass="StackLabelView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="111.5" y="0.0" width="112" height="339"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoT-a8-PBh" customClass="NasaleAnleitungView" customModule="learnDevanagari2" customModuleProvider="target">
+                            <rect key="frame" x="223.5" y="0.0" width="111.5" height="339"/>
+                            <color key="backgroundColor" red="0.1443433117" green="0.45644081289999999" blue="0.1191656785" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpx-iz-pM7" customClass="ArtikulationsAnleitungView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="335" y="0.0" width="111.5" height="339"/>
                             <color key="backgroundColor" red="0.14434331170250181" green="0.45644081289067362" blue="0.11916567853612113" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnQ-gg-I6J" customClass="ArtikulationsAnleitungView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="446.5" y="0.0" width="111.5" height="339"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIW-nM-9Ut" customClass="ArtikulationsAnleitungView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="558" y="0.0" width="112" height="339"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFP-UW-5L4" customClass="ArtikulationsAnleitungView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="670" y="0.0" width="111.5" height="339"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owN-uV-kLi" customClass="ArtikulationsAnleitungView" customModule="learnDevanagari2" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="339"/>
+                            <rect key="frame" x="781.5" y="0.0" width="111.5" height="339"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>

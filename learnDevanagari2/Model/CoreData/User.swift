@@ -29,7 +29,7 @@ extension User{
         try? managedContext.save()
     }
     
-    func getButtonData(title:String?)           -> ButtonData   { return (title ?? "" ,getScoreZeichen(for: title)?.gesamtScore ?? 0) }
+    func getButtonData(title:String?)           -> ButtonData   { return (title ?? "" ,getScoreZeichen(for: title)?.grundZeichenScore ?? 0) }
     func getButtonData(for titles:[String?])    -> [ButtonData] { return titles.map{getButtonData(title: $0)} }
     
     var currentMainQuizSetting:QuizSetting?{ return QuizSetting(dict: lektionsQuizSettings as? Dictionary) }
@@ -37,7 +37,7 @@ extension User{
     //Mark:Lektion
     var currentLektion:Lektion{ return erstelleLektionen()[Int(aktuelleLektion)] }
     func nextLektion()->Lektion{
-        aktuelleLektion += 1
+        aktuelleLektion = erstelleLektionen().count < aktuelleLektion + 1 ?  aktuelleLektion + 1  : 0
         try? managedContext.save()
         return currentLektion
     }
@@ -49,8 +49,14 @@ extension User{
         let bereitsBekannte     = (bereitsBekannteControls as? Set<String>) ??  Set<String>()
         bereitsBekannteControls = bereitsBekannte.union(aktuelleAbfragen) as NSObject
     }
+    func updateBereitsbekannteLektion(){
+        bereitsBekannteLektion  = aktuelleLektion > bereitsBekannteLektion ? aktuelleLektion : bereitsBekannteLektion
+    }
     
     //MARK: ScoreZeichen
+    var ligaturenScoreZeichen:[ScoreZeichen]{
+        return erstelleZeichensatz().filter{$0.isLigatur}.map{self.getScoreZeichen(for: $0.devanagari)}.filter{$0 != nil} as! [ScoreZeichen]
+    }
     func getScoreZeichen(for devaString:String?) -> ScoreZeichen?{
         return allScoreZeichen.filter{$0.devaString == devaString}.first
     }
@@ -73,9 +79,26 @@ extension User{
     func updateScoreZeichen(for userAntwortZeichen:UserAntwortZeichen,quizZeichen:QuizZeichen?){
         guard let quizZeichen = quizZeichen else {return}
         let scoreZeichen = getScoreZeichen(for: quizZeichen.zeichen.devanagari)
-        for userAntwort in userAntwortZeichen.userAntworten(for: quizZeichen){
-            _ = scoreZeichen?.newAbfrage(userAntwort: userAntwort)
+        
+        if let nasalDesAnusvaraZeichen = quizZeichen.nasalDesAnusvaraZeichen{
+            let userAntworten   = userAntwortZeichen.userAntworten(for: quizZeichen)
+            let correct         = userAntworten.count == (userAntworten.filter{$0.correct}).count
+            _ = scoreZeichen?.newAbfrageForNasalDesAnusvara(artikulation: nasalDesAnusvaraZeichen.artikulation, correct: correct)
         }
+        else{
+            if let anusvaraVisargaViramaZeichen = quizZeichen.anusvaraVisargaViramaZeichen{
+                let userAntworten   = userAntwortZeichen.userAntworten(for: quizZeichen)
+                let correct         = userAntworten.count == (userAntworten.filter{$0.correct}).count
+                let anusVisVirScoreZeichen  = getScoreZeichen(for:anusvaraVisargaViramaZeichen.zeichenFuerScore.devanagari)
+                _ = anusVisVirScoreZeichen?.newAbfrageFuerAnusvaraVisargaVirama(correct:correct)
+                anusVisVirScoreZeichen?.gesamtScore = anusVisVirScoreZeichen?.calcGesamtScore ?? 0
+            }
+            for userAntwort in userAntwortZeichen.userAntworten(for: quizZeichen){
+                _ = scoreZeichen?.newAbfrage(userAntwort: userAntwort)
+            }
+        }
+        //update GesamtScore
+        scoreZeichen?.gesamtScore = scoreZeichen?.calcGesamtScore ?? 0
         
         //letzte Korrekte Antwort in Lektion speichern
         if userAntwortZeichen.isCorrect(for: quizZeichen){

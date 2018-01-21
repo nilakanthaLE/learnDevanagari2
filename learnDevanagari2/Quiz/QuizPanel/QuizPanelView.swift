@@ -124,7 +124,7 @@ protocol PanelControlViewModelProtocol:ControlViewModel {
 }
 extension PanelControlViewModelProtocol{
     //Model Interaktionen
-    func isHidden(controlCurrentModus:ControlCurrentModus ,usereingabe:UserAntwortZeichen?, controlTyp:ControlTyp, controlModus: PanelControlModus?, korrekteAntwort:Zeichen?, vokalOderKonsShowsAnswer: PanelControlModus? ) -> Bool{
+    func isHidden(controlCurrentModus:ControlCurrentModus ,usereingabe:UserAntwortZeichen?, controlTyp:ControlTyp, controlModus: PanelControlModus?, korrekteAntwort:Zeichen?, vokalOderKonsShowsAnswer: PanelControlModus?, isNasalDesAnusvaraLektion:Bool ) -> Bool{
         guard let usereingabe = usereingabe,
             controlCurrentModus != .Versteckt,
             controlCurrentModus != .Anzeige,
@@ -152,7 +152,7 @@ extension PanelControlViewModelProtocol{
         switch controlTyp {
         case .VokalOderKonsonantTyp:   return false
         case .VokalOderHalbvokalTyp:   return vokalKonsNil || konsonant || konsonantForKorrekt || konsonantForShowsAnswer //|| controlIsVersteckt
-        case .ArtikulationTyp :        return vokalKonsNil || (vokal && (vokalHalbVokalNil || einfVokal)) || vokalForKorrekt || vokalForShowsAnswer //|| controlIsVersteckt
+        case .ArtikulationTyp :        return (vokalKonsNil  || (vokal && (vokalHalbVokalNil || einfVokal)) || vokalForKorrekt || vokalForShowsAnswer) && !isNasalDesAnusvaraLektion
         case .AspirationTyp :          return vokalKonsNil || vokal || vokalForKorrekt || vokalForShowsAnswer //|| controlIsVersteckt
         case .StimmhaftigkeitTyp:      return vokalKonsNil || vokal || vokalForKorrekt || vokalForShowsAnswer //|| controlIsVersteckt
         case .KonsonantTyp :            return vokalKonsNil || vokal || vokalForKorrekt || vokalForShowsAnswer //|| controlIsVersteckt

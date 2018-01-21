@@ -16,7 +16,14 @@ class QuizModel{
     var quizZeichenInAbfrageIstLeer:MutableProperty<Void>
     var quizZeichenSatz:MutableProperty<[QuizZeichen]>
     var currentQuizZeichenStatusHasChanged:MutableProperty<QuizZeichen?>
-    init(quizZeichenSatz:MutableProperty<[QuizZeichen]>, quizZeichenInAbfrageIstLeer:MutableProperty<Void>, isLektionsquiz:Bool, currentQuizZeichenStatusHasChanged:MutableProperty<QuizZeichen?>) {
+    var konsonantenTypModus:KonsonantTypModus?
+    init(quizZeichenSatz:MutableProperty<[QuizZeichen]>,
+         quizZeichenInAbfrageIstLeer:MutableProperty<Void>,
+         isLektionsquiz:Bool,
+         currentQuizZeichenStatusHasChanged:MutableProperty<QuizZeichen?>,
+         konsonantenTypModus:KonsonantTypModus?) {
+        
+        self.konsonantenTypModus = konsonantenTypModus
         self.quizZeichenSatz = quizZeichenSatz
         self.quizZeichenInAbfrageIstLeer = quizZeichenInAbfrageIstLeer
         self.currentQuizZeichenStatusHasChanged = currentQuizZeichenStatusHasChanged

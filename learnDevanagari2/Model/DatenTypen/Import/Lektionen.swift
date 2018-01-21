@@ -95,6 +95,7 @@ func erstelleLektionen() -> [Lektion]
     lektionen[17-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .InAbfrage, konsonantTypModus: nil)
     lektionen[18-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .InAbfrage, konsonantTypModus: nil)
     lektionen[19-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .InAbfrage, konsonantTypModus: nil)
+    lektionen[20-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .InAbfrage, konsonantTypModus: nil)
     lektionen[21-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .Versteckt, konsonantTypModus: nil)
     lektionen[22-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .Versteckt, konsonantTypModus: nil)
     lektionen[23-1].quizSetting?.vokalOderKonsonant    = .init(controlTyp: .VokalOderKonsonantTyp, modus: .Versteckt, konsonantTypModus: nil)
@@ -275,20 +276,16 @@ func erstelleLektionen() -> [Lektion]
     lektionen[24-1].quizSetting?.konsonantTyp = .init(controlTyp:.KonsonantTyp, modus: .Versteckt, konsonantTypModus: .Nasal)
     lektionen[25-1].quizSetting?.konsonantTyp = .init(controlTyp:.KonsonantTyp, modus: .Versteckt, konsonantTypModus: .Nasal)
     
+    lektionen[20].quizSetting?.nasalDesAnusvaraPruefe       = true
+    lektionen[19].quizSetting?.anusvaraVisargaViramaPruefe  = true
+    
     return lektionen
 }
-//    lektionen[20-1].quizSetting.anusVisPruefe = true;
-//
-//    lektionen[21-1].quizSetting.nasalDesAnusvaraPruefe = true;
-//
+
+
 //    lektionen[22-1].quizSetting.ligaturPruefe = true;
 //    lektionen[23-1].quizSetting.ligaturPruefe = true;
 //    lektionen[24-1].quizSetting.ligaturPruefe = true;
 //    lektionen[25-1].quizSetting.ligaturPruefe = true;
-//
-//    self.alleLektionen = [[NSArray alloc]initWithObjects:lektionen[1],lektionen[2],lektionen[3],lektionen[4],lektionen[5],lektionen[6],lektionen[7],lektionen[8],lektionen[9],lektionen[10],lektionen[11],lektionen[12],lektionen[13],lektionen[14],lektionen[15],lektionen[16], lektionen[17], lektionen[18], lektionen[19],lektionen[20],lektionen[21],lektionen[22],lektionen[23],lektionen[24],lektionen[25],nil];
-//    [self erstelleLektionenZeichensatz];
-//
-//    return self.alleLektionen;
-//}
+
 

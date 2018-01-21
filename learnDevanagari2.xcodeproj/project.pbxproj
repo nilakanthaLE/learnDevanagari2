@@ -55,8 +55,12 @@
 		5CAE404F1FB329E80030B024 /* QuizConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE404E1FB329E80030B024 /* QuizConfigVC.swift */; };
 		5CAE40511FB335D60030B024 /* QuizAbfragenSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE40501FB335D60030B024 /* QuizAbfragenSettingView.swift */; };
 		5CAE40531FB3369C0030B024 /* QuizConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */; };
+		5CB217EC2010E70400FB3083 /* NasaleAnleitungView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CB217EB2010E70400FB3083 /* NasaleAnleitungView.xib */; };
+		5CB217EE2010E8E300FB3083 /* NasaleAnleitungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB217ED2010E8E300FB3083 /* NasaleAnleitungView.swift */; };
 		5CC44D011FD02BF700C0FB05 /* ScoreZeichen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC44D001FD02BF700C0FB05 /* ScoreZeichen.swift */; };
 		5CC44D031FD02C2300C0FB05 /* Abfrage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC44D021FD02C2300C0FB05 /* Abfrage.swift */; };
+		5CC6C29E200F7A3400DBB637 /* LigaturenUebersichtView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC6C29D200F7A3400DBB637 /* LigaturenUebersichtView.xib */; };
+		5CC6C2A0200F7A5300DBB637 /* LigaturenUebersichtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC6C29F200F7A5300DBB637 /* LigaturenUebersichtView.swift */; };
 		5CD391101F861FAB0054295A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3910F1F861FAB0054295A /* AppDelegate.swift */; };
 		5CD391151F861FAB0054295A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD391131F861FAB0054295A /* Main.storyboard */; };
 		5CD391181F861FAB0054295A /* learnDevanagari2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5CD391161F861FAB0054295A /* learnDevanagari2.xcdatamodeld */; };
@@ -135,8 +139,12 @@
 		5CAE404E1FB329E80030B024 /* QuizConfigVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConfigVC.swift; sourceTree = "<group>"; };
 		5CAE40501FB335D60030B024 /* QuizAbfragenSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAbfragenSettingView.swift; sourceTree = "<group>"; };
 		5CAE40521FB3369C0030B024 /* QuizConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizConfigModel.swift; sourceTree = "<group>"; };
+		5CB217EB2010E70400FB3083 /* NasaleAnleitungView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NasaleAnleitungView.xib; sourceTree = "<group>"; };
+		5CB217ED2010E8E300FB3083 /* NasaleAnleitungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaleAnleitungView.swift; sourceTree = "<group>"; };
 		5CC44D001FD02BF700C0FB05 /* ScoreZeichen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreZeichen.swift; sourceTree = "<group>"; };
 		5CC44D021FD02C2300C0FB05 /* Abfrage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abfrage.swift; sourceTree = "<group>"; };
+		5CC6C29D200F7A3400DBB637 /* LigaturenUebersichtView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LigaturenUebersichtView.xib; sourceTree = "<group>"; };
+		5CC6C29F200F7A5300DBB637 /* LigaturenUebersichtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigaturenUebersichtView.swift; sourceTree = "<group>"; };
 		5CD3910C1F861FAB0054295A /* learnDevanagari2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnDevanagari2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD3910F1F861FAB0054295A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CD391141F861FAB0054295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +231,8 @@
 				5C0E6EA31FCD8ABF00F246B6 /* AnleitungErklaerungContentView.swift */,
 				5C0E6DCE1FCD7D1C00F246B6 /* ArtikulationsAnleitungView.xib */,
 				5C0E6DD01FCD7DC200F246B6 /* ArtikulationsAnleitungView.swift */,
+				5CB217EB2010E70400FB3083 /* NasaleAnleitungView.xib */,
+				5CB217ED2010E8E300FB3083 /* NasaleAnleitungView.swift */,
 			);
 			path = ErklaerungControl;
 			sourceTree = "<group>";
@@ -327,6 +337,8 @@
 				5CF9D98F1FCF12A8008FD232 /* ZeichenUbersichtVC.swift */,
 				5CF9D98B1FCF04B5008FD232 /* ZeichenUebersichtView.xib */,
 				5CF9D98D1FCF0662008FD232 /* ZeichenUebersichtView.swift */,
+				5CC6C29F200F7A5300DBB637 /* LigaturenUebersichtView.swift */,
+				5CC6C29D200F7A3400DBB637 /* LigaturenUebersichtView.xib */,
 			);
 			path = ZeichenFortschritt;
 			sourceTree = "<group>";
@@ -514,6 +526,8 @@
 			files = (
 				5C0E6EB51FCDBDD900F246B6 /* nasal.png in Resources */,
 				5C5B23051FDAA84F00AE2F85 /* QuizAbfragenSettingView.xib in Resources */,
+				5CC6C29E200F7A3400DBB637 /* LigaturenUebersichtView.xib in Resources */,
+				5CB217EC2010E70400FB3083 /* NasaleAnleitungView.xib in Resources */,
 				5CD3911D1F861FAB0054295A /* LaunchScreen.storyboard in Resources */,
 				5CE68D4F1FB8BD2600791D7D /* ZeichenfeldView.xib in Resources */,
 				5CF0B5891FD55B1E00A9AB01 /* UeberichtZeichen.storyboard in Resources */,
@@ -601,6 +615,7 @@
 			files = (
 				5CC44D011FD02BF700C0FB05 /* ScoreZeichen.swift in Sources */,
 				5C0E6EA01FCD88BF00F246B6 /* StackLabelView.swift in Sources */,
+				5CC6C2A0200F7A5300DBB637 /* LigaturenUebersichtView.swift in Sources */,
 				5C0E6DCD1FCC3BF800F246B6 /* LektionstextVC.swift in Sources */,
 				5C9B0EF21FB30CF80084862E /* DatentypenZeichen.swift in Sources */,
 				5CF9D9901FCF12A8008FD232 /* ZeichenUbersichtVC.swift in Sources */,
@@ -608,6 +623,7 @@
 				5C932C201FC1F29E0013789D /* ConfigZeichensatzVC.swift in Sources */,
 				5C0E6DD11FCD7DC200F246B6 /* ArtikulationsAnleitungView.swift in Sources */,
 				5C932C111FBDE6D00013789D /* Lektionen.swift in Sources */,
+				5CB217EE2010E8E300FB3083 /* NasaleAnleitungView.swift in Sources */,
 				5C546C991FD8189900C87093 /* MantrasViews.swift in Sources */,
 				5CF0B5901FD5654C00A9AB01 /* MantrasVC.swift in Sources */,
 				5C932C131FBF08990013789D /* QuizSettings.swift in Sources */,

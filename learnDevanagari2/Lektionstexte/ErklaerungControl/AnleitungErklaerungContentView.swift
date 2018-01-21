@@ -35,7 +35,9 @@ class AnleitungErklaerungContentViewModel{
         var ergebnis = [ViewInStackViewModelData]()
         ergebnis.append(ViewInStackViewModelData(isHidden: false, viewModel: StackLabelViewModel(labelText: lektionsText.erklaerung)))
         ergebnis.append(ViewInStackViewModelData(isHidden: lektionsText.erklaerung2 == nil, viewModel: StackLabelViewModel(labelText: lektionsText.erklaerung2)))
+        ergebnis.append(ViewInStackViewModelData(isHidden: !lektionsText.mitNasaleAnleitungViews, viewModel: NasaleAnleitungViewModel(labelText: getNasaleText())))
         let artikulationsViewmodel = getViewModelsForArtikulationViews()
+        
         for i in 0 ..< 5 {
             ergebnis.append(ViewInStackViewModelData(isHidden: !lektionsText.mitArtikulationAnleitungViews, viewModel: artikulationsViewmodel[i]))
         }
@@ -61,9 +63,11 @@ class AnleitungErklaerungContentView: NibLoadingView {
     @IBOutlet private weak var stack: UIStackView!
     private func setViewsInStack(dataArray:[ViewInStackViewModelData]){
         for subview in stack.arrangedSubviews.enumerated(){
+            print("\(dataArray[subview.offset].isHidden) ... \(viewModel.numberOfVisibleViews.value)")
             subview.element.isHidden                                    = dataArray[subview.offset].isHidden
             (subview.element as? StackLabelView)?.viewModel             = dataArray[subview.offset].viewModel as? StackLabelViewModel
             (subview.element as? ArtikulationsAnleitungView)?.viewModel = dataArray[subview.offset].viewModel as? ArtikulationsAnleitungViewModel
+            (subview.element as? NasaleAnleitungView)?.viewModel        = dataArray[subview.offset].viewModel as? NasaleAnleitungViewModel
         }
     }
 }

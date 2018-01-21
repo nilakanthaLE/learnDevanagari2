@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0iN-t9-W4K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0iN-t9-W4K">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,18 +12,35 @@
         <!--MantrasVC-->
         <scene sceneID="E1A-c1-3jQ">
             <objects>
-                <viewController id="OIF-gd-OkV" customClass="MantrasVC" customModule="learnDevanagari2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MantrasVC" id="OIF-gd-OkV" customClass="MantrasVC" customModule="learnDevanagari2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fIa-gL-IYs">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94375056030000004" green="0.59539538619999999" blue="0.21537679430000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="fKV-c3-f3j"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2nH-b9-m9T"/>
+                    <navigationItem key="navigationItem" id="2nH-b9-m9T">
+                        <barButtonItem key="rightBarButtonItem" title="weiter" id="uOA-yZ-bWQ">
+                            <connections>
+                                <segue destination="Ujf-jF-ZHJ" kind="presentation" id="lDY-fk-QQG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="weiterBarButton" destination="uOA-yZ-bWQ" id="AKM-Yd-dXh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njN-w7-XPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884.765625" y="-408.59375"/>
+        </scene>
+        <!--UeberichtZeichen-->
+        <scene sceneID="2jA-y6-Dpi">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UeberichtZeichen" id="Ujf-jF-ZHJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4C1-fT-cJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="-408"/>
         </scene>
         <!--Mantras-->
         <scene sceneID="PbZ-zY-Yd2">

@@ -36,7 +36,7 @@ class QuizDevaAbfrageViewModel{
         okButtonIsHidden    <~ quizModel.currentQuizZeichen.producer.map{ $0?.quizSetting.zeichenfeld == .Nachzeichnen}
         devaButtonIsEnabled <~ quizModel.currentQuizZeichen.producer.map{ $0?.quizSetting.zeichenfeld != .NurAnzeige  }
         backGroundColor     <~ quizModel.currentQuizZeichen.producer.map{ _ in colorForDefault}
-        correctAnswer       <~ quizModel.currentQuizZeichen.producer.map{ $0?.zeichen.devanagari }
+        correctAnswer       <~ quizModel.currentQuizZeichen.producer.map{ $0?.nasalDesAnusvaraZeichen?.devanagari ?? $0?.anusvaraVisargaViramaZeichen?.devanagari  ?? $0?.zeichen.devanagari }
         
         
         //Prüfergebnisse anzeigen
@@ -86,11 +86,11 @@ class QuizDevaButton:UIButton{
         super.init(frame: frame)
         backgroundColor = colorForDefault
         titleLabel?.adjustsFontSizeToFitWidth = true
-        titleLabel?.minimumScaleFactor = 0.5
+        titleLabel?.minimumScaleFactor  = 0.1
         titleLabel?.numberOfLines   = 1
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
-    
+
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented")  }
     

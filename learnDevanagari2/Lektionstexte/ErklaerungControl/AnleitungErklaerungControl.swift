@@ -42,16 +42,18 @@ class AnleitungErklaerungControl: NibLoadingView,UIScrollViewDelegate {
             scrollView.addSubview(contentView)
             
             viewModel.numberOfVisibleViews.producer.startWithValues{ [weak self] numberOfViews in
-                self?.setScrollViewSize(numberOfVisibleViews: numberOfViews)
+                
                 self?.pageControl.numberOfPages = numberOfViews
                 self?.pageControl.isHidden      = numberOfViews == 1
+                self?.setScrollViewSize(numberOfVisibleViews: numberOfViews)
+                
             }
             
             viewModel.buttonsAreHidden.producer.startWithValues { [weak self] isHidden in
                 self?.leftButton.isHidden       = isHidden
                 self?.rightButton.isHidden      = isHidden
-                self?.setNeedsLayout()
-                self?.layoutIfNeeded()
+                self?.scrollView.setNeedsLayout()
+                self?.scrollView.layoutIfNeeded()
                 self?.setScrollViewSize(numberOfVisibleViews: self?.viewModel.currentPage.value ?? 0)
             }
             leftButton.reactive.isEnabled       <~ viewModel.leftButtonIsEnabled

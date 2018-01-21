@@ -3059,7 +3059,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङ.artikulation = Artikulation.velar.rawValue
     ङ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङ.lektion = 14
     ङ.grundZeichen = "ङ"
     
@@ -3071,7 +3071,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञ.artikulation = Artikulation.palatal.rawValue
     ञ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञ.lektion = 14
     ञ.grundZeichen = "ञ"
     
@@ -3083,7 +3083,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ण.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ण.artikulation = Artikulation.retroflex.rawValue
     ण.aspiration = Aspiration.NichtAspiriert.rawValue
-    ण.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ण.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ण.lektion = 14
     ण.grundZeichen = "ण"
     
@@ -3095,7 +3095,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     न.konsonantTyp = KonsonantTyp.Nasal.rawValue
     न.artikulation = Artikulation.dental.rawValue
     न.aspiration = Aspiration.NichtAspiriert.rawValue
-    न.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    न.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     न.lektion = 14
     न.grundZeichen = "न"
     
@@ -3107,7 +3107,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     म.konsonantTyp = KonsonantTyp.Nasal.rawValue
     म.artikulation = Artikulation.labial.rawValue
     म.aspiration = Aspiration.NichtAspiriert.rawValue
-    म.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    म.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     म.lektion = 14
     म.grundZeichen = "म"
     
@@ -3120,7 +3120,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङि.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङि.artikulation = Artikulation.velar.rawValue
     ङि.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङि.lektion = 15
     ङि.grundZeichen = "ङ"
     
@@ -3132,7 +3132,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङी.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङी.artikulation = Artikulation.velar.rawValue
     ङी.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङी.lektion = 15
     ङी.grundZeichen = "ङ"
     
@@ -3144,7 +3144,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङा.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङा.artikulation = Artikulation.velar.rawValue
     ङा.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङा.lektion = 15
     ङा.grundZeichen = "ङ"
     
@@ -3156,7 +3156,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङु.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङु.artikulation = Artikulation.velar.rawValue
     ङु.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङु.lektion = 15
     ङु.grundZeichen = "ङ"
     
@@ -3168,7 +3168,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङू.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङू.artikulation = Artikulation.velar.rawValue
     ङू.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङू.lektion = 15
     ङू.grundZeichen = "ङ"
     
@@ -3180,7 +3180,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङे.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङे.artikulation = Artikulation.velar.rawValue
     ङे.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङे.lektion = 15
     ङे.grundZeichen = "ङ"
     
@@ -3192,7 +3192,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङै.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङै.artikulation = Artikulation.velar.rawValue
     ङै.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङै.lektion = 15
     ङै.grundZeichen = "ङ"
     
@@ -3204,7 +3204,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङो.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङो.artikulation = Artikulation.velar.rawValue
     ङो.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङो.lektion = 15
     ङो.grundZeichen = "ङ"
     
@@ -3216,7 +3216,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङौ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङौ.artikulation = Artikulation.velar.rawValue
     ङौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङौ.lektion = 15
     ङौ.grundZeichen = "ङ"
     
@@ -3228,7 +3228,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञा.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञा.artikulation = Artikulation.palatal.rawValue
     ञा.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञा.lektion = 15
     ञा.grundZeichen = "ञ"
     
@@ -3240,7 +3240,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञि.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञि.artikulation = Artikulation.palatal.rawValue
     ञि.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञि.lektion = 15
     ञि.grundZeichen = "ञ"
     
@@ -3252,7 +3252,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञी.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञी.artikulation = Artikulation.palatal.rawValue
     ञी.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञी.lektion = 15
     ञी.grundZeichen = "ञ"
     
@@ -3264,7 +3264,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञु.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञु.artikulation = Artikulation.palatal.rawValue
     ञु.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञु.lektion = 15
     ञु.grundZeichen = "ञ"
     
@@ -3276,7 +3276,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञू.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञू.artikulation = Artikulation.palatal.rawValue
     ञू.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञू.lektion = 15
     ञू.grundZeichen = "ञ"
     
@@ -3288,7 +3288,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञे.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञे.artikulation = Artikulation.palatal.rawValue
     ञे.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञे.lektion = 15
     ञे.grundZeichen = "ञ"
     
@@ -3300,7 +3300,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञै.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञै.artikulation = Artikulation.palatal.rawValue
     ञै.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञै.lektion = 15
     ञै.grundZeichen = "ञ"
     
@@ -3312,7 +3312,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञो.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञो.artikulation = Artikulation.palatal.rawValue
     ञो.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञो.lektion = 15
     ञो.grundZeichen = "ञ"
     
@@ -3324,7 +3324,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञौ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञौ.artikulation = Artikulation.palatal.rawValue
     ञौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञौ.lektion = 15
     ञौ.grundZeichen = "ञ"
     
@@ -3336,7 +3336,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णा.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णा.artikulation = Artikulation.retroflex.rawValue
     णा.aspiration = Aspiration.NichtAspiriert.rawValue
-    णा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णा.lektion = 15
     णा.grundZeichen = "ण"
     
@@ -3348,7 +3348,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णि.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णि.artikulation = Artikulation.retroflex.rawValue
     णि.aspiration = Aspiration.NichtAspiriert.rawValue
-    णि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णि.lektion = 15
     णि.grundZeichen = "ण"
     
@@ -3360,7 +3360,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णी.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णी.artikulation = Artikulation.retroflex.rawValue
     णी.aspiration = Aspiration.NichtAspiriert.rawValue
-    णी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णी.lektion = 15
     णी.grundZeichen = "ण"
     
@@ -3372,7 +3372,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णु.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णु.artikulation = Artikulation.retroflex.rawValue
     णु.aspiration = Aspiration.NichtAspiriert.rawValue
-    णु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णु.lektion = 15
     णु.grundZeichen = "ण"
     
@@ -3384,7 +3384,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णू.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णू.artikulation = Artikulation.retroflex.rawValue
     णू.aspiration = Aspiration.NichtAspiriert.rawValue
-    णू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णू.lektion = 15
     णू.grundZeichen = "ण"
     
@@ -3396,7 +3396,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णे.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णे.artikulation = Artikulation.retroflex.rawValue
     णे.aspiration = Aspiration.NichtAspiriert.rawValue
-    णे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णे.lektion = 15
     णे.grundZeichen = "ण"
     
@@ -3408,7 +3408,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णै.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णै.artikulation = Artikulation.retroflex.rawValue
     णै.aspiration = Aspiration.NichtAspiriert.rawValue
-    णै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णै.lektion = 15
     णै.grundZeichen = "ण"
     
@@ -3420,7 +3420,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णो.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णो.artikulation = Artikulation.retroflex.rawValue
     णो.aspiration = Aspiration.NichtAspiriert.rawValue
-    णो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णो.lektion = 15
     णो.grundZeichen = "ण"
     
@@ -3432,7 +3432,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णौ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णौ.artikulation = Artikulation.retroflex.rawValue
     णौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    णौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णौ.lektion = 15
     णौ.grundZeichen = "ण"
     
@@ -3445,7 +3445,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ना.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ना.artikulation = Artikulation.dental.rawValue
     ना.aspiration = Aspiration.NichtAspiriert.rawValue
-    ना.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ना.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ना.lektion = 15
     ना.grundZeichen = "न"
     
@@ -3457,7 +3457,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नि.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नि.artikulation = Artikulation.dental.rawValue
     नि.aspiration = Aspiration.NichtAspiriert.rawValue
-    नि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नि.lektion = 15
     नि.grundZeichen = "न"
     
@@ -3469,7 +3469,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नी.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नी.artikulation = Artikulation.dental.rawValue
     नी.aspiration = Aspiration.NichtAspiriert.rawValue
-    नी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नी.lektion = 15
     नी.grundZeichen = "न"
     
@@ -3481,7 +3481,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नु.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नु.artikulation = Artikulation.dental.rawValue
     नु.aspiration = Aspiration.NichtAspiriert.rawValue
-    नु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नु.lektion = 15
     नु.grundZeichen = "न"
     
@@ -3493,7 +3493,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नू.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नू.artikulation = Artikulation.dental.rawValue
     नू.aspiration = Aspiration.NichtAspiriert.rawValue
-    नू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नू.lektion = 15
     नू.grundZeichen = "न"
     
@@ -3505,7 +3505,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ने.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ने.artikulation = Artikulation.dental.rawValue
     ने.aspiration = Aspiration.NichtAspiriert.rawValue
-    ने.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ने.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ने.lektion = 15
     ने.grundZeichen = "न"
     
@@ -3517,7 +3517,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नै.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नै.artikulation = Artikulation.dental.rawValue
     नै.aspiration = Aspiration.NichtAspiriert.rawValue
-    नै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नै.lektion = 15
     नै.grundZeichen = "न"
     
@@ -3529,7 +3529,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नो.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नो.artikulation = Artikulation.dental.rawValue
     नो.aspiration = Aspiration.NichtAspiriert.rawValue
-    नो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नो.lektion = 15
     नो.grundZeichen = "न"
     
@@ -3541,7 +3541,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नौ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नौ.artikulation = Artikulation.dental.rawValue
     नौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    नौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नौ.lektion = 15
     नौ.grundZeichen = "न"
     
@@ -3553,7 +3553,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मा.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मा.artikulation = Artikulation.labial.rawValue
     मा.aspiration = Aspiration.NichtAspiriert.rawValue
-    मा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मा.lektion = 15
     मा.grundZeichen = "म"
     
@@ -3565,7 +3565,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मि.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मि.artikulation = Artikulation.labial.rawValue
     मि.aspiration = Aspiration.NichtAspiriert.rawValue
-    मि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मि.lektion = 15
     मि.grundZeichen = "म"
     
@@ -3577,7 +3577,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मी.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मी.artikulation = Artikulation.labial.rawValue
     मी.aspiration = Aspiration.NichtAspiriert.rawValue
-    मी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मी.lektion = 15
     मी.grundZeichen = "म"
     
@@ -3589,7 +3589,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मु.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मु.artikulation = Artikulation.labial.rawValue
     मु.aspiration = Aspiration.NichtAspiriert.rawValue
-    मु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मु.lektion = 15
     मु.grundZeichen = "म"
     
@@ -3601,7 +3601,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मू.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मू.artikulation = Artikulation.labial.rawValue
     मू.aspiration = Aspiration.NichtAspiriert.rawValue
-    मू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मू.lektion = 15
     मू.grundZeichen = "म"
     
@@ -3613,7 +3613,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मे.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मे.artikulation = Artikulation.labial.rawValue
     मे.aspiration = Aspiration.NichtAspiriert.rawValue
-    मे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मे.lektion = 15
     मे.grundZeichen = "म"
     
@@ -3625,7 +3625,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मै.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मै.artikulation = Artikulation.labial.rawValue
     मै.aspiration = Aspiration.NichtAspiriert.rawValue
-    मै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मै.lektion = 15
     मै.grundZeichen = "म"
     
@@ -3637,7 +3637,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मो.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मो.artikulation = Artikulation.labial.rawValue
     मो.aspiration = Aspiration.NichtAspiriert.rawValue
-    मो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मो.lektion = 15
     मो.grundZeichen = "म"
     
@@ -3649,7 +3649,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मौ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मौ.artikulation = Artikulation.labial.rawValue
     मौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    मौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मौ.lektion = 15
     मौ.grundZeichen = "म"
     
@@ -3661,7 +3661,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङृ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङृ.artikulation = Artikulation.velar.rawValue
     ङृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङृ.lektion = 15
     ङृ.grundZeichen = "ङ"
     
@@ -3673,7 +3673,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञृ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञृ.artikulation = Artikulation.palatal.rawValue
     ञृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञृ.lektion = 15
     ञृ.grundZeichen = "ञ"
     
@@ -3685,7 +3685,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णृ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णृ.artikulation = Artikulation.retroflex.rawValue
     णृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    णृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णृ.lektion = 15
     णृ.grundZeichen = "ण"
     
@@ -3697,7 +3697,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नृ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नृ.artikulation = Artikulation.dental.rawValue
     नृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    नृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नृ.lektion = 15
     नृ.grundZeichen = "न"
     
@@ -3709,7 +3709,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मृ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मृ.artikulation = Artikulation.labial.rawValue
     मृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    मृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मृ.lektion = 15
     मृ.grundZeichen = "म"
     
@@ -3721,7 +3721,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङॄ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ङॄ.artikulation = Artikulation.velar.rawValue
     ङॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ङॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ङॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ङॄ.lektion = 15
     ङॄ.grundZeichen = "ङ"
     
@@ -3733,7 +3733,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञॄ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     ञॄ.artikulation = Artikulation.palatal.rawValue
     ञॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    ञॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ञॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ञॄ.lektion = 15
     ञॄ.grundZeichen = "ञ"
     
@@ -3745,7 +3745,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     णॄ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     णॄ.artikulation = Artikulation.retroflex.rawValue
     णॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    णॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    णॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     णॄ.lektion = 15
     णॄ.grundZeichen = "ण"
     
@@ -3757,7 +3757,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     नॄ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     नॄ.artikulation = Artikulation.dental.rawValue
     नॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    नॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    नॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     नॄ.lektion = 15
     नॄ.grundZeichen = "न"
     
@@ -3769,7 +3769,7 @@ func erstelleZeichensatz() -> [Zeichen] {
     मॄ.konsonantTyp = KonsonantTyp.Nasal.rawValue
     मॄ.artikulation = Artikulation.labial.rawValue
     मॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    मॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    मॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     मॄ.lektion = 15
     मॄ.grundZeichen = "म"
     
@@ -3780,22 +3780,23 @@ func erstelleZeichensatz() -> [Zeichen] {
     य.umschrift = "ya"
     य.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     य.aspiration = Aspiration.NichtAspiriert.rawValue
-    य.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    य.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     य.lektion = 16
     य.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     य.grundZeichen = "य"
+    य.artikulation  = Artikulation.palatal.rawValue
     
     let र = Zeichen()
     र.ID = 1
     र.devanagari = "र"
     र.umschrift = "ra"
     र.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
-    
     र.aspiration = Aspiration.NichtAspiriert.rawValue
-    र.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    र.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     र.lektion = 16
     र.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     र.grundZeichen = "र"
+    र.artikulation  = Artikulation.retroflex.rawValue
     
     let व = Zeichen()
     व.ID = 1
@@ -3804,10 +3805,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     व.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     व.artikulation = nil
     व.aspiration = Aspiration.NichtAspiriert.rawValue
-    व.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    व.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     व.lektion = 16
     व.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     व.grundZeichen = "व"
+    व.artikulation  = Artikulation.labial.rawValue
     
     let ल = Zeichen()
     ल.ID = 1
@@ -3816,10 +3818,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     ल.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     ल.artikulation = nil
     ल.aspiration = Aspiration.NichtAspiriert.rawValue
-    ल.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ल.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ल.lektion = 16
     ल.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     ल.grundZeichen = "ल"
+    ल.artikulation  = Artikulation.dental.rawValue
     
     let यि = Zeichen()
     यि.ID = 1
@@ -3828,10 +3831,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यि.artikulation = nil
     यि.aspiration = Aspiration.NichtAspiriert.rawValue
-    यि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यि.lektion = 16
     यि.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यि.grundZeichen = "य"
+    यि.artikulation  = Artikulation.palatal.rawValue
     
     let यी = Zeichen()
     यी.ID = 1
@@ -3840,10 +3844,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यी.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यी.artikulation = nil
     यी.aspiration = Aspiration.NichtAspiriert.rawValue
-    यी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यी.lektion = 16
     यी.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यी.grundZeichen = "य"
+    यी.artikulation  = Artikulation.palatal.rawValue
     
     let या = Zeichen()
     या.ID = 1
@@ -3852,10 +3857,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     या.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     या.artikulation = nil
     या.aspiration = Aspiration.NichtAspiriert.rawValue
-    या.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    या.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     या.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     या.lektion = 16
     या.grundZeichen = "य"
+    या.artikulation  = Artikulation.palatal.rawValue
     
     let यु = Zeichen()
     यु.ID = 1
@@ -3864,10 +3870,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यु.artikulation = nil
     यु.aspiration = Aspiration.NichtAspiriert.rawValue
-    यु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यु.lektion = 16
     यु.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यु.grundZeichen = "य"
+    यु.artikulation  = Artikulation.palatal.rawValue
     
     let यू = Zeichen()
     यू.ID = 1
@@ -3876,10 +3883,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यू.artikulation = nil
     यू.aspiration = Aspiration.NichtAspiriert.rawValue
-    यू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यू.lektion = 16
     यू.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यू.grundZeichen = "य"
+    यू.artikulation  = Artikulation.palatal.rawValue
     
     let ये = Zeichen()
     ये.ID = 1
@@ -3888,10 +3896,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     ये.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     ये.artikulation = nil
     ये.aspiration = Aspiration.NichtAspiriert.rawValue
-    ये.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ये.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ये.lektion = 16
     ये.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     ये.grundZeichen = "य"
+    ये.artikulation  = Artikulation.palatal.rawValue
     
     let यै = Zeichen()
     यै.ID = 1
@@ -3900,10 +3909,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यै.artikulation = nil
     यै.aspiration = Aspiration.NichtAspiriert.rawValue
-    यै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यै.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यै.lektion = 16
     यै.grundZeichen = "य"
+    यै.artikulation  = Artikulation.palatal.rawValue
     
     let यो = Zeichen()
     यो.ID = 1
@@ -3912,10 +3922,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यो.artikulation = nil
     यो.aspiration = Aspiration.NichtAspiriert.rawValue
-    यो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यो.lektion = 16
     यो.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यो.grundZeichen = "य"
+    यो.artikulation  = Artikulation.palatal.rawValue
     
     let यौ = Zeichen()
     यौ.ID = 1
@@ -3924,10 +3935,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यौ.artikulation = nil
     यौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    यौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यौ.lektion = 16
     यौ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यौ.grundZeichen = "य"
+    यौ.artikulation  = Artikulation.palatal.rawValue
     
     let रा = Zeichen()
     रा.ID = 1
@@ -3936,10 +3948,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रा.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रा.artikulation = nil
     रा.aspiration = Aspiration.NichtAspiriert.rawValue
-    रा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रा.lektion = 16
     रा.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रा.grundZeichen = "र"
+    रा.artikulation  = Artikulation.retroflex.rawValue
     
     let रि = Zeichen()
     रि.ID = 1
@@ -3948,10 +3961,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रि.artikulation = nil
     रि.aspiration = Aspiration.NichtAspiriert.rawValue
-    रि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रि.lektion = 16
     रि.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रि.grundZeichen = "र"
+    रि.artikulation  = Artikulation.retroflex.rawValue
     
     let री = Zeichen()
     री.ID = 1
@@ -3960,10 +3974,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     री.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     री.artikulation = nil
     री.aspiration = Aspiration.NichtAspiriert.rawValue
-    री.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    री.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     री.lektion = 16
     री.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     री.grundZeichen = "र"
+    री.artikulation  = Artikulation.retroflex.rawValue
     
     let रु = Zeichen()
     रु.ID = 1
@@ -3972,10 +3987,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रु.artikulation = nil
     रु.aspiration = Aspiration.NichtAspiriert.rawValue
-    रु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रु.lektion = 16
     रु.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रु.grundZeichen = "र"
+    रु.artikulation  = Artikulation.retroflex.rawValue
     
     let रू = Zeichen()
     रू.ID = 1
@@ -3984,10 +4000,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रू.artikulation = nil
     रू.aspiration = Aspiration.NichtAspiriert.rawValue
-    रू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रू.lektion = 16
     रू.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रू.grundZeichen = "र"
+    रू.artikulation  = Artikulation.retroflex.rawValue
     
     let रे = Zeichen()
     रे.ID = 1
@@ -3996,10 +4013,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रे.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रे.artikulation = nil
     रे.aspiration = Aspiration.NichtAspiriert.rawValue
-    रे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रे.lektion = 16
     रे.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रे.grundZeichen = "र"
+    रे.artikulation  = Artikulation.retroflex.rawValue
     
     let रै = Zeichen()
     रै.ID = 1
@@ -4008,10 +4026,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रै.artikulation = nil
     रै.aspiration = Aspiration.NichtAspiriert.rawValue
-    रै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रै.lektion = 16
     रै.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रै.grundZeichen = "र"
+    रै.artikulation  = Artikulation.retroflex.rawValue
     
     let रो = Zeichen()
     रो.ID = 1
@@ -4020,10 +4039,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रो.artikulation = nil
     रो.aspiration = Aspiration.NichtAspiriert.rawValue
-    रो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रो.lektion = 16
     रो.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रो.grundZeichen = "र"
+    रो.artikulation  = Artikulation.retroflex.rawValue
     
     let रौ = Zeichen()
     रौ.ID = 1
@@ -4032,10 +4052,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रौ.artikulation = nil
     रौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    रौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रौ.lektion = 16
     रौ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रौ.grundZeichen = "र"
+    रौ.artikulation  = Artikulation.retroflex.rawValue
     
     let वा = Zeichen()
     वा.ID = 1
@@ -4044,10 +4065,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वा.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वा.artikulation = nil
     वा.aspiration = Aspiration.NichtAspiriert.rawValue
-    वा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वा.lektion = 16
     वा.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वा.grundZeichen = "व"
+    वा.artikulation  = Artikulation.labial.rawValue
     
     let वि = Zeichen()
     वि.ID = 1
@@ -4056,10 +4078,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वि.artikulation = nil
     वि.aspiration = Aspiration.NichtAspiriert.rawValue
-    वि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वि.lektion = 16
     वि.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वि.grundZeichen = "व"
+    वि.artikulation  = Artikulation.labial.rawValue
     
     let वी = Zeichen()
     वी.ID = 1
@@ -4068,10 +4091,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वी.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वी.artikulation = nil
     वी.aspiration = Aspiration.NichtAspiriert.rawValue
-    वी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वी.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वी.lektion = 16
     वी.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वी.grundZeichen = "व"
+    वी.artikulation  = Artikulation.labial.rawValue
     
     let वु = Zeichen()
     वु.ID = 1
@@ -4080,10 +4104,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वु.artikulation = nil
     वु.aspiration = Aspiration.NichtAspiriert.rawValue
-    वु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वु.lektion = 16
     वु.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वु.grundZeichen = "व"
+    वु.artikulation  = Artikulation.labial.rawValue
     
     let वू = Zeichen()
     वू.ID = 1
@@ -4092,10 +4117,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वू.artikulation = nil
     वू.aspiration = Aspiration.NichtAspiriert.rawValue
-    वू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वू.lektion = 16
     वू.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वू.grundZeichen = "व"
+    वू.artikulation  = Artikulation.labial.rawValue
     
     let वे = Zeichen()
     वे.ID = 1
@@ -4104,10 +4130,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वे.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वे.artikulation = nil
     वे.aspiration = Aspiration.NichtAspiriert.rawValue
-    वे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वे.lektion = 16
     वे.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वे.grundZeichen = "व"
+    वे.artikulation  = Artikulation.labial.rawValue
     
     let वै = Zeichen()
     वै.ID = 1
@@ -4116,10 +4143,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वै.artikulation = nil
     वै.aspiration = Aspiration.NichtAspiriert.rawValue
-    वै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वै.lektion = 16
     वै.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वै.grundZeichen = "व"
+    वै.artikulation  = Artikulation.labial.rawValue
     
     let वो = Zeichen()
     वो.ID = 1
@@ -4128,10 +4156,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वो.artikulation = nil
     वो.aspiration = Aspiration.NichtAspiriert.rawValue
-    वो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वो.lektion = 16
     वो.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वो.grundZeichen = "व"
+    वो.artikulation  = Artikulation.labial.rawValue
     
     let वौ = Zeichen()
     वौ.ID = 1
@@ -4140,11 +4169,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वौ.artikulation = nil
     वौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    वौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वौ.lektion = 16
     वौ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वौ.grundZeichen = "व"
-    
+    वौ.artikulation  = Artikulation.labial.rawValue
     
     let ला = Zeichen()
     ला.ID = 1
@@ -4153,10 +4182,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     ला.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     ला.artikulation = nil
     ला.aspiration = Aspiration.NichtAspiriert.rawValue
-    ला.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ला.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ला.lektion = 16
     ला.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     ला.grundZeichen = "ल"
+    ला.artikulation  = Artikulation.dental.rawValue
     
     let लि = Zeichen()
     लि.ID = 1
@@ -4165,10 +4195,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लि.artikulation = nil
     लि.aspiration = Aspiration.NichtAspiriert.rawValue
-    लि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लि.lektion = 16
     लि.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लि.grundZeichen = "ल"
+    लि.artikulation  = Artikulation.dental.rawValue
     
     let ली = Zeichen()
     ली.ID = 1
@@ -4177,10 +4208,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     ली.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     ली.artikulation = nil
     ली.aspiration = Aspiration.NichtAspiriert.rawValue
-    ली.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ली.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ली.lektion = 16
     ली.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     ली.grundZeichen = "ल"
+    ली.artikulation  = Artikulation.dental.rawValue
     
     let लु = Zeichen()
     लु.ID = 1
@@ -4189,10 +4221,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लु.artikulation = nil
     लु.aspiration = Aspiration.NichtAspiriert.rawValue
-    लु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लु.lektion = 16
     लु.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लु.grundZeichen = "ल"
+    लु.artikulation  = Artikulation.dental.rawValue
     
     let लू = Zeichen()
     लू.ID = 1
@@ -4201,10 +4234,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लू.artikulation = nil
     लू.aspiration = Aspiration.NichtAspiriert.rawValue
-    लू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लू.lektion = 16
     लू.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लू.grundZeichen = "ल"
+    लू.artikulation  = Artikulation.dental.rawValue
     
     let ले = Zeichen()
     ले.ID = 1
@@ -4213,10 +4247,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     ले.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     ले.artikulation = nil
     ले.aspiration = Aspiration.NichtAspiriert.rawValue
-    ले.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ले.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ले.lektion = 16
     ले.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     ले.grundZeichen = "ल"
+    ले.artikulation  = Artikulation.dental.rawValue
     
     let लै = Zeichen()
     लै.ID = 1
@@ -4225,10 +4260,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लै.artikulation = nil
     लै.aspiration = Aspiration.NichtAspiriert.rawValue
-    लै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लै.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लै.lektion = 16
     लै.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लै.grundZeichen = "ल"
+    लै.artikulation  = Artikulation.dental.rawValue
     
     let लो = Zeichen()
     लो.ID = 1
@@ -4237,10 +4273,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लो.artikulation = nil
     लो.aspiration = Aspiration.NichtAspiriert.rawValue
-    लो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लो.lektion = 16
     लो.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लो.grundZeichen = "ल"
+    लो.artikulation  = Artikulation.dental.rawValue
     
     let लौ = Zeichen()
     लौ.ID = 1
@@ -4249,10 +4286,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लौ.artikulation = nil
     लौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    लौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लौ.lektion = 16
     लौ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लौ.grundZeichen = "ल"
+    लौ.artikulation  = Artikulation.dental.rawValue
     
     let यृ = Zeichen()
     यृ.ID = 1
@@ -4261,10 +4299,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यृ.artikulation = Artikulation.velar.rawValue
     यृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    यृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यृ.lektion = 16
     यृ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यृ.grundZeichen = "य"
+    यृ.artikulation  = Artikulation.palatal.rawValue
     
     let लृ = Zeichen()
     लृ.ID = 1
@@ -4273,10 +4312,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लृ.artikulation = Artikulation.palatal.rawValue
     लृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    लृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लृ.lektion = 16
     लृ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लृ.grundZeichen = "ल"
+    लृ.artikulation  = Artikulation.dental.rawValue
     
     let वृ = Zeichen()
     वृ.ID = 1
@@ -4285,10 +4325,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वृ.artikulation = nil
     वृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    वृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वृ.lektion = 16
     वृ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वृ.grundZeichen = "व"
+    वृ.artikulation  = Artikulation.labial.rawValue
     
     let रृ = Zeichen()
     रृ.ID = 1
@@ -4297,10 +4338,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रृ.artikulation = nil
     रृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    रृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रृ.lektion = 16
     रृ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रृ.grundZeichen = "र"
+    रृ.artikulation  = Artikulation.retroflex.rawValue
     
     let यॄ = Zeichen()
     यॄ.ID = 1
@@ -4309,10 +4351,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     यॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     यॄ.artikulation = nil
     यॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    यॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    यॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     यॄ.lektion = 16
     यॄ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     यॄ.grundZeichen = "य"
+    यॄ.artikulation  = Artikulation.palatal.rawValue
     
     let रॄ = Zeichen()
     रॄ.ID = 1
@@ -4321,10 +4364,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     रॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     रॄ.artikulation = nil
     रॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    रॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    रॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     रॄ.lektion = 16
     रॄ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     रॄ.grundZeichen = "र"
+    रॄ.artikulation  = Artikulation.retroflex.rawValue
     
     let वॄ = Zeichen()
     वॄ.ID = 1
@@ -4333,10 +4377,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     वॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     वॄ.artikulation = nil
     वॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    वॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    वॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     वॄ.lektion = 16
     वॄ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     वॄ.grundZeichen = "व"
+    वॄ.artikulation  = Artikulation.labial.rawValue
     
     let लॄ = Zeichen()
     लॄ.ID = 1
@@ -4345,10 +4390,11 @@ func erstelleZeichensatz() -> [Zeichen] {
     लॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
     लॄ.artikulation = nil
     लॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    लॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    लॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     लॄ.lektion = 16
     लॄ.vokalOderHalbvokal = VokalOderHalbvokal.Halbvokal.rawValue
     लॄ.grundZeichen = "ल"
+    लॄ.artikulation  = Artikulation.dental.rawValue
     
     //Lektion 17
     let स = Zeichen()
@@ -4357,8 +4403,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     स.umschrift = "sa"
     स.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     स.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    स.artikulation = nil
-    स.aspiration = Aspiration.NichtAspiriert.rawValue
+    स.artikulation = Artikulation.dental.rawValue
+    स.aspiration = Aspiration.Aspiriert.rawValue
     स.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     स.lektion = 17
     स.grundZeichen = "स"
@@ -4369,8 +4415,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     श.umschrift = "śa"
     श.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     श.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    श.artikulation = nil
-    श.aspiration = Aspiration.NichtAspiriert.rawValue
+    श.artikulation = Artikulation.palatal.rawValue
+    श.aspiration = Aspiration.Aspiriert.rawValue
     श.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     श.lektion = 17
     श.grundZeichen = "श"
@@ -4381,8 +4427,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     ष.umschrift = "ṣa"
     ष.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     ष.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    ष.artikulation = nil
-    ष.aspiration = Aspiration.NichtAspiriert.rawValue
+    ष.artikulation = Artikulation.retroflex.rawValue
+    ष.aspiration = Aspiration.Aspiriert.rawValue
     ष.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     ष.lektion = 17
     ष.grundZeichen = "ष"
@@ -4393,8 +4439,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सि.umschrift = "si"
     सि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सि.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सि.artikulation = nil
-    सि.aspiration = Aspiration.NichtAspiriert.rawValue
+    सि.artikulation = Artikulation.dental.rawValue
+    सि.aspiration = Aspiration.Aspiriert.rawValue
     सि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सि.lektion = 17
     सि.grundZeichen = "स"
@@ -4405,8 +4451,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सी.umschrift = "sī"
     सी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सी.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सी.artikulation = nil
-    सी.aspiration = Aspiration.NichtAspiriert.rawValue
+    सी.artikulation = Artikulation.dental.rawValue
+    सी.aspiration = Aspiration.Aspiriert.rawValue
     सी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सी.lektion = 17
     सी.grundZeichen = "स"
@@ -4417,8 +4463,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सा.umschrift = "sā"
     सा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सा.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सा.artikulation = nil
-    सा.aspiration = Aspiration.NichtAspiriert.rawValue
+    सा.artikulation = Artikulation.dental.rawValue
+    सा.aspiration = Aspiration.Aspiriert.rawValue
     सा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सा.lektion = 17
     सा.grundZeichen = "स"
@@ -4429,8 +4475,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सु.umschrift = "su"
     सु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सु.konsonantTyp = KonsonantTyp.Sibilant.rawValue
-    सु.artikulation = nil
-    सु.aspiration = Aspiration.NichtAspiriert.rawValue
+    सु.artikulation = Artikulation.dental.rawValue
+    सु.aspiration = Aspiration.Aspiriert.rawValue
     सु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सु.lektion = 17
     सु.grundZeichen = "स"
@@ -4441,8 +4487,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सू.umschrift = "sū"
     सू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सू.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सू.artikulation = nil
-    सू.aspiration = Aspiration.NichtAspiriert.rawValue
+    सू.artikulation = Artikulation.dental.rawValue
+    सू.aspiration = Aspiration.Aspiriert.rawValue
     सू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सू.lektion = 17
     सू.grundZeichen = "स"
@@ -4453,8 +4499,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     से.umschrift = "se"
     से.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     से.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    से.artikulation = nil
-    से.aspiration = Aspiration.NichtAspiriert.rawValue
+    से.artikulation = Artikulation.dental.rawValue
+    से.aspiration = Aspiration.Aspiriert.rawValue
     से.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     से.lektion = 17
     से.grundZeichen = "स"
@@ -4465,8 +4511,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सै.umschrift = "sai"
     सै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सै.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सै.artikulation = nil
-    सै.aspiration = Aspiration.NichtAspiriert.rawValue
+    सै.artikulation = Artikulation.dental.rawValue
+    सै.aspiration = Aspiration.Aspiriert.rawValue
     सै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सै.lektion = 17
     सै.grundZeichen = "स"
@@ -4477,8 +4523,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सो.umschrift = "so"
     सो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सो.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सो.artikulation = nil
-    सो.aspiration = Aspiration.NichtAspiriert.rawValue
+    सो.artikulation = Artikulation.dental.rawValue
+    सो.aspiration = Aspiration.Aspiriert.rawValue
     सो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सो.lektion = 17
     सो.grundZeichen = "स"
@@ -4489,8 +4535,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सौ.umschrift = "sau"
     सौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सौ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सौ.artikulation = nil
-    सौ.aspiration = Aspiration.NichtAspiriert.rawValue
+    सौ.artikulation = Artikulation.dental.rawValue
+    सौ.aspiration = Aspiration.Aspiriert.rawValue
     सौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सौ.lektion = 17
     सौ.grundZeichen = "स"
@@ -4501,8 +4547,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शा.umschrift = "śā"
     शा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शा.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शा.artikulation = nil
-    शा.aspiration = Aspiration.NichtAspiriert.rawValue
+    शा.artikulation = Artikulation.palatal.rawValue
+    शा.aspiration = Aspiration.Aspiriert.rawValue
     शा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शा.lektion = 17
     शा.grundZeichen = "श"
@@ -4513,8 +4559,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शि.umschrift = "śi"
     शि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शि.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शि.artikulation = nil
-    शि.aspiration = Aspiration.NichtAspiriert.rawValue
+    शि.artikulation = Artikulation.palatal.rawValue
+    शि.aspiration = Aspiration.Aspiriert.rawValue
     शि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शि.lektion = 17
     शि.grundZeichen = "श"
@@ -4525,8 +4571,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शी.umschrift = "śī"
     शी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शी.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शी.artikulation = nil
-    शी.aspiration = Aspiration.NichtAspiriert.rawValue
+    शी.artikulation = Artikulation.palatal.rawValue
+    शी.aspiration = Aspiration.Aspiriert.rawValue
     शी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शी.lektion = 17
     शी.grundZeichen = "श"
@@ -4537,8 +4583,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शु.umschrift = "śu"
     शु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शु.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शु.artikulation = nil
-    शु.aspiration = Aspiration.NichtAspiriert.rawValue
+    शु.artikulation = Artikulation.palatal.rawValue
+    शु.aspiration = Aspiration.Aspiriert.rawValue
     शु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शु.lektion = 17
     शु.grundZeichen = "श"
@@ -4549,8 +4595,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शू.umschrift = "śū"
     शू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शू.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शू.artikulation = nil
-    शू.aspiration = Aspiration.NichtAspiriert.rawValue
+    शू.artikulation = Artikulation.palatal.rawValue
+    शू.aspiration = Aspiration.Aspiriert.rawValue
     शू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शू.lektion = 17
     शू.grundZeichen = "श"
@@ -4561,8 +4607,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शे.umschrift = "śe"
     शे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शे.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शे.artikulation = nil
-    शे.aspiration = Aspiration.NichtAspiriert.rawValue
+    शे.artikulation = Artikulation.palatal.rawValue
+    शे.aspiration = Aspiration.Aspiriert.rawValue
     शे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शे.lektion = 17
     शे.grundZeichen = "श"
@@ -4573,8 +4619,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शै.umschrift = "śai"
     शै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शै.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शै.artikulation = nil
-    शै.aspiration = Aspiration.NichtAspiriert.rawValue
+    शै.artikulation = Artikulation.palatal.rawValue
+    शै.aspiration = Aspiration.Aspiriert.rawValue
     शै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शै.lektion = 17
     शै.grundZeichen = "श"
@@ -4585,8 +4631,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शो.umschrift = "śo"
     शो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शो.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शो.artikulation = nil
-    शो.aspiration = Aspiration.NichtAspiriert.rawValue
+    शो.artikulation = Artikulation.palatal.rawValue
+    शो.aspiration = Aspiration.Aspiriert.rawValue
     शो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शो.lektion = 17
     शो.grundZeichen = "श"
@@ -4597,8 +4643,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शौ.umschrift = "śau"
     शौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शौ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शौ.artikulation = nil
-    शौ.aspiration = Aspiration.NichtAspiriert.rawValue
+    शौ.artikulation = Artikulation.palatal.rawValue
+    शौ.aspiration = Aspiration.Aspiriert.rawValue
     शौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शौ.lektion = 17
     शौ.grundZeichen = "श"
@@ -4609,8 +4655,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षा.umschrift = "ṣā"
     षा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षा.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षा.artikulation = nil
-    षा.aspiration = Aspiration.NichtAspiriert.rawValue
+    षा.artikulation = Artikulation.retroflex.rawValue
+    षा.aspiration = Aspiration.Aspiriert.rawValue
     षा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षा.lektion = 17
     षा.grundZeichen = "ष"
@@ -4621,8 +4667,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षि.umschrift = "ṣi"
     षि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षि.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षि.artikulation = nil
-    षि.aspiration = Aspiration.NichtAspiriert.rawValue
+    षि.artikulation = Artikulation.retroflex.rawValue
+    षि.aspiration = Aspiration.Aspiriert.rawValue
     षि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षि.lektion = 17
     षि.grundZeichen = "ष"
@@ -4633,8 +4679,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षी.umschrift = "ṣī"
     षी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षी.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षी.artikulation = nil
-    षी.aspiration = Aspiration.NichtAspiriert.rawValue
+    षी.artikulation = Artikulation.retroflex.rawValue
+    षी.aspiration = Aspiration.Aspiriert.rawValue
     षी.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षी.lektion = 17
     षी.grundZeichen = "ष"
@@ -4645,8 +4691,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षु.umschrift = "ṣu"
     षु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षु.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षु.artikulation = nil
-    षु.aspiration = Aspiration.NichtAspiriert.rawValue
+    षु.artikulation = Artikulation.retroflex.rawValue
+    षु.aspiration = Aspiration.Aspiriert.rawValue
     षु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षु.lektion = 17
     षु.grundZeichen = "ष"
@@ -4657,8 +4703,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षू.umschrift = "ṣū"
     षू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षू.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षू.artikulation = nil
-    षू.aspiration = Aspiration.NichtAspiriert.rawValue
+    षू.artikulation = Artikulation.retroflex.rawValue
+    षू.aspiration = Aspiration.Aspiriert.rawValue
     षू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षू.lektion = 17
     षू.grundZeichen = "ष"
@@ -4669,8 +4715,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षे.umschrift = "ṣe"
     षे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षे.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षे.artikulation = nil
-    षे.aspiration = Aspiration.NichtAspiriert.rawValue
+    षे.artikulation = Artikulation.retroflex.rawValue
+    षे.aspiration = Aspiration.Aspiriert.rawValue
     षे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षे.lektion = 17
     षे.grundZeichen = "ष"
@@ -4681,8 +4727,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षै.umschrift = "ṣai"
     षै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षै.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षै.artikulation = nil
-    षै.aspiration = Aspiration.NichtAspiriert.rawValue
+    षै.artikulation = Artikulation.retroflex.rawValue
+    षै.aspiration = Aspiration.Aspiriert.rawValue
     षै.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षै.lektion = 17
     षै.grundZeichen = "ष"
@@ -4693,8 +4739,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षो.umschrift = "ṣo"
     षो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षो.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षो.artikulation = nil
-    षो.aspiration = Aspiration.NichtAspiriert.rawValue
+    षो.artikulation = Artikulation.retroflex.rawValue
+    षो.aspiration = Aspiration.Aspiriert.rawValue
     षो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षो.lektion = 17
     षो.grundZeichen = "ष"
@@ -4705,8 +4751,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षौ.umschrift = "ṣau"
     षौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षौ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षौ.artikulation = nil
-    षौ.aspiration = Aspiration.NichtAspiriert.rawValue
+    षौ.artikulation = Artikulation.retroflex.rawValue
+    षौ.aspiration = Aspiration.Aspiriert.rawValue
     षौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षौ.lektion = 17
     षौ.grundZeichen = "ष"
@@ -4718,8 +4764,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सृ.umschrift = "sṛ"
     सृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सृ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सृ.artikulation = nil
-    सृ.aspiration = Aspiration.NichtAspiriert.rawValue
+    सृ.artikulation = Artikulation.dental.rawValue
+    सृ.aspiration = Aspiration.Aspiriert.rawValue
     सृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सृ.lektion = 17
     सृ.grundZeichen = "स"
@@ -4731,8 +4777,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षृ.umschrift = "ṣṛ"
     षृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षृ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षृ.artikulation = nil
-    षृ.aspiration = Aspiration.NichtAspiriert.rawValue
+    षृ.artikulation = Artikulation.retroflex.rawValue
+    षृ.aspiration = Aspiration.Aspiriert.rawValue
     षृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षृ.lektion = 17
     षृ.grundZeichen = "ष"
@@ -4743,8 +4789,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शृ.umschrift = "śṛ"
     शृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शृ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शृ.artikulation = nil
-    शृ.aspiration = Aspiration.NichtAspiriert.rawValue
+    शृ.artikulation = Artikulation.palatal.rawValue
+    शृ.aspiration = Aspiration.Aspiriert.rawValue
     शृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शृ.lektion = 17
     शृ.grundZeichen = "श"
@@ -4755,8 +4801,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     सॄ.umschrift = "sṝ"
     सॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     सॄ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    सॄ.artikulation = nil
-    सॄ.aspiration = Aspiration.NichtAspiriert.rawValue
+    सॄ.artikulation = Artikulation.dental.rawValue
+    सॄ.aspiration = Aspiration.Aspiriert.rawValue
     सॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     सॄ.lektion = 17
     सॄ.grundZeichen = "स"
@@ -4767,8 +4813,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     शॄ.umschrift = "śṝ"
     शॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     शॄ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    शॄ.artikulation = nil
-    शॄ.aspiration = Aspiration.NichtAspiriert.rawValue
+    शॄ.artikulation = Artikulation.palatal.rawValue
+    शॄ.aspiration = Aspiration.Aspiriert.rawValue
     शॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     शॄ.lektion = 17
     शॄ.grundZeichen = "श"
@@ -4779,8 +4825,8 @@ func erstelleZeichensatz() -> [Zeichen] {
     षॄ.umschrift = "ṣṝ"
     षॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     षॄ.konsonantTyp = KonsonantTyp.Sibilant.rawValue //Sibilant
-    षॄ.artikulation = nil
-    षॄ.aspiration = Aspiration.NichtAspiriert.rawValue
+    षॄ.artikulation = Artikulation.retroflex.rawValue
+    षॄ.aspiration = Aspiration.Aspiriert.rawValue
     षॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
     षॄ.lektion = 17
     षॄ.grundZeichen = "ष"
@@ -4792,9 +4838,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     ह.umschrift = "ha"
     ह.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     ह.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue//Hauchlaut
-    ह.artikulation = nil
-    ह.aspiration = Aspiration.NichtAspiriert.rawValue
-    ह.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ह.artikulation = Artikulation.velar.rawValue
+    ह.aspiration = Aspiration.Aspiriert.rawValue
+    ह.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ह.lektion = 18
     ह.grundZeichen = "ह"
     
@@ -4804,9 +4850,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हि.umschrift = "hi"
     हि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हि.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हि.artikulation = nil
-    हि.aspiration = Aspiration.NichtAspiriert.rawValue
-    हि.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हि.artikulation = Artikulation.velar.rawValue
+    हि.aspiration = Aspiration.Aspiriert.rawValue
+    हि.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हि.lektion = 18
     हि.grundZeichen = "ह"
     
@@ -4816,9 +4862,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     ही.umschrift = "hī"
     ही.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     ही.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    ही.artikulation = nil
-    ही.aspiration = Aspiration.NichtAspiriert.rawValue
-    ही.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    ही.artikulation = Artikulation.velar.rawValue
+    ही.aspiration = Aspiration.Aspiriert.rawValue
+    ही.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     ही.lektion = 18
     ही.grundZeichen = "ह"
     
@@ -4828,9 +4874,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हा.umschrift = "hā"
     हा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हा.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हा.artikulation = nil
-    हा.aspiration = Aspiration.NichtAspiriert.rawValue
-    हा.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हा.artikulation = Artikulation.velar.rawValue
+    हा.aspiration = Aspiration.Aspiriert.rawValue
+    हा.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हा.lektion = 18
     हा.grundZeichen = "ह"
     
@@ -4840,9 +4886,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हु.umschrift = "hu"
     हु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हु.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हु.artikulation = nil
-    हु.aspiration = Aspiration.NichtAspiriert.rawValue
-    हु.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हु.artikulation = Artikulation.velar.rawValue
+    हु.aspiration = Aspiration.Aspiriert.rawValue
+    हु.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हु.lektion = 18
     हु.grundZeichen = "ह"
     
@@ -4852,9 +4898,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हू.umschrift = "hū"
     हू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हू.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हू.artikulation = nil
-    हू.aspiration = Aspiration.NichtAspiriert.rawValue
-    हू.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हू.artikulation = Artikulation.velar.rawValue
+    हू.aspiration = Aspiration.Aspiriert.rawValue
+    हू.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हू.lektion = 18
     हू.grundZeichen = "ह"
     
@@ -4864,9 +4910,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हे.umschrift = "he"
     हे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हे.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हे.artikulation = nil
-    हे.aspiration = Aspiration.NichtAspiriert.rawValue
-    हे.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हे.artikulation = Artikulation.velar.rawValue
+    हे.aspiration = Aspiration.Aspiriert.rawValue
+    हे.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हे.lektion = 18
     हे.grundZeichen = "ह"
     
@@ -4876,9 +4922,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     है.umschrift = "hai"
     है.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     है.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    है.artikulation = nil
-    है.aspiration = Aspiration.NichtAspiriert.rawValue
-    है.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    है.artikulation = Artikulation.velar.rawValue
+    है.aspiration = Aspiration.Aspiriert.rawValue
+    है.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     है.lektion = 18
     है.grundZeichen = "ह"
     
@@ -4888,9 +4934,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हो.umschrift = "ho"
     हो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हो.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हो.artikulation = nil
-    हो.aspiration = Aspiration.NichtAspiriert.rawValue
-    हो.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हो.artikulation = Artikulation.velar.rawValue
+    हो.aspiration = Aspiration.Aspiriert.rawValue
+    हो.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हो.lektion = 18
     हो.grundZeichen = "ह"
     
@@ -4900,9 +4946,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हौ.umschrift = "hau"
     हौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हौ.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हौ.artikulation = nil
-    हौ.aspiration = Aspiration.NichtAspiriert.rawValue
-    हौ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हौ.artikulation = Artikulation.velar.rawValue
+    हौ.aspiration = Aspiration.Aspiriert.rawValue
+    हौ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हौ.lektion = 18
     हौ.grundZeichen = "ह"
     
@@ -4912,9 +4958,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हृ.umschrift = "hṛ"
     हृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हृ.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हृ.artikulation = nil
-    हृ.aspiration = Aspiration.NichtAspiriert.rawValue
-    हृ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हृ.artikulation = Artikulation.velar.rawValue
+    हृ.aspiration = Aspiration.Aspiriert.rawValue
+    हृ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हृ.lektion = 18
     हृ.grundZeichen = "ह"
     
@@ -4924,9 +4970,9 @@ func erstelleZeichensatz() -> [Zeichen] {
     हॄ.umschrift = "hṝ"
     हॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
     हॄ.konsonantTyp = KonsonantTyp.Hauchlaut.rawValue //Hauchlaut
-    हॄ.artikulation = nil
-    हॄ.aspiration = Aspiration.NichtAspiriert.rawValue
-    हॄ.stimmhaftigkeit = Stimmhaftigkeit.NichtStimmhaft.rawValue
+    हॄ.artikulation = Artikulation.velar.rawValue
+    हॄ.aspiration = Aspiration.Aspiriert.rawValue
+    हॄ.stimmhaftigkeit = Stimmhaftigkeit.Stimmhaft.rawValue
     हॄ.lektion = 18
     हॄ.grundZeichen = "ह"
     
@@ -4995,11 +5041,13 @@ func erstelleZeichensatz() -> [Zeichen] {
 
 
     let न्द = Zeichen()
+    न्द.isLigatur = true
     न्द.devanagari = "न्द"
     न्द.umschrift = "nd"
     न्द.lektion = 21
     
     let न्म = Zeichen()
+    न्म.isLigatur = true
     न्म.devanagari = "न्म"
     न्म.umschrift = "nm"
     न्म.lektion = 21
@@ -5387,18 +5435,23 @@ func erstelleZeichensatz() -> [Zeichen] {
     त्स.umschrift = "ts"
     त्स.lektion = 24
     
+    //anusvara - Lektion 20
+    let anusvara = Zeichen()
+    anusvara.devanagari = "ं"
+    anusvara.lektion = 20
+    
+    
     //sonderzeichen
     let leerZeichen = Zeichen()
     leerZeichen.devanagari = " "
     leerZeichen.lektion = 1000
     
     let visarga = Zeichen()
-    visarga.devanagari = "ः"
+    visarga.devanagari  = "ः"
+    visarga.umschrift   = "ḥ"
     visarga.lektion = 1000
     
-    let anusvara = Zeichen()
-    anusvara.devanagari = "ं"
-    anusvara.lektion = 1000
+    
     
     let ऽ = Zeichen()
     ऽ.devanagari = "ऽ"
@@ -5469,13 +5522,13 @@ func erstelleZeichensatz() -> [Zeichen] {
                        श्च, श्र, श्न, ग्द, ग्ध, प्र, त्र, र्ग ,र्क ,र्न्द ,र्ध,र्भ,र्ब,र्न,क्र,स्र,ह्र,न्त्र,त्त,ष्ट,ष्ठ,क्त,
                        ज्ञ , क्ष, क्ष्म्य, ह्म, ह्य, ह्न, ह्ण, द्व, द्ध,द्म, द्य, द्ग, द्भ, द्ब, ञ्च, ञ्ज, च्च, क्क, ष्ण, ण्य,
                        ॐ,
-                       ब्र,स्म,त्त्व,क्ल,ण्ड,rva,rma,स्त्र,त्स,
-                       leerZeichen,visarga, anusvara,ऽ,virama,candrabindu,linebreak,
-                       iKurz,uKurz,aLang,iLang,uLang,e,o,ai,au,ri,rI,
-                       ]
+                       ब्र,स्म,त्त्व,क्ल,ण्ड,rva,rma,स्त्र,त्स]
+    for ligatur in ligaturen{ ligatur.isLigatur = true }
+    
+    let sonderZeichen = [ leerZeichen,visarga, anusvara,ऽ,virama,candrabindu,linebreak, iKurz, uKurz, aLang, iLang, uLang,e,o,ai,au,ri,rI]
     
     
-    let alleZeichen = zeichensatz + ligaturen
+    let alleZeichen = zeichensatz + ligaturen + sonderZeichen
     
     return alleZeichen
     
@@ -5541,12 +5594,14 @@ func sonderZeichenFuerBar() -> [(suchString:String,angezeigt:String)]{
     ergebnis.append((suchString: "ं", angezeigt: "ṃ"))
     
     ergebnis.append((suchString: "ः", angezeigt: "ḥ"))
-    
+   
     return ergebnis
 }
 
 
-
+func grundZeichen() -> [Zeichen]{
+    return erstelleZeichensatz().filter{$0.devanagari == $0.grundZeichen}
+}
 
 //-(NSMutableArray *)erstelleAnusvaras{
 //    anusvara *labialAnusvara        =   [[anusvara alloc] init]

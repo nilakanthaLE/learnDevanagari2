@@ -13,8 +13,15 @@ import ReactiveSwift
 class MultiTouchButtonViewModel:PanelControlViewModel{
     var titleArray: [[String]]
     required init(controlSetting: PanelControlSetting,quizModel:QuizModel) {
-        self.titleArray         = controlSetting.titleArray ?? [[String]]()
+        
+        var titleArray:[[String]]{
+            if controlSetting.controlTyp == ControlTyp.KonsonantTyp{ return quizModel.konsonantenTypModus?.titleArray ?? [[String]]()}
+            return controlSetting.titleArray ?? [[String]]()
+        }
+        
+        self.titleArray         =  titleArray
         super.init(controlSetting: controlSetting, quizModel: quizModel)
+        
         
 
     }

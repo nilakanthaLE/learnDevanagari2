@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                         <state key="normal" title="starten / fortsetzen"/>
                                         <connections>
-                                            <segue destination="e49-ZV-u0g" kind="presentation" id="XQi-kk-wYA"/>
+                                            <action selector="quizStartenPressed:" destination="kTZ-vm-WUm" eventType="touchUpInside" id="L8d-CV-5P1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc4-ah-sa1">
@@ -232,6 +232,8 @@
                         <outlet property="uebenZeichenView" destination="GN6-6x-Eqk" id="Hcw-WY-3C4"/>
                         <segue destination="32m-ud-ccz" kind="show" identifier="showQuizAbfragenConfig" id="ash-l4-jzk"/>
                         <segue destination="uuw-3F-MPz" kind="show" identifier="showZeichenSatzConfig" id="KnJ-0H-8X8"/>
+                        <segue destination="5xr-Jd-ilR" kind="presentation" identifier="GoToLektionsTexte" id="PDR-7J-bvp"/>
+                        <segue destination="e49-ZV-u0g" kind="presentation" identifier="goToQuiz" id="y2s-2c-vtA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g37-Us-qjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,7 +445,15 @@
                 <viewControllerPlaceholder storyboardName="Quiz" id="e49-ZV-u0g" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFJ-fg-8LR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397.65625" y="-537.3046875"/>
+            <point key="canvasLocation" x="1374" y="-602"/>
+        </scene>
+        <!--Lektionstexte-->
+        <scene sceneID="jhJ-w5-Spw">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LektionsTexteVC" storyboardName="Lektionstexte" id="5xr-Jd-ilR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ic-8E-JpA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1395" y="-454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fmE-Fg-ser">

@@ -26,34 +26,40 @@ class QuizConfigModel{
     //QuizZeichenSätze
     var gewaehlterQuizZeichensatz                                   = MutableProperty([QuizZeichen]())
     var freiesUebenQuizZeichenSatz                                  = MutableProperty([QuizZeichen]())
-    var lektionsQuizZeichenSatz                                     = MutableProperty([QuizZeichen]())
+    var lektionsQuizZeichenSatz                                             = MutableProperty([QuizZeichen]())
 
     //Zeichsatz für freies Üben
-    var configZeichensatzGrundauswahl                               = MutableProperty([Zeichen]())
-    var configZeichensatzGewaehltausGrundauswahl                    = MutableProperty([Zeichen]())
-    var configZeichensatzGewaehlteLektionen                         = MutableProperty([Lektion]())
+    var configZeichensatzGrundauswahl                                       = MutableProperty([Zeichen]())
+    var configZeichensatzGewaehltausGrundauswahl                            = MutableProperty([Zeichen]())
+    var configZeichensatzGewaehlteLektionen                                 = MutableProperty([Lektion]())
     
-    var canStartQuiz                                                = MutableProperty(false)
-    var quizZeichenInAbfrageIstLeer                                 = MutableProperty(Void())
+    var canStartQuiz                                                        = MutableProperty(false)
+    var quizZeichenInAbfrageIstLeer                                         = MutableProperty(Void())
     
-    var aktuellerLektionsTitle:MutableProperty<String?>             = MutableProperty(nil)
+    var aktuellerLektionsTitle:MutableProperty<String?>                     = MutableProperty(nil)
+    var aktuelleLektion                                                     = MutableProperty(0)
     
-    var currentQuizZeichenStatusHasChanged:MutableProperty<QuizZeichen?> = MutableProperty(nil)
+    var currentQuizZeichenStatusHasChanged:MutableProperty<QuizZeichen?>    = MutableProperty(nil)
     
     init(){
         let user = MainSettings.get()?.angemeldeterUser
+        //Test!
+        print("test für Sonderlektionen")
+        user?.aktuelleLektion = 19
+        
         //aktuelle Lektion setzen (angemeldeter User)
         func updateForLektion(_ lektion:Lektion?){
             lektionsQuizSetting.value       = filterLektionsQuizSetting(lektion: lektion)
             lektionsQuizZeichenSatz.value   = QuizZeichen.createQuizZeichensatzForLektion(quizSetting:filterLektionsQuizSetting(lektion:lektion), zeichensatz: lektion?.zeichenSatzBisAktuell)
             aktuellerLektionsTitle.value    = lektion?.title
-            
+            aktuelleLektion.value           = lektion?.nummer ?? 0
             user?.updateBereitsBekannteControls(quizSetting: lektionsQuizSetting.value)
-            
+            user?.updateBereitsbekannteLektion()
             //falls beim letzten Mal die App beendet wurde, ohne dass die nächste Lektion initialisiert wurde
             if (lektionsQuizZeichenSatz.value.filter{ $0.status.value != .Correct}).count == 0{
                 updateForLektion(user?.nextLektion())
             }
+            
         }
         updateForLektion(user?.currentLektion)
         
@@ -81,14 +87,18 @@ class QuizConfigModel{
         freiesUebenQuizZeichenSatz      <~ freiesUebenQuizSetting.producer.map{[weak self] quizSetting in return QuizZeichen.createQuizZeichensatz(quizSetting: quizSetting, zeichensatz: self?.freiesUebenZeichenSatz.value)}
         
         //setze canStartValue
-        let canStartQuizProducerArray = [selectedSetting.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()},
-                                         gewaehlterQuizZeichensatz.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()},
-                                         gewaehltesQuizSetting.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()} ]
-        canStartQuiz <~ SignalProducer.merge(canStartQuizProducerArray).map{_canStartQuiz()}
+        let canStartQuizProducerArray   = [     selectedSetting.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()},
+                                                gewaehlterQuizZeichensatz.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()},
+                                                gewaehltesQuizSetting.producer.combinePrevious().filter{$0.0 != $0.1}.map{_ in ()} ]
+        canStartQuiz                    <~ SignalProducer.merge(canStartQuizProducerArray).map{_canStartQuiz()}
         
         //MARK: helper
         func _canStartQuiz() -> Bool
-            { return !(selectedSetting.value == nil || gewaehlterQuizZeichensatz.value.count == 0 || gewaehltesQuizSetting.value?.anzahlAbfragen == 0 && gewaehltesQuizSetting.value?.zeichenfeld != .Nachzeichnen || gewaehltesQuizSetting.value == nil) }
+            { return !(selectedSetting.value == nil ||
+                gewaehlterQuizZeichensatz.value.count == 0 ||
+                gewaehltesQuizSetting.value?.anzahlAbfragen == 0 &&
+                gewaehltesQuizSetting.value?.zeichenfeld != .Nachzeichnen ||
+                gewaehltesQuizSetting.value == nil) }
         func useSetting(for selSetting:SelectedSetting?){
             guard let selSetting = selSetting else { return }
             switch selSetting {
@@ -101,12 +111,16 @@ class QuizConfigModel{
             }
         }
         func filterLektionsQuizSetting(lektion:Lektion?) -> QuizSetting?{
+            
+            print("muss überdacht werden")
+            guard lektion?.quizSetting?.nasalDesAnusvaraPruefe == false  , lektion?.quizSetting?.anusvaraVisargaViramaPruefe  == false else {return lektion?.quizSetting}
+            
             //user Einstellungen für Quiz berücksichtigen
             guard let mainSettings  = MainSettings.get()?.angemeldeterUser?.currentMainQuizSetting else { return QuizSetting()}
             return lektion?.quizSetting?.filterNotIn(quizSetting: mainSettings)
         }
     }
-    func getQuizModel() -> QuizModel{ return QuizModel(quizZeichenSatz: gewaehlterQuizZeichensatz, quizZeichenInAbfrageIstLeer: quizZeichenInAbfrageIstLeer, isLektionsquiz: selectedSetting.value == .Lektion, currentQuizZeichenStatusHasChanged: currentQuizZeichenStatusHasChanged) }
+    func getQuizModel() -> QuizModel{ return QuizModel(quizZeichenSatz: gewaehlterQuizZeichensatz, quizZeichenInAbfrageIstLeer: quizZeichenInAbfrageIstLeer, isLektionsquiz: selectedSetting.value == .Lektion, currentQuizZeichenStatusHasChanged: currentQuizZeichenStatusHasChanged, konsonantenTypModus: gewaehltesQuizSetting.value?.konsonantTyp.konsonantTypModus) }
 }
 
 

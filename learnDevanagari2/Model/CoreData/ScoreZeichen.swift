@@ -32,17 +32,44 @@ extension ScoreZeichen{
 
     
     //helper
+    var grundZeichen:[ScoreZeichen]{
+        guard let abgeleiteteZeichen = zeichen?.vonGrundZeichenAbgeleitet, let user = MainSettings.get()?.angemeldeterUser, abgeleiteteZeichen.count > 0 else {return [ScoreZeichen]()}
+        return (abgeleiteteZeichen.map{user.getScoreZeichen(for: $0.devanagari)}.filter{$0 != nil} as! [ScoreZeichen]).sorted{($0.devaString ?? "") < ($1.devaString ?? "")}
+    }
+    var grundZeichenScore:Double{
+        let scoreSumme  = grundZeichen.map{$0.gesamtScore}.reduce(0){$0+$1}
+        return scoreSumme / Double(grundZeichen.count)
+    }
     var alleAbfragen:[Abfrage]{
         return [convert(abfrageSet: artikulation) , convert(abfrageSet: aspiration) , convert(abfrageSet: konsonantTyp) , convert(abfrageSet: stimmhaftigkeit) , convert(abfrageSet: umschrift) , convert(abfrageSet: vokalOderHalbVokal) , convert(abfrageSet: vokalOderKonsonant) , convert(abfrageSet: devanagari)].flatMap{$0}
     }
     var haeufigkeitFalsch:Int       {
-        print("\(devaString) anzahlFalsch:  \(alleAbfragen.filter{!$0.correct}.count)")
         return alleAbfragen.filter{!$0.correct}.count }
     var haeufigKeitGeuebt:Int       { return alleAbfragen.count }
-    var gesamtScore:Double          { return ScoreZeichen.calcGesamtScore(scorezeichen: self) }
+    
+    
+    var calcGesamtScore:Double          { return ScoreZeichen.calcGesamtScore(scorezeichen: self) }
     static func calcGesamtScore(scorezeichen:ScoreZeichen?) -> Double{
         guard let scorezeichen = scorezeichen, let anzahlMoeglich = Zeichen.get(forDeva: scorezeichen.devaString)?.anzahlMoeglicheAbfragen, anzahlMoeglich > 0 else {return 0}
-        return Double(scorezeichen.richtigeLetzteAbfragen.count) / Double(anzahlMoeglich)
+        var anzahlRichtigeAbfragen:Double{
+            if scorezeichen.devaString == "ं"{
+                return Double(scorezeichen.richtigeLetzteNasalDesAnusvaraAbfragen.count) + (scorezeichen.wasLetzteAnusvaraVisargaAbfrageCorrect ? 1 : 0) }
+            if scorezeichen.devaString == "ः" || scorezeichen.devaString == "्"{
+                return scorezeichen.wasLetzteAnusvaraVisargaAbfrageCorrect ? 1 : 0
+            }
+            return Double(scorezeichen.richtigeLetzteAbfragen.count)
+        }
+        return  anzahlRichtigeAbfragen / Double(anzahlMoeglich)
+    }
+    
+    private var wasLetzteAnusvaraVisargaAbfrageCorrect:Bool{
+        let abfragen    = convert(abfrageSet: anusvaraVisargaVirama)
+        let letzte      = abfragen.sorted{$1.date!.isGreaterThanDate(dateToCompare: $0.date!)}.last
+        return letzte?.correct == true
+    }
+    private var richtigeLetzteNasalDesAnusvaraAbfragen:[(artikulation:Artikulation,abfrage:Abfrage)]{
+        let letzteAbfragen = Artikulation.cases().map{ (artikulation:$0,abfrage:getNasalDesAnusvaraAbfragen(for: $0).sorted{$1.date!.isGreaterThanDate(dateToCompare: $0.date!)}.last) }
+        return letzteAbfragen.filter{$0.abfrage?.correct == true} as! [(artikulation: Artikulation, abfrage: Abfrage)]
     }
     private var richtigeLetzteAbfragen:[(controlTyp:ControlTyp,abfrage:Abfrage)]{ return letzteAbfragen.filter{$0.abfrage.correct} }
     private var letzteAbfragen:[(controlTyp:ControlTyp,abfrage:Abfrage)]{
@@ -60,6 +87,21 @@ extension ScoreZeichen{
         case .ZeichenfeldTyp:           return convert(abfrageSet: devanagari)
         }
     }
+    private func getNasalDesAnusvaraAbfragen(for artikulation:Artikulation) -> [Abfrage]{
+        switch artikulation{
+        case .velar:        return convert(abfrageSet: nasalDesAnusvaraVelar)
+        case .palatal:      return convert(abfrageSet: nasalDesAnusvaraPalatal)
+        case .retroflex:    return convert(abfrageSet: nasalDesAnusvaraRetroflex)
+        case .dental:       return convert(abfrageSet: nasalDesAnusvaraDental)
+        case .labial:       return convert(abfrageSet: nasalDesAnusvaraLabial)
+        }
+    }
+    
+    func newAbfrageFuerAnusvaraVisargaVirama(correct:Bool) -> Abfrage?{
+        guard let abfrage = Abfrage.new( correct: correct) else {return nil}
+        addToAnusvaraVisargaVirama(abfrage)
+        return abfrage
+    }
     func newAbfrage(userAntwort : (controlTyp:ControlTyp,correct:Bool)) -> Abfrage?{
         guard let abfrage = Abfrage.new( correct: userAntwort.correct) else {return nil}
         switch userAntwort.controlTyp {
@@ -73,6 +115,17 @@ extension ScoreZeichen{
         case .ZeichenfeldTyp: addToDevanagari(abfrage)
         }
         abfrage.lektion = user?.aktuelleLektion ?? -1
+        return abfrage
+    }
+    func newAbfrageForNasalDesAnusvara(artikulation:Artikulation,correct:Bool) -> Abfrage?{
+        guard let abfrage = Abfrage.new( correct: correct) else {return nil}
+        switch artikulation {
+        case .velar:        addToNasalDesAnusvaraVelar(abfrage)
+        case .palatal:      addToNasalDesAnusvaraPalatal(abfrage)
+        case .retroflex:    addToNasalDesAnusvaraRetroflex(abfrage)
+        case .dental:       addToNasalDesAnusvaraDental(abfrage)
+        case .labial:       addToNasalDesAnusvaraLabial(abfrage)
+        }
         return abfrage
     }
     private func convert(abfrageSet:NSSet?) -> [Abfrage]{

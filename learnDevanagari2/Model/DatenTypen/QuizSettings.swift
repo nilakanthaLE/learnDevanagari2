@@ -25,10 +25,13 @@ struct QuizSetting:Equatable{
         lhs.artikulation == rhs.artikulation &&
         lhs.konsonantTyp == rhs.konsonantTyp &&
         lhs.aspiration == rhs.aspiration &&
-        lhs.stimmhaftigkeit == rhs.stimmhaftigkeit
+        lhs.stimmhaftigkeit == rhs.stimmhaftigkeit &&
+        lhs.nasalDesAnusvaraPruefe == rhs.nasalDesAnusvaraPruefe
     }
     
     
+    var nasalDesAnusvaraPruefe = false
+    var anusvaraVisargaViramaPruefe = false
     
     var dynamisiert: Bool
     var zeichenfeld:ZeichenfeldModus
@@ -91,6 +94,19 @@ struct QuizSetting:Equatable{
     var abfragen:[ControlTyp]{
         let zeichenfeldAbfrage      = (zeichenfeld == .InAbfrage || zeichenfeld == .AbfrageUndNachzeichnen) ? [ControlTyp.ZeichenfeldTyp] : [ControlTyp]()
         return allePanelControls.filter{$0.modus == .InAbfrage}.map{$0.controlTyp} + zeichenfeldAbfrage
+    }
+    func filteredAbfragen(for quizZeichen:QuizZeichen) -> [ControlTyp]{
+        switch quizZeichen.zeichen.vokalOderKonsonant ?? ""{
+        case VokalOderKonsonant.Konsonant.rawValue:
+            return abfragen.filter{$0 != ControlTyp.VokalOderHalbvokalTyp}
+        case VokalOderKonsonant.Vokal.rawValue:
+            return abfragen.filter{$0 != ControlTyp.ArtikulationTyp &&
+                $0 != ControlTyp.KonsonantTyp &&
+                $0 != ControlTyp.AspirationTyp &&
+                $0 != ControlTyp.StimmhaftigkeitTyp }
+        default:
+            return [ControlTyp]()
+        }
     }
     var anzahlAbfragen:Int{
         let anzahlZeichenFeldAbfragen = zeichenfeld == .InAbfrage || zeichenfeld == .AbfrageUndNachzeichnen ? 1 : 0

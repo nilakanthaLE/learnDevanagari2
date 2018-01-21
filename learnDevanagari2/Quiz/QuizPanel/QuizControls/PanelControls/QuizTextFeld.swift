@@ -77,6 +77,6 @@ class QuizTextFeld: UITextField,PanelControlProtocol {
     }
     @objc private func barButtonPressed(sender:UIBarButtonItem){
         guard let title = sender.title else {return}
-        text = (text ?? "") + title
+        viewModel.userEingabe.value = (text ?? "") + title
     }
 }

@@ -29,7 +29,7 @@ class PanelControlViewModel:PanelControlViewModelProtocol{
     var userEingabe                         = MutableProperty<String?>(nil)
     
     required init(controlSetting: PanelControlSetting,quizModel:QuizModel) {
-        self.controlTyp         = controlSetting.controlTyp
+        controlTyp         = controlSetting.controlTyp
         self.quizModel          = quizModel
         
         if controlTyp == .TextfeldTyp || controlTyp == .ArtikulationTyp { backGroundColor     <~ controlCurrentModus.producer.map{[weak self] _ in self?.getBackGroundColor() ?? colorForDefault} }
@@ -38,7 +38,11 @@ class PanelControlViewModel:PanelControlViewModelProtocol{
         userEingabe             = quizModel.userEingabe.getMutableProperty(for: controlTyp) ?? MutableProperty<String?>(nil)
         
         //neues QuizZeichen
-        correctAnswer       <~ quizModel.currentQuizZeichen.producer.map                    { [weak self] quizZeichen in quizZeichen?.zeichen.getValue(for: self?.controlTyp) }
+        correctAnswer       <~ quizModel.currentQuizZeichen.producer.map{ [weak self] quizZeichen -> String? in
+            return quizZeichen?.zeichen.getCorrectAnswer(for: self?.controlTyp, quizZeichen: quizZeichen)
+        }
+        
+        
         controlCurrentModus <~ quizModel.currentQuizZeichen.producer.map                    { [weak self] quizZeichen in
             guard let panelControlSetting = quizZeichen?.quizSetting.getPanelControlSetting(for: self?.controlTyp) else {return .Versteckt}
             switch panelControlSetting.modus{
@@ -74,14 +78,17 @@ class PanelControlViewModel:PanelControlViewModelProtocol{
         func getIsHidden()->Bool {
             let controlModus = quizModel.currentQuizZeichen.value?.quizSetting.getPanelControlSetting(for: controlTyp)?.modus
             return isHidden(controlCurrentModus:controlCurrentModus.value,
-                            usereingabe: quizModel.userEingabe,
-                            controlTyp:               controlTyp,
-                            controlModus:             controlModus,
-                            korrekteAntwort:          quizModel.currentQuizZeichen.value?.zeichen,
-                            vokalOderKonsShowsAnswer: quizModel.currentQuizZeichen.value?.quizSetting.vokalOderKonsonant.modus) }
+                            usereingabe:                quizModel.userEingabe,
+                            controlTyp:                 controlTyp,
+                            controlModus:               controlModus,
+                            korrekteAntwort:            quizModel.currentQuizZeichen.value?.zeichen,
+                            vokalOderKonsShowsAnswer:   quizModel.currentQuizZeichen.value?.quizSetting.vokalOderKonsonant.modus,
+                            isNasalDesAnusvaraLektion:  quizModel.currentQuizZeichen.value?.nasalDesAnusvaraZeichen  != nil) }
     }
     
     //helper
+    
+    
     
     func getBackGroundColor() -> UIColor{
         var currentControlSetting:PanelControlSetting?{ return quizModel.currentQuizZeichen.value?.quizSetting.getPanelControlSetting(for: controlTyp) }
