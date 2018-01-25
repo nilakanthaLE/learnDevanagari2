@@ -65,6 +65,8 @@ class ZeichenInAbfrageViewModel:AbfrageZeichenViewModelProtocol{
         return anteilCorrect == 0 ? .clear : anteilCorrect == 1 ? .green : .yellow
     }
     static func getZeichenArray(quizZeichen:[QuizZeichen]) -> [[(title:String,color:UIColor)]]{
+        let start = Date()
+        
         var zeichenMitAnteilCorrect = arrayOfZeichenWithAnteilCorrect(array:arrayOfSame(array: quizZeichen))
         let anzahlReihen            = Int(ceil(sqrt(Double(zeichenMitAnteilCorrect.count))))
         let array                   = Array.init(repeating: Array.init(repeating: String(), count: anzahlReihen), count: anzahlReihen)
@@ -97,6 +99,9 @@ class ZeichenInAbfrageView: AbfrageZeichenView {
     }
     var editButtonAction:(()->Void)?
     override func updateStack(zeichenArray:[[(title:String,color:UIColor)]]){
+        let start = Date()
+        defer { print("updateStack dauer: \(Date().timeIntervalSince(start))") }
+        
         for subview in stackView.arrangedSubviews {subview.removeFromSuperview()}
         stackView.distribution  = .fillEqually
         _ = zeichenArray.map{ row in

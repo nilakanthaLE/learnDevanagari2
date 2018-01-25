@@ -26,7 +26,7 @@ class LektionstextViewModel{
         currentLektionsText             <~ currentLektion.producer.map{getTexteFuerLektionen()[$0]}
         currentAufgabenText             <~ currentLektionsText.producer.map{$0.erklaerung}
         currentZusatzAufgebenText       <~ currentLektionsText.producer.map{$0.zusatzAufgaben}
-        title                           <~ currentLektion.map{erstelleLektionen()[$0].title}
+        title                           <~ currentLektion.map{Singleton.sharedInstance.lektionen[$0].title}
     }
     //helper
     func showNextLektionsText(direction:String?){

@@ -31,6 +31,7 @@ class ZeichenAuswahlConfigViewModel:AbfrageZeichenViewModelProtocol{
     }
     
     static func updateZeichenArray(configZeichensatzGrundauswahl:[Zeichen],configZeichensatzGewaehltausGrundauswahl:[Zeichen]) -> [[(title:String,color:UIColor)]]{
+        
         var grundauswahl            = configZeichensatzGrundauswahl
         let anzahlReihen            = Int(ceil(sqrt(Double(configZeichensatzGrundauswahl.count))))
         let array                   = Array.init(repeating: Array.init(repeating: String(), count: anzahlReihen), count: anzahlReihen)

@@ -31,10 +31,21 @@ class ConfigZeichensatzViewModel{
         //anzahlGrundauswahl wird von User per Slider gesetzt
         //user wählt ZeichenAuswahlTyp
         //--> Zeichensatz bestimmen
-        quizConfigModel.configZeichensatzGewaehltausGrundauswahl    <~ anzahlAusGrundauswahl.signal.map { [weak self] anzahl in  self?.filterZeichenSatz(anzahl:anzahl) ?? [Zeichen]() }
-        quizConfigModel.configZeichensatzGewaehltausGrundauswahl    <~ zeichenAuswahlTyp.signal.map     { [weak self] typ in self?.filterZeichenSatz(zeichenAuswahlTyp:typ) ?? [Zeichen]()}
-
         anzahlAusGrundauswahl   <~ grundAuswahl.signal.filter{[weak self] grundauswahl in grundauswahl.count < self?.anzahlAusGrundauswahl.value ?? 0}.map{$0.count}
+        
+        
+        basisZeichensatzFuerZeichenAuswahlTyp                       <~ zeichenAuswahlTyp.signal.map {[weak self] zeichenAuswahlTyp in
+            Zeichen.sortZeichenSatz(aus: self?.grundAuswahl.value, user: MainSettings.get()?.angemeldeterUser, zeichenAuswahlTyp: zeichenAuswahlTyp)}
+        quizConfigModel.configZeichensatzGewaehltausGrundauswahl    <~ basisZeichensatzFuerZeichenAuswahlTyp.signal.map{[weak self] basisZeichenSatz in
+            let anzahl = self?.anzahlAusGrundauswahl.value ?? 0
+            return Array(basisZeichenSatz.prefix(anzahl))
+        }
+        quizConfigModel.configZeichensatzGewaehltausGrundauswahl    <~ anzahlAusGrundauswahl.signal.map{[weak self] anzahl in
+            
+            
+            let basisZeichenSatz = self?.basisZeichensatzFuerZeichenAuswahlTyp.value ?? [Zeichen]()
+            return Array(basisZeichenSatz.prefix(anzahl))
+        }
     }
     
     //Mutable Properties
@@ -42,16 +53,17 @@ class ConfigZeichensatzViewModel{
     var gewaehltAusGrundauswahl = MutableProperty([Zeichen]())
     var anzahlAusGrundauswahl   = MutableProperty(0)
     
+    var basisZeichensatzFuerZeichenAuswahlTyp = MutableProperty([Zeichen]())
     
-    func filterZeichenSatz(anzahl:Int ) -> [Zeichen]{ return Zeichen.filterZeichenSatz(anzahl: anzahl,aus: grundAuswahl.value, user: MainSettings.get()?.angemeldeterUser, zeichenAuswahlTyp: zeichenAuswahlTyp.value)}
-    func filterZeichenSatz(zeichenAuswahlTyp:ZeichenAuswahlTyp ) -> [Zeichen]{ return Zeichen.filterZeichenSatz(anzahl: anzahlAusGrundauswahl.value,aus: grundAuswahl.value, user: MainSettings.get()?.angemeldeterUser, zeichenAuswahlTyp: zeichenAuswahlTyp)}
+    
     
     fileprivate var zeichenAuswahlTyp       = MutableProperty(ZeichenAuswahlTyp.Zufall)
     
     func getViewModelForZeichensatzInAbfrageView() -> AbfrageZeichenViewModelProtocol{
         return ZeichenAuswahlConfigViewModel.init(configZeichensatzGrundauswahl: quizConfigModel.configZeichensatzGrundauswahl, configZeichensatzGewaehltausGrundauswahl: quizConfigModel.configZeichensatzGewaehltausGrundauswahl)
     }
-    func getViewModelForGrundauswahlPopoverVC() -> GrundauswahlPopoverViewModel{        return GrundauswahlPopoverViewModel(configZeichensatzGewaehlteLektionen: quizConfigModel.configZeichensatzGewaehlteLektionen, gesamtZeichensatz: quizConfigModel.gesamtZeichenSatz)
+    func getViewModelForGrundauswahlPopoverVC() -> GrundauswahlPopoverViewModel{
+        return GrundauswahlPopoverViewModel(configZeichensatzGewaehlteLektionen: quizConfigModel.configZeichensatzGewaehlteLektionen, gesamtZeichensatz: quizConfigModel.gesamtZeichenSatz)
     }
 }
 

@@ -35,7 +35,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let इ = Zeichen()
-    इ.ID = 2
     इ.devanagari = "इ"
     इ.umschrift = "i"
     इ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -45,7 +44,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let उ = Zeichen()
-    उ.ID = 3
     उ.devanagari = "उ"
     उ.umschrift = "u"
     उ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -56,7 +54,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 2
     let क = Zeichen()
-    क.ID = 1
     क.devanagari = "क"
     क.umschrift = "ka"
     क.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -68,7 +65,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     क.grundZeichen = "क"
     
     let प = Zeichen()
-    प.ID = 1
     प.devanagari = "प"
     प.umschrift = "pa"
     प.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -81,7 +77,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 3
     let ए = Zeichen()
-    ए.ID = 1
     ए.devanagari = "ए"
     ए.umschrift = "e"
     ए.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -90,7 +85,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ए.grundZeichen = "ए"
     
     let ओ = Zeichen()
-    ओ.ID = 1
     ओ.devanagari = "ओ"
     ओ.umschrift = "o"
     ओ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -100,7 +94,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 4
     let कि = Zeichen()
-    कि.ID = 1
     कि.devanagari = "कि"
     कि.umschrift = "ki"
     कि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -112,7 +105,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कि.grundZeichen = "क"
     
     let कु = Zeichen()
-    कु.ID = 1
     कु.devanagari = "कु"
     कु.umschrift = "ku"
     कु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -124,7 +116,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कु.grundZeichen = "क"
     
     let के = Zeichen()
-    के.ID = 1
     के.devanagari = "के"
     के.umschrift = "ke"
     के.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -136,7 +127,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     के.grundZeichen = "क"
     
     let को = Zeichen()
-    को.ID = 1
     को.devanagari = "को"
     को.umschrift = "ko"
     को.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -148,7 +138,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     को.grundZeichen = "क"
     
     let पि = Zeichen()
-    पि.ID = 1
     पि.devanagari = "पि"
     पि.umschrift = "pi"
     पि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -160,7 +149,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पि.grundZeichen = "प"
     
     let पु = Zeichen()
-    पु.ID = 1
     पु.devanagari = "पु"
     पु.umschrift = "pu"
     पु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -172,7 +160,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पु.grundZeichen = "प"
     
     let पे = Zeichen()
-    पे.ID = 1
     पे.devanagari = "पे"
     पे.umschrift = "pe"
     पे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -184,7 +171,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पे.grundZeichen = "प"
     
     let पो = Zeichen()
-    पो.ID = 1
     पो.devanagari = "पो"
     पो.umschrift = "po"
     पो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -197,7 +183,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 5
     let त = Zeichen()
-    त.ID = 1
     त.devanagari = "त"
     त.umschrift = "ta"
     त.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -209,7 +194,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     त.grundZeichen = "त"
     
     let च = Zeichen()
-    च.ID = 1
     च.devanagari = "च"
     च.umschrift = "ca"
     च.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -221,7 +205,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     च.grundZeichen = "च"
     
     let ति = Zeichen()
-    ति.ID = 1
     ति.devanagari = "ति"
     ति.umschrift = "ti"
     ति.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -233,7 +216,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ति.grundZeichen = "त"
     
     let तु = Zeichen()
-    तु.ID = 1
     तु.devanagari = "तु"
     तु.umschrift = "tu"
     तु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -245,7 +227,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तु.grundZeichen = "त"
     
     let ते = Zeichen()
-    ते.ID = 1
     ते.devanagari = "ते"
     ते.umschrift = "te"
     ते.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -257,7 +238,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ते.grundZeichen = "त"
     
     let तो = Zeichen()
-    तो.ID = 1
     तो.devanagari = "तो"
     तो.umschrift = "to"
     तो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -269,7 +249,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तो.grundZeichen = "त"
     
     let चि = Zeichen()
-    चि.ID = 1
     चि.devanagari = "चि"
     चि.umschrift = "ci"
     चि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -281,7 +260,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चि.grundZeichen = "च"
     
     let चु = Zeichen()
-    चु.ID = 1
     चु.devanagari = "चु"
     चु.umschrift = "cu"
     चु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -293,7 +271,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चु.grundZeichen = "च"
     
     let चे = Zeichen()
-    चे.ID = 1
     चे.devanagari = "चे"
     चे.umschrift = "ce"
     चे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -305,7 +282,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चे.grundZeichen = "च"
     
     let चो = Zeichen()
-    चो.ID = 1
     चो.devanagari = "चो"
     चो.umschrift = "co"
     चो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -318,7 +294,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 6
     let आ = Zeichen()
-    आ.ID = 1
     आ.devanagari = "आ"
     आ.umschrift = "ā"
     आ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -327,7 +302,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     आ.grundZeichen = "अ"
     
     let ई = Zeichen()
-    ई.ID = 1
     ई.devanagari = "ई"
     ई.umschrift = "ī"
     ई.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -336,7 +310,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ई.grundZeichen = "इ"
     
     let ऊ = Zeichen()
-    ऊ.ID = 1
     ऊ.devanagari = "ऊ"
     ऊ.umschrift = "ū"
     ऊ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -345,7 +318,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ऊ.grundZeichen = "उ"
     
     let का = Zeichen()
-    का.ID = 1
     का.devanagari = "का"
     का.umschrift = "kā"
     का.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -357,7 +329,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     का.grundZeichen = "क"
     
     let की = Zeichen()
-    की.ID = 1
     की.devanagari = "की"
     की.umschrift = "kī"
     की.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -369,7 +340,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     की.grundZeichen = "क"
     
     let कू = Zeichen()
-    कू.ID = 1
     कू.devanagari = "कू"
     कू.umschrift = "kū"
     कू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -381,7 +351,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कू.grundZeichen = "क"
     
     let चा = Zeichen()
-    चा.ID = 1
     चा.devanagari = "चा"
     चा.umschrift = "cā"
     चा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -393,7 +362,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चा.grundZeichen = "च"
     
     let ची = Zeichen()
-    ची.ID = 1
     ची.devanagari = "ची"
     ची.umschrift = "cī"
     ची.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -405,7 +373,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ची.grundZeichen = "च"
     
     let चू = Zeichen()
-    चू.ID = 1
     चू.devanagari = "चू"
     चू.umschrift = "cū"
     चू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -417,7 +384,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चू.grundZeichen = "च"
     
     let ता = Zeichen()
-    ता.ID = 1
     ता.devanagari = "ता"
     ता.umschrift = "tā"
     ता.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -429,7 +395,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ता.grundZeichen = "त"
     
     let ती = Zeichen()
-    ती.ID = 1
     ती.devanagari = "ती"
     ती.umschrift = "tī"
     ती.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -441,7 +406,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ती.grundZeichen = "त"
     
     let तू = Zeichen()
-    तू.ID = 1
     तू.devanagari = "तू"
     तू.umschrift = "tū"
     तू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -453,7 +417,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तू.grundZeichen = "त"
     
     let पा = Zeichen()
-    पा.ID = 1
     पा.devanagari = "पा"
     पा.umschrift = "pā"
     पा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -465,7 +428,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पा.grundZeichen = "प"
     
     let पी = Zeichen()
-    पी.ID = 1
     पी.devanagari = "पी"
     पी.umschrift = "pī"
     पी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -477,7 +439,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पी.grundZeichen = "प"
     
     let पू = Zeichen()
-    पू.ID = 1
     पू.devanagari = "पू"
     पू.umschrift = "pū"
     पू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -490,7 +451,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 7
     let ट = Zeichen()
-    ट.ID = 1
     ट.devanagari = "ट"
     ट.umschrift = "ṭa"
     ट.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -502,7 +462,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ट.grundZeichen = "ट"
     
     let टि = Zeichen()
-    टि.ID = 1
     टि.devanagari = "टि"
     टि.umschrift = "ṭi"
     टि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -514,7 +473,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टि.grundZeichen = "ट"
     
     let टु = Zeichen()
-    टु.ID = 1
     टु.devanagari = "टु"
     टु.umschrift = "ṭu"
     टु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -526,7 +484,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टु.grundZeichen = "ट"
     
     let टे = Zeichen()
-    टे.ID = 1
     टे.devanagari = "टे"
     टे.umschrift = "ṭe"
     टे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -538,7 +495,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टे.grundZeichen = "ट"
     
     let टो = Zeichen()
-    टो.ID = 1
     टो.devanagari = "टो"
     टो.umschrift = "ṭo"
     टो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -550,7 +506,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टो.grundZeichen = "ट"
     
     let टा = Zeichen()
-    टा.ID = 1
     टा.devanagari = "टा"
     टा.umschrift = "ṭā"
     टा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -562,7 +517,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टा.grundZeichen = "ट"
     
     let टी = Zeichen()
-    टी.ID = 2
     टी.devanagari = "टी"
     टी.umschrift = "ṭī"
     टी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -574,7 +528,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टी.grundZeichen = "ट"
     
     let टू = Zeichen()
-    टू.ID = 1
     टू.devanagari = "टू"
     टू.umschrift = "ṭū"
     टू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -588,7 +541,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     //Lektion 8
     
     let औ = Zeichen()
-    औ.ID = 1
     औ.devanagari = "औ"
     औ.umschrift = "au"
     औ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -597,7 +549,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     औ.grundZeichen = "ओ"
     
     let ऐ = Zeichen()
-    ऐ.ID = 1
     ऐ.devanagari = "ऐ"
     ऐ.umschrift = "ai"
     ऐ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -606,7 +557,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ऐ.grundZeichen = "ए"
     
     let कौ = Zeichen()
-    कौ.ID = 1
     कौ.devanagari = "कौ"
     कौ.umschrift = "kau"
     कौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -618,7 +568,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कौ.grundZeichen = "क"
     
     let कै = Zeichen()
-    कै.ID = 1
     कै.devanagari = "कै"
     कै.umschrift = "kai"
     कै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -630,7 +579,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कै.grundZeichen = "क"
     
     let चौ = Zeichen()
-    चौ.ID = 1
     चौ.devanagari = "चौ"
     चौ.umschrift = "cau"
     चौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -642,7 +590,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चौ.grundZeichen = "च"
     
     let चै = Zeichen()
-    चै.ID = 1
     चै.devanagari = "चै"
     चै.umschrift = "cai"
     चै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -654,7 +601,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चै.grundZeichen = "च"
     
     let टौ = Zeichen()
-    टौ.ID = 1
     टौ.devanagari = "टौ"
     टौ.umschrift = "ṭau"
     टौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -666,7 +612,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टौ.grundZeichen = "ट"
     
     let टै = Zeichen()
-    टै.ID = 1
     टै.devanagari = "टै"
     टै.umschrift = "ṭai"
     टै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -678,7 +623,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टै.grundZeichen = "ट"
     
     let तौ = Zeichen()
-    तौ.ID = 1
     तौ.devanagari = "तौ"
     तौ.umschrift = "tau"
     तौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -690,7 +634,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तौ.grundZeichen = "त"
     
     let तै = Zeichen()
-    तै.ID = 1
     तै.devanagari = "तै"
     तै.umschrift = "tai"
     तै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -702,7 +645,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तै.grundZeichen = "त"
     
     let पौ = Zeichen()
-    पौ.ID = 1
     पौ.devanagari = "पौ"
     पौ.umschrift = "pau"
     पौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -714,7 +656,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पौ.grundZeichen = "प"
     
     let पै = Zeichen()
-    पै.ID = 1
     पै.devanagari = "पै"
     पै.umschrift = "pai"
     पै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -727,7 +668,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 9
     let ख = Zeichen()
-    ख.ID = 1
     ख.devanagari = "ख"
     ख.umschrift = "kha"
     ख.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -739,7 +679,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ख.grundZeichen = "ख"
     
     let छ = Zeichen()
-    छ.ID = 1
     छ.devanagari = "छ"
     छ.umschrift = "cha"
     छ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -751,7 +690,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छ.grundZeichen = "छ"
     
     let ठ = Zeichen()
-    ठ.ID = 1
     ठ.devanagari = "ठ"
     ठ.umschrift = "ṭha"
     ठ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -763,7 +701,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठ.grundZeichen = "ठ"
     
     let थ = Zeichen()
-    थ.ID = 1
     थ.devanagari = "थ"
     थ.umschrift = "tha"
     थ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -775,7 +712,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थ.grundZeichen = "थ"
     
     let फ = Zeichen()
-    फ.ID = 1
     फ.devanagari = "फ"
     फ.umschrift = "pha"
     फ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -788,7 +724,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 10
     let खि = Zeichen()
-    खि.ID = 1
     खि.devanagari = "खि"
     खि.umschrift = "khi"
     खि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -800,7 +735,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खि.grundZeichen = "ख"
     
     let खु = Zeichen()
-    खु.ID = 1
     खु.devanagari = "खु"
     खु.umschrift = "khu"
     खु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -812,7 +746,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खु.grundZeichen = "ख"
     
     let खे = Zeichen()
-    खे.ID = 1
     खे.devanagari = "खे"
     खे.umschrift = "khe"
     खे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -824,7 +757,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खे.grundZeichen = "ख"
     
     let खो = Zeichen()
-    खो.ID = 1
     खो.devanagari = "खो"
     खो.umschrift = "kho"
     खो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -836,7 +768,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खो.grundZeichen = "ख"
     
     let खा = Zeichen()
-    खा.ID = 1
     खा.devanagari = "खा"
     खा.umschrift = "khā"
     खा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -848,7 +779,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खा.grundZeichen = "ख"
     
     let खी = Zeichen()
-    खी.ID = 1
     खी.devanagari = "खी"
     खी.umschrift = "khī"
     खी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -860,7 +790,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खी.grundZeichen = "ख"
     
     let खू = Zeichen()
-    खू.ID = 1
     खू.devanagari = "खू"
     खू.umschrift = "khū"
     खू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -872,7 +801,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खू.grundZeichen = "ख"
     
     let खौ = Zeichen()
-    खौ.ID = 1
     खौ.devanagari = "खौ"
     खौ.umschrift = "khau"
     खौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -884,7 +812,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खौ.grundZeichen = "ख"
     
     let खै = Zeichen()
-    खै.ID = 1
     खै.devanagari = "खै"
     खै.umschrift = "khai"
     खै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -896,7 +823,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खै.grundZeichen = "ख"
     
     let छि = Zeichen()
-    छि.ID = 1
     छि.devanagari = "छि"
     छि.umschrift = "chi"
     छि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -908,7 +834,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छि.grundZeichen = "छ"
     
     let छु = Zeichen()
-    छु.ID = 1
     छु.devanagari = "छु"
     छु.umschrift = "chu"
     छु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -920,7 +845,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छु.grundZeichen = "छ"
     
     let छे = Zeichen()
-    छे.ID = 1
     छे.devanagari = "छे"
     छे.umschrift = "che"
     छे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -932,7 +856,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छे.grundZeichen = "छ"
     
     let छो = Zeichen()
-    छो.ID = 1
     छो.devanagari = "छो"
     छो.umschrift = "cho"
     छो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -944,7 +867,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छो.grundZeichen = "छ"
     
     let छा = Zeichen()
-    छा.ID = 1
     छा.devanagari = "छा"
     छा.umschrift = "chā"
     छा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -956,7 +878,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छा.grundZeichen = "छ"
     
     let छी = Zeichen()
-    छी.ID = 1
     छी.devanagari = "छी"
     छी.umschrift = "chī"
     छी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -968,7 +889,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छी.grundZeichen = "छ"
     
     let छू = Zeichen()
-    छू.ID = 1
     छू.devanagari = "छू"
     छू.umschrift = "chū"
     छू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -980,7 +900,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छू.grundZeichen = "छ"
     
     let छौ = Zeichen()
-    छौ.ID = 1
     छौ.devanagari = "छौ"
     छौ.umschrift = "chau"
     छौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -992,7 +911,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छौ.grundZeichen = "छ"
     
     let छै = Zeichen()
-    छै.ID = 1
     छै.devanagari = "छै"
     छै.umschrift = "chai"
     छै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1004,7 +922,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छै.grundZeichen = "छ"
     
     let ठि = Zeichen()
-    ठि.ID = 1
     ठि.devanagari = "ठि"
     ठि.umschrift = "ṭhi"
     ठि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1016,7 +933,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठि.grundZeichen = "ठ"
     
     let ठु = Zeichen()
-    ठु.ID = 1
     ठु.devanagari = "ठु"
     ठु.umschrift = "ṭhu"
     ठु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1028,7 +944,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठु.grundZeichen = "ठ"
     
     let ठे = Zeichen()
-    ठे.ID = 1
     ठे.devanagari = "ठे"
     ठे.umschrift = "ṭhe"
     ठे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1040,7 +955,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठे.grundZeichen = "ठ"
     
     let ठो = Zeichen()
-    ठो.ID = 1
     ठो.devanagari = "ठो"
     ठो.umschrift = "ṭho"
     ठो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1052,7 +966,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठो.grundZeichen = "ठ"
     
     let ठा = Zeichen()
-    ठा.ID = 1
     ठा.devanagari = "ठा"
     ठा.umschrift = "ṭhā"
     ठा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1064,7 +977,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठा.grundZeichen = "ठ"
     
     let ठी = Zeichen()
-    ठी.ID = 1
     ठी.devanagari = "ठी"
     ठी.umschrift = "ṭhī"
     ठी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1076,7 +988,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठी.grundZeichen = "ठ"
     
     let ठू = Zeichen()
-    ठू.ID = 1
     ठू.devanagari = "ठू"
     ठू.umschrift = "ṭhū"
     ठू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1088,7 +999,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठू.grundZeichen = "ठ"
     
     let ठौ = Zeichen()
-    ठौ.ID = 1
     ठौ.devanagari = "ठौ"
     ठौ.umschrift = "ṭhau"
     ठौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1100,7 +1010,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठौ.grundZeichen = "ठ"
     
     let ठै = Zeichen()
-    ठै.ID = 1
     ठै.devanagari = "ठै"
     ठै.umschrift = "ṭhai"
     ठै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1112,7 +1021,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठै.grundZeichen = "ठ"
     
     let थि = Zeichen()
-    थि.ID = 1
     थि.devanagari = "थि"
     थि.umschrift = "thi"
     थि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1124,7 +1032,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थि.grundZeichen = "थ"
     
     let थु = Zeichen()
-    थु.ID = 1
     थु.devanagari = "थु"
     थु.umschrift = "thu"
     थु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1136,7 +1043,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थु.grundZeichen = "थ"
     
     let थे = Zeichen()
-    थे.ID = 1
     थे.devanagari = "थे"
     थे.umschrift = "the"
     थे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1148,7 +1054,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थे.grundZeichen = "थ"
     
     let थो = Zeichen()
-    थो.ID = 1
     थो.devanagari = "थो"
     थो.umschrift = "tho"
     थो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1160,7 +1065,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थो.grundZeichen = "थ"
     
     let था = Zeichen()
-    था.ID = 2
     था.devanagari = "था"
     था.umschrift = "thā"
     था.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1172,7 +1076,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     था.grundZeichen = "थ"
     
     let थी = Zeichen()
-    थी.ID = 2
     थी.devanagari = "थी"
     थी.umschrift = "thī"
     थी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1184,7 +1087,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थी.grundZeichen = "थ"
     
     let थू = Zeichen()
-    थू.ID = 1
     थू.devanagari = "थू"
     थू.umschrift = "thū"
     थू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1196,7 +1098,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थू.grundZeichen = "थ"
     
     let थौ = Zeichen()
-    थौ.ID = 1
     थौ.devanagari = "थौ"
     थौ.umschrift = "thau"
     थौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1208,7 +1109,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थौ.grundZeichen = "थ"
     
     let थै = Zeichen()
-    थै.ID = 1
     थै.devanagari = "थै"
     थै.umschrift = "thai"
     थै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1220,7 +1120,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थै.grundZeichen = "थ"
     
     let फि = Zeichen()
-    फि.ID = 1
     फि.devanagari = "फि"
     फि.umschrift = "phi"
     फि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1232,7 +1131,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फि.grundZeichen = "फ"
     
     let फु = Zeichen()
-    फु.ID = 1
     फु.devanagari = "फु"
     फु.umschrift = "phu"
     फु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1244,7 +1142,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फु.grundZeichen = "फ"
     
     let फे = Zeichen()
-    फे.ID = 1
     फे.devanagari = "फे"
     फे.umschrift = "phe"
     फे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1256,7 +1153,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फे.grundZeichen = "फ"
     
     let फो = Zeichen()
-    फो.ID = 1
     फो.devanagari = "फो"
     फो.umschrift = "pho"
     फो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1268,7 +1164,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फो.grundZeichen = "फ"
     
     let फा = Zeichen()
-    फा.ID = 1
     फा.devanagari = "फा"
     फा.umschrift = "phā"
     फा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1280,7 +1175,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फा.grundZeichen = "फ"
     
     let फी = Zeichen()
-    फी.ID = 1
     फी.devanagari = "फी"
     फी.umschrift = "phī"
     फी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1292,7 +1186,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फी.grundZeichen = "फ"
     
     let फू = Zeichen()
-    फू.ID = 1
     फू.devanagari = "फू"
     फू.umschrift = "phū"
     फू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1304,7 +1197,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फू.grundZeichen = "फ"
     
     let फौ = Zeichen()
-    फौ.ID = 1
     फौ.devanagari = "फौ"
     फौ.umschrift = "phau"
     फौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1316,7 +1208,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फौ.grundZeichen = "फ"
     
     let फै = Zeichen()
-    फै.ID = 1
     फै.devanagari = "फै"
     फै.umschrift = "phai"
     फै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1329,7 +1220,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 11
     let ऋ = Zeichen()
-    ऋ.ID = 1
     ऋ.devanagari = "ऋ"
     ऋ.umschrift = "ṛ"
     ऋ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -1338,7 +1228,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ऋ.grundZeichen = "ऋ"
     
     let ॠ = Zeichen()
-    ॠ.ID = 1
     ॠ.devanagari = "ॠ"
     ॠ.umschrift = "ṝ"
     ॠ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -1347,7 +1236,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ॠ.grundZeichen = "ऋ"
     
     let कृ = Zeichen()
-    कृ.ID = 1
     कृ.devanagari = "कृ"
     कृ.umschrift = "kṛ"
     कृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1359,7 +1247,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कृ.grundZeichen = "क"
     
     let कॄ = Zeichen()
-    कॄ.ID = 1
     कॄ.devanagari = "कॄ"
     कॄ.umschrift = "kṝ"
     कॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1371,7 +1258,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     कॄ.grundZeichen = "क"
     
     let चृ = Zeichen()
-    चृ.ID = 1
     चृ.devanagari = "चृ"
     चृ.umschrift = "cṛ"
     चृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1383,7 +1269,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चृ.grundZeichen = "च"
     
     let चॄ = Zeichen()
-    चॄ.ID = 1
     चॄ.devanagari = "चॄ"
     चॄ.umschrift = "cṝ"
     चॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1395,7 +1280,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     चॄ.grundZeichen = "च"
     
     let टृ = Zeichen()
-    टृ.ID = 1
     टृ.devanagari = "टृ"
     टृ.umschrift = "ṭṛ"
     टृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1407,7 +1291,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टृ.grundZeichen = "ट"
     
     let टॄ = Zeichen()
-    टॄ.ID = 1
     टॄ.devanagari = "टॄ"
     टॄ.umschrift = "ṭṝ"
     टॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1419,7 +1302,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     टॄ.grundZeichen = "ट"
     
     let तृ = Zeichen()
-    तृ.ID = 1
     तृ.devanagari = "तृ"
     तृ.umschrift = "tṛ"
     तृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1431,7 +1313,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तृ.grundZeichen = "त"
     
     let तॄ = Zeichen()
-    तॄ.ID = 1
     तॄ.devanagari = "तॄ"
     तॄ.umschrift = "tṝ"
     तॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1443,7 +1324,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     तॄ.grundZeichen = "त"
     
     let खृ = Zeichen()
-    खृ.ID = 1
     खृ.devanagari = "खृ"
     खृ.umschrift = "khṛ"
     खृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1455,7 +1335,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खृ.grundZeichen = "ख"
     
     let खॄ = Zeichen()
-    खॄ.ID = 1
     खॄ.devanagari = "खॄ"
     खॄ.umschrift = "khṝ"
     खॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1467,7 +1346,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     खॄ.grundZeichen = "ख"
     
     let छृ = Zeichen()
-    छृ.ID = 1
     छृ.devanagari = "छृ"
     छृ.umschrift = "chṛ"
     छृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1479,7 +1357,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छृ.grundZeichen = "छ"
     
     let छॄ = Zeichen()
-    छॄ.ID = 1
     छॄ.devanagari = "छॄ"
     छॄ.umschrift = "chṝ"
     छॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1491,7 +1368,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     छॄ.grundZeichen = "छ"
     
     let ठृ = Zeichen()
-    ठृ.ID = 1
     ठृ.devanagari = "ठृ"
     ठृ.umschrift = "ṭhṛ"
     ठृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1503,7 +1379,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठृ.grundZeichen = "ठ"
     
     let ठॄ = Zeichen()
-    ठॄ.ID = 1
     ठॄ.devanagari = "ठॄ"
     ठॄ.umschrift = "ṭhṝ"
     ठॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1515,7 +1390,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ठॄ.grundZeichen = "ठ"
     
     let थृ = Zeichen()
-    थृ.ID = 1
     थृ.devanagari = "थृ"
     थृ.umschrift = "thṛ"
     थृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1527,7 +1401,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थृ.grundZeichen = "थ"
     
     let थॄ = Zeichen()
-    थॄ.ID = 1
     थॄ.devanagari = "थॄ"
     थॄ.umschrift = "thṝ"
     थॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1539,7 +1412,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     थॄ.grundZeichen = "थ"
     
     let पृ = Zeichen()
-    पृ.ID = 1
     पृ.devanagari = "पृ"
     पृ.umschrift = "pṛ"
     पृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1551,7 +1423,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पृ.grundZeichen = "प"
     
     let पॄ = Zeichen()
-    पॄ.ID = 1
     पॄ.devanagari = "पॄ"
     पॄ.umschrift = "pṝ"
     पॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1563,7 +1434,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     पॄ.grundZeichen = "प"
     
     let फृ = Zeichen()
-    फृ.ID = 1
     फृ.devanagari = "फृ"
     फृ.umschrift = "phṛ"
     फृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1575,7 +1445,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     फृ.grundZeichen = "फ"
     
     let फॄ = Zeichen()
-    फॄ.ID = 1
     फॄ.devanagari = "फॄ"
     फॄ.umschrift = "phṝ"
     फॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1589,7 +1458,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     //Lektion 12
     
     let ग = Zeichen()
-    ग.ID = 1
     ग.devanagari = "ग"
     ग.umschrift = "ga"
     ग.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1601,7 +1469,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ग.grundZeichen = "ग"
     
     let ज = Zeichen()
-    ज.ID = 1
     ज.devanagari = "ज"
     ज.umschrift = "ja"
     ज.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1615,7 +1482,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let ब = Zeichen()
-    ब.ID = 1
     ब.devanagari = "ब"
     ब.umschrift = "ba"
     ब.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1627,7 +1493,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ब.grundZeichen = "ब"
     
     let घ = Zeichen()
-    घ.ID = 1
     घ.devanagari = "घ"
     घ.umschrift = "gha"
     घ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1639,7 +1504,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घ.grundZeichen = "घ"
     
     let झ = Zeichen()
-    झ.ID = 1
     झ.devanagari = "झ"
     झ.umschrift = "jha"
     झ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1653,7 +1517,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let भ = Zeichen()
-    भ.ID = 1
     भ.devanagari = "भ"
     भ.umschrift = "bha"
     भ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1667,7 +1530,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     //Lektion 13
     
     let गा = Zeichen()
-    गा.ID = 1
     गा.devanagari = "गा"
     गा.umschrift = "gā"
     गा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1679,7 +1541,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गा.grundZeichen = "ग"
     
     let गि = Zeichen()
-    गि.ID = 1
     गि.devanagari = "गि"
     गि.umschrift = "gi"
     गि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1691,7 +1552,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गि.grundZeichen = "ग"
     
     let गी = Zeichen()
-    गी.ID = 1
     गी.devanagari = "गी"
     गी.umschrift = "gī"
     गी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1703,7 +1563,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गी.grundZeichen = "ग"
     
     let गु = Zeichen()
-    गु.ID = 1
     गु.devanagari = "गु"
     गु.umschrift = "gu"
     गु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1715,7 +1574,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गु.grundZeichen = "ग"
     
     let गू = Zeichen()
-    गू.ID = 1
     गू.devanagari = "गू"
     गू.umschrift = "gū"
     गू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1727,7 +1585,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गू.grundZeichen = "ग"
     
     let गे = Zeichen()
-    गे.ID = 1
     गे.devanagari = "गे"
     गे.umschrift = "ge"
     गे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1739,7 +1596,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गे.grundZeichen = "ग"
     
     let गै = Zeichen()
-    गै.ID = 1
     गै.devanagari = "गै"
     गै.umschrift = "gai"
     गै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1751,7 +1607,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गै.grundZeichen = "ग"
     
     let गो = Zeichen()
-    गो.ID = 1
     गो.devanagari = "गो"
     गो.umschrift = "go"
     गो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1763,7 +1618,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गो.grundZeichen = "ग"
     
     let गौ = Zeichen()
-    गौ.ID = 1
     गौ.devanagari = "गौ"
     गौ.umschrift = "gau"
     गौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1775,7 +1629,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गौ.grundZeichen = "ग"
     
     let जा = Zeichen()
-    जा.ID = 1
     जा.devanagari = "जा"
     जा.umschrift = "jā"
     जा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1787,7 +1640,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जा.grundZeichen = "ज"
     
     let जि = Zeichen()
-    जि.ID = 1
     जि.devanagari = "जि"
     जि.umschrift = "ji"
     जि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1799,7 +1651,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जि.grundZeichen = "ज"
     
     let जी = Zeichen()
-    जी.ID = 1
     जी.devanagari = "जी"
     जी.umschrift = "jī"
     जी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1811,7 +1662,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जी.grundZeichen = "ज"
     
     let जु = Zeichen()
-    जु.ID = 1
     जु.devanagari = "जु"
     जु.umschrift = "ju"
     जु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1823,7 +1673,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जु.grundZeichen = "ज"
     
     let जू = Zeichen()
-    जू.ID = 1
     जू.devanagari = "जू"
     जू.umschrift = "jū"
     जू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1835,7 +1684,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जू.grundZeichen = "ज"
     
     let जे = Zeichen()
-    जे.ID = 1
     जे.devanagari = "जे"
     जे.umschrift = "je"
     जे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1847,7 +1695,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जे.grundZeichen = "ज"
     
     let जै = Zeichen()
-    जै.ID = 1
     जै.devanagari = "जै"
     जै.umschrift = "jai"
     जै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1859,7 +1706,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जै.grundZeichen = "ज"
     
     let जो = Zeichen()
-    जो.ID = 1
     जो.devanagari = "जो"
     जो.umschrift = "jo"
     जो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1871,7 +1717,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जो.grundZeichen = "ज"
     
     let जौ = Zeichen()
-    जौ.ID = 1
     जौ.devanagari = "जौ"
     जौ.umschrift = "jau"
     जौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1883,7 +1728,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     जौ.grundZeichen = "ज"
     
     let बा = Zeichen()
-    बा.ID = 1
     बा.devanagari = "बा"
     बा.umschrift = "bā"
     बा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1895,7 +1739,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बा.grundZeichen = "ब"
     
     let बि = Zeichen()
-    बि.ID = 1
     बि.devanagari = "बि"
     बि.umschrift = "bi"
     बि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1907,7 +1750,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बि.grundZeichen = "ब"
     
     let बी = Zeichen()
-    बी.ID = 1
     बी.devanagari = "बी"
     बी.umschrift = "bī"
     बी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1919,7 +1761,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बी.grundZeichen = "ब"
     
     let बु = Zeichen()
-    बु.ID = 1
     बु.devanagari = "बु"
     बु.umschrift = "bu"
     बु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1931,7 +1772,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बु.grundZeichen = "ब"
     
     let बू = Zeichen()
-    बू.ID = 1
     बू.devanagari = "बू"
     बू.umschrift = "bū"
     बू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1943,7 +1783,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बू.grundZeichen = "ब"
     
     let बे = Zeichen()
-    बे.ID = 1
     बे.devanagari = "बे"
     बे.umschrift = "be"
     बे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1955,7 +1794,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बे.grundZeichen = "ब"
     
     let बै = Zeichen()
-    बै.ID = 1
     बै.devanagari = "बै"
     बै.umschrift = "bai"
     बै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1967,7 +1805,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बै.grundZeichen = "ब"
     
     let बो = Zeichen()
-    बो.ID = 1
     बो.devanagari = "बो"
     बो.umschrift = "bo"
     बो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1979,7 +1816,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बो.grundZeichen = "ब"
     
     let बौ = Zeichen()
-    बौ.ID = 1
     बौ.devanagari = "बौ"
     बौ.umschrift = "bau"
     बौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -1991,7 +1827,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बौ.grundZeichen = "ब"
     
     let घा = Zeichen()
-    घा.ID = 1
     घा.devanagari = "घा"
     घा.umschrift = "ghā"
     घा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2003,7 +1838,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घा.grundZeichen = "घ"
     
     let घि = Zeichen()
-    घि.ID = 1
     घि.devanagari = "घि"
     घि.umschrift = "ghi"
     घि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2015,7 +1849,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घि.grundZeichen = "घ"
     
     let घी = Zeichen()
-    घी.ID = 1
     घी.devanagari = "घी"
     घी.umschrift = "ghī"
     घी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2027,7 +1860,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घी.grundZeichen = "घ"
     
     let घु = Zeichen()
-    घु.ID = 1
     घु.devanagari = "घु"
     घु.umschrift = "ghu"
     घु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2039,7 +1871,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घु.grundZeichen = "घ"
     
     let घू = Zeichen()
-    घू.ID = 1
     घू.devanagari = "घू"
     घू.umschrift = "ghū"
     घू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2051,7 +1882,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घू.grundZeichen = "घ"
     
     let घे = Zeichen()
-    घे.ID = 1
     घे.devanagari = "घे"
     घे.umschrift = "ghe"
     घे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2063,7 +1893,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घे.grundZeichen = "घ"
     
     let घै = Zeichen()
-    घै.ID = 1
     घै.devanagari = "घै"
     घै.umschrift = "ghai"
     घै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2075,7 +1904,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घै.grundZeichen = "घ"
     
     let घो = Zeichen()
-    घो.ID = 1
     घो.devanagari = "घो"
     घो.umschrift = "gho"
     घो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2087,7 +1915,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घो.grundZeichen = "घ"
     
     let घौ = Zeichen()
-    घौ.ID = 1
     घौ.devanagari = "घौ"
     घौ.umschrift = "ghau"
     घौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2099,7 +1926,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घौ.grundZeichen = "घ"
     
     let झा = Zeichen()
-    झा.ID = 1
     झा.devanagari = "झा"
     झा.umschrift = "jhā"
     झा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2111,7 +1937,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झा.grundZeichen = "झ"
     
     let झि = Zeichen()
-    झि.ID = 1
     झि.devanagari = "झि"
     झि.umschrift = "jhi"
     झि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2123,7 +1948,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झि.grundZeichen = "झ"
     
     let झी = Zeichen()
-    झी.ID = 1
     झी.devanagari = "झी"
     झी.umschrift = "jhī"
     झी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2135,7 +1959,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झी.grundZeichen = "झ"
     
     let झु = Zeichen()
-    झु.ID = 1
     झु.devanagari = "झु"
     झु.umschrift = "jhu"
     झु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2147,7 +1970,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झु.grundZeichen = "झ"
     
     let झू = Zeichen()
-    झू.ID = 1
     झू.devanagari = "झू"
     झू.umschrift = "jhū"
     झू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2159,7 +1981,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झू.grundZeichen = "झ"
     
     let झे = Zeichen()
-    झे.ID = 1
     झे.devanagari = "झे"
     झे.umschrift = "jhe"
     झे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2171,7 +1992,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झे.grundZeichen = "झ"
     
     let झै = Zeichen()
-    झै.ID = 1
     झै.devanagari = "झै"
     झै.umschrift = "jhai"
     झै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2183,7 +2003,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झै.grundZeichen = "झ"
     
     let झो = Zeichen()
-    झो.ID = 1
     झो.devanagari = "झो"
     झो.umschrift = "jho"
     झो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2195,7 +2014,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झो.grundZeichen = "झ"
     
     let झौ = Zeichen()
-    झौ.ID = 1
     झौ.devanagari = "झौ"
     झौ.umschrift = "jhau"
     झौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2207,7 +2025,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झौ.grundZeichen = "झ"
     
     let भा = Zeichen()
-    भा.ID = 1
     भा.devanagari = "भा"
     भा.umschrift = "bhā"
     भा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2219,7 +2036,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भा.grundZeichen = "भ"
     
     let भि = Zeichen()
-    भि.ID = 1
     भि.devanagari = "भि"
     भि.umschrift = "bhi"
     भि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2231,7 +2047,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भि.grundZeichen = "भ"
     
     let भी = Zeichen()
-    भी.ID = 1
     भी.devanagari = "भी"
     भी.umschrift = "bhī"
     भी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2243,7 +2058,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भी.grundZeichen = "भ"
     
     let भु = Zeichen()
-    भु.ID = 1
     भु.devanagari = "भु"
     भु.umschrift = "bhu"
     भु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2255,7 +2069,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भु.grundZeichen = "भ"
     
     let भू = Zeichen()
-    भू.ID = 1
     भू.devanagari = "भू"
     भू.umschrift = "bhū"
     भू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2267,7 +2080,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भू.grundZeichen = "भ"
     
     let भे = Zeichen()
-    भे.ID = 1
     भे.devanagari = "भे"
     भे.umschrift = "bhe"
     भे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2279,7 +2091,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भे.grundZeichen = "भ"
     
     let भै = Zeichen()
-    भै.ID = 1
     भै.devanagari = "भै"
     भै.umschrift = "bhai"
     भै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2291,7 +2102,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भै.grundZeichen = "भ"
     
     let भो = Zeichen()
-    भो.ID = 1
     भो.devanagari = "भो"
     भो.umschrift = "bho"
     भो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2303,7 +2113,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भो.grundZeichen = "भ"
     
     let भौ = Zeichen()
-    भौ.ID = 1
     भौ.devanagari = "भौ"
     भौ.umschrift = "bhau"
     भौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2316,7 +2125,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let गृ = Zeichen()
-    गृ.ID = 1
     गृ.devanagari = "गृ"
     गृ.umschrift = "gṛ"
     गृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2328,7 +2136,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गृ.grundZeichen = "ग"
     
     let जृ = Zeichen()
-    जृ.ID = 1
     जृ.devanagari = "जृ"
     जृ.umschrift = "jṛ"
     जृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2342,7 +2149,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let बृ = Zeichen()
-    बृ.ID = 1
     बृ.devanagari = "बृ"
     बृ.umschrift = "bṛ"
     बृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2355,7 +2161,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let घृ = Zeichen()
-    घृ.ID = 1
     घृ.devanagari = "घृ"
     घृ.umschrift = "ghṛ"
     घृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2367,7 +2172,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घृ.grundZeichen = "घ"
     
     let झृ = Zeichen()
-    झृ.ID = 1
     झृ.devanagari = "झृ"
     झृ.umschrift = "jhṛ"
     झृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2379,7 +2183,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झृ.grundZeichen = "झ"
     
     let भृ = Zeichen()
-    भृ.ID = 1
     भृ.devanagari = "भृ"
     भृ.umschrift = "bhṛ"
     भृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2391,7 +2194,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     भृ.grundZeichen = "भ"
     
     let गॄ = Zeichen()
-    गॄ.ID = 1
     गॄ.devanagari = "गॄ"
     गॄ.umschrift = "gṝ"
     गॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2403,7 +2205,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     गॄ.grundZeichen = "ग"
     
     let जॄ = Zeichen()
-    जॄ.ID = 1
     जॄ.devanagari = "जॄ"
     जॄ.umschrift = "jṝ"
     जॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2417,7 +2218,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let बॄ = Zeichen()
-    बॄ.ID = 1
     बॄ.devanagari = "बॄ"
     बॄ.umschrift = "bṝ"
     बॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2429,7 +2229,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     बॄ.grundZeichen = "ब"
     
     let घॄ = Zeichen()
-    घॄ.ID = 1
     घॄ.devanagari = "घॄ"
     घॄ.umschrift = "ghṝ"
     घॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2441,7 +2240,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     घॄ.grundZeichen = "घ"
     
     let झॄ = Zeichen()
-    झॄ.ID = 1
     झॄ.devanagari = "झॄ"
     झॄ.umschrift = "jhṝ"
     झॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2453,7 +2251,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     झॄ.grundZeichen = "झ"
     
     let भॄ = Zeichen()
-    भॄ.ID = 1
     भॄ.devanagari = "भॄ"
     भॄ.umschrift = "bhṝ"
     भॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2469,7 +2266,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     //nächste Lektion
     
     let ड = Zeichen()
-    ड.ID = 1
     ड.devanagari = "ड"
     ड.umschrift = "ḍa"
     ड.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2481,7 +2277,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ड.grundZeichen = "ड"
     
     let ढ = Zeichen()
-    ढ.ID = 1
     ढ.devanagari = "ढ"
     ढ.umschrift = "ḍha"
     ढ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2493,7 +2288,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढ.grundZeichen = "ढ"
     
     let ध = Zeichen()
-    ध.ID = 1
     ध.devanagari = "ध"
     ध.umschrift = "dha"
     ध.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2505,7 +2299,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ध.grundZeichen = "ध"
     
     let द = Zeichen()
-    द.ID = 1
     द.devanagari = "द"
     द.umschrift = "da"
     द.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2517,7 +2310,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     द.grundZeichen = "द"
     
     let डा = Zeichen()
-    डा.ID = 1
     डा.devanagari = "डा"
     डा.umschrift = "ḍā"
     डा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2529,7 +2321,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डा.grundZeichen = "ड"
     
     let डि = Zeichen()
-    डि.ID = 1
     डि.devanagari = "डि"
     डि.umschrift = "ḍi"
     डि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2541,7 +2332,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डि.grundZeichen = "ड"
     
     let डी = Zeichen()
-    डी.ID = 1
     डी.devanagari = "डी"
     डी.umschrift = "ḍī"
     डी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2553,7 +2343,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डी.grundZeichen = "ड"
     
     let डु = Zeichen()
-    डु.ID = 1
     डु.devanagari = "डु"
     डु.umschrift = "ḍu"
     डु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2565,7 +2354,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डु.grundZeichen = "ड"
     
     let डू = Zeichen()
-    डू.ID = 1
     डू.devanagari = "डू"
     डू.umschrift = "ḍū"
     डू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2577,7 +2365,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डू.grundZeichen = "ड"
     
     let डे = Zeichen()
-    डे.ID = 1
     डे.devanagari = "डे"
     डे.umschrift = "ḍe"
     डे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2589,7 +2376,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डे.grundZeichen = "ड"
     
     let डै = Zeichen()
-    डै.ID = 1
     डै.devanagari = "डै"
     डै.umschrift = "ḍai"
     डै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2601,7 +2387,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डै.grundZeichen = "ड"
     
     let डो = Zeichen()
-    डो.ID = 1
     डो.devanagari = "डो"
     डो.umschrift = "ḍo"
     डो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2613,7 +2398,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डो.grundZeichen = "ड"
     
     let डौ = Zeichen()
-    डौ.ID = 1
     डौ.devanagari = "डौ"
     डौ.umschrift = "ḍau"
     डौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2625,7 +2409,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डौ.grundZeichen = "ड"
     
     let दा = Zeichen()
-    दा.ID = 1
     दा.devanagari = "दा"
     दा.umschrift = "dā"
     दा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2637,7 +2420,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दा.grundZeichen = "द"
     
     let दि = Zeichen()
-    दि.ID = 1
     दि.devanagari = "दि"
     दि.umschrift = "di"
     दि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2649,7 +2431,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दि.grundZeichen = "द"
     
     let दी = Zeichen()
-    दी.ID = 1
     दी.devanagari = "दी"
     दी.umschrift = "dī"
     दी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2661,7 +2442,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दी.grundZeichen = "द"
     
     let दु = Zeichen()
-    दु.ID = 1
     दु.devanagari = "दु"
     दु.umschrift = "du"
     दु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2673,7 +2453,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दु.grundZeichen = "द"
     
     let दू = Zeichen()
-    दू.ID = 1
     दू.devanagari = "दू"
     दू.umschrift = "dū"
     दू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2685,7 +2464,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दू.grundZeichen = "द"
     
     let दे = Zeichen()
-    दे.ID = 1
     दे.devanagari = "दे"
     दे.umschrift = "de"
     दे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2697,7 +2475,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दे.grundZeichen = "द"
     
     let दै = Zeichen()
-    दै.ID = 1
     दै.devanagari = "दै"
     दै.umschrift = "dai"
     दै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2709,7 +2486,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दै.grundZeichen = "द"
     
     let दो = Zeichen()
-    दो.ID = 1
     दो.devanagari = "दो"
     दो.umschrift = "do"
     दो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2721,7 +2497,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दो.grundZeichen = "द"
     
     let दौ = Zeichen()
-    दौ.ID = 1
     दौ.devanagari = "दौ"
     दौ.umschrift = "dau"
     दौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2734,7 +2509,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let ढा = Zeichen()
-    ढा.ID = 1
     ढा.devanagari = "ढा"
     ढा.umschrift = "ḍhā"
     ढा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2746,7 +2520,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढा.grundZeichen = "ढ"
     
     let ढि = Zeichen()
-    ढि.ID = 1
     ढि.devanagari = "ढि"
     ढि.umschrift = "ḍhi"
     ढि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2758,7 +2531,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढि.grundZeichen = "ढ"
     
     let ढी = Zeichen()
-    ढी.ID = 1
     ढी.devanagari = "ढी"
     ढी.umschrift = "ḍhī"
     ढी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2770,7 +2542,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढी.grundZeichen = "ढ"
     
     let ढु = Zeichen()
-    ढु.ID = 1
     ढु.devanagari = "ढु"
     ढु.umschrift = "ḍhu"
     ढु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2782,7 +2553,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढु.grundZeichen = "ढ"
     
     let ढू = Zeichen()
-    ढू.ID = 1
     ढू.devanagari = "ढू"
     ढू.umschrift = "ḍhū"
     ढू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2794,7 +2564,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढू.grundZeichen = "ढ"
     
     let ढे = Zeichen()
-    ढे.ID = 1
     ढे.devanagari = "ढे"
     ढे.umschrift = "ḍhe"
     ढे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2806,7 +2575,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढे.grundZeichen = "ढ"
     
     let ढै = Zeichen()
-    ढै.ID = 1
     ढै.devanagari = "ढै"
     ढै.umschrift = "ḍhai"
     ढै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2818,7 +2586,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढै.grundZeichen = "ढ"
     
     let ढो = Zeichen()
-    ढो.ID = 1
     ढो.devanagari = "ढो"
     ढो.umschrift = "ḍho"
     ढो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2830,7 +2597,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढो.grundZeichen = "ढ"
     
     let ढौ = Zeichen()
-    ढौ.ID = 1
     ढौ.devanagari = "ढौ"
     ढौ.umschrift = "ḍhau"
     ढौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2842,7 +2608,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढौ.grundZeichen = "ढ"
     
     let धा = Zeichen()
-    धा.ID = 1
     धा.devanagari = "धा"
     धा.umschrift = "dhā"
     धा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2854,7 +2619,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धा.grundZeichen = "ध"
     
     let धि = Zeichen()
-    धि.ID = 1
     धि.devanagari = "धि"
     धि.umschrift = "dhi"
     धि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2866,7 +2630,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धि.grundZeichen = "ध"
     
     let धी = Zeichen()
-    धी.ID = 1
     धी.devanagari = "धी"
     धी.umschrift = "dhī"
     धी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2878,7 +2641,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धी.grundZeichen = "ध"
     
     let धु = Zeichen()
-    धु.ID = 1
     धु.devanagari = "धु"
     धु.umschrift = "dhu"
     धु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2890,7 +2652,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धु.grundZeichen = "ध"
     
     let धू = Zeichen()
-    धू.ID = 1
     धू.devanagari = "धू"
     धू.umschrift = "dhū"
     धू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2902,7 +2663,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धू.grundZeichen = "ध"
     
     let धे = Zeichen()
-    धे.ID = 1
     धे.devanagari = "धे"
     धे.umschrift = "dhe"
     धे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2914,7 +2674,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धे.grundZeichen = "ध"
     
     let धै = Zeichen()
-    धै.ID = 1
     धै.devanagari = "धै"
     धै.umschrift = "dhai"
     धै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2926,7 +2685,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धै.grundZeichen = "ध"
     
     let धो = Zeichen()
-    धो.ID = 1
     धो.devanagari = "धो"
     धो.umschrift = "dho"
     धो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2938,7 +2696,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धो.grundZeichen = "ध"
     
     let धौ = Zeichen()
-    धौ.ID = 1
     धौ.devanagari = "धौ"
     धौ.umschrift = "dhau"
     धौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2950,7 +2707,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धौ.grundZeichen = "ध"
     
     let डृ = Zeichen()
-    डृ.ID = 1
     डृ.devanagari = "डृ"
     डृ.umschrift = "ḍṛ"
     डृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2962,7 +2718,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डृ.grundZeichen = "ड"
     
     let दृ = Zeichen()
-    दृ.ID = 1
     दृ.devanagari = "दृ"
     दृ.umschrift = "dṛ"
     दृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2974,7 +2729,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दृ.grundZeichen = "द"
     
     let ढृ = Zeichen()
-    ढृ.ID = 1
     ढृ.devanagari = "ढृ"
     ढृ.umschrift = "ḍhṛ"
     ढृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2986,7 +2740,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढृ.grundZeichen = "ढ"
     
     let धृ = Zeichen()
-    धृ.ID = 1
     धृ.devanagari = "धृ"
     धृ.umschrift = "dhṛ"
     धृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -2998,7 +2751,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     धृ.grundZeichen = "ध"
     
     let डॄ = Zeichen()
-    डॄ.ID = 1
     डॄ.devanagari = "डॄ"
     डॄ.umschrift = "ḍṝ"
     डॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3010,7 +2762,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     डॄ.grundZeichen = "ड"
     
     let दॄ = Zeichen()
-    दॄ.ID = 1
     दॄ.devanagari = "दॄ"
     दॄ.umschrift = "dṝ"
     दॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3022,7 +2773,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     दॄ.grundZeichen = "द"
     
     let ढॄ = Zeichen()
-    ढॄ.ID = 1
     ढॄ.devanagari = "ढॄ"
     ढॄ.umschrift = "ḍhṝ"
     ढॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3034,7 +2784,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ढॄ.grundZeichen = "ढ"
     
     let धॄ = Zeichen()
-    धॄ.ID = 1
     धॄ.devanagari = "धॄ"
     धॄ.umschrift = "dhṝ"
     धॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3052,7 +2801,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     //Lektion 15
     
     let ङ = Zeichen()
-    ङ.ID = 1
     ङ.devanagari = "ङ"
     ङ.umschrift = "ṅa"
     ङ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3064,7 +2812,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङ.grundZeichen = "ङ"
     
     let ञ = Zeichen()
-    ञ.ID = 1
     ञ.devanagari = "ञ"
     ञ.umschrift = "ña"
     ञ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3076,7 +2823,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञ.grundZeichen = "ञ"
     
     let ण = Zeichen()
-    ण.ID = 1
     ण.devanagari = "ण"
     ण.umschrift = "ṇa"
     ण.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3088,7 +2834,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ण.grundZeichen = "ण"
     
     let न = Zeichen()
-    न.ID = 1
     न.devanagari = "न"
     न.umschrift = "na"
     न.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3100,7 +2845,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     न.grundZeichen = "न"
     
     let म = Zeichen()
-    म.ID = 1
     म.devanagari = "म"
     म.umschrift = "ma"
     म.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3113,7 +2857,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 15
     let ङि = Zeichen()
-    ङि.ID = 1
     ङि.devanagari = "ङि"
     ङि.umschrift = "ṅi"
     ङि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3125,7 +2868,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङि.grundZeichen = "ङ"
     
     let ङी = Zeichen()
-    ङी.ID = 1
     ङी.devanagari = "ङी"
     ङी.umschrift = "ṅī"
     ङी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3137,7 +2879,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङी.grundZeichen = "ङ"
     
     let ङा = Zeichen()
-    ङा.ID = 1
     ङा.devanagari = "ङा"
     ङा.umschrift = "ṅā"
     ङा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3149,7 +2890,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङा.grundZeichen = "ङ"
     
     let ङु = Zeichen()
-    ङु.ID = 1
     ङु.devanagari = "ङु"
     ङु.umschrift = "ṅu"
     ङु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3161,7 +2901,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङु.grundZeichen = "ङ"
     
     let ङू = Zeichen()
-    ङू.ID = 1
     ङू.devanagari = "ङू"
     ङू.umschrift = "ṅū"
     ङू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3173,7 +2912,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङू.grundZeichen = "ङ"
     
     let ङे = Zeichen()
-    ङे.ID = 1
     ङे.devanagari = "ङे"
     ङे.umschrift = "ṅe"
     ङे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3185,7 +2923,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङे.grundZeichen = "ङ"
     
     let ङै = Zeichen()
-    ङै.ID = 1
     ङै.devanagari = "ङै"
     ङै.umschrift = "ṅai"
     ङै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3197,7 +2934,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङै.grundZeichen = "ङ"
     
     let ङो = Zeichen()
-    ङो.ID = 1
     ङो.devanagari = "ङो"
     ङो.umschrift = "ṅo"
     ङो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3209,7 +2945,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङो.grundZeichen = "ङ"
     
     let ङौ = Zeichen()
-    ङौ.ID = 1
     ङौ.devanagari = "ङौ"
     ङौ.umschrift = "ṅau"
     ङौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3221,7 +2956,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङौ.grundZeichen = "ङ"
     
     let ञा = Zeichen()
-    ञा.ID = 1
     ञा.devanagari = "ञा"
     ञा.umschrift = "ñā"
     ञा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3233,7 +2967,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञा.grundZeichen = "ञ"
     
     let ञि = Zeichen()
-    ञि.ID = 1
     ञि.devanagari = "ञि"
     ञि.umschrift = "ñi"
     ञि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3245,7 +2978,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञि.grundZeichen = "ञ"
     
     let ञी = Zeichen()
-    ञी.ID = 1
     ञी.devanagari = "ञी"
     ञी.umschrift = "ñī"
     ञी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3257,7 +2989,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञी.grundZeichen = "ञ"
     
     let ञु = Zeichen()
-    ञु.ID = 1
     ञु.devanagari = "ञु"
     ञु.umschrift = "ñu"
     ञु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3269,7 +3000,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञु.grundZeichen = "ञ"
     
     let ञू = Zeichen()
-    ञू.ID = 1
     ञू.devanagari = "ञू"
     ञू.umschrift = "ñū"
     ञू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3281,7 +3011,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञू.grundZeichen = "ञ"
     
     let ञे = Zeichen()
-    ञे.ID = 1
     ञे.devanagari = "ञे"
     ञे.umschrift = "ñe"
     ञे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3293,7 +3022,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञे.grundZeichen = "ञ"
     
     let ञै = Zeichen()
-    ञै.ID = 1
     ञै.devanagari = "ञै"
     ञै.umschrift = "ñai"
     ञै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3305,7 +3033,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञै.grundZeichen = "ञ"
     
     let ञो = Zeichen()
-    ञो.ID = 1
     ञो.devanagari = "ञो"
     ञो.umschrift = "ño"
     ञो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3317,7 +3044,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञो.grundZeichen = "ञ"
     
     let ञौ = Zeichen()
-    ञौ.ID = 1
     ञौ.devanagari = "ञौ"
     ञौ.umschrift = "ñau"
     ञौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3329,7 +3055,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञौ.grundZeichen = "ञ"
     
     let णा = Zeichen()
-    णा.ID = 1
     णा.devanagari = "णा"
     णा.umschrift = "ṇā"
     णा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3341,7 +3066,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णा.grundZeichen = "ण"
     
     let णि = Zeichen()
-    णि.ID = 1
     णि.devanagari = "णि"
     णि.umschrift = "ṇi"
     णि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3353,7 +3077,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णि.grundZeichen = "ण"
     
     let णी = Zeichen()
-    णी.ID = 1
     णी.devanagari = "णी"
     णी.umschrift = "ṇī"
     णी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3365,7 +3088,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णी.grundZeichen = "ण"
     
     let णु = Zeichen()
-    णु.ID = 1
     णु.devanagari = "णु"
     णु.umschrift = "ṇu"
     णु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3377,7 +3099,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णु.grundZeichen = "ण"
     
     let णू = Zeichen()
-    णू.ID = 1
     णू.devanagari = "णू"
     णू.umschrift = "ṇū"
     णू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3389,7 +3110,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णू.grundZeichen = "ण"
     
     let णे = Zeichen()
-    णे.ID = 1
     णे.devanagari = "णे"
     णे.umschrift = "ṇe"
     णे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3401,7 +3121,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णे.grundZeichen = "ण"
     
     let णै = Zeichen()
-    णै.ID = 1
     णै.devanagari = "णै"
     णै.umschrift = "ṇai"
     णै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3413,7 +3132,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णै.grundZeichen = "ण"
     
     let णो = Zeichen()
-    णो.ID = 1
     णो.devanagari = "णो"
     णो.umschrift = "ṇo"
     णो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3425,7 +3143,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णो.grundZeichen = "ण"
     
     let णौ = Zeichen()
-    णौ.ID = 1
     णौ.devanagari = "णौ"
     णौ.umschrift = "ṇau"
     णौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3438,7 +3155,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let ना = Zeichen()
-    ना.ID = 1
     ना.devanagari = "ना"
     ना.umschrift = "nā"
     ना.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3450,7 +3166,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ना.grundZeichen = "न"
     
     let नि = Zeichen()
-    नि.ID = 1
     नि.devanagari = "नि"
     नि.umschrift = "ni"
     नि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3462,7 +3177,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नि.grundZeichen = "न"
     
     let नी = Zeichen()
-    नी.ID = 1
     नी.devanagari = "नी"
     नी.umschrift = "nī"
     नी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3474,7 +3188,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नी.grundZeichen = "न"
     
     let नु = Zeichen()
-    नु.ID = 1
     नु.devanagari = "नु"
     नु.umschrift = "nu"
     नु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3486,7 +3199,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नु.grundZeichen = "न"
     
     let नू = Zeichen()
-    नू.ID = 1
     नू.devanagari = "नू"
     नू.umschrift = "nū"
     नू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3498,7 +3210,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नू.grundZeichen = "न"
     
     let ने = Zeichen()
-    ने.ID = 1
     ने.devanagari = "ने"
     ने.umschrift = "ne"
     ने.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3510,7 +3221,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ने.grundZeichen = "न"
     
     let नै = Zeichen()
-    नै.ID = 1
     नै.devanagari = "नै"
     नै.umschrift = "nai"
     नै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3522,7 +3232,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नै.grundZeichen = "न"
     
     let नो = Zeichen()
-    नो.ID = 1
     नो.devanagari = "नो"
     नो.umschrift = "no"
     नो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3534,7 +3243,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नो.grundZeichen = "न"
     
     let नौ = Zeichen()
-    नौ.ID = 1
     नौ.devanagari = "नौ"
     नौ.umschrift = "nau"
     नौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3546,7 +3254,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नौ.grundZeichen = "न"
     
     let मा = Zeichen()
-    मा.ID = 1
     मा.devanagari = "मा"
     मा.umschrift = "mā"
     मा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3558,7 +3265,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मा.grundZeichen = "म"
     
     let मि = Zeichen()
-    मि.ID = 1
     मि.devanagari = "मि"
     मि.umschrift = "mi"
     मि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3570,7 +3276,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मि.grundZeichen = "म"
     
     let मी = Zeichen()
-    मी.ID = 1
     मी.devanagari = "मी"
     मी.umschrift = "mī"
     मी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3582,7 +3287,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मी.grundZeichen = "म"
     
     let मु = Zeichen()
-    मु.ID = 1
     मु.devanagari = "मु"
     मु.umschrift = "mu"
     मु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3594,7 +3298,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मु.grundZeichen = "म"
     
     let मू = Zeichen()
-    मू.ID = 1
     मू.devanagari = "मू"
     मू.umschrift = "mū"
     मू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3606,7 +3309,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मू.grundZeichen = "म"
     
     let मे = Zeichen()
-    मे.ID = 1
     मे.devanagari = "मे"
     मे.umschrift = "me"
     मे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3618,7 +3320,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मे.grundZeichen = "म"
     
     let मै = Zeichen()
-    मै.ID = 1
     मै.devanagari = "मै"
     मै.umschrift = "mai"
     मै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3630,7 +3331,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मै.grundZeichen = "म"
     
     let मो = Zeichen()
-    मो.ID = 1
     मो.devanagari = "मो"
     मो.umschrift = "mo"
     मो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3642,7 +3342,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मो.grundZeichen = "म"
     
     let मौ = Zeichen()
-    मौ.ID = 1
     मौ.devanagari = "मौ"
     मौ.umschrift = "mau"
     मौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3654,7 +3353,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मौ.grundZeichen = "म"
     
     let ङृ = Zeichen()
-    ङृ.ID = 1
     ङृ.devanagari = "ङृ"
     ङृ.umschrift = "ṅṛ"
     ङृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3666,7 +3364,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङृ.grundZeichen = "ङ"
     
     let ञृ = Zeichen()
-    ञृ.ID = 1
     ञृ.devanagari = "ञृ"
     ञृ.umschrift = "ñṛ"
     ञृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3678,7 +3375,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञृ.grundZeichen = "ञ"
     
     let णृ = Zeichen()
-    णृ.ID = 1
     णृ.devanagari = "णृ"
     णृ.umschrift = "ṇṛ"
     णृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3690,7 +3386,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णृ.grundZeichen = "ण"
     
     let नृ = Zeichen()
-    नृ.ID = 1
     नृ.devanagari = "नृ"
     नृ.umschrift = "nṛ"
     नृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3702,7 +3397,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नृ.grundZeichen = "न"
     
     let मृ = Zeichen()
-    मृ.ID = 1
     मृ.devanagari = "मृ"
     मृ.umschrift = "mṛ"
     मृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3714,7 +3408,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     मृ.grundZeichen = "म"
     
     let ङॄ = Zeichen()
-    ङॄ.ID = 1
     ङॄ.devanagari = "ङॄ"
     ङॄ.umschrift = "ṅṝ"
     ङॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3726,7 +3419,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ङॄ.grundZeichen = "ङ"
     
     let ञॄ = Zeichen()
-    ञॄ.ID = 1
     ञॄ.devanagari = "ञॄ"
     ञॄ.umschrift = "ñṝ"
     ञॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3738,7 +3430,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ञॄ.grundZeichen = "ञ"
     
     let णॄ = Zeichen()
-    णॄ.ID = 1
     णॄ.devanagari = "णॄ"
     णॄ.umschrift = "ṇṝ"
     णॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3750,7 +3441,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     णॄ.grundZeichen = "ण"
     
     let नॄ = Zeichen()
-    नॄ.ID = 1
     नॄ.devanagari = "नॄ"
     नॄ.umschrift = "nṝ"
     नॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3762,7 +3452,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     नॄ.grundZeichen = "न"
     
     let मॄ = Zeichen()
-    मॄ.ID = 1
     मॄ.devanagari = "मॄ"
     मॄ.umschrift = "mṝ"
     मॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -3775,7 +3464,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 16
     let य = Zeichen()
-    य.ID = 1
     य.devanagari = "य"
     य.umschrift = "ya"
     य.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3787,7 +3475,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     य.artikulation  = Artikulation.palatal.rawValue
     
     let र = Zeichen()
-    र.ID = 1
     र.devanagari = "र"
     र.umschrift = "ra"
     र.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3799,7 +3486,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     र.artikulation  = Artikulation.retroflex.rawValue
     
     let व = Zeichen()
-    व.ID = 1
     व.devanagari = "व"
     व.umschrift = "va"
     व.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3812,7 +3498,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     व.artikulation  = Artikulation.labial.rawValue
     
     let ल = Zeichen()
-    ल.ID = 1
     ल.devanagari = "ल"
     ल.umschrift = "la"
     ल.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3825,7 +3510,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ल.artikulation  = Artikulation.dental.rawValue
     
     let यि = Zeichen()
-    यि.ID = 1
     यि.devanagari = "यि"
     यि.umschrift = "yi"
     यि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3838,7 +3522,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यि.artikulation  = Artikulation.palatal.rawValue
     
     let यी = Zeichen()
-    यी.ID = 1
     यी.devanagari = "यी"
     यी.umschrift = "yī"
     यी.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3851,7 +3534,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यी.artikulation  = Artikulation.palatal.rawValue
     
     let या = Zeichen()
-    या.ID = 1
     या.devanagari = "या"
     या.umschrift = "yā"
     या.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3864,7 +3546,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     या.artikulation  = Artikulation.palatal.rawValue
     
     let यु = Zeichen()
-    यु.ID = 1
     यु.devanagari = "यु"
     यु.umschrift = "yu"
     यु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3877,7 +3558,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यु.artikulation  = Artikulation.palatal.rawValue
     
     let यू = Zeichen()
-    यू.ID = 1
     यू.devanagari = "यू"
     यू.umschrift = "yū"
     यू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3890,7 +3570,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यू.artikulation  = Artikulation.palatal.rawValue
     
     let ये = Zeichen()
-    ये.ID = 1
     ये.devanagari = "ये"
     ये.umschrift = "ye"
     ये.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3903,7 +3582,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ये.artikulation  = Artikulation.palatal.rawValue
     
     let यै = Zeichen()
-    यै.ID = 1
     यै.devanagari = "यै"
     यै.umschrift = "yai"
     यै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3916,7 +3594,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यै.artikulation  = Artikulation.palatal.rawValue
     
     let यो = Zeichen()
-    यो.ID = 1
     यो.devanagari = "यो"
     यो.umschrift = "yo"
     यो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3929,7 +3606,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यो.artikulation  = Artikulation.palatal.rawValue
     
     let यौ = Zeichen()
-    यौ.ID = 1
     यौ.devanagari = "यौ"
     यौ.umschrift = "yau"
     यौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3942,7 +3618,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यौ.artikulation  = Artikulation.palatal.rawValue
     
     let रा = Zeichen()
-    रा.ID = 1
     रा.devanagari = "रा"
     रा.umschrift = "rā"
     रा.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3955,7 +3630,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रा.artikulation  = Artikulation.retroflex.rawValue
     
     let रि = Zeichen()
-    रि.ID = 1
     रि.devanagari = "रि"
     रि.umschrift = "ri"
     रि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3968,7 +3642,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रि.artikulation  = Artikulation.retroflex.rawValue
     
     let री = Zeichen()
-    री.ID = 1
     री.devanagari = "री"
     री.umschrift = "rī"
     री.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3981,7 +3654,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     री.artikulation  = Artikulation.retroflex.rawValue
     
     let रु = Zeichen()
-    रु.ID = 1
     रु.devanagari = "रु"
     रु.umschrift = "ru"
     रु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -3994,7 +3666,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रु.artikulation  = Artikulation.retroflex.rawValue
     
     let रू = Zeichen()
-    रू.ID = 1
     रू.devanagari = "रू"
     रू.umschrift = "rū"
     रू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4007,7 +3678,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रू.artikulation  = Artikulation.retroflex.rawValue
     
     let रे = Zeichen()
-    रे.ID = 1
     रे.devanagari = "रे"
     रे.umschrift = "re"
     रे.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4020,7 +3690,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रे.artikulation  = Artikulation.retroflex.rawValue
     
     let रै = Zeichen()
-    रै.ID = 1
     रै.devanagari = "रै"
     रै.umschrift = "rai"
     रै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4033,7 +3702,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रै.artikulation  = Artikulation.retroflex.rawValue
     
     let रो = Zeichen()
-    रो.ID = 1
     रो.devanagari = "रो"
     रो.umschrift = "ro"
     रो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4046,7 +3714,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रो.artikulation  = Artikulation.retroflex.rawValue
     
     let रौ = Zeichen()
-    रौ.ID = 1
     रौ.devanagari = "रौ"
     रौ.umschrift = "rau"
     रौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4059,7 +3726,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रौ.artikulation  = Artikulation.retroflex.rawValue
     
     let वा = Zeichen()
-    वा.ID = 1
     वा.devanagari = "वा"
     वा.umschrift = "vā"
     वा.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4072,7 +3738,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वा.artikulation  = Artikulation.labial.rawValue
     
     let वि = Zeichen()
-    वि.ID = 1
     वि.devanagari = "वि"
     वि.umschrift = "vi"
     वि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4085,7 +3750,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वि.artikulation  = Artikulation.labial.rawValue
     
     let वी = Zeichen()
-    वी.ID = 1
     वी.devanagari = "वी"
     वी.umschrift = "vī"
     वी.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4098,7 +3762,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वी.artikulation  = Artikulation.labial.rawValue
     
     let वु = Zeichen()
-    वु.ID = 1
     वु.devanagari = "वु"
     वु.umschrift = "vu"
     वु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4111,7 +3774,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वु.artikulation  = Artikulation.labial.rawValue
     
     let वू = Zeichen()
-    वू.ID = 1
     वू.devanagari = "वू"
     वू.umschrift = "vū"
     वू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4124,7 +3786,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वू.artikulation  = Artikulation.labial.rawValue
     
     let वे = Zeichen()
-    वे.ID = 1
     वे.devanagari = "वे"
     वे.umschrift = "ve"
     वे.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4137,7 +3798,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वे.artikulation  = Artikulation.labial.rawValue
     
     let वै = Zeichen()
-    वै.ID = 1
     वै.devanagari = "वै"
     वै.umschrift = "vai"
     वै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4150,7 +3810,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वै.artikulation  = Artikulation.labial.rawValue
     
     let वो = Zeichen()
-    वो.ID = 1
     वो.devanagari = "वो"
     वो.umschrift = "vo"
     वो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4163,7 +3822,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वो.artikulation  = Artikulation.labial.rawValue
     
     let वौ = Zeichen()
-    वौ.ID = 1
     वौ.devanagari = "वौ"
     वौ.umschrift = "vau"
     वौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4176,7 +3834,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वौ.artikulation  = Artikulation.labial.rawValue
     
     let ला = Zeichen()
-    ला.ID = 1
     ला.devanagari = "ला"
     ला.umschrift = "lā"
     ला.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4189,7 +3846,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ला.artikulation  = Artikulation.dental.rawValue
     
     let लि = Zeichen()
-    लि.ID = 1
     लि.devanagari = "लि"
     लि.umschrift = "li"
     लि.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4202,7 +3858,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लि.artikulation  = Artikulation.dental.rawValue
     
     let ली = Zeichen()
-    ली.ID = 1
     ली.devanagari = "ली"
     ली.umschrift = "lī"
     ली.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4215,7 +3870,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ली.artikulation  = Artikulation.dental.rawValue
     
     let लु = Zeichen()
-    लु.ID = 1
     लु.devanagari = "लु"
     लु.umschrift = "lu"
     लु.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4228,7 +3882,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लु.artikulation  = Artikulation.dental.rawValue
     
     let लू = Zeichen()
-    लू.ID = 1
     लू.devanagari = "लू"
     लू.umschrift = "lū"
     लू.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4241,7 +3894,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लू.artikulation  = Artikulation.dental.rawValue
     
     let ले = Zeichen()
-    ले.ID = 1
     ले.devanagari = "ले"
     ले.umschrift = "le"
     ले.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4254,7 +3906,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ले.artikulation  = Artikulation.dental.rawValue
     
     let लै = Zeichen()
-    लै.ID = 1
     लै.devanagari = "लै"
     लै.umschrift = "lai"
     लै.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4267,7 +3918,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लै.artikulation  = Artikulation.dental.rawValue
     
     let लो = Zeichen()
-    लो.ID = 1
     लो.devanagari = "लो"
     लो.umschrift = "lo"
     लो.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4280,7 +3930,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लो.artikulation  = Artikulation.dental.rawValue
     
     let लौ = Zeichen()
-    लौ.ID = 1
     लौ.devanagari = "लौ"
     लौ.umschrift = "lau"
     लौ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4293,7 +3942,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लौ.artikulation  = Artikulation.dental.rawValue
     
     let यृ = Zeichen()
-    यृ.ID = 1
     यृ.devanagari = "यृ"
     यृ.umschrift = "yṛ"
     यृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4306,7 +3954,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यृ.artikulation  = Artikulation.palatal.rawValue
     
     let लृ = Zeichen()
-    लृ.ID = 1
     लृ.devanagari = "लृ"
     लृ.umschrift = "lṛ"
     लृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4319,7 +3966,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     लृ.artikulation  = Artikulation.dental.rawValue
     
     let वृ = Zeichen()
-    वृ.ID = 1
     वृ.devanagari = "वृ"
     वृ.umschrift = "vṛ"
     वृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4332,7 +3978,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वृ.artikulation  = Artikulation.labial.rawValue
     
     let रृ = Zeichen()
-    रृ.ID = 1
     रृ.devanagari = "रृ"
     रृ.umschrift = "rṛ"
     रृ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4345,7 +3990,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रृ.artikulation  = Artikulation.retroflex.rawValue
     
     let यॄ = Zeichen()
-    यॄ.ID = 1
     यॄ.devanagari = "यॄ"
     यॄ.umschrift = "yṝ"
     यॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4358,7 +4002,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     यॄ.artikulation  = Artikulation.palatal.rawValue
     
     let रॄ = Zeichen()
-    रॄ.ID = 1
     रॄ.devanagari = "रॄ"
     रॄ.umschrift = "rṝ"
     रॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4371,7 +4014,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     रॄ.artikulation  = Artikulation.retroflex.rawValue
     
     let वॄ = Zeichen()
-    वॄ.ID = 1
     वॄ.devanagari = "वॄ"
     वॄ.umschrift = "vṝ"
     वॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4384,7 +4026,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     वॄ.artikulation  = Artikulation.labial.rawValue
     
     let लॄ = Zeichen()
-    लॄ.ID = 1
     लॄ.devanagari = "लॄ"
     लॄ.umschrift = "lṝ"
     लॄ.vokalOderKonsonant = VokalOderKonsonant.Vokal.rawValue
@@ -4398,7 +4039,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 17
     let स = Zeichen()
-    स.ID = 1
     स.devanagari = "स"
     स.umschrift = "sa"
     स.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4410,7 +4050,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     स.grundZeichen = "स"
     
     let श = Zeichen()
-    श.ID = 1
     श.devanagari = "श"
     श.umschrift = "śa"
     श.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4422,7 +4061,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     श.grundZeichen = "श"
     
     let ष = Zeichen()
-    ष.ID = 1
     ष.devanagari = "ष"
     ष.umschrift = "ṣa"
     ष.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4434,7 +4072,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ष.grundZeichen = "ष"
     
     let सि = Zeichen()
-    सि.ID = 1
     सि.devanagari = "सि"
     सि.umschrift = "si"
     सि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4446,7 +4083,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सि.grundZeichen = "स"
     
     let सी = Zeichen()
-    सी.ID = 1
     सी.devanagari = "सी"
     सी.umschrift = "sī"
     सी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4458,7 +4094,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सी.grundZeichen = "स"
     
     let सा = Zeichen()
-    सा.ID = 1
     सा.devanagari = "सा"
     सा.umschrift = "sā"
     सा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4470,7 +4105,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सा.grundZeichen = "स"
     
     let सु = Zeichen()
-    सु.ID = 1
     सु.devanagari = "सु"
     सु.umschrift = "su"
     सु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4482,7 +4116,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सु.grundZeichen = "स"
     
     let सू = Zeichen()
-    सू.ID = 1
     सू.devanagari = "सू"
     सू.umschrift = "sū"
     सू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4494,7 +4127,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सू.grundZeichen = "स"
     
     let से = Zeichen()
-    से.ID = 1
     से.devanagari = "से"
     से.umschrift = "se"
     से.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4506,7 +4138,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     से.grundZeichen = "स"
     
     let सै = Zeichen()
-    सै.ID = 1
     सै.devanagari = "सै"
     सै.umschrift = "sai"
     सै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4518,7 +4149,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सै.grundZeichen = "स"
     
     let सो = Zeichen()
-    सो.ID = 1
     सो.devanagari = "सो"
     सो.umschrift = "so"
     सो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4530,7 +4160,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सो.grundZeichen = "स"
     
     let सौ = Zeichen()
-    सौ.ID = 1
     सौ.devanagari = "सौ"
     सौ.umschrift = "sau"
     सौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4542,7 +4171,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सौ.grundZeichen = "स"
     
     let शा = Zeichen()
-    शा.ID = 1
     शा.devanagari = "शा"
     शा.umschrift = "śā"
     शा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4554,7 +4182,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शा.grundZeichen = "श"
     
     let शि = Zeichen()
-    शि.ID = 1
     शि.devanagari = "शि"
     शि.umschrift = "śi"
     शि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4566,7 +4193,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शि.grundZeichen = "श"
     
     let शी = Zeichen()
-    शी.ID = 1
     शी.devanagari = "शी"
     शी.umschrift = "śī"
     शी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4578,7 +4204,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शी.grundZeichen = "श"
     
     let शु = Zeichen()
-    शु.ID = 1
     शु.devanagari = "शु"
     शु.umschrift = "śu"
     शु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4590,7 +4215,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शु.grundZeichen = "श"
     
     let शू = Zeichen()
-    शू.ID = 1
     शू.devanagari = "शू"
     शू.umschrift = "śū"
     शू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4602,7 +4226,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शू.grundZeichen = "श"
     
     let शे = Zeichen()
-    शे.ID = 1
     शे.devanagari = "शे"
     शे.umschrift = "śe"
     शे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4614,7 +4237,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शे.grundZeichen = "श"
     
     let शै = Zeichen()
-    शै.ID = 1
     शै.devanagari = "शै"
     शै.umschrift = "śai"
     शै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4626,7 +4248,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शै.grundZeichen = "श"
     
     let शो = Zeichen()
-    शो.ID = 1
     शो.devanagari = "शो"
     शो.umschrift = "śo"
     शो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4638,7 +4259,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शो.grundZeichen = "श"
     
     let शौ = Zeichen()
-    शौ.ID = 1
     शौ.devanagari = "शौ"
     शौ.umschrift = "śau"
     शौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4650,7 +4270,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शौ.grundZeichen = "श"
     
     let षा = Zeichen()
-    षा.ID = 1
     षा.devanagari = "षा"
     षा.umschrift = "ṣā"
     षा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4662,7 +4281,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षा.grundZeichen = "ष"
     
     let षि = Zeichen()
-    षि.ID = 1
     षि.devanagari = "षि"
     षि.umschrift = "ṣi"
     षि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4674,7 +4292,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षि.grundZeichen = "ष"
     
     let षी = Zeichen()
-    षी.ID = 1
     षी.devanagari = "षी"
     षी.umschrift = "ṣī"
     षी.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4686,7 +4303,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षी.grundZeichen = "ष"
     
     let षु = Zeichen()
-    षु.ID = 1
     षु.devanagari = "षु"
     षु.umschrift = "ṣu"
     षु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4698,7 +4314,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षु.grundZeichen = "ष"
     
     let षू = Zeichen()
-    षू.ID = 1
     षू.devanagari = "षू"
     षू.umschrift = "ṣū"
     षू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4710,7 +4325,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षू.grundZeichen = "ष"
     
     let षे = Zeichen()
-    षे.ID = 1
     षे.devanagari = "षे"
     षे.umschrift = "ṣe"
     षे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4722,7 +4336,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षे.grundZeichen = "ष"
     
     let षै = Zeichen()
-    षै.ID = 1
     षै.devanagari = "षै"
     षै.umschrift = "ṣai"
     षै.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4734,7 +4347,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षै.grundZeichen = "ष"
     
     let षो = Zeichen()
-    षो.ID = 1
     षो.devanagari = "षो"
     षो.umschrift = "ṣo"
     षो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4746,7 +4358,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षो.grundZeichen = "ष"
     
     let षौ = Zeichen()
-    षौ.ID = 1
     षौ.devanagari = "षौ"
     षौ.umschrift = "ṣau"
     षौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4759,7 +4370,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let सृ = Zeichen()
-    सृ.ID = 1
     सृ.devanagari = "सृ"
     सृ.umschrift = "sṛ"
     सृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4772,7 +4382,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     
     let षृ = Zeichen()
-    षृ.ID = 1
     षृ.devanagari = "षृ"
     षृ.umschrift = "ṣṛ"
     षृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4784,7 +4393,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     षृ.grundZeichen = "ष"
     
     let शृ = Zeichen()
-    शृ.ID = 1
     शृ.devanagari = "शृ"
     शृ.umschrift = "śṛ"
     शृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4796,7 +4404,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शृ.grundZeichen = "श"
     
     let सॄ = Zeichen()
-    सॄ.ID = 1
     सॄ.devanagari = "सॄ"
     सॄ.umschrift = "sṝ"
     सॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4808,7 +4415,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     सॄ.grundZeichen = "स"
     
     let शॄ = Zeichen()
-    शॄ.ID = 1
     शॄ.devanagari = "शॄ"
     शॄ.umschrift = "śṝ"
     शॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4820,7 +4426,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     शॄ.grundZeichen = "श"
     
     let षॄ = Zeichen()
-    षॄ.ID = 1
     षॄ.devanagari = "षॄ"
     षॄ.umschrift = "ṣṝ"
     षॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4833,7 +4438,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     
     //Lektion 18
     let ह = Zeichen()
-    ह.ID = 1
     ह.devanagari = "ह"
     ह.umschrift = "ha"
     ह.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4845,7 +4449,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ह.grundZeichen = "ह"
     
     let हि = Zeichen()
-    हि.ID = 1
     हि.devanagari = "हि"
     हि.umschrift = "hi"
     हि.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4857,7 +4460,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हि.grundZeichen = "ह"
     
     let ही = Zeichen()
-    ही.ID = 1
     ही.devanagari = "ही"
     ही.umschrift = "hī"
     ही.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4869,7 +4471,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     ही.grundZeichen = "ह"
     
     let हा = Zeichen()
-    हा.ID = 1
     हा.devanagari = "हा"
     हा.umschrift = "hā"
     हा.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4881,7 +4482,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हा.grundZeichen = "ह"
     
     let हु = Zeichen()
-    हु.ID = 1
     हु.devanagari = "हु"
     हु.umschrift = "hu"
     हु.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4893,7 +4493,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हु.grundZeichen = "ह"
     
     let हू = Zeichen()
-    हू.ID = 1
     हू.devanagari = "हू"
     हू.umschrift = "hū"
     हू.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4905,7 +4504,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हू.grundZeichen = "ह"
     
     let हे = Zeichen()
-    हे.ID = 1
     हे.devanagari = "हे"
     हे.umschrift = "he"
     हे.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4917,7 +4515,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हे.grundZeichen = "ह"
     
     let है = Zeichen()
-    है.ID = 1
     है.devanagari = "है"
     है.umschrift = "hai"
     है.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4929,7 +4526,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     है.grundZeichen = "ह"
     
     let हो = Zeichen()
-    हो.ID = 1
     हो.devanagari = "हो"
     हो.umschrift = "ho"
     हो.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4941,7 +4537,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हो.grundZeichen = "ह"
     
     let हौ = Zeichen()
-    हौ.ID = 1
     हौ.devanagari = "हौ"
     हौ.umschrift = "hau"
     हौ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4953,7 +4548,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हौ.grundZeichen = "ह"
     
     let हृ = Zeichen()
-    हृ.ID = 1
     हृ.devanagari = "हृ"
     हृ.umschrift = "hṛ"
     हृ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -4965,7 +4559,6 @@ func erstelleZeichensatz() -> [Zeichen] {
     हृ.grundZeichen = "ह"
     
     let हॄ = Zeichen()
-    हॄ.ID = 1
     हॄ.devanagari = "हॄ"
     हॄ.umschrift = "hṝ"
     हॄ.vokalOderKonsonant = VokalOderKonsonant.Konsonant.rawValue
@@ -5562,37 +5155,29 @@ func sonderZeichenFuerBar() -> [(suchString:String,angezeigt:String)]{
     var ergebnis = [(suchString:String,angezeigt:String)]()
     ergebnis.append((suchString: "आ", angezeigt: "ā"))
     ergebnis.append((suchString: "ा", angezeigt: "ā"))
-    
     ergebnis.append((suchString: "ई", angezeigt: "ī"))
     ergebnis.append((suchString: "ी", angezeigt: "ī"))
-    
     ergebnis.append((suchString: "ऊ", angezeigt: "ū"))
     ergebnis.append((suchString: "ू", angezeigt: "ū"))
-    
     ergebnis.append((suchString: "ऋ", angezeigt: "ṛ"))
     ergebnis.append((suchString: "ृ", angezeigt: "ṛ"))
-    
     ergebnis.append((suchString: "ॠ", angezeigt: "ṝ"))
     ergebnis.append((suchString: "ॄ", angezeigt: "ṝ"))
     
     ergebnis.append((suchString: "ठ", angezeigt: "ṭ"))
     ergebnis.append((suchString: "ट", angezeigt: "ṭ"))
-    
     ergebnis.append((suchString: "ड", angezeigt: "ḍ"))
     ergebnis.append((suchString: "ढ", angezeigt: "ḍ"))
     
     ergebnis.append((suchString: "ङ", angezeigt: "ṅ"))
-    
     ergebnis.append((suchString: "ञ", angezeigt: "ñ"))
-    
     ergebnis.append((suchString: "ण", angezeigt: "ṇ"))
     
-    ergebnis.append((suchString: "श", angezeigt: "ś"))
     
+    ergebnis.append((suchString: "श", angezeigt: "ś"))
     ergebnis.append((suchString: "ष", angezeigt: "ṣ"))
     
     ergebnis.append((suchString: "ं", angezeigt: "ṃ"))
-    
     ergebnis.append((suchString: "ः", angezeigt: "ḥ"))
    
     return ergebnis

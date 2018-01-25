@@ -10,8 +10,7 @@ import Foundation
 
 func erstelleLektionen() -> [Lektion]
 {
-    let lektionen = Array.init(count: 25, elementCreator: Lektion())
-    Array.init(repeating: Lektion(), count: 25)
+    let lektionen = Array.init(count: 25, elementCreator: Lektion(setting: nil, title: nil, nummer: nil))
     //quizSetting
     for lektion in lektionen               { lektion.quizSetting = QuizSetting() }
     

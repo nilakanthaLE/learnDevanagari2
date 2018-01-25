@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uYE-ta-FZv">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lektion 1-->
+        <scene sceneID="Vnx-8a-4E3">
+            <objects>
+                <viewController storyboardIdentifier="LektionsTexteVC" id="Leh-Zv-78l" customClass="LektionstextVC" customModule="learnDevanagari2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T9E-WT-vPg">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cea-t7-fEH">
+                                <rect key="frame" x="20" y="84" width="728" height="920"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nLg-x4-8Bw">
+                                        <rect key="frame" x="0.0" y="0.0" width="728" height="456"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ila-WR-UkE" customClass="AnleitungErklaerungControl" customModule="learnDevanagari2">
+                                                <rect key="frame" x="0.0" y="0.0" width="728" height="456"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wt0-Qm-Ez6">
+                                        <rect key="frame" x="0.0" y="464" width="728" height="456"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmS-v6-uII">
+                                                <rect key="frame" x="0.0" y="0.0" width="360" height="456"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-ed-P5V" customClass="StackLabelView" customModule="learnDevanagari2" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="20" width="320" height="416"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Jgl-ed-P5V" secondAttribute="trailing" constant="20" symbolic="YES" id="AaL-lo-LSg"/>
+                                                    <constraint firstItem="Jgl-ed-P5V" firstAttribute="leading" secondItem="mmS-v6-uII" secondAttribute="leading" constant="20" symbolic="YES" id="GJF-2m-2VG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Jgl-ed-P5V" secondAttribute="bottom" constant="20" symbolic="YES" id="RHF-OI-zXy"/>
+                                                    <constraint firstItem="Jgl-ed-P5V" firstAttribute="top" secondItem="mmS-v6-uII" secondAttribute="top" constant="20" symbolic="YES" id="zIW-WR-Z0I"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKT-83-qrw">
+                                                <rect key="frame" x="368" y="0.0" width="360" height="456"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNy-ug-0nc" customClass="StackLabelView" customModule="learnDevanagari2">
+                                                        <rect key="frame" x="20" y="20" width="320" height="416"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="kNy-ug-0nc" secondAttribute="bottom" constant="20" symbolic="YES" id="0MV-Go-PzW"/>
+                                                    <constraint firstItem="kNy-ug-0nc" firstAttribute="leading" secondItem="sKT-83-qrw" secondAttribute="leading" constant="20" symbolic="YES" id="I8e-1K-hZl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kNy-ug-0nc" secondAttribute="trailing" constant="20" symbolic="YES" id="RCU-o9-RSx"/>
+                                                    <constraint firstItem="kNy-ug-0nc" firstAttribute="top" secondItem="sKT-83-qrw" secondAttribute="top" constant="20" symbolic="YES" id="tCR-iB-kS9"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="i5C-Zh-s35">
+                                        <rect key="frame" x="0.0" y="924" width="728" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EX3-Qf-k5G">
+                                                <rect key="frame" x="0.0" y="0.0" width="728" height="40"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA8-Vb-rlN" customClass="StackLabelView" customModule="learnDevanagari2">
+                                                        <rect key="frame" x="20" y="20" width="688" height="0.0"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="CA8-Vb-rlN" secondAttribute="bottom" constant="20" symbolic="YES" id="5BI-NB-UFd"/>
+                                                    <constraint firstItem="CA8-Vb-rlN" firstAttribute="leading" secondItem="EX3-Qf-k5G" secondAttribute="leading" constant="20" symbolic="YES" id="82c-bc-X6h"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CA8-Vb-rlN" secondAttribute="trailing" constant="20" symbolic="YES" id="Ybx-t7-PoB"/>
+                                                    <constraint firstItem="CA8-Vb-rlN" firstAttribute="top" secondItem="EX3-Qf-k5G" secondAttribute="top" constant="20" symbolic="YES" id="gBJ-qf-dtG"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94375056028366089" green="0.59539538621902466" blue="0.21537679433822632" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="BUZ-Hb-IZ3" firstAttribute="bottom" secondItem="cea-t7-fEH" secondAttribute="bottom" constant="20" id="FVF-xe-wyr"/>
+                            <constraint firstItem="cea-t7-fEH" firstAttribute="leading" secondItem="BUZ-Hb-IZ3" secondAttribute="leading" constant="20" id="Xfx-9h-Bxo"/>
+                            <constraint firstItem="BUZ-Hb-IZ3" firstAttribute="trailing" secondItem="cea-t7-fEH" secondAttribute="trailing" constant="20" id="iq5-wA-6eG"/>
+                            <constraint firstItem="cea-t7-fEH" firstAttribute="top" secondItem="BUZ-Hb-IZ3" secondAttribute="top" constant="20" id="zpZ-NS-9zZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BUZ-Hb-IZ3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lektion 1" id="dtD-N9-tC3">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="SPP-qU-AfW">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="3BL-02-jrl">
+                                <rect key="frame" x="20" y="7" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="&lt;"/>
+                                    <segment title="&gt;"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segementedControlAction:" destination="Leh-Zv-78l" eventType="valueChanged" id="RdP-zS-Zie"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="zum Quiz" id="kc4-so-CKQ">
+                            <connections>
+                                <segue destination="rdo-aA-mAk" kind="presentation" id="O3Y-A6-GaH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="aufgabenLabelStackView" destination="kNy-ug-0nc" id="M4d-fm-t9g"/>
+                        <outlet property="aufgabenView" destination="sKT-83-qrw" id="pIc-WZ-Yup"/>
+                        <outlet property="erklaerungView" destination="Ila-WR-UkE" id="IDE-Uj-tnu"/>
+                        <outlet property="firstRowStack" destination="nLg-x4-8Bw" id="ytM-5F-nsG"/>
+                        <outlet property="mainStack" destination="cea-t7-fEH" id="Pse-68-kbu"/>
+                        <outlet property="neueZeichenLabelStackView" destination="Jgl-ed-P5V" id="AiW-fb-Sql"/>
+                        <outlet property="neueZeichenView" destination="mmS-v6-uII" id="ePr-Cp-knR"/>
+                        <outlet property="secondRowStack" destination="Wt0-Qm-Ez6" id="obJ-k6-pPg"/>
+                        <outlet property="segmentedControl" destination="3BL-02-jrl" id="t4R-GS-Zi5"/>
+                        <outlet property="thirdRowStack" destination="i5C-Zh-s35" id="LcA-zG-22Q"/>
+                        <outlet property="zumQuizBarButton" destination="kc4-so-CKQ" id="qb6-CH-eXs"/>
+                        <outlet property="zusatzAufgabenLabelStackView" destination="CA8-Vb-rlN" id="ksS-W1-TLZ"/>
+                        <outlet property="zusatzAufgabenView" destination="EX3-Qf-k5G" id="Sb4-0D-42q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFz-2P-k13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="-1188"/>
+        </scene>
+        <!--Lektionstexte-->
+        <scene sceneID="AhZ-KP-dUK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uYE-ta-FZv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lektionstexte" id="FgX-w7-kfj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xnh-zN-ZkK">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Leh-Zv-78l" kind="relationship" relationship="rootViewController" id="1Ei-AF-9AS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lE-br-lk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="-1188.28125"/>
+        </scene>
+        <!--Quiz-->
+        <scene sceneID="bJg-Lm-SAK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Quiz" id="rdo-aA-mAk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXU-Fh-ntI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1327" y="-1188"/>
+        </scene>
+    </scenes>
+</document>

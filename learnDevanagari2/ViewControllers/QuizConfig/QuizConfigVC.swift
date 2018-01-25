@@ -39,7 +39,7 @@ class QuizConfigViewModel{
         }
         quizConfigModel.selectedSetting.producer.startWithValues() { toggleBackground(to: $0) }
         freiesUebenAbfragenLabelText    <~ quizConfigModel.freiesUebenQuizSetting.producer.map{ quizSetting in getText(for: .InAbfrage, in: quizSetting) }
-        lektionLabelText                <~ quizConfigModel.aktuellerLektionsTitle
+        lektionLabelText                <~ quizConfigModel.aktuelleLektion.producer.map{ Lektion.getTitle(lektionsNummer: $0)}
         quizZeichenSatzIstLeer          <~ quizConfigModel.quizZeichenInAbfrageIstLeer
         quizStartenButtonIsEnabled      <~ quizConfigModel.canStartQuiz
         settingsTabIsEnabled            <~ quizConfigModel.aktuelleLektion.map{$0 == 0}

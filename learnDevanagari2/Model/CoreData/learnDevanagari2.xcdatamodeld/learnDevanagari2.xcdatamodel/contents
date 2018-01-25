@@ -24,7 +24,9 @@
     </entity>
     <entity name="ScoreZeichen" representedClassName="ScoreZeichen" syncable="YES" codeGenerationType="class">
         <attribute name="devaString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="falschBeantwortetCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="gesamtScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="geuebtCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="letztesMalKorrektLektionZFAbfrage" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="letztesMalKorrektLektionZFAnzeige" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="letztesMalKorrektLektionZFNachzeichnen" optional="YES" attributeType="Integer 16" defaultValueString="-1" usesScalarValueType="YES" syncable="YES"/>
@@ -56,7 +58,7 @@
     <elements>
         <element name="Abfrage" positionX="-236" positionY="-27" width="128" height="298"/>
         <element name="MainSettings" positionX="-1064" positionY="72" width="128" height="58"/>
-        <element name="ScoreZeichen" positionX="-594" positionY="-45" width="162" height="343"/>
+        <element name="ScoreZeichen" positionX="-594" positionY="-45" width="162" height="375"/>
         <element name="User" positionX="-866" positionY="44" width="128" height="150"/>
     </elements>
 </model>

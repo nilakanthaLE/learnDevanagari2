@@ -20,15 +20,18 @@ class ZeichenUebersichtViewModel{
     fileprivate func updateScores(){
         for bData in buttonData{
             let title = bData.value.title
-            let score = MainSettings.get()?.angemeldeterUser?.getButtonData(title: title).score ?? 0
+            let score = getButtonData(title: title).score
             bData.value = (title:title,score:score)
         }
     }
     fileprivate func getButtonData(for deva:String?) -> MutableProperty<ButtonData>?{ return buttonData.filter{$0.value.title == deva}.first }
-    private var userButtonData:[ButtonData]     { return (MainSettings.get()?.angemeldeterUser?.getButtonData(for: buttonTitles) ?? [ButtonData]()) }
+    private var userButtonData:[ButtonData]     { return (getButtonData(for: buttonTitles) ) }
     init(zeichenButtonPressed:MutableProperty<UIView?>){
         self.zeichenButtonPressed = zeichenButtonPressed
     }
+    
+    func getButtonData(title:String?)           -> ButtonData   { return (title ?? "" , MainSettings.get()?.angemeldeterUser?.getScoreZeichen(for: title)?.grundZeichenScore ?? 0) }
+    func getButtonData(for titles:[String?])    -> [ButtonData] { return titles.map{getButtonData(title: $0)} }
 }
 
 class ZeichenUebersichtView:NibLoadingView{
