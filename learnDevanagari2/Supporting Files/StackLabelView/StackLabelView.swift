@@ -18,9 +18,7 @@ class StackLabelViewModel{
 
 class StackLabelView:NibLoadingView{
     var viewModel:StackLabelViewModel!{
-        didSet{
-            label.reactive.text <~ viewModel.labelText.producer
-        }
+        didSet{ label.reactive.text <~ viewModel.labelText.producer }
     }
     @IBOutlet private weak var label: UILabel!
 }

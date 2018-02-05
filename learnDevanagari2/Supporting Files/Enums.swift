@@ -7,25 +7,48 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: enums
+enum AbfrageStufe               {case einfach,medium,voll}
+enum SettingModus               { case InAbfrage, Anzeige}
 enum IPadOrientation            { case portrait, landscape }
 enum SelectedSetting            { case Lektion, FreiesUeben}
-enum QuizZeichenStatus:Int      { case Ungesichtet = 1 , Correct = 0, FalschBeantwortet = 2, InUserAbfrage = 3}
 enum VokalOderKonsonant:String  { case Vokal        = "Vokal", Konsonant  = "Konsonant" }
 enum VokalOderHalbvokal:String  { case Vokal        = "einf. Vokal", Halbvokal  = "Halbvokal" }
 enum KonsonantTyp:String        { case Nasal        = "Nasal",Sibilant = "Sibilant",Hauchlaut = "Hauchlaut",EinfacherKonsonant = "einf. Konsonant" }
 enum Aspiration:String          { case Aspiriert    = "aspiriert", NichtAspiriert = "n. aspiriert" }
 enum Stimmhaftigkeit:String     { case Stimmhaft    = "stimmhaft", NichtStimmhaft = "n. stimmhaft" }
+enum ZeichenAuswahlTyp:Int      { case Zufall = 0, SeltenGeuebt = 1,HauefigFalsch = 2 }
+enum PruefenButtonZustand:String{ case Pruefen = "Eingabe prüfen", NaechstesZeichen   = "nächstes Zeichen", QuizBeenden = "Quiz beenden" }
+enum ControlCurrentModus        { case Abfrage, Anzeige, ShowsPruefergebnis, Versteckt }
+enum QuizZeichenStatus:Int      {
+    case Ungesichtet = 1 , Correct = 0, FalschBeantwortet = 2, InUserAbfrage = 3
+    func moveToIndex(anzahlElemente:Int) -> Int?{
+        switch self{
+        case .Correct:              return 0
+        case .FalschBeantwortet:    return anzahlElemente - 1
+        default:                    return nil
+        }
+    }
+    var colorFortschrittsbalken : UIColor {
+        switch self {
+        case .Correct:              return .green
+        case .FalschBeantwortet:    return UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.5)
+        case .Ungesichtet:          return UIColor(white: 1, alpha: 0.2)
+        case .InUserAbfrage:        return UIColor(white: 0.5, alpha: 0.2)
+        }
+    }
+}
 enum Artikulation:String {
-    case velar        = "velar",palatal = "palatal",retroflex = "retroflex" ,dental = "dental",labial = "labial"
+    case velar        = "velar", palatal = "palatal",retroflex = "retroflex" ,dental = "dental",labial = "labial"
     var nasalUmschrift:String?{
         switch self {
-        case .velar:return "ṅ"
-        case .palatal:return "ñ"
+        case .velar:    return "ṅ"
+        case .palatal:  return "ñ"
         case .retroflex:return "ṇ"
-        case .dental:return "n"
-        case .labial:return "m"
+        case .dental:   return "n"
+        case .labial:   return "m"
         }
     }
     static func cases() -> [Artikulation]{ return [.velar,.palatal,.retroflex,.dental,.labial] }
@@ -67,6 +90,13 @@ enum PanelControlModus{
         case "NurAnzeige": return .NurAnzeige
         default: return .Versteckt }
     }
+    var asControlCurrentModus:ControlCurrentModus{
+        switch self{
+        case .InAbfrage     :  return .Abfrage
+        case .NurAnzeige    :  return .Anzeige
+        case .Versteckt     :  return .Versteckt
+        }
+    }
 }
 enum KonsonantTypModus:Int{
     case Nasal,Sibilant,Hauchlaut
@@ -101,14 +131,7 @@ enum KonsonantTypModus:Int{
     }
 }
 enum ControlTyp:Int{
-    case ZeichenfeldTyp = 0
-    case TextfeldTyp = 1
-    case VokalOderKonsonantTyp = 2
-    case VokalOderHalbvokalTyp = 3
-    case ArtikulationTyp = 4
-    case KonsonantTyp = 5
-    case AspirationTyp = 6
-    case StimmhaftigkeitTyp = 7
+    case ZeichenfeldTyp = 0, TextfeldTyp = 1, VokalOderKonsonantTyp = 2, VokalOderHalbvokalTyp = 3, ArtikulationTyp = 4, KonsonantTyp = 5, AspirationTyp = 6, StimmhaftigkeitTyp = 7
     
     static func getBy(name:String)  -> ControlTyp{
         switch name {
@@ -152,13 +175,13 @@ enum ControlTyp:Int{
         switch orientation {
         case .landscape:
             switch self {
-            case .VokalOderKonsonantTyp:   return (0,rawValue)
-            case .VokalOderHalbvokalTyp:   return (0,rawValue)
-            case .KonsonantTyp:         return (0,rawValue)
-            case .TextfeldTyp:             return (0,rawValue)
-            case .ArtikulationTyp:         return (0,rawValue)
-            case .AspirationTyp:           return (0,rawValue)
-            case .StimmhaftigkeitTyp:      return (0,rawValue)
+            case .VokalOderKonsonantTyp:    return (0,rawValue)
+            case .VokalOderHalbvokalTyp:    return (0,rawValue)
+            case .KonsonantTyp:             return (0,rawValue)
+            case .TextfeldTyp:              return (0,rawValue)
+            case .ArtikulationTyp:          return (0,rawValue)
+            case .AspirationTyp:            return (0,rawValue)
+            case .StimmhaftigkeitTyp:       return (0,rawValue)
             default: return nil
             }
         case .portrait:
@@ -173,5 +196,26 @@ enum ControlTyp:Int{
             default: return nil
             }
         }
+    }
+}
+enum AbfrageTyp{
+    case nachzeichnen,umschrift,vokalOderKonsonant,artikulation,devaSchreiben,konsonantenTyp,aspiration,stimmhaftigkeit,vokalOderHalbVokal
+    
+    var controlTyp:ControlTyp{
+        switch self {
+        case .nachzeichnen:         return .ZeichenfeldTyp
+        case .umschrift:            return .TextfeldTyp
+        case .vokalOderKonsonant:   return .VokalOderKonsonantTyp
+        case .artikulation:         return .ArtikulationTyp
+        case .devaSchreiben:        return .ZeichenfeldTyp
+        case .konsonantenTyp:       return .KonsonantTyp
+        case .aspiration:           return .AspirationTyp
+        case .stimmhaftigkeit:      return .StimmhaftigkeitTyp
+        case .vokalOderHalbVokal:   return .VokalOderHalbvokalTyp
+        }
+    }
+    func isEnabled(for bekannteControls:Set<ControlTyp>) -> Bool{
+        guard self != .nachzeichnen else { return true}
+        return bekannteControls.contains(self.controlTyp)
     }
 }

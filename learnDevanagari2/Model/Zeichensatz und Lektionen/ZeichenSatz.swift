@@ -5184,45 +5184,8 @@ func sonderZeichenFuerBar() -> [(suchString:String,angezeigt:String)]{
 }
 
 
-func grundZeichen() -> [Zeichen]{
-    return erstelleZeichensatz().filter{$0.devanagari == $0.grundZeichen}
-}
+func grundZeichen() -> [Zeichen]{ return erstelleZeichensatz().filter{$0.devanagari == $0.grundZeichen} }
+var vokalZeichen:[String]       { return ["ा","ी","े","ि","ो","ु","ू","ै","ौ","ृ","ॄ"] }
 
-//-(NSMutableArray *)erstelleAnusvaras{
-//    anusvara *labialAnusvara        =   [[anusvara alloc] init]
-//    anusvara *dentalAnusvara        =   [[anusvara alloc] init]
-//    anusvara *retroflexAnusvara     =   [[anusvara alloc] init]
-//    anusvara *palatalAnusvara       =   [[anusvara alloc] init]
-//    anusvara *velarAnusvara         =   [[anusvara alloc] init]
-//
-//
-//
-//    labialAnusvara.artikulation = Artikulation.labial.rawValue
-//    labialAnusvara.devanagari = "म्"
-//    labialAnusvara.umschrift = "m"
-//
-//    dentalAnusvara.artikulation = Artikulation.dental.rawValue
-//    dentalAnusvara.devanagari = "न्"
-//    dentalAnusvara.umschrift = "n"
-//
-//    retroflexAnusvara.artikulation = Artikulation.retroflex.rawValue
-//    retroflexAnusvara.devanagari = "ण"
-//    retroflexAnusvara.umschrift = "ṇ"
-//
-//    palatalAnusvara.artikulation = Artikulation.palatal.rawValue
-//    palatalAnusvara.devanagari = "ञ"
-//    palatalAnusvara.umschrift = "ñ"
-//
-//    velarAnusvara.artikulation = Artikulation.velar.rawValue
-//    velarAnusvara.devanagari = "ङ"
-//    velarAnusvara.umschrift = "ṅ"
-//
-//    NSMutableArray *arrayAnusvara   = [[NSMutableArray alloc]initWithObjects:labialAnusvara,dentalAnusvara,retroflexAnusvara,palatalAnusvara,velarAnusvara, nil]
-//
-//    return arrayAnusvara
-//}
-//
-//
-//
-//@end
+
 

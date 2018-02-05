@@ -34,9 +34,9 @@
 		5C31DC481FD997CA00782A91 /* StartAnimation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C31DC471FD997CA00782A91 /* StartAnimation.storyboard */; };
 		5C31DC4E1FD9982600782A91 /* StartAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C31DC4D1FD9982600782A91 /* StartAnimationVC.swift */; };
 		5C38C008201A188F00987213 /* QuizFortschrittsbalkenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38C007201A188F00987213 /* QuizFortschrittsbalkenView.swift */; };
+		5C38C00E201A26DD00987213 /* ViewWithLabelInCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38C00D201A26DD00987213 /* ViewWithLabelInCenter.swift */; };
 		5C3AF3401FAB13360045BB27 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AF33F1FAB13360045BB27 /* Design.swift */; };
 		5C3AF3421FAB67A30045BB27 /* QuizPruefenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AF3411FAB67A30045BB27 /* QuizPruefenButton.swift */; };
-		5C546C991FD8189900C87093 /* MantrasViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C546C981FD8189900C87093 /* MantrasViews.swift */; };
 		5C5B22FF1FDA89AE00AE2F85 /* UserWahlTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B22FE1FDA89AE00AE2F85 /* UserWahlTableVC.swift */; };
 		5C5B23011FDA8F6400AE2F85 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B23001FDA8F6400AE2F85 /* User.swift */; };
 		5C5B23051FDAA84F00AE2F85 /* QuizAbfragenSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5B23041FDAA84F00AE2F85 /* QuizAbfragenSettingView.xib */; };
@@ -48,8 +48,8 @@
 		5C932C0E1FBDE59F0013789D /* DatenTypLektion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C0D1FBDE59F0013789D /* DatenTypLektion.swift */; };
 		5C932C111FBDE6D00013789D /* Lektionen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C101FBDE6D00013789D /* Lektionen.swift */; };
 		5C932C131FBF08990013789D /* QuizSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C121FBF08990013789D /* QuizSettings.swift */; };
-		5C932C151FC0A3CF0013789D /* ZeichenInAbfrageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C141FC0A3CF0013789D /* ZeichenInAbfrageView.swift */; };
-		5C932C171FC0A4900013789D /* ZeichenInAbfrageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C932C161FC0A4900013789D /* ZeichenInAbfrageView.xib */; };
+		5C932C151FC0A3CF0013789D /* ZeichenImQuadratView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C141FC0A3CF0013789D /* ZeichenImQuadratView.swift */; };
+		5C932C171FC0A4900013789D /* ZeichenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C932C161FC0A4900013789D /* ZeichenView.xib */; };
 		5C932C191FC0CEF10013789D /* ViewWithLabelInCenter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C932C181FC0CEF10013789D /* ViewWithLabelInCenter.xib */; };
 		5C932C1C1FC1BF950013789D /* AbfragenUndAnzeigenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C932C1B1FC1BF950013789D /* AbfragenUndAnzeigenView.xib */; };
 		5C932C1E1FC1C07F0013789D /* AbfragenUndAnzeigenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C932C1D1FC1C07F0013789D /* AbfragenUndAnzeigenView.swift */; };
@@ -74,7 +74,9 @@
 		5CE0FE011FAE78E70098BD2E /* PanelControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0FE001FAE78E70098BD2E /* PanelControlViewModel.swift */; };
 		5CE0FE031FAE7AE60098BD2E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0FE021FAE7AE60098BD2E /* Helper.swift */; };
 		5CE0FE061FB05F970098BD2E /* QuizZeichenfeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */; };
-		5CE68D4D1FB8926D00791D7D /* QuizDevaAbfrageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D4C1FB8926D00791D7D /* QuizDevaAbfrageView.swift */; };
+		5CE49C20201E03E900732390 /* ZeichenGrundAuswahlPopoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE49C1F201E03E900732390 /* ZeichenGrundAuswahlPopoverVC.swift */; };
+		5CE49C23201F61C100732390 /* ZeichenfeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE49C22201F61C100732390 /* ZeichenfeldView.swift */; };
+		5CE68D4D1FB8926D00791D7D /* QuizDevaControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D4C1FB8926D00791D7D /* QuizDevaControl.swift */; };
 		5CE68D4F1FB8BD2600791D7D /* ZeichenfeldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */; };
 		5CE68D511FB8BE1600791D7D /* NibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D501FB8BE1500791D7D /* NibLoadingView.swift */; };
 		5CE68D531FB9AFEF00791D7D /* DevaAntwortenStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE68D521FB9AFEF00791D7D /* DevaAntwortenStackView.swift */; };
@@ -123,9 +125,9 @@
 		5C31DC471FD997CA00782A91 /* StartAnimation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartAnimation.storyboard; sourceTree = "<group>"; };
 		5C31DC4D1FD9982600782A91 /* StartAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAnimationVC.swift; sourceTree = "<group>"; };
 		5C38C007201A188F00987213 /* QuizFortschrittsbalkenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizFortschrittsbalkenView.swift; sourceTree = "<group>"; };
+		5C38C00D201A26DD00987213 /* ViewWithLabelInCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWithLabelInCenter.swift; sourceTree = "<group>"; };
 		5C3AF33F1FAB13360045BB27 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		5C3AF3411FAB67A30045BB27 /* QuizPruefenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPruefenButton.swift; sourceTree = "<group>"; };
-		5C546C981FD8189900C87093 /* MantrasViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MantrasViews.swift; sourceTree = "<group>"; };
 		5C5B22FE1FDA89AE00AE2F85 /* UserWahlTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWahlTableVC.swift; sourceTree = "<group>"; };
 		5C5B23001FDA8F6400AE2F85 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C5B23041FDAA84F00AE2F85 /* QuizAbfragenSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizAbfragenSettingView.xib; sourceTree = "<group>"; };
@@ -137,8 +139,8 @@
 		5C932C0D1FBDE59F0013789D /* DatenTypLektion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatenTypLektion.swift; sourceTree = "<group>"; };
 		5C932C101FBDE6D00013789D /* Lektionen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lektionen.swift; sourceTree = "<group>"; };
 		5C932C121FBF08990013789D /* QuizSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSettings.swift; sourceTree = "<group>"; };
-		5C932C141FC0A3CF0013789D /* ZeichenInAbfrageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeichenInAbfrageView.swift; sourceTree = "<group>"; };
-		5C932C161FC0A4900013789D /* ZeichenInAbfrageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZeichenInAbfrageView.xib; sourceTree = "<group>"; };
+		5C932C141FC0A3CF0013789D /* ZeichenImQuadratView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeichenImQuadratView.swift; sourceTree = "<group>"; };
+		5C932C161FC0A4900013789D /* ZeichenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZeichenView.xib; sourceTree = "<group>"; };
 		5C932C181FC0CEF10013789D /* ViewWithLabelInCenter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewWithLabelInCenter.xib; sourceTree = "<group>"; };
 		5C932C1B1FC1BF950013789D /* AbfragenUndAnzeigenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbfragenUndAnzeigenView.xib; sourceTree = "<group>"; };
 		5C932C1D1FC1C07F0013789D /* AbfragenUndAnzeigenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbfragenUndAnzeigenView.swift; sourceTree = "<group>"; };
@@ -165,7 +167,9 @@
 		5CE0FE001FAE78E70098BD2E /* PanelControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelControlViewModel.swift; sourceTree = "<group>"; };
 		5CE0FE021FAE7AE60098BD2E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizZeichenfeldView.swift; sourceTree = "<group>"; };
-		5CE68D4C1FB8926D00791D7D /* QuizDevaAbfrageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDevaAbfrageView.swift; sourceTree = "<group>"; };
+		5CE49C1F201E03E900732390 /* ZeichenGrundAuswahlPopoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeichenGrundAuswahlPopoverVC.swift; sourceTree = "<group>"; };
+		5CE49C22201F61C100732390 /* ZeichenfeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeichenfeldView.swift; sourceTree = "<group>"; };
+		5CE68D4C1FB8926D00791D7D /* QuizDevaControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDevaControl.swift; sourceTree = "<group>"; };
 		5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZeichenfeldView.xib; sourceTree = "<group>"; };
 		5CE68D501FB8BE1500791D7D /* NibLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadingView.swift; sourceTree = "<group>"; };
 		5CE68D521FB9AFEF00791D7D /* DevaAntwortenStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevaAntwortenStackView.swift; sourceTree = "<group>"; };
@@ -198,24 +202,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C0E6DCB1FCC3BB600F246B6 /* Lektionstexte */ = {
+		5C0E6DCB1FCC3BB600F246B6 /* TAB - Lektionstexte */ = {
 			isa = PBXGroup;
 			children = (
 				5C0E6DCC1FCC3BF800F246B6 /* LektionstextVC.swift */,
 				5C0E6EA91FCDB13E00F246B6 /* ErklaerungControl */,
 			);
-			path = Lektionstexte;
+			path = "TAB - Lektionstexte";
 			sourceTree = "<group>";
 		};
 		5C0E6DD21FCD7FAC00F246B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5C9B0EEF1FB216490084862E /* tessdata */,
 				5C3AF33F1FAB13360045BB27 /* Design.swift */,
 				5C7BCCB52016215C00B120ED /* Extensions.swift */,
 				5C7BCCB72016355A00B120ED /* Enums.swift */,
 				5CE0FE021FAE7AE60098BD2E /* Helper.swift */,
+				5CF0B58D1FD55E6E00A9AB01 /* MantraTexte.swift */,
+				5C9B0EEF1FB216490084862E /* tessdata */,
 				5C9FE1941FE95A6500A194F1 /* StackLabelView */,
+				5C38C00F201A270100987213 /* ViewWithLabelInCenter */,
 				5C0E6E961FCD801D00F246B6 /* Bilder */,
 				5CD391191F861FAB0054295A /* Assets.xcassets */,
 				5CD3911B1F861FAB0054295A /* LaunchScreen.storyboard */,
@@ -242,28 +248,27 @@
 		5C0E6EA91FCDB13E00F246B6 /* ErklaerungControl */ = {
 			isa = PBXGroup;
 			children = (
-				5C0E6EA51FCD9A7600F246B6 /* AnleitungErklaerungControl.xib */,
+				5CD46CE12024899E00727873 /* Views */,
 				5C0E6EA71FCD9B7700F246B6 /* AnleitungErklaerungControl.swift */,
-				5C0E6EA11FCD89D800F246B6 /* AnleitungErklaerungContentView.xib */,
 				5C0E6EA31FCD8ABF00F246B6 /* AnleitungErklaerungContentView.swift */,
-				5C0E6DCE1FCD7D1C00F246B6 /* ArtikulationsAnleitungView.xib */,
 				5C0E6DD01FCD7DC200F246B6 /* ArtikulationsAnleitungView.swift */,
-				5CB217EB2010E70400FB3083 /* NasaleAnleitungView.xib */,
 				5CB217ED2010E8E300FB3083 /* NasaleAnleitungView.swift */,
 			);
 			path = ErklaerungControl;
 			sourceTree = "<group>";
 		};
-		5C10F8682018C032007656F2 /* ViewControllers */ = {
+		5C10F8682018C032007656F2 /* Views und ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5C2FCDFF1FB7628700978E27 /* QuizConfig */,
+				5C5B22FE1FDA89AE00AE2F85 /* UserWahlTableVC.swift */,
+				5C2FCDFF1FB7628700978E27 /* TAB - Quiz konfigurieren (Start) */,
+				5C55E9D5201B3235003C70FE /* (TAB -) Abfragen konfigurieren */,
 				5C2FCDFE1FB6348400978E27 /* Quiz */,
-				5CF0B58C1FD55E4500A9AB01 /* Mantras */,
-				5CC44CFE1FD015A600C0FB05 /* ZeichenFortschritt */,
-				5C0E6DCB1FCC3BB600F246B6 /* Lektionstexte */,
+				5CF0B58C1FD55E4500A9AB01 /* (TAB -)Mantras */,
+				5CC44CFE1FD015A600C0FB05 /* TAB - ZeichenFortschritt */,
+				5C0E6DCB1FCC3BB600F246B6 /* TAB - Lektionstexte */,
 			);
-			path = ViewControllers;
+			path = "Views und ViewControllers";
 			sourceTree = "<group>";
 		};
 		5C2FCDFD1FB6343E00978E27 /* Model */ = {
@@ -287,18 +292,24 @@
 			path = Quiz;
 			sourceTree = "<group>";
 		};
-		5C2FCDFF1FB7628700978E27 /* QuizConfig */ = {
+		5C2FCDFF1FB7628700978E27 /* TAB - Quiz konfigurieren (Start) */ = {
 			isa = PBXGroup;
 			children = (
 				5CAE404E1FB329E80030B024 /* QuizConfigVC.swift */,
-				5C932C1A1FC1BEF80013789D /* QuizConfigControls */,
-				5C5B23041FDAA84F00AE2F85 /* QuizAbfragenSettingView.xib */,
-				5C090CA01FDABB8B00173B01 /* QuizAbfrageSettingsVC.swift */,
-				5CAE40501FB335D60030B024 /* QuizAbfragenSettingView.swift */,
-				5C932C1F1FC1F29E0013789D /* ConfigZeichensatzVC.swift */,
-				5C1934581FFB99B50054E145 /* ZeichenAuswahl.swift */,
+				5C7916FA201CE6E100C56C15 /* ConfigZeichensatz freies Ueben */,
+				5C55E9D8201B329F003C70FE /* View fuer Abfragen und Anzeigen */,
+				5C55E9D6201B326A003C70FE /* Zeichen im Quadrat View */,
 			);
-			path = QuizConfig;
+			path = "TAB - Quiz konfigurieren (Start)";
+			sourceTree = "<group>";
+		};
+		5C38C00F201A270100987213 /* ViewWithLabelInCenter */ = {
+			isa = PBXGroup;
+			children = (
+				5C932C181FC0CEF10013789D /* ViewWithLabelInCenter.xib */,
+				5C38C00D201A26DD00987213 /* ViewWithLabelInCenter.swift */,
+			);
+			path = ViewWithLabelInCenter;
 			sourceTree = "<group>";
 		};
 		5C546C9A1FD819A400C87093 /* MantrasViews */ = {
@@ -306,9 +317,46 @@
 			children = (
 				5C31DC421FD81D1C00782A91 /* MantraViewIPadH.xib */,
 				5C31DC441FD81F2600782A91 /* MantraViewIPadV.xib */,
-				5C546C981FD8189900C87093 /* MantrasViews.swift */,
 			);
 			path = MantrasViews;
+			sourceTree = "<group>";
+		};
+		5C55E9D5201B3235003C70FE /* (TAB -) Abfragen konfigurieren */ = {
+			isa = PBXGroup;
+			children = (
+				5C5B23041FDAA84F00AE2F85 /* QuizAbfragenSettingView.xib */,
+				5C090CA01FDABB8B00173B01 /* QuizAbfrageSettingsVC.swift */,
+				5CAE40501FB335D60030B024 /* QuizAbfragenSettingView.swift */,
+			);
+			path = "(TAB -) Abfragen konfigurieren";
+			sourceTree = "<group>";
+		};
+		5C55E9D6201B326A003C70FE /* Zeichen im Quadrat View */ = {
+			isa = PBXGroup;
+			children = (
+				5C932C161FC0A4900013789D /* ZeichenView.xib */,
+				5C932C141FC0A3CF0013789D /* ZeichenImQuadratView.swift */,
+			);
+			path = "Zeichen im Quadrat View";
+			sourceTree = "<group>";
+		};
+		5C55E9D8201B329F003C70FE /* View fuer Abfragen und Anzeigen */ = {
+			isa = PBXGroup;
+			children = (
+				5C932C1B1FC1BF950013789D /* AbfragenUndAnzeigenView.xib */,
+				5C932C1D1FC1C07F0013789D /* AbfragenUndAnzeigenView.swift */,
+			);
+			path = "View fuer Abfragen und Anzeigen";
+			sourceTree = "<group>";
+		};
+		5C7916FA201CE6E100C56C15 /* ConfigZeichensatz freies Ueben */ = {
+			isa = PBXGroup;
+			children = (
+				5C932C1F1FC1F29E0013789D /* ConfigZeichensatzVC.swift */,
+				5C1934581FFB99B50054E145 /* ZeichenAuswahl.swift */,
+				5CE49C1F201E03E900732390 /* ZeichenGrundAuswahlPopoverVC.swift */,
+			);
+			path = "ConfigZeichensatz freies Ueben";
 			sourceTree = "<group>";
 		};
 		5C7BCCBD20177D5100B120ED /* Storyboards */ = {
@@ -335,18 +383,6 @@
 			path = "Zeichensatz und Lektionen";
 			sourceTree = "<group>";
 		};
-		5C932C1A1FC1BEF80013789D /* QuizConfigControls */ = {
-			isa = PBXGroup;
-			children = (
-				5C932C181FC0CEF10013789D /* ViewWithLabelInCenter.xib */,
-				5C932C161FC0A4900013789D /* ZeichenInAbfrageView.xib */,
-				5C932C141FC0A3CF0013789D /* ZeichenInAbfrageView.swift */,
-				5C932C1B1FC1BF950013789D /* AbfragenUndAnzeigenView.xib */,
-				5C932C1D1FC1C07F0013789D /* AbfragenUndAnzeigenView.swift */,
-			);
-			path = QuizConfigControls;
-			sourceTree = "<group>";
-		};
 		5C9B0EF31FB30DC20084862E /* DatenTypen */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,16 +404,15 @@
 			path = StackLabelView;
 			sourceTree = "<group>";
 		};
-		5CC44CFE1FD015A600C0FB05 /* ZeichenFortschritt */ = {
+		5CC44CFE1FD015A600C0FB05 /* TAB - ZeichenFortschritt */ = {
 			isa = PBXGroup;
 			children = (
+				5CD46CE02024897E00727873 /* Views */,
 				5CF9D98F1FCF12A8008FD232 /* ZeichenUbersichtVC.swift */,
-				5CF9D98B1FCF04B5008FD232 /* ZeichenUebersichtView.xib */,
 				5CF9D98D1FCF0662008FD232 /* ZeichenUebersichtView.swift */,
 				5CC6C29F200F7A5300DBB637 /* LigaturenUebersichtView.swift */,
-				5CC6C29D200F7A3400DBB637 /* LigaturenUebersichtView.xib */,
 			);
-			path = ZeichenFortschritt;
+			path = "TAB - ZeichenFortschritt";
 			sourceTree = "<group>";
 		};
 		5CC44CFF1FD02BB600C0FB05 /* CoreData */ = {
@@ -413,48 +448,91 @@
 			isa = PBXGroup;
 			children = (
 				5C7BCCBD20177D5100B120ED /* Storyboards */,
-				5C5B22FE1FDA89AE00AE2F85 /* UserWahlTableVC.swift */,
 				5C2FCDFD1FB6343E00978E27 /* Model */,
-				5C10F8682018C032007656F2 /* ViewControllers */,
-				5CD3911E1F861FAB0054295A /* Info.plist */,
+				5C10F8682018C032007656F2 /* Views und ViewControllers */,
 				5C0E6DD21FCD7FAC00F246B6 /* Supporting Files */,
+				5CD3911E1F861FAB0054295A /* Info.plist */,
 			);
 			path = learnDevanagari2;
+			sourceTree = "<group>";
+		};
+		5CD46CE02024897E00727873 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CF9D98B1FCF04B5008FD232 /* ZeichenUebersichtView.xib */,
+				5CC6C29D200F7A3400DBB637 /* LigaturenUebersichtView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5CD46CE12024899E00727873 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C0E6EA51FCD9A7600F246B6 /* AnleitungErklaerungControl.xib */,
+				5C0E6EA11FCD89D800F246B6 /* AnleitungErklaerungContentView.xib */,
+				5C0E6DCE1FCD7D1C00F246B6 /* ArtikulationsAnleitungView.xib */,
+				5CB217EB2010E70400FB3083 /* NasaleAnleitungView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5CE0FE041FAF3A760098BD2E /* PanelControls */ = {
 			isa = PBXGroup;
 			children = (
 				5CE0FE001FAE78E70098BD2E /* PanelControlViewModel.swift */,
-				5CA4DDB91F9E5F2B00A114D7 /* MultiTouchButton.swift */,
-				5CF360B91FA0BB9D0074755C /* QuizArtikulationPicker.swift */,
 				5CF360B71FA08E670074755C /* QuizTextFeld.swift */,
+				5CF360B91FA0BB9D0074755C /* QuizArtikulationPicker.swift */,
+				5CA4DDB91F9E5F2B00A114D7 /* MultiTouchButton.swift */,
 				5C3AF3411FAB67A30045BB27 /* QuizPruefenButton.swift */,
 			);
 			path = PanelControls;
 			sourceTree = "<group>";
 		};
-		5CF0B58C1FD55E4500A9AB01 /* Mantras */ = {
+		5CE49C21201F5A0F00732390 /* DevaZeichenControl */ = {
+			isa = PBXGroup;
+			children = (
+				5CE68D4C1FB8926D00791D7D /* QuizDevaControl.swift */,
+				5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */,
+				5CE49C24201F65AD00732390 /* Zeichenfeld */,
+			);
+			path = DevaZeichenControl;
+			sourceTree = "<group>";
+		};
+		5CE49C24201F65AD00732390 /* Zeichenfeld */ = {
+			isa = PBXGroup;
+			children = (
+				5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */,
+				5CE49C22201F61C100732390 /* ZeichenfeldView.swift */,
+			);
+			path = Zeichenfeld;
+			sourceTree = "<group>";
+		};
+		5CE49C25201F6B3D00732390 /* Fortschrittsbalken */ = {
+			isa = PBXGroup;
+			children = (
+				5C0E6DC71FCC188100F246B6 /* QuizFortschrittsbalkenView.xib */,
+				5C38C007201A188F00987213 /* QuizFortschrittsbalkenView.swift */,
+			);
+			path = Fortschrittsbalken;
+			sourceTree = "<group>";
+		};
+		5CF0B58C1FD55E4500A9AB01 /* (TAB -)Mantras */ = {
 			isa = PBXGroup;
 			children = (
 				5C546C9A1FD819A400C87093 /* MantrasViews */,
 				5CF0B58F1FD5654C00A9AB01 /* MantrasVC.swift */,
-				5CF0B58D1FD55E6E00A9AB01 /* MantraTexte.swift */,
 				5C31DC4D1FD9982600782A91 /* StartAnimationVC.swift */,
 			);
-			path = Mantras;
+			path = "(TAB -)Mantras";
 			sourceTree = "<group>";
 		};
 		5CF360BD1FA1FEAD0074755C /* QuizControls */ = {
 			isa = PBXGroup;
 			children = (
-				5CE68D4C1FB8926D00791D7D /* QuizDevaAbfrageView.swift */,
-				5CE68D4E1FB8BD2600791D7D /* ZeichenfeldView.xib */,
-				5CE0FE051FB05F970098BD2E /* QuizZeichenfeldView.swift */,
 				5CE68D521FB9AFEF00791D7D /* DevaAntwortenStackView.swift */,
-				5C0E6DC71FCC188100F246B6 /* QuizFortschrittsbalkenView.xib */,
-				5C38C007201A188F00987213 /* QuizFortschrittsbalkenView.swift */,
+				5CE49C21201F5A0F00732390 /* DevaZeichenControl */,
 				5CE0FE041FAF3A760098BD2E /* PanelControls */,
+				5CE49C25201F6B3D00732390 /* Fortschrittsbalken */,
 			);
 			path = QuizControls;
 			sourceTree = "<group>";
@@ -570,7 +648,7 @@
 				5C932C191FC0CEF10013789D /* ViewWithLabelInCenter.xib in Resources */,
 				5C0E6EB41FCDBDD900F246B6 /* dental.png in Resources */,
 				5C0E6E9E1FCD885800F246B6 /* StackLabelView.xib in Resources */,
-				5C932C171FC0A4900013789D /* ZeichenInAbfrageView.xib in Resources */,
+				5C932C171FC0A4900013789D /* ZeichenView.xib in Resources */,
 				5CF9D98A1FCEF132008FD232 /* QuizConfig.storyboard in Resources */,
 				5CF0B5871FD55AF000A9AB01 /* Lektionstexte.storyboard in Resources */,
 				5C0E6DCF1FCD7D1C00F246B6 /* ArtikulationsAnleitungView.xib in Resources */,
@@ -648,7 +726,6 @@
 				5C0E6DD11FCD7DC200F246B6 /* ArtikulationsAnleitungView.swift in Sources */,
 				5C932C111FBDE6D00013789D /* Lektionen.swift in Sources */,
 				5CB217EE2010E8E300FB3083 /* NasaleAnleitungView.swift in Sources */,
-				5C546C991FD8189900C87093 /* MantrasViews.swift in Sources */,
 				5CF0B5901FD5654C00A9AB01 /* MantrasVC.swift in Sources */,
 				5C932C131FBF08990013789D /* QuizSettings.swift in Sources */,
 				5C932C0E1FBDE59F0013789D /* DatenTypLektion.swift in Sources */,
@@ -664,6 +741,7 @@
 				5C0E6DCA1FCC330100F246B6 /* Lektionstexte.swift in Sources */,
 				5C31DC4E1FD9982600782A91 /* StartAnimationVC.swift in Sources */,
 				5C7BCCBC2016366800B120ED /* DatentypUserAntwortZeichen.swift in Sources */,
+				5CE49C23201F61C100732390 /* ZeichenfeldView.swift in Sources */,
 				5C7BCCB220160C3100B120ED /* SharedManager.swift in Sources */,
 				5CF360B81FA08E670074755C /* QuizTextFeld.swift in Sources */,
 				5C04993C1FA8F286008DD1A3 /* QuizVC.swift in Sources */,
@@ -677,10 +755,12 @@
 				5C932C1E1FC1C07F0013789D /* AbfragenUndAnzeigenView.swift in Sources */,
 				5C3AF3421FAB67A30045BB27 /* QuizPruefenButton.swift in Sources */,
 				5C5B23011FDA8F6400AE2F85 /* User.swift in Sources */,
+				5C38C00E201A26DD00987213 /* ViewWithLabelInCenter.swift in Sources */,
 				5C04993A1FA8EE58008DD1A3 /* QuizModel.swift in Sources */,
-				5CE68D4D1FB8926D00791D7D /* QuizDevaAbfrageView.swift in Sources */,
+				5CE49C20201E03E900732390 /* ZeichenGrundAuswahlPopoverVC.swift in Sources */,
+				5CE68D4D1FB8926D00791D7D /* QuizDevaControl.swift in Sources */,
 				5CE68D511FB8BE1600791D7D /* NibLoadingView.swift in Sources */,
-				5C932C151FC0A3CF0013789D /* ZeichenInAbfrageView.swift in Sources */,
+				5C932C151FC0A3CF0013789D /* ZeichenImQuadratView.swift in Sources */,
 				5CAE40531FB3369C0030B024 /* QuizConfigModel.swift in Sources */,
 				5CA4DDBA1F9E5F2B00A114D7 /* MultiTouchButton.swift in Sources */,
 				5CAE40511FB335D60030B024 /* QuizAbfragenSettingView.swift in Sources */,

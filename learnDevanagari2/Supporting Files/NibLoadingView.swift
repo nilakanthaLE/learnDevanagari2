@@ -32,12 +32,10 @@ open class NibLoadingView:UIView,NibDefinable{
         addSubview(view)
     }
     private func loadViewFromNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
+        let bundle      = Bundle(for: type(of: self))
+        let nib         = UINib(nibName: nibName, bundle: bundle)
+        let nibView     = nib.instantiate(withOwner: self, options: nil).first as! UIView
         return nibView
     }
 }
-protocol NibDefinable {
-    var nibName: String { get }
-}
+protocol NibDefinable { var nibName: String { get } }

@@ -50,8 +50,8 @@ class QuizModel{
     var userEingabeDevaErkannteZeichen                      = MutableProperty([String()])
     
     //FortschrittsbalkenAnimationen
-    var animateFortschrittsbalkenTo:MutableProperty<Bool?>          = MutableProperty(nil)
-    var pruefenButtonZustand:MutableProperty<PruefenButtonZustand?> = MutableProperty(nil)
+    var animateFortschrittsbalkenTo:MutableProperty<QuizZeichenStatus?> = MutableProperty(nil)
+    var pruefenButtonZustand:MutableProperty<PruefenButtonZustand?>     = MutableProperty(nil)
     
     //pruefenButton Aktionen
     // (immer wenn, pruefenButton gedrückt wird)
@@ -66,7 +66,7 @@ class QuizModel{
     private func setNextQZ(){
         // Für den fall, dass das gegenwärtige QuizZeichen nur nachgezeichnet wird
         // -> Animation des Fortschrittsbalkens
-        if currentQuizZeichen.value?.quizSetting.isNachZeichnen == true     { animateFortschrittsbalkenTo.value = true }
+        if currentQuizZeichen.value?.quizSetting.isNachZeichnen == true     { animateFortschrittsbalkenTo.value = QuizZeichenStatus.Correct }
         //Usereingabe zurück setzen
         userEingabe.resetToNil()
         // currenQuizzeichen erhält neues QuizZeichen
@@ -103,7 +103,7 @@ class QuizModel{
         //zeigt PruefErgebnisse + animiert  Fortschrittsbalken
         if currentQuizZeichen.value?.quizSetting.isNachZeichnen == false{
             zeigePruefergebnisse.value = Void()
-            animateFortschrittsbalkenTo.value = isUserEingabeCorrect }
+            animateFortschrittsbalkenTo.value = isUserEingabeCorrect ? QuizZeichenStatus.Correct : QuizZeichenStatus.FalschBeantwortet}
         //wenn current letztes Zeichen? --> PruefenButton auf QuizBeenden setzen, sonst auf nächstesZeichen setzen
         switch quizZeicheninAbfrage.count == 0 {
         case true: pruefenButtonZustand.value = .QuizBeenden

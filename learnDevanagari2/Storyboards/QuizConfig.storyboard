@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ReD-aP-frq">
-    <device id="ipad9_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -15,22 +12,19 @@
         <scene sceneID="CYe-0T-kmR">
             <objects>
                 <viewController id="kTZ-vm-WUm" customClass="QuizConfigVC" customModule="learnDevanagari2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oTW-eZ-xUp">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="oTW-eZ-xUp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-th-lB4">
-                                <rect key="frame" x="0.0" y="64" width="768" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CY7-th-lB4">
+                                <rect key="frame" x="0.0" y="64" width="600" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-f2-paD">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-f2-paD">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
                                         <state key="normal" title="starten / fortsetzen"/>
-                                        <connections>
-                                            <action selector="quizStartenPressed:" destination="kTZ-vm-WUm" eventType="touchUpInside" id="L8d-CV-5P1"/>
-                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc4-ah-sa1">
-                                        <rect key="frame" x="384" y="0.0" width="384" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uc4-ah-sa1">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="30"/>
                                         <state key="normal" title="abbrechen"/>
                                     </button>
                                 </subviews>
@@ -38,13 +32,13 @@
                                     <constraint firstAttribute="height" constant="30" id="bjQ-QX-AsS"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-mN-zvY">
-                                <rect key="frame" x="10" y="102" width="748" height="912"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-mN-zvY">
+                                <rect key="frame" x="10" y="102" width="580" height="912"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-rx-c5B">
-                                        <rect key="frame" x="0.0" y="0.0" width="748" height="450"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-rx-c5B">
+                                        <rect key="frame" x="0.0" y="0.0" width="580" height="450"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lektion 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-JF-Eyy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lektion 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnH-JF-Eyy">
                                                 <rect key="frame" x="8" y="8" width="68" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20.5" id="HyR-fT-Ypv"/>
@@ -53,25 +47,25 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7fY-kT-YJL">
-                                                <rect key="frame" x="20" y="36.5" width="708" height="393.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7fY-kT-YJL">
+                                                <rect key="frame" x="20" y="36.5" width="540" height="393.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-Bj-kXO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="393.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JNh-Bj-kXO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="266" height="393.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoO-Cn-HWc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="22"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EoO-Cn-HWc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="64"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWc-eO-1Kd" customClass="ZeichenInAbfrageView" customModule="learnDevanagari2" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="22" width="350" height="350"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWc-eO-1Kd" customClass="ZeichenImQuadratView" customModule="learnDevanagari2" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="64" width="266" height="266"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GWc-eO-1Kd" secondAttribute="height" multiplier="1:1" priority="999" id="Abo-CR-WSJ"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-1E-nfX">
-                                                                <rect key="frame" x="0.0" y="372" width="350" height="21.5"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wgs-1E-nfX">
+                                                                <rect key="frame" x="0.0" y="330" width="266" height="63.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -80,25 +74,25 @@
                                                             <constraint firstItem="Wgs-1E-nfX" firstAttribute="width" secondItem="EoO-Cn-HWc" secondAttribute="width" id="S8I-tO-1uH"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-pq-pZB">
-                                                        <rect key="frame" x="358" y="0.0" width="350" height="393.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FiK-pq-pZB">
+                                                        <rect key="frame" x="274" y="0.0" width="266" height="393.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYA-mn-6NQ" customClass="AbfragenUndAnzeigenView" customModule="learnDevanagari2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="163"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYA-mn-6NQ" customClass="AbfragenUndAnzeigenView" customModule="learnDevanagari2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="163"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="163" placeholder="YES" id="H3L-zr-Hfk"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AM5-ep-HGP" customClass="AbfragenUndAnzeigenView" customModule="learnDevanagari2">
-                                                                <rect key="frame" x="0.0" y="171" width="350" height="140"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AM5-ep-HGP" customClass="AbfragenUndAnzeigenView" customModule="learnDevanagari2">
+                                                                <rect key="frame" x="0.0" y="171" width="266" height="140"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="140" placeholder="YES" id="PKq-Z5-RKM"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-Xe-ol9">
-                                                                <rect key="frame" x="0.0" y="319" width="350" height="74.5"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-Xe-ol9">
+                                                                <rect key="frame" x="0.0" y="319" width="266" height="74.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -120,8 +114,8 @@
                                             <outletCollection property="gestureRecognizers" destination="DhC-F1-FzL" appends="YES" id="Kk2-AJ-GuM"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QgA-o4-npv">
-                                        <rect key="frame" x="0.0" y="462" width="748" height="450"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QgA-o4-npv">
+                                        <rect key="frame" x="0.0" y="462" width="580" height="450"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freies Üben" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogY-8A-o6F">
                                                 <rect key="frame" x="8" y="8" width="92" height="20.5"/>
@@ -132,25 +126,25 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="otd-BD-HcV">
-                                                <rect key="frame" x="20" y="36.5" width="708" height="393.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="otd-BD-HcV">
+                                                <rect key="frame" x="20" y="36.5" width="540" height="393.5"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-GY-aQ5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="393.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-GY-aQ5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="266" height="393.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gd-0M-yKc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="22"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Gd-0M-yKc">
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="64"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GN6-6x-Eqk" customClass="ZeichenInAbfrageView" customModule="learnDevanagari2" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="22" width="350" height="350"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GN6-6x-Eqk" customClass="ZeichenImQuadratView" customModule="learnDevanagari2" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="64" width="266" height="266"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GN6-6x-Eqk" secondAttribute="height" multiplier="1:1" priority="999" id="0Rd-Su-qj6"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-Ll-EnU">
-                                                                <rect key="frame" x="0.0" y="372" width="350" height="21.5"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-Ll-EnU">
+                                                                <rect key="frame" x="0.0" y="330" width="266" height="63.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -159,18 +153,18 @@
                                                             <constraint firstItem="IsA-Ll-EnU" firstAttribute="height" secondItem="7Gd-0M-yKc" secondAttribute="height" id="njy-IC-xbR"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Bp-gh-FL0">
-                                                        <rect key="frame" x="358" y="0.0" width="350" height="393.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Bp-gh-FL0">
+                                                        <rect key="frame" x="274" y="0.0" width="266" height="393.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojE-Rt-ZmQ" customClass="AbfragenUndAnzeigenView" customModule="learnDevanagari2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="180.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="266" height="180.5"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="180.5" placeholder="YES" id="C0R-Sy-gtg"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B9X-WK-JdF">
-                                                                <rect key="frame" x="0.0" y="188.5" width="350" height="205"/>
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B9X-WK-JdF">
+                                                                <rect key="frame" x="0.0" y="188.5" width="266" height="205"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -255,34 +249,34 @@
             <objects>
                 <viewController id="uuw-3F-MPz" customClass="ConfigZeichensatzVC" customModule="learnDevanagari2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBi-vg-DpJ">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lBI-bw-cLm">
-                                <rect key="frame" x="20" y="84" width="728" height="920"/>
+                                <rect key="frame" x="20" y="84" width="560" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5K-rH-hLw">
-                                        <rect key="frame" x="0.0" y="0.0" width="728" height="920"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="496"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lAE-kx-mGD">
-                                                <rect key="frame" x="20" y="20" width="688" height="880"/>
+                                                <rect key="frame" x="20" y="20" width="520" height="456"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8t-9p-fum">
-                                                        <rect key="frame" x="0.0" y="0.0" width="688" height="688"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="520" height="396"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI7-wR-rRk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="688"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="396"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3e-I6-M2Q" customClass="ZeichenInAbfrageView" customModule="learnDevanagari2" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="688" height="688"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3e-I6-M2Q" customClass="ZeichenImQuadratView" customModule="learnDevanagari2" customModuleProvider="target">
+                                                                <rect key="frame" x="62" y="0.0" width="396" height="396"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="E3e-I6-M2Q" secondAttribute="height" multiplier="1:1" id="epy-CR-NFd"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cs0-6z-emm">
-                                                                <rect key="frame" x="688" y="0.0" width="0.0" height="688"/>
+                                                                <rect key="frame" x="458" y="0.0" width="62" height="396"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -291,20 +285,20 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bVg-8J-xcK">
-                                                        <rect key="frame" x="0.0" y="718" width="688" height="66"/>
+                                                        <rect key="frame" x="0.0" y="426" width="520" height="0.0"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-Yy-tQs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="688" height="66"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="520" height="0.0"/>
                                                                 <subviews>
                                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="4rh-5k-Xlm">
-                                                                        <rect key="frame" x="-2" y="0.0" width="692" height="67"/>
+                                                                        <rect key="frame" x="-2" y="0.0" width="524" height="1"/>
                                                                     </slider>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z35-Rh-Kjg">
-                                                        <rect key="frame" x="0.0" y="814" width="688" height="67"/>
+                                                        <rect key="frame" x="0.0" y="456" width="520" height="1"/>
                                                         <segments>
                                                             <segment title="Zufall"/>
                                                             <segment title="selten geübt"/>
@@ -370,26 +364,26 @@
             <objects>
                 <tableViewController id="KVx-x5-Arh" customClass="GrundauswahlPopoverVC" customModule="learnDevanagari2" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HeE-57-AFv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="vSe-PP-50c" detailTextLabel="Btr-mV-aTW" style="IBUITableViewCellStyleSubtitle" id="uge-Mh-QRq">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uge-Mh-QRq" id="lcV-KJ-I1r">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSe-PP-50c">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="20" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Btr-mV-aTW">
-                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>

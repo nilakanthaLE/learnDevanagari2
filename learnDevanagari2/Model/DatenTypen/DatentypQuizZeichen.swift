@@ -24,7 +24,7 @@ class QuizZeichen:Equatable{
     var nasalDesAnusvaraZeichen:NasalDesAnusvaraZeichen?
     var anusvaraVisargaViramaZeichen:AnusvaraVisargaViramaZeichen?
     var quizSetting:QuizSetting
-    
+    var devaString:String? { return anusvaraVisargaViramaZeichen?.devanagari ?? nasalDesAnusvaraZeichen?.devanagari ?? zeichen.devanagari }
     //MARK: init
     init(zeichen:Zeichen,quizSetting:QuizSetting) {
         self.zeichen                = zeichen

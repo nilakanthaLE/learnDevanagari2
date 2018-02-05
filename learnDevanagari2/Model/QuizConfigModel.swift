@@ -30,11 +30,11 @@ class QuizConfigModel{
     var freiesUebenQuizZeichenSatz                                          = MutableProperty([QuizZeichen]())
     var lektionsQuizZeichenSatz                                             = MutableProperty([QuizZeichen]())
 
-    //Zeichssätze für freies Üben
+    //freies Üben
     var freiesUebenZeichenSatz                                              = MutableProperty([Zeichen]())
     var configZeichensatzGrundauswahl                                       = MutableProperty([Zeichen]())
-    var configZeichensatzGewaehltausGrundauswahl                            = MutableProperty([Zeichen]())
     var configZeichensatzGewaehlteLektionen                                 = MutableProperty([Lektion]())
+    var configZeichensatzZeichenAuswahlTyp                                  = MutableProperty(ZeichenAuswahlTyp.Zufall)
     
     // wird gesetzt, wenn alle QuizZeichen richtig beantwortet wurden
     var quizZeichenInAbfrageIstLeer                                         = MutableProperty(Void())
@@ -51,6 +51,9 @@ class QuizConfigModel{
         print("test für Sonderlektionen")
         user.aktuelleLektion = 19
         
+        let countryCode = NSLocale.current.regionCode
+        print(emoji(countryCode: countryCode!))
+        
         //Einstellungen für die aktuelle Lektion des Users setzen
         setCurrentLektion(user.currentLektion)
         
@@ -63,7 +66,6 @@ class QuizConfigModel{
         quizZeichenInAbfrageIstLeer.signal.observeValues        { [weak self] _ in self?.quizWurdeAbgeschlossen() }
         
         //UserConfig Freies Üben
-        freiesUebenZeichenSatz          <~ configZeichensatzGewaehltausGrundauswahl
         configZeichensatzGrundauswahl   <~ configZeichensatzGewaehlteLektionen.signal.map{Lektion.zeichenSatz(fuer: $0)}
         
         //QuizZeichenSätze generieren

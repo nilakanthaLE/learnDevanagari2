@@ -100,11 +100,11 @@
                     <tabBarItem key="tabBarItem" title="Quiz" id="lJM-aK-OyX"/>
                     <navigationItem key="navigationItem" title="Quiz" id="RZD-i4-Z4r"/>
                     <connections>
-                        <outlet property="devaAntwortenStack" destination="oJy-cz-NH6" id="gRD-NU-Baz"/>
                         <outlet property="fortschrittsBalken" destination="w3V-r3-MVE" id="B3b-Sj-zZj"/>
                         <outlet property="mainStack" destination="FmY-NS-aT6" id="Jok-g2-dWd"/>
                         <outlet property="quizDevaAbfrage" destination="oXU-qo-WgK" id="LBC-KM-ZW9"/>
                         <outlet property="quizPanelView" destination="VOC-dS-iG3" id="YjB-me-twu"/>
+                        <outlet property="vorgeschlageneDevaAntwortenStack" destination="oJy-cz-NH6" id="gRD-NU-Baz"/>
                         <segue destination="SJm-Jz-qCQ" kind="presentation" identifier="goToMantras" id="Nm2-mS-Axa"/>
                     </connections>
                 </viewController>

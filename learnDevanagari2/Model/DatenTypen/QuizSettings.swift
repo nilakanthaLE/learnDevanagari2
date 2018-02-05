@@ -81,6 +81,8 @@ struct QuizSetting:Equatable{
         self.aspiration                                 = PanelControlSetting(controlTyp: .AspirationTyp, modus: .Versteckt, konsonantTypModus: nil)
         self.stimmhaftigkeit                            = PanelControlSetting(controlTyp: .StimmhaftigkeitTyp, modus: .Versteckt, konsonantTypModus: nil)
     }
+    //init per NSObject
+    init?(nsobject:NSObject?)                           { self.init(dict: nsobject as? [String:String]) }
     //init per dict (z.B. CoreData)
     init?(dict:[String:String]?){
         guard let dict = dict else { return nil }
@@ -174,7 +176,7 @@ class PanelControlSetting:Hashable{
     
     
     //MARK: calc Properties
-    var titleArray:[[String]]?                                                  { return konsonantTypModus != nil ? konsonantTypModus?.titleArray : controlTyp.titleArray }
+    var titleArray:[[String]] {  return konsonantTypModus?.titleArray ?? controlTyp.titleArray ?? [[String]]()}
     
     //MARK: init
     init(controlTyp: ControlTyp, modus: PanelControlModus   , konsonantTypModus: KonsonantTypModus?){
@@ -182,6 +184,8 @@ class PanelControlSetting:Hashable{
         self.modus              = modus
         self.konsonantTypModus  = konsonantTypModus
     }
+    
+    
 }
 
 

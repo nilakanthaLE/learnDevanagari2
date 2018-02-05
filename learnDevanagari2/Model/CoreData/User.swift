@@ -103,7 +103,11 @@ extension User{
     // das aktuelle QuizSetting (Abfragensetting) (lektionsQuizSetting Dict -> QuizSetting)
     var currentMainQuizSetting:QuizSetting?     { return QuizSetting(dict: lektionsQuizSettings as? Dictionary) }
     
-    
+    //MARK: LektionsQuiz Mainsettings
+    func setMainSettings(settings:QuizSetting?){
+        lektionsQuizSettings = settings?.asDict as NSObject?
+        try? managedContext.save()
+    }
 }
 
 
@@ -113,5 +117,9 @@ extension MainSettings{
         let request = NSFetchRequest<MainSettings>.init(entityName: "MainSettings")
         if let settings = (try? managedContext.fetch(request))?.first   { return settings }
         return NSEntityDescription.insertNewObject(forEntityName: "MainSettings", into: managedContext) as? MainSettings
+    }
+    func userAbmelden(){
+        angemeldeterUser = nil
+        try? managedContext.save()
     }
 }
